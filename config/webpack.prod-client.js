@@ -9,8 +9,14 @@ const BrotliPlugin = require('brotli-webpack-plugin');
 module.exports = {
 	name: 'client',
 	entry: {
-		vendor: ['react', 'react-dom'],
-		main: ['./src/main.js']
+		vendor: [
+			'react',
+			'react-dom'
+		],
+		main: [
+			'@babel/polyfill',
+			'./src/main.js'
+		]
 	},
 	mode: 'production',
 	output: {

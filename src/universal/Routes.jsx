@@ -1,20 +1,24 @@
 import React from 'react'
 import { Route, Link } from 'react-router-dom'
-// import universal from 'react-universal-component'git
+import universal from 'react-universal-component';
 import { Switch } from 'react-router'
 // import '../css/nav.css'
 // import NotFound from './NotFound'
-
-// const UniversalComponent = universal(props => import(`./${props.page}`));
-
+// import Test from './Test';
+const UniversalComponent = universal(/* webpackChunkName: Test */ import('./Test'));
 export default () => (
 	<div>
-		<h1>bbbbb</h1>
-		{/*<Switch>*/}
-			{/*<Route exact path='/'>*/}
-				{/*<UniversalComponent page='Test.jsx' />*/}
-			{/*</Route>*/}
+		<header>
+			header
+		</header>
+		<Switch>
+			<Route exact path='/'>
+				<UniversalComponent />
+			</Route>
 			{/*<Route component={NotFound} />*/}
-		{/*</Switch>*/}
+		</Switch>
+		<footer>
+			footer
+		</footer>
 	</div>
 );

@@ -6,7 +6,10 @@ module.exports = {
 	name: 'server',
 	target: 'node',
 	externals: [nodeExternals()],
-	entry: './src/server/render.js',
+	entry: [
+		'@babel/polyfill',
+		'./src/server/render.js',
+	],
 	mode: 'production',
 	output: {
 		filename: 'prod-server-bundle.js',
@@ -41,6 +44,9 @@ module.exports = {
 				]
 			},
 		]
+	},
+	resolve: {
+		extensions: ['.js', '.jsx'],
 	},
 	plugins: [
 		new webpack.optimize.LimitChunkCountPlugin({

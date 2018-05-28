@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { AppContainer } from 'react-hot-loader'
-import Loadable from 'react-loadable';
-
+import { AppContainer } from 'react-hot-loader';
 import AppRoot from './App.jsx';
 
 function render(Component) {
@@ -10,7 +8,7 @@ function render(Component) {
 		<AppContainer>
 			<Component />
 		</AppContainer>,
-		document.getElementById("react-root")
+		document.getElementById('react-root')
 	);
 }
 
@@ -19,6 +17,6 @@ render(AppRoot);
 if (module.hot) {
 	module.hot.accept('./App.jsx', () => {
 		const NewAppRoot = require('./App.jsx').default;
-		render(NewAppRoot)
-	})
+		render(NewAppRoot);
+	});
 }

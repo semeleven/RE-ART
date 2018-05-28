@@ -24,12 +24,12 @@ export default ({ clientStats }) => (req, res) => {
 	      </head>
 	      <body>
 	        <div id='react-root'>${renderToString(
-			<StaticRouter location={req.url} context={context}>
-				<Routes />
-			</StaticRouter>
-		)}</div>
+		<StaticRouter location={req.url} context={context}>
+			<Routes />
+		</StaticRouter>
+	)}</div>
 	        ${js}
 	      </body>
 	    </html>
   `);
-}
+};

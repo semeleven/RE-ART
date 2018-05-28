@@ -10,7 +10,7 @@ import configProdServer from '../../config/webpack.prod-server.js';
 
 const server = express();
 
-const isProd = process.env.NODE_ENV === "production";
+const isProd = process.env.NODE_ENV === 'production';
 const isDev = !isProd;
 const PORT = process.env.PORT || 8080;
 
@@ -20,11 +20,7 @@ const done = () => {
 	if (!isBuilt) {
 		return server.listen(PORT, () => {
 			isBuilt = true;
-			console.log(
-				`Server listening on http://localhost:${PORT} in ${
-					process.env.NODE_ENV
-				}`
-			);
+			console.log(`Server listening on http://localhost:${PORT} in ${process.env.NODE_ENV}`);
 		});
 	}
 };
@@ -33,39 +29,37 @@ if (isDev) {
 	const compiler = webpack([configDevClient, configDevServer]);
 
 	const clientCompiler = compiler.compilers[0];
-	const serverCompiler = compiler.compilers[1];
+	// const serverCompiler = compiler.compilers[1];
 
-	const webpackDevMiddleware = require("webpack-dev-middleware")(
-		compiler,
-		configDevClient.devServer
-	);
+	/* eslint-disable-next-line */
+	const webpackDevMiddleware = require('webpack-dev-middleware')(compiler, configDevClient.devServer);
 
-	const webpackHotMiddlware = require("webpack-hot-middleware")(
-		clientCompiler,
-		configDevClient.devServer
-	);
+	/* eslint-disable-next-line */
+	const webpackHotMiddlware = require('webpack-hot-middleware')(clientCompiler, configDevClient.devServer);
 
 	server.use(webpackDevMiddleware);
 	server.use(webpackHotMiddlware);
 	server.use(webpackHotServerMiddleware(compiler));
-	console.log("Middleware enabled");
-	done()
+	console.log('Middleware enabled');
+	done();
 } else {
 	webpack([configProdClient, configProdServer]).run((err, stats) => {
 		const clientStats = stats.toJson().children[0];
-		const render = require("../../build/prod-server-bundle.js").default;
+
+		/* eslint-disable-next-line */
+		const render = require('../../build/prod-server-bundle.js').default;
 		console.log(
 			stats.toString({
-				colors: true
+				colors: true,
 			})
 		);
 
 		server.use(
-			expressStaticGzip("dist", {
-				enableBrotli: true
+			expressStaticGzip('dist', {
+				enableBrotli: true,
 			})
 		);
 		server.use(render({ clientStats }));
-		return done()
+		return done();
 	});
 }
