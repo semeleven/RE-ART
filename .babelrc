@@ -1,0 +1,24 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": ["last 2 versions"]
+        },
+        "debug": false
+      }
+    ],
+    ["@babel/preset-stage-0", {
+      "useBuiltIns": true,
+      "decoratorsLegacy": true
+    }],
+    "@babel/preset-react"
+  ],
+  "plugins": ["syntax-dynamic-import", "universal-import"],
+  "env": {
+    "development": {
+      "plugins": ["react-hot-loader/babel"]
+    }
+  }
+}
