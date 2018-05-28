@@ -2,6 +2,7 @@ import express from 'express';
 import expressStaticGzip from 'express-static-gzip';
 import webpack from 'webpack';
 import webpackHotServerMiddleware from 'webpack-hot-server-middleware';
+import signale from 'signale';
 
 import configDevClient from '../../config/webpack.dev-client.js';
 import configDevServer from '../../config/webpack.dev-server.js';
@@ -20,7 +21,7 @@ const done = () => {
 	if (!isBuilt) {
 		return server.listen(PORT, () => {
 			isBuilt = true;
-			console.log(`Server listening on http://localhost:${PORT} in ${process.env.NODE_ENV}`);
+			signale.success(`Server listening on http://localhost:${PORT} in ${process.env.NODE_ENV}`);
 		});
 	}
 };
@@ -40,7 +41,7 @@ if (isDev) {
 	server.use(webpackDevMiddleware);
 	server.use(webpackHotMiddlware);
 	server.use(webpackHotServerMiddleware(compiler));
-	console.log('Middleware enabled');
+	signale.success('Middleware enabled');
 	done();
 } else {
 	webpack([configProdClient, configProdServer]).run((err, stats) => {

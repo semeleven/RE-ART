@@ -21,13 +21,17 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.jsx?$/,
+				test : /\.(js|jsx)$/,
 				exclude: /node_modules/,
 				use: [
 					{
 						loader: 'babel-loader'
 					}
 				]
+			},
+			{
+				test : /\.(ts|tsx)$/,
+				loader: 'awesome-typescript-loader'
 			},
 			{
 				test: /\.css$/,
@@ -53,7 +57,7 @@ module.exports = {
 		]
 	},
 	resolve: {
-		extensions: ['.js', '.jsx'],
+		extensions: ['.js', '.jsx', '.ts', '.tsx'],
 	},
 	plugins: [
 		new webpack.optimize.LimitChunkCountPlugin({

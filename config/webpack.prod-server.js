@@ -28,6 +28,10 @@ module.exports = {
 				]
 			},
 			{
+				test : /\.(ts|tsx)$/,
+				loader: 'awesome-typescript-loader'
+			},
+			{
 				test: /\.css$/,
 				use: 'css-loader'
 			},
@@ -46,7 +50,7 @@ module.exports = {
 		]
 	},
 	resolve: {
-		extensions: ['.js', '.jsx'],
+		extensions: ['.js', '.jsx', '.ts', '.tsx'],
 	},
 	plugins: [
 		new webpack.optimize.LimitChunkCountPlugin({

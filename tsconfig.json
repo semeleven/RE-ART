@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+  "module": "es2015",
+  "target": "es2015",
+  "lib": ["es2015", "es7", "dom"],
+  "moduleResolution": "node",
+  "strict": true,
+  "strictNullChecks": false,
+  "outDir": "dist",
+  "allowSyntheticDefaultImports": true,
+  "experimentalDecorators": true,
+  "pretty": true,
+  "removeComments": false,
+  "jsx": "react",
+  "skipLibCheck": true,
+  "noImplicitAny": false,
+  "noUnusedLocals": true,
+  "noUnusedParameters": false
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["./node_modules", "./dist"]
+}
