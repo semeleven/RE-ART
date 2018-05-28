@@ -12,6 +12,11 @@
     "lint": "eslint \"**/*.js\"",
     "prettier": "prettier-eslint \"**/*.js\" --write"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn prettier"
+    }
+  },
   "dependencies": {
     "@babel/cli": "^7.0.0-beta.49",
     "express": "^4.16.3",
