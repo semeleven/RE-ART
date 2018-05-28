@@ -58,6 +58,9 @@ module.exports = {
 			},
 		]
 	},
+	resolve: {
+		extensions: ['.js', '.jsx'],
+	},
 	plugins: [
 		new OptimizeCssAssetsPlugin({
 			assetNameRegExp: /\.css$/g,
@@ -75,6 +78,6 @@ module.exports = {
 		new CompressionPlugin({
 			algorithm: 'gzip'
 		}),
-		new BrotliPlugin()
+		new BrotliPlugin(),
 	]
 }

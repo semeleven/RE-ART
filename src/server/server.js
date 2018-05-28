@@ -18,7 +18,7 @@ let isBuilt = false;
 
 const done = () => {
 	if (!isBuilt) {
-		server.listen(PORT, () => {
+		return server.listen(PORT, () => {
 			isBuilt = true;
 			console.log(
 				`Server listening on http://localhost:${PORT} in ${
@@ -27,7 +27,7 @@ const done = () => {
 			);
 		});
 	}
-}
+};
 
 if (isDev) {
 	const compiler = webpack([configDevClient, configDevServer]);
@@ -65,7 +65,7 @@ if (isDev) {
 				enableBrotli: true
 			})
 		);
-		server.use(render({clientStats}));
+		server.use(render({ clientStats }));
 		return done()
 	});
 }

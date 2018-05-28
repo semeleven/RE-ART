@@ -1,5 +1,5 @@
 import React from 'react';
-import Routes from './universal/Routes.jsx';
+import Routes from './universal/Routes';
 
 export default () => (
 	<div>

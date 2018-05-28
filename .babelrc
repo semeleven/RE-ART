@@ -15,10 +15,12 @@
     }],
     "@babel/preset-react"
   ],
-  "plugins": ["syntax-dynamic-import", "universal-import"],
+  "plugins": ["syntax-dynamic-import"],
   "env": {
     "development": {
-      "plugins": ["react-hot-loader/babel"]
+      "plugins": [
+        "react-hot-loader/babel",
+.      ]
     }
   }
 }

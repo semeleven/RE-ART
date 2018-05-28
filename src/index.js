@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader'
+import Loadable from 'react-loadable';
 
 import AppRoot from './App.jsx';
 
@@ -12,6 +13,7 @@ function render(Component) {
 		document.getElementById("react-root")
 	);
 }
+
 render(AppRoot);
 
 if (module.hot) {

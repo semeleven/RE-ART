@@ -57,9 +57,9 @@ module.exports = {
 			},
 		]
 	},
-	// resolve: {
-	// 	[]
-	// }
+	resolve: {
+		extensions: ['.js', '.jsx'],
+	},
 	plugins: [
 		new webpack.DefinePlugin({
 			'process.env': {

@@ -1,11 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
-const externals = require('./node-externals');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
 	name: 'server',
 	target: 'node',
-	externals: externals,
+	externals: [nodeExternals()],
 	entry: './src/server/render.js',
 	mode: 'production',
 	output: {
@@ -50,6 +50,6 @@ module.exports = {
 			'process.env': {
 				NODE_ENV: JSON.stringify('production')
 			}
-		})
+		}),
 	]
 }
