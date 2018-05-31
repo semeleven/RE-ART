@@ -1,13 +1,6 @@
-import {
-	createStore,
-	combineReducers,
-	compose,
-} from 'redux';
+import { createStore, combineReducers, compose } from 'redux';
 
-import {
-	persistStore,
-	persistReducer,
-} from 'redux-persist';
+import { persistStore, persistReducer } from 'redux-persist';
 
 import storage from 'redux-persist/lib/storage';
 
@@ -34,10 +27,10 @@ const createNewStore = (preloadedState = null) => {
 			userData: initialState,
 		},
 		compose(
-			(!process.env.SERVER && typeof window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined')
+			!process.env.SERVER && typeof window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined'
 				? window.__REDUX_DEVTOOLS_EXTENSION__()
-				: f => f,
-		),
+				: f => f
+		)
 	);
 
 	const persistor = persistStore(store);

@@ -4,17 +4,17 @@ const initialState = {
 
 export default function userReducer(state = initialState, action) {
 	switch (action.type) {
-		case 'TEST':
-			return {
-				...state,
-				user: {
-					...state.user,
-					...action.payload,
-				},
-			};
+	case 'TEST':
+		return {
+			...state,
+			user: {
+				...state.user,
+				...action.payload,
+			},
+		};
 
-		default:
-			return state;
+	default:
+		return state;
 	}
 }
 
