@@ -35,7 +35,7 @@ export default ({ clientStats }) => async (req, res) => {
 		}),
 		cache: new InMemoryCache(),
 	});
-	
+
 	const App = (
 		<ApolloProvider client={client}>
 			<StaticRouter location={req.url} context={context}>
