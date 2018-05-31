@@ -2,6 +2,9 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router';
 
+import { Provider as ReduxProvider } from 'react-redux';
+import createStore from '../universal/lib/redux/store';
+
 import { flushChunkNames } from 'react-universal-component/server';
 import flushChunks from 'webpack-flush-chunks';
 
@@ -36,16 +39,21 @@ export default ({ clientStats }) => async (req, res) => {
 		cache: new InMemoryCache(),
 	});
 
+	const { store } = createStore();
+
 	const App = (
 		<ApolloProvider client={client}>
-			<StaticRouter location={req.url} context={context}>
-				<Routes />
-			</StaticRouter>
+			<ReduxProvider store={store}>
+				<StaticRouter location={req.url} context={context}>
+					<Routes />
+				</StaticRouter>
+			</ReduxProvider>
 		</ApolloProvider>
 	);
 
 	await getDataFromTree(App).then(() => {
 		const apolloState = client.extract();
+		const reduxState = store.getState();
 
 		return res.send(`
 			<html ${helmet.htmlAttributes.toString()}>
@@ -60,7 +68,9 @@ export default ({ clientStats }) => async (req, res) => {
 					${js}
 					<script 
 						dangerouslySetInnerHTML={{
-							__html: \`window.__APOLLO_STATE__=${JSON.stringify(apolloState).replace(/</g, '\\\u003c')};\`,	
+							__html: 
+							\`window.__APOLLO_STATE__=${JSON.stringify(apolloState).replace(/</g, '\\\u003c')};\`,
+							\`window.__REDUX_STATE__=${JSON.stringify(reduxState).replace(/</g, '\\\\\u003c')};\`,	
 						}}
 					/>
 				</body>
