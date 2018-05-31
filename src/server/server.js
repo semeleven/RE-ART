@@ -1,4 +1,5 @@
 import express from 'express';
+import { graphiqlExpress, graphqlExpress } from 'apollo-server-express';
 import expressStaticGzip from 'express-static-gzip';
 import webpack from 'webpack';
 import bodyParser from 'body-parser';
@@ -9,6 +10,8 @@ import configDevClient from '../../config/webpack.dev-client.js';
 import configDevServer from '../../config/webpack.dev-server.js';
 import configProdClient from '../../config/webpack.prod-client.js';
 import configProdServer from '../../config/webpack.prod-server.js';
+
+import schema from '../universal/lib/graphql/schema';
 
 const app = express();
 
@@ -26,6 +29,10 @@ const done = () => {
 		});
 	}
 };
+
+app.use('/graphql', bodyParser.json(), graphqlExpress({ schema }));
+
+app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
 
 if (isDev) {
 	const compiler = webpack([configDevClient, configDevServer]);
