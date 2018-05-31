@@ -1,6 +1,7 @@
 import express from 'express';
 import expressStaticGzip from 'express-static-gzip';
 import webpack from 'webpack';
+import bodyParser from 'body-parser';
 import webpackHotServerMiddleware from 'webpack-hot-server-middleware';
 import signale from 'signale';
 
@@ -9,7 +10,7 @@ import configDevServer from '../../config/webpack.dev-server.js';
 import configProdClient from '../../config/webpack.prod-client.js';
 import configProdServer from '../../config/webpack.prod-server.js';
 
-const server = express();
+const app = express();
 
 const isProd = process.env.NODE_ENV === 'production';
 const isDev = !isProd;
@@ -19,7 +20,7 @@ let isBuilt = false;
 
 const done = () => {
 	if (!isBuilt) {
-		return server.listen(PORT, () => {
+		return app.listen(PORT, () => {
 			isBuilt = true;
 			signale.success(`Server listening on http://localhost:${PORT} in ${process.env.NODE_ENV}`);
 		});
@@ -38,9 +39,9 @@ if (isDev) {
 	/* eslint-disable-next-line */
 	const webpackHotMiddlware = require('webpack-hot-middleware')(clientCompiler, configDevClient.devServer);
 
-	server.use(webpackDevMiddleware);
-	server.use(webpackHotMiddlware);
-	server.use(webpackHotServerMiddleware(compiler));
+	app.use(webpackDevMiddleware);
+	app.use(webpackHotMiddlware);
+	app.use(webpackHotServerMiddleware(compiler));
 	signale.success('Middleware enabled');
 	done();
 } else {
@@ -55,12 +56,12 @@ if (isDev) {
 			})
 		);
 
-		server.use(
+		app.use(
 			expressStaticGzip('dist', {
 				enableBrotli: true,
 			})
 		);
-		server.use(render({ clientStats }));
+		app.use(render({ clientStats }));
 		return done();
 	});
 }

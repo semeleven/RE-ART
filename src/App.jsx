@@ -4,8 +4,14 @@ import Routes from './universal/Routes';
 
 export default () => (
 	<div>
+		<header>
+			header
+		</header>
 		<Router>
 			<Routes />
 		</Router>
+		<footer>
+			footer
+		</footer>
 	</div>
 );

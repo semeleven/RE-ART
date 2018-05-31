@@ -7,18 +7,10 @@ import { Switch } from 'react-router';
 // import Test from './Test';
 const UniversalComponent = Universal(/* webpackChunkName: Test */ import('./Test.tsx'));
 export default () => (
-	<div>
-		<header>
-			header
-		</header>
-		<Switch>
-			<Route exact path='/'>
-				<UniversalComponent />
-			</Route>
-			{/*<Route component={NotFound} />*/}
-		</Switch>
-		<footer>
-			footer
-		</footer>
-	</div>
+	<Switch>
+		<Route exact path='/'>
+			<UniversalComponent />
+		</Route>
+		{/*<Route component={NotFound} />*/}
+	</Switch>
 );
