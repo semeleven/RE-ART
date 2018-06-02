@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider as ReduxProvider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
 
@@ -33,7 +34,9 @@ function render(Component) {
 		<ApolloProvider client={client}>
 			<ReduxProvider store={store}>
 				<AppContainer>
-					<Component />
+					<Router>
+						<Component />
+					</Router>
 				</AppContainer>
 			</ReduxProvider>
 		</ApolloProvider>,

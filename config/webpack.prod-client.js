@@ -15,7 +15,7 @@ module.exports = {
 		],
 		main: [
 			'@babel/polyfill',
-			'./src/main.js'
+			'./src/index.js'
 		]
 	},
 	mode: 'production',
@@ -69,7 +69,7 @@ module.exports = {
 		]
 	},
 	resolve: {
-		extensions: ['.js', '.jsx', '.ts', '.tsx'],
+		extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx'],
 	},
 	plugins: [
 		new OptimizeCssAssetsPlugin({

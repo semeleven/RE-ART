@@ -15,7 +15,7 @@ import { ApolloClient } from 'apollo-client';
 import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
-import Routes from '../universal/Routes.jsx';
+import AppRoot from '../App.jsx';
 
 export default ({ clientStats }) => async (req, res) => {
 	const helmet = Helmet.renderStatic();
@@ -45,7 +45,7 @@ export default ({ clientStats }) => async (req, res) => {
 		<ApolloProvider client={client}>
 			<ReduxProvider store={store}>
 				<StaticRouter location={req.url} context={context}>
-					<Routes />
+					<AppRoot />
 				</StaticRouter>
 			</ReduxProvider>
 		</ApolloProvider>

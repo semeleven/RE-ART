@@ -62,7 +62,7 @@ module.exports = {
 		]
 	},
 	resolve: {
-		extensions: ['.js', '.jsx', '.ts', '.tsx'],
+		extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx'],
 	},
 	plugins: [
 		new webpack.DefinePlugin({
