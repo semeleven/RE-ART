@@ -3,7 +3,7 @@ import { Button } from '../components/';
 
 const Landing = () => (
 	<div>
-		<Button>
+		<Button padding={20}>
 			JSS
 		</Button>
 	</div>

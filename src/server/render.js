@@ -8,24 +8,30 @@ import { flushChunkNames } from 'react-universal-component/server';
 import flushChunks from 'webpack-flush-chunks';
 
 import { Helmet } from 'react-helmet';
-import {
-	JssProvider,
-	SheetsRegistry,
-	ThemeProvider,
-} from 'react-jss';
+
+import { Provider as FelaProvider, ThemeProvider } from 'react-fela';
+import { createRenderer } from 'fela';
+import { renderToMarkup } from 'fela-dom';
 
 import { ApolloProvider, getDataFromTree } from 'react-apollo';
 import { ApolloClient } from 'apollo-client';
 import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
+import theme from '../universal/helpers/theme';
 import createStore from '../universal/lib/redux/store';
 
 import AppRoot from '../App.jsx';
-import theme from '../universal/theme';
 
 export default ({ clientStats }) => async (req, res) => {
-	const sheets = new SheetsRegistry();
+	const renderer = createRenderer();
+
+	renderer.renderStatic({
+		margin: 0,
+		padding: 0,
+	}, 'html, body');
+
+	const styleMarkup = renderToMarkup(renderer)
 
 	const helmet = Helmet.renderStatic();
 
@@ -54,11 +60,11 @@ export default ({ clientStats }) => async (req, res) => {
 		<ApolloProvider client={client}>
 			<ReduxProvider store={store}>
 				<StaticRouter location={req.url} context={context}>
-					<JssProvider registry={sheets}>
+					<FelaProvider renderer={renderer}>
 						<ThemeProvider theme={theme}>
 							<AppRoot />
 						</ThemeProvider>
-					</JssProvider>
+					</FelaProvider>
 				</StaticRouter>
 			</ReduxProvider>
 		</ApolloProvider>
@@ -74,9 +80,7 @@ export default ({ clientStats }) => async (req, res) => {
 					${helmet.title.toString()}
 	                ${helmet.meta.toString()}
 	                ${helmet.link.toString()}
-	                <style type="text/css" id="server-side-styles">
-			          ${sheets.toString()}
-			        </style>
+	                ${styleMarkup}
 					${styles}
 				</head>
 	            <body ${helmet.bodyAttributes.toString()}>

@@ -3,20 +3,21 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider as ReduxProvider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
-import { ThemeProvider, JssProvider, SheetsRegistry } from 'react-jss';
 import { ApolloProvider } from 'react-apollo';
 
 import { ApolloClient } from 'apollo-client';
 import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
+import { createRenderer } from 'fela';
+import { Provider as FelaProvider, ThemeProvider } from 'react-fela';
+import theme from './universal/helpers/theme';
 
 import createStore from './universal/lib/redux/store';
 
 import AppRoot from './App.jsx';
-import theme from './universal/theme';
 
-const sheets = new SheetsRegistry();
+const renderer = createRenderer();
 
 const preloadedReduxState = window.__REDUX_STATE__;
 // const preloadedApolloState = window.__APOLLO_STATE__;
@@ -38,21 +39,17 @@ function render(Component) {
 		<ApolloProvider client={client}>
 			<ReduxProvider store={store}>
 				<AppContainer>
-					<JssProvider registry={sheets}>
+					<FelaProvider renderer={renderer}>
 						<ThemeProvider theme={theme}>
 							<Router>
 								<Component />
 							</Router>
 						</ThemeProvider>
-					</JssProvider>
+					</FelaProvider>
 				</AppContainer>
 			</ReduxProvider>
 		</ApolloProvider>,
-		document.getElementById('react-root'),
-		() => {
-			const ssStyles = document.getElementById('server-side-styles');
-			ssStyles.parentNode.removeChild(ssStyles);
-		}
+		document.getElementById('react-root')
 	);
 }
 
