@@ -3,8 +3,14 @@ import { Button } from '../components/';
 
 const Landing = () => (
 	<div>
-		<Button padding={20}>
-			JSS
+		<Button type="transparentDark" onClick={() => console.log('transparentDark')}>
+			HELLO
+		</Button>
+		<Button type="transparentPurple">
+			LOGIN
+		</Button>
+		<Button type="purple">
+			SIGN UP
 		</Button>
 	</div>
 );

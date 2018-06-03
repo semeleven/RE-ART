@@ -10,28 +10,38 @@ import flushChunks from 'webpack-flush-chunks';
 import { Helmet } from 'react-helmet';
 
 import { Provider as FelaProvider, ThemeProvider } from 'react-fela';
-import { createRenderer } from 'fela';
-import { renderToMarkup } from 'fela-dom';
+import createRenderer from '../universal/lib/fela/renderer.tsx';
+// import { createRenderer } from 'fela';
+// import { renderToMarkup } from 'fela-dom';
 
 import { ApolloProvider, getDataFromTree } from 'react-apollo';
 import { ApolloClient } from 'apollo-client';
 import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
-import theme from '../universal/helpers/theme';
+import theme from '../universal/lib/fela/theme';
 import createStore from '../universal/lib/redux/store';
 
 import AppRoot from '../App.jsx';
 
 export default ({ clientStats }) => async (req, res) => {
-	const renderer = createRenderer();
+	const { renderer } = createRenderer();
 
-	renderer.renderStatic({
-		margin: 0,
-		padding: 0,
-	}, 'html, body');
+	renderer.renderStatic(
+		{
+			margin: 0,
+			padding: 0,
+		},
+		'html, body'
+	);
+	const files = [
+		'../client/fonts/GothamMedium.ttf',
+	];
 
-	const styleMarkup = renderToMarkup(renderer)
+	renderer.renderFont('Gotham', files, { fontWeight: 700 });
+
+	const styleMarkup = renderToMarkup(renderer);
+	// const { renderer, styleMarkup } = createRenderer();
 
 	const helmet = Helmet.renderStatic();
 
