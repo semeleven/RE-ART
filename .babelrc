@@ -16,7 +16,7 @@
     "@babel/preset-react"
   ],
   "plugins": [
-    "syntax-dynamic-import",
+    "@babel/syntax-dynamic-import",
     "universal-import",
     "import-graphql"
   ],

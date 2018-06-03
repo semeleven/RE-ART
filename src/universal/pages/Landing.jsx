@@ -1,8 +1,11 @@
 import React from 'react';
+import { Button } from '../components';
 
-const Landing = props => (
+const Landing = () => (
 	<div>
-		<h1>LANDING</h1>
+		<Button>
+			JSS
+		</Button>
 	</div>
 );
 

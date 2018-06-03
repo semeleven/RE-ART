@@ -3,21 +3,25 @@ import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router';
 
 import { Provider as ReduxProvider } from 'react-redux';
-import createStore from '../universal/lib/redux/store';
 
 import { flushChunkNames } from 'react-universal-component/server';
 import flushChunks from 'webpack-flush-chunks';
 
 import { Helmet } from 'react-helmet';
+import {JssProvider, SheetsRegistry} from 'react-jss'
 
 import { ApolloProvider, getDataFromTree } from 'react-apollo';
 import { ApolloClient } from 'apollo-client';
 import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
+import createStore from '../universal/lib/redux/store';
+
 import AppRoot from '../App.jsx';
 
 export default ({ clientStats }) => async (req, res) => {
+	const sheets = new SheetsRegistry();
+
 	const helmet = Helmet.renderStatic();
 
 	const site = req.hostname.split('.')[0];
@@ -45,7 +49,9 @@ export default ({ clientStats }) => async (req, res) => {
 		<ApolloProvider client={client}>
 			<ReduxProvider store={store}>
 				<StaticRouter location={req.url} context={context}>
-					<AppRoot />
+					<JssProvider registry={sheets}>
+						<AppRoot />
+					</JssProvider>
 				</StaticRouter>
 			</ReduxProvider>
 		</ApolloProvider>
@@ -61,6 +67,9 @@ export default ({ clientStats }) => async (req, res) => {
 					${helmet.title.toString()}
 	                ${helmet.meta.toString()}
 	                ${helmet.link.toString()}
+	                <style type="text/css">
+			          ${sheets.toString()}
+			        </style>
 					${styles}
 				</head>
 	            <body ${helmet.bodyAttributes.toString()}>
