@@ -2,7 +2,7 @@
   "compilerOptions": {
   "module": "es2015",
   "target": "es2015",
-  "lib": ["es2015", "es7", "dom"],
+  "lib": ["es5", "es6", "es7", "es2017", "dom"],
   "moduleResolution": "node",
   "strict": true,
   "strictNullChecks": false,
@@ -18,5 +18,5 @@
   "noUnusedParameters": false
   },
   "include": ["./src/**/*"],
-  "exclude": ["./node_modules", "./dist"]
+  "exclude": ["./node_modules", "./dist", "./build"]
 }
