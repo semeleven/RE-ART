@@ -5,9 +5,4 @@ import createRenderer from '../src/universal/lib/fela/renderer';
 
 const renderer = createRenderer();
 
-export default () =>
-	story => (
-		<Provider renderer={renderer}>
-			{story()}
-		</Provider>
-	);
+export default () => story => <Provider renderer={renderer}>{story()}</Provider>;

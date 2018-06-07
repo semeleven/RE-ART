@@ -11,15 +11,26 @@ const FelaProvider = initFelaProvider();
 
 storiesOf('Button', module)
 	.addDecorator(FelaProvider)
-	.add('with text', () => (
-		<h1>TEST</h1>
-	));
+	.add('with text', () => <h1>TEST</h1>);
 
-{/*<Button*/}
-{/*onClick={action('clicked')}*/}
-{/*type="transparentDark"*/}
-{/*theme={theme}*/}
-{/*>*/}
-{/*LOGIN*/}
-{/*</Button>*/}
-
+{
+	/* <Button */
+}
+{
+	/* onClick={action('clicked')} */
+}
+{
+	/* type="transparentDark" */
+}
+{
+	/* theme={theme} */
+}
+{
+	/* > */
+}
+{
+	/* LOGIN */
+}
+{
+	/* </Button> */
+}
