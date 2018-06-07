@@ -1,19 +1,13 @@
 import React, { Component } from 'react';
-import { FelaWithStylesProps } from 'react-fela';
 import { darken } from 'polished';
 import { withStyles, ThemeInterface } from '../../lib/fela/';
 
-interface OwnProps {
+type Props = {
 	type: 'transparentDark' | 'transparentPurple' | 'purple'
 	onClick: () => any
 	theme: ThemeInterface
-}
-
-interface Styles {
 	className: string
 }
-
-type Props = OwnProps & FelaWithStylesProps<OwnProps, Styles, ThemeInterface>
 
 const styles = ({ 
 	theme: { darkGray, darkPurple, white, purple },
@@ -22,6 +16,7 @@ const styles = ({
 	const commonStyles = {
 		boxSizing: 'border-box',
 		fontFamily: 'Gotham',
+		fontWeight: 700,
 		textTransform: 'uppercase',
 		color: 'white',
 		display: 'inline-flex',
@@ -94,7 +89,7 @@ const styles = ({
 
 @withStyles(styles)
 class Button extends Component<Props, any> {
-	public render(): JSX.Element {
+	public render(): React.ReactNode {
 		const { className, children, onClick } = this.props;
 
 		return (

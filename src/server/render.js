@@ -10,16 +10,17 @@ import flushChunks from 'webpack-flush-chunks';
 import { Helmet } from 'react-helmet';
 
 import { Provider as FelaProvider, ThemeProvider } from 'react-fela';
-import createRenderer from '../universal/lib/fela/renderer.tsx';
 // import { createRenderer } from 'fela';
-// import { renderToMarkup } from 'fela-dom';
+import { renderToMarkup } from 'fela-dom';
 
 import { ApolloProvider, getDataFromTree } from 'react-apollo';
 import { ApolloClient } from 'apollo-client';
 import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
+import createRenderer from '../universal/lib/fela/renderer.js';
 import theme from '../universal/lib/fela/theme';
+
 import createStore from '../universal/lib/redux/store';
 
 import AppRoot from '../App.jsx';
