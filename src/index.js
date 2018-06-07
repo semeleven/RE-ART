@@ -10,10 +10,9 @@ import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 import createRenderer from './universal/lib/fela/renderer';
-// import { createRenderer } from 'fela';
 import { Provider as FelaProvider, ThemeProvider } from 'react-fela';
 import theme from './universal/lib/fela/theme';
-
+import styles from './styles.global.css';
 import createStore from './universal/lib/redux/store';
 
 import AppRoot from './App.jsx';

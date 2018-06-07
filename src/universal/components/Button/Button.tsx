@@ -13,7 +13,6 @@ const styles = ({ theme: { darkGray, darkPurple, white, purple }, type }: Props)
 	const commonStyles = {
 		boxSizing: 'border-box',
 		fontFamily: 'Gotham',
-		fontWeight: 700,
 		textTransform: 'uppercase',
 		color: 'white',
 		display: 'inline-flex',

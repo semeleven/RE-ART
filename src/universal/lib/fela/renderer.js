@@ -8,12 +8,7 @@ import prefixer from 'fela-plugin-prefixer';
 
 const initializeRenderer = () => {
 	const config = {
-		plugins: [
-			unit(),
-			fallbackValue(),
-			lvha(),
-			prefixer(),
-		],
+		plugins: [unit(), fallbackValue(), lvha(), prefixer()],
 	};
 
 	const renderer = createRenderer(config);
