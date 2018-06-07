@@ -35,9 +35,7 @@ export default ({ clientStats }) => async (req, res) => {
 		},
 		'html, body'
 	);
-	const files = [
-		'../client/fonts/GothamMedium.ttf',
-	];
+	const files = ['../client/fonts/GothamMedium.ttf'];
 
 	renderer.renderFont('Gotham', files, { fontWeight: 700 });
 

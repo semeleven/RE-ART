@@ -3,16 +3,13 @@ import { darken } from 'polished';
 import { withStyles, ThemeInterface } from '../../lib/fela/';
 
 type Props = {
-	type: 'transparentDark' | 'transparentPurple' | 'purple'
-	onClick: () => any
-	theme: ThemeInterface
-	className: string
-}
+	type: 'transparentDark' | 'transparentPurple' | 'purple';
+	onClick: () => any;
+	theme: ThemeInterface;
+	className: string;
+};
 
-const styles = ({ 
-	theme: { darkGray, darkPurple, white, purple },
-    type 
-}: Props): object => {
+const styles = ({ theme: { darkGray, darkPurple, white, purple }, type }: Props): object => {
 	const commonStyles = {
 		boxSizing: 'border-box',
 		fontFamily: 'Gotham',
@@ -51,7 +48,7 @@ const styles = ({
 			'&:active': {
 				backgroundColor: darken(0.1, darkGray),
 			},
-		}
+		};
 	}
 
 	if (type === 'transparentPurple') {
@@ -67,7 +64,7 @@ const styles = ({
 			'&:active': {
 				backgroundColor: darken(0.1, purple),
 			},
-		}
+		};
 	}
 
 	if (type === 'purple') {
@@ -83,7 +80,7 @@ const styles = ({
 			'&:active': {
 				backgroundColor: darken(0.1, darkPurple),
 			},
-		}
+		};
 	}
 };
 
@@ -93,11 +90,7 @@ class Button extends Component<Props, any> {
 		const { className, children, onClick } = this.props;
 
 		return (
-			<button
-				type="button"
-				className={className}
-				onClick={onClick}
-			>
+			<button type="button" className={className} onClick={onClick}>
 				{children}
 			</button>
 		);
@@ -105,5 +98,3 @@ class Button extends Component<Props, any> {
 }
 
 export default Button;
-
-  

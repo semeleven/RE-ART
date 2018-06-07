@@ -20,7 +20,7 @@ export default class App extends Component {
 					<Route exact path="/">
 						<Landing {...rest} />
 					</Route>
-					{/*<Route component={NotFound} />*/}
+					{/* <Route component={NotFound} /> */}
 				</Switch>
 				<footer>
 					<h1>FOOTER</h1>

@@ -6,12 +6,8 @@ const Landing = () => (
 		<Button type="transparentDark" onClick={() => console.log('transparentDark')}>
 			HELLO
 		</Button>
-		<Button type="transparentPurple">
-			LOGIN
-		</Button>
-		<Button type="purple">
-			SIGN UP
-		</Button>
+		<Button type="transparentPurple">LOGIN</Button>
+		<Button type="purple">SIGN UP</Button>
 	</div>
 );
 
