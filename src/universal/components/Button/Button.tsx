@@ -12,13 +12,10 @@ type Props = {
 const styles = ({ theme: { darkGray, darkPurple, white, purple }, type }: Props): object => {
 	const commonStyles = {
 		boxSizing: 'border-box',
-		fontFamily: 'Gotham',
+		fontFamily: 'GothamMedium',
 		textTransform: 'uppercase',
 		color: 'white',
-		display: 'inline-flex',
-		justifyContent: 'center',
-		alignItems: 'center',
-		minHeight: 40,
+		textAlign: 'center',
 		minWidth: 115,
 		paddingRight: 30,
 		paddingLeft: 30,
@@ -29,7 +26,8 @@ const styles = ({ theme: { darkGray, darkPurple, white, purple }, type }: Props)
 		outline: 'none',
 		fontSize: 15,
 		textDecoration: 'none',
-		verticalAlign: 'middle',
+		lineHeight: 1,
+		// verticalAlign: 'middle',
 		cursor: 'pointer',
 		transition: '0.1s ease-in-out',
 	};

@@ -1,4 +1,60 @@
 @font-face {
-    font-family: Gotham;
-    src: url("./client/fonts/GothamMedium.ttf");
+    font-family: 'GothamLight';
+    src: url('./client/fonts/gothamlight-webfont.eot');
+    src: url('./client/fonts/gothamlight-webfont.eot?#iefix') format('embedded-opentype'),
+    url('./client/fonts/gothamlight-webfont.woff2') format('woff2'),
+    url('./client/fonts/gothamlight-webfont.woff') format('woff'),
+    url('./client/fonts/gothamlight-webfont.ttf') format('truetype'),
+    url('./client/fonts/gothamlight-webfont.svg#gothamlightregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'GothamBold';
+    src: url('./client/fonts/gothambold-webfont.eot');
+    src: url('./client/fonts/gothambold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('./client/fonts/gothambold-webfont.woff2') format('woff2'),
+    url('./client/fonts/gothambold-webfont.woff') format('woff'),
+    url('./client/fonts/gothambold-webfont.ttf') format('truetype'),
+    url('./client/fonts/gothambold-webfont.svg#gothamboldregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'GothamMedium';
+    src: url('./client/fonts/gothammedium-webfont.eot');
+    src: url('./client/fonts/gothammedium-webfont.eot?#iefix') format('embedded-opentype'),
+    url('./client/fonts/gothammedium-webfont.woff2') format('woff2'),
+    url('./client/fonts/gothammedium-webfont.woff') format('woff'),
+    url('./client/fonts/gothammedium-webfont.ttf') format('truetype'),
+    url('./client/fonts/gothammedium-webfont.svg#gothammediumregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {./client/fonts/
+    font-family: 'GothamBook';
+    src: url('./client/fonts/gothambook-webfont.eot');
+    src: url('./client/fonts/gothambook-webfont.eot?#iefix') format('embedded-opentype'),
+    url('./client/fonts/gothambook-webfont.woff2') format('woff2'),
+    url('./client/fonts/gothambook-webfont.woff') format('woff'),
+    url('./client/fonts/gothambook-webfont.ttf') format('truetype'),
+    url('./client/fonts/gothambook-webfont.svg#gothambookregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
