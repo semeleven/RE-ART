@@ -9,13 +9,7 @@ import important from 'fela-plugin-important';
 
 const initializeRenderer = () => {
 	const config = {
-		plugins: [
-			unit(),
-			fallbackValue(),
-			lvha(),
-			prefixer(),
-			important(),
-		],
+		plugins: [unit(), fallbackValue(), lvha(), prefixer(), important()],
 	};
 
 	const renderer = createRenderer(config);

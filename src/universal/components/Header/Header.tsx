@@ -25,28 +25,16 @@ class Header extends Component<Props, any> {
 
 		return (
 			<header className={className}>
+				<div>MENU</div>
+				<h1>RE:ART</h1>
 				<div>
-					MENU
-				</div>
-				<h1>
-					RE:ART
-				</h1>
-				<div>
-					<Button
-						type="transparentDark"
-						onClick={() => {}}
-					>
+					<Button type="transparentDark" onClick={() => {}}>
 						LOGIN
 					</Button>
-					<Button
-						type="purple"
-						onClick={() => {}}
-					>
+					<Button type="purple" onClick={() => {}}>
 						SIGN UP
 					</Button>
-					<div>
-						SEARCH
-					</div>
+					<div>SEARCH</div>
 				</div>
 			</header>
 		);
