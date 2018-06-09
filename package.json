@@ -92,6 +92,7 @@
     "prettier-eslint-cli": "^4.7.1",
     "prop-types": "^15.6.1",
     "react-hot-loader": "^4.2.0",
+    "react-styleguidist": "^7.0.17",
     "style-loader": "^0.21.0",
     "typescript": "^2.9.1",
     "uglifyjs-webpack-plugin": "^1.2.5",
