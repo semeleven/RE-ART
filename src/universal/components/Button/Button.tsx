@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { darken } from 'polished';
-import { withStyles, ThemeInterface } from '../../lib/fela/';
+import { withStyles } from '../../lib/fela/';
 
 type Props = {
 	type: 'transparentDark' | 'transparentPurple' | 'purple';
 	onClick: () => any;
-	theme: ThemeInterface;
-	className: string;
+	theme?: any;
+	className?: string;
 };
 
 const styles = ({ theme: { darkGray, darkPurple, white, purple }, type }: Props): object => {
@@ -22,6 +22,7 @@ const styles = ({ theme: { darkGray, darkPurple, white, purple }, type }: Props)
 		paddingBottom: 11,
 		borderStyle: 'solid',
 		borderRadius: '10px',
+		outline: 'none',
 		fontSize: 15,
 		lineHeight: 1,
 		cursor: 'pointer',

@@ -5,10 +5,17 @@ import unit from 'fela-plugin-unit';
 import fallbackValue from 'fela-plugin-fallback-value';
 import lvha from 'fela-plugin-lvha';
 import prefixer from 'fela-plugin-prefixer';
+import important from 'fela-plugin-important';
 
 const initializeRenderer = () => {
 	const config = {
-		plugins: [unit(), fallbackValue(), lvha(), prefixer()],
+		plugins: [
+			unit(),
+			fallbackValue(),
+			lvha(),
+			prefixer(),
+			important(),
+		],
 	};
 
 	const renderer = createRenderer(config);
