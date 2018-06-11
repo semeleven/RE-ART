@@ -35,7 +35,7 @@ const StyledButton = styled.button`
 			font-size: 15px;
 			line-height: 1;
 			cursor: pointer;
-			transition: 0.1s ease-in-out;
+			transition: 0.2s ease-in-out;
 			user-select: none;
 			text-decoration: none;
 			margin-right: ${props.spaced && '20px'};

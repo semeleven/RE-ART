@@ -12,6 +12,7 @@ const icons = {
 const IconWrapper = styled.div`
 	width: 32px;
 	height: 32px;
+	cursor: pointer;
 `;
 
 const Icon = ({ icon }) => <IconWrapper>{icons[icon]()}</IconWrapper>;

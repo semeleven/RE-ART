@@ -13,6 +13,7 @@ const StyledHeader = styled.header`
 	padding-left: 24px;
 	padding-right: 24px;
 	height: 82px;
+	margin-bottom: 50px;
 `;
 
 const Wrapper = styled.div`

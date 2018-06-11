@@ -12,7 +12,6 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { injectGlobal } from 'styled-components';
 import globalStyles from './injectGlobal';
 // eslint-disable-next-line
-import styles from './styles.global.css';
 import createStore from './universal/lib/redux/store';
 
 import { ThemeProvider } from './universal/lib/styled';

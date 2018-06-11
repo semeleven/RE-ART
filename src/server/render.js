@@ -35,7 +35,7 @@ export default ({ clientStats }) => async (req, res) => {
 	const site = req.hostname.split('.')[0];
 	const context = { site };
 
-	const { js, styles } = flushChunks(clientStats, {
+	const { js } = flushChunks(clientStats, {
 		chunkNames: flushChunkNames(),
 	});
 
@@ -78,7 +78,6 @@ export default ({ clientStats }) => async (req, res) => {
 	                ${helmet.meta.toString()}
 	                ${helmet.link.toString()}
 	                ${styledComponents}
-	                ${styles}
 				</head>
 	            <body ${helmet.bodyAttributes.toString()}>
 	                <div id='react-root'>${renderToString(App)}</div>
