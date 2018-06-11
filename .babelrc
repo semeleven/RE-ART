@@ -16,6 +16,10 @@
     "@babel/preset-react"
   ],
   "plugins": [
+    ["babel-plugin-styled-components", {
+      "ssr": true,
+      "displayName": true
+    }],
     "@babel/syntax-dynamic-import",
     "universal-import",
     "import-graphql"

@@ -9,38 +9,21 @@ import flushChunks from 'webpack-flush-chunks';
 
 import { Helmet } from 'react-helmet';
 
-import { Provider as FelaProvider, ThemeProvider } from 'react-fela';
-// import { createRenderer } from 'fela';
-import { renderToMarkup } from 'fela-dom';
-
 import { ApolloProvider, getDataFromTree } from 'react-apollo';
 import { ApolloClient } from 'apollo-client';
 import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
-import createRenderer from '../universal/lib/fela/renderer.js';
-import theme from '../universal/lib/fela/theme';
+// import { ThemeProvider } from '../universal/lib/styled/styled-components';
+import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
 
 import createStore from '../universal/lib/redux/store';
 
 import AppRoot from '../App.jsx';
 
 export default ({ clientStats }) => async (req, res) => {
-	const { renderer } = createRenderer();
-
-	renderer.renderStatic(
-		{
-			margin: 0,
-			padding: 0,
-		},
-		'html, body'
-	);
-	const files = ['../client/fonts/GothamMedium.ttf'];
-
-	renderer.renderFont('Gotham', files, { fontWeight: 700 });
-
-	const styleMarkup = renderToMarkup(renderer);
-	// const { renderer, styleMarkup } = createRenderer();
+	const sheet = new ServerStyleSheet();
+	const styleTags = sheet.getStyleTags();
 
 	const helmet = Helmet.renderStatic();
 
@@ -69,11 +52,9 @@ export default ({ clientStats }) => async (req, res) => {
 		<ApolloProvider client={client}>
 			<ReduxProvider store={store}>
 				<StaticRouter location={req.url} context={context}>
-					<FelaProvider renderer={renderer}>
-						<ThemeProvider theme={theme}>
-							<AppRoot />
-						</ThemeProvider>
-					</FelaProvider>
+					<StyleSheetManager sheet={sheet.instance}>
+						<AppRoot />
+					</StyleSheetManager>
 				</StaticRouter>
 			</ReduxProvider>
 		</ApolloProvider>
@@ -89,7 +70,7 @@ export default ({ clientStats }) => async (req, res) => {
 					${helmet.title.toString()}
 	                ${helmet.meta.toString()}
 	                ${helmet.link.toString()}
-	                ${styleMarkup}
+	                ${styleTags}
 					${styles}
 				</head>
 	            <body ${helmet.bodyAttributes.toString()}>
