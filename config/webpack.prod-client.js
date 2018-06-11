@@ -69,7 +69,7 @@ module.exports = {
 		]
 	},
 	resolve: {
-		extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx'],
+		extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx', 'svg'],
 	},
 	plugins: [
 		new OptimizeCssAssetsPlugin({

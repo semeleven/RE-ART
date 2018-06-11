@@ -1,6 +1,5 @@
 import { lighten, darken } from 'polished';
 
-
 interface ThemeInterface {
 	white: string;
 	black: string;
@@ -55,12 +54,4 @@ const borderColor = {
 	purple: theme.purple,
 };
 
-export {
-	theme,
-	ThemeInterface,
-	background,
-	color,
-	borderColor,
-	hoverBackground,
-	activeBackground,
-};
+export { theme, ThemeInterface, background, color, borderColor, hoverBackground, activeBackground };

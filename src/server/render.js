@@ -14,7 +14,8 @@ import { ApolloClient } from 'apollo-client';
 import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
-import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
+import { ServerStyleSheet, injectGlobal } from 'styled-components';
+import globalStyles from '../injectGlobal';
 import { ThemeProvider } from '../universal/lib/styled';
 import { theme } from '../universal/lib/styled/theme';
 
@@ -24,7 +25,10 @@ import AppRoot from '../App.jsx';
 
 export default ({ clientStats }) => async (req, res) => {
 	const sheet = new ServerStyleSheet();
-	const styleTags = sheet.getStyleTags();
+	const styledComponents = sheet.getStyleTags();
+
+	// eslint-disable-next-line
+	injectGlobal`${globalStyles}`;
 
 	const helmet = Helmet.renderStatic();
 
@@ -53,11 +57,11 @@ export default ({ clientStats }) => async (req, res) => {
 		<ApolloProvider client={client}>
 			<ReduxProvider store={store}>
 				<StaticRouter location={req.url} context={context}>
-					<StyleSheetManager sheet={sheet.instance}>
-						<ThemeProvider theme={theme}>
-							<AppRoot />
-						</ThemeProvider>
-					</StyleSheetManager>
+					{/* <StyleSheetManager sheet={sheet.instance}> */}
+					<ThemeProvider theme={theme}>
+						<AppRoot />
+					</ThemeProvider>
+					{/* </StyleSheetManager> */}
 				</StaticRouter>
 			</ReduxProvider>
 		</ApolloProvider>
@@ -73,8 +77,8 @@ export default ({ clientStats }) => async (req, res) => {
 					${helmet.title.toString()}
 	                ${helmet.meta.toString()}
 	                ${helmet.link.toString()}
-	                ${styleTags}
-					${styles}
+	                ${styledComponents}
+	                ${styles}
 				</head>
 	            <body ${helmet.bodyAttributes.toString()}>
 	                <div id='react-root'>${renderToString(App)}</div>

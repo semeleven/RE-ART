@@ -2,13 +2,13 @@
   "env": {
     "development": {
       "plugins": [
-        ["babel-plugin-styled-components", {
-          "ssr": true
-        }],
         "@babel/syntax-dynamic-import",
         "universal-import",
         "import-graphql",
-        "react-hot-loader/babel"
+        "react-hot-loader/babel",
+        ["babel-plugin-styled-components", {
+          "ssr": true
+        }]
       ],
       "presets": [
         [

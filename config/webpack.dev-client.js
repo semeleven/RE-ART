@@ -49,7 +49,7 @@ module.exports = {
 				use: ['style-loader', 'css-loader'],
 			},
 			{
-				test: /\.(jpg|png|gif|ttf|svg|eot|woff|woff2)$/,
+				test: /\.(jpg|png|gif|ttf|eot|woff|woff2)$/,
 				use: [
 					{
 						loader: 'file-loader',
@@ -59,10 +59,14 @@ module.exports = {
 					},
 				],
 			},
+			{
+				test: /\.svg$/,
+				loader: 'svg-inline-loader'
+			}
 		]
 	},
 	resolve: {
-		extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx'],
+		extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx', 'svg'],
 	},
 	plugins: [
 		new webpack.DefinePlugin({

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter, Switch } from 'react-router';
 import { Route } from 'react-router-dom';
 // import Universal from 'react-universal-component';
+import { Header } from './universal/components/';
 import Landing from './universal/pages/Landing';
 
 // const Landing = Universal(/* webpackChunkName: Landing */ import('./universal/pages/Landing'));
@@ -13,9 +14,7 @@ export default class App extends Component {
 
 		return (
 			<div>
-				<header>
-					<h1>HEADER</h1>
-				</header>
+				<Header />
 				<Switch>
 					<Route exact path="/">
 						<Landing {...rest} />

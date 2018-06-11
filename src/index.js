@@ -9,6 +9,8 @@ import { ApolloClient } from 'apollo-client';
 import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
+import { injectGlobal } from 'styled-components';
+import globalStyles from './injectGlobal';
 // eslint-disable-next-line
 import styles from './styles.global.css';
 import createStore from './universal/lib/redux/store';
@@ -32,6 +34,9 @@ const client = new ApolloClient({
 });
 
 const { store } = createStore(preloadedReduxState);
+
+// eslint-disable-next-line
+injectGlobal`${globalStyles}`;
 
 function render(Component) {
 	ReactDOM.hydrate(
