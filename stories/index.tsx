@@ -5,6 +5,4 @@ import { storiesOf } from '@storybook/react';
 
 // import { Button } from '../src/universal/components/';
 
-storiesOf('Button', module)
-	.add('with text', () => <h1>TEST</h1>);
-
+storiesOf('Button', module).add('with text', () => <h1>TEST</h1>);

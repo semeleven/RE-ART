@@ -14,8 +14,9 @@ import { ApolloClient } from 'apollo-client';
 import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
-// import { ThemeProvider } from '../universal/lib/styled/styled-components';
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
+import { ThemeProvider } from '../universal/lib/styled';
+import { theme } from '../universal/lib/styled/theme';
 
 import createStore from '../universal/lib/redux/store';
 
@@ -53,7 +54,9 @@ export default ({ clientStats }) => async (req, res) => {
 			<ReduxProvider store={store}>
 				<StaticRouter location={req.url} context={context}>
 					<StyleSheetManager sheet={sheet.instance}>
-						<AppRoot />
+						<ThemeProvider theme={theme}>
+							<AppRoot />
+						</ThemeProvider>
 					</StyleSheetManager>
 				</StaticRouter>
 			</ReduxProvider>

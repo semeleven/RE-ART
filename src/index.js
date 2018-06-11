@@ -9,8 +9,12 @@ import { ApolloClient } from 'apollo-client';
 import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
+// eslint-disable-next-line
 import styles from './styles.global.css';
 import createStore from './universal/lib/redux/store';
+
+import { ThemeProvider } from './universal/lib/styled';
+import { theme } from './universal/lib/styled/theme';
 
 import AppRoot from './App.jsx';
 
@@ -35,7 +39,9 @@ function render(Component) {
 			<ReduxProvider store={store}>
 				<AppContainer>
 					<Router>
-						<Component />
+						<ThemeProvider theme={theme}>
+							<Component />
+						</ThemeProvider>
 					</Router>
 				</AppContainer>
 			</ReduxProvider>

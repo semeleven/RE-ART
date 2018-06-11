@@ -1,5 +1,13 @@
 // import React from 'react';
+import styledProps from 'styled-props';
 import styled from '../../lib/styled';
+import {
+	background,
+	color,
+	borderColor,
+	hoverBackground,
+	activeBackground
+} from '../../lib/styled/theme';
 
 // import { darken } from 'polished';
 
@@ -85,21 +93,34 @@ import styled from '../../lib/styled';
 // };
 
 const Button = styled.button`
-	background-color: rebeccapurple;
-	font-size: 20px;
+	background-color: ${styledProps(background)};
+	color: ${styledProps(color)};
+	border-color: ${styledProps(borderColor)};
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 10px;
+	box-sizing: border-box;
+	font-family: GothamMedium, Tahoma, Geneva, sans-serif;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 11px 30px;
+	outline: none;
+	font-size: 15px;
+	line-height: 1;
+	cursor: pointer;
+	transition: 0.1s ease-in-out;
+	user-select: none;
+  	text-decoration: none;
+  	:hover {
+        background-color: ${styledProps(hoverBackground)};
+        border-color: ${styledProps(hoverBackground)};
+        color: white;
+    }
+    :active {
+    	background-color: ${styledProps(activeBackground)};
+    	border-color: ${styledProps(activeBackground)};
+        color: white;
+    }
 `;
-
-
-// class Button extends Component<any, any> {
-// 	public render(): React.ReactNode {
-// 		const { className, children, onClick } = this.props;
-//
-// 		return (
-// 			<button type="button" className={className} onClick={onClick}>
-// 				{children}
-// 			</button>
-// 		);
-// 	}
-// }
 
 export default Button;

@@ -3,11 +3,12 @@ import { Button } from '../components/';
 
 const Landing = () => (
 	<div>
-		<Button type="transparentDark" onClick={() => console.log('transparentDark')}>
-			HELLO
+		<Button invertedDark onClick={() => console.log('transparentDark')}>
+			invertedDark
 		</Button>
-		<Button type="transparentPurple">LOGIN</Button>
-		<Button type="purple">SIGN UP</Button>
+		<Button invertedPurple>invertedPurple</Button>
+		<Button dark>DARK</Button>
+		<Button purple>PURPLE</Button>
 	</div>
 );
 
