@@ -14,12 +14,6 @@ const IconWrapper = styled.div`
 	height: 32px;
 `;
 
-const Icon = ({ icon }) => (
-	<IconWrapper>
-		{icons[icon]()}
-	</IconWrapper>
-);
+const Icon = ({ icon }) => <IconWrapper>{icons[icon]()}</IconWrapper>;
 
 export default Icon;
-
-
