@@ -11,11 +11,7 @@ it('renders purple button', () => {
 
 it('simulates click events', () => {
 	const onButtonClick = sinon.spy();
-	const wrapper = shallow(
-		<Button onClick={onButtonClick}>
-			TEST
-		</Button>
-	);
+	const wrapper = shallow(<Button onClick={onButtonClick}>TEST</Button>);
 	wrapper.find('button').simulate('click');
 	expect(onButtonClick.calledOnce).toEqual(true);
 });
