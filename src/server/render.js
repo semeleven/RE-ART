@@ -77,7 +77,8 @@ export default ({ clientStats }) => async (req, res) => {
 					${helmet.title.toString()}
 	                ${helmet.meta.toString()}
 	                ${helmet.link.toString()}
-	                ${styledComponents}
+					<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
+					${styledComponents}
 				</head>
 	            <body ${helmet.bodyAttributes.toString()}>
 	                <div id='react-root'>${renderToString(App)}</div>

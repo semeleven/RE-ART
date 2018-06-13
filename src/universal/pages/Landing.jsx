@@ -7,7 +7,6 @@ const Landing = () => (
 			invertedDark
 		</Button>
 		<Button invertedPurple>invertedPurple</Button>
-		<Button dark>DARK</Button>
 		<Button purple>PURPLE</Button>
 	</div>
 );

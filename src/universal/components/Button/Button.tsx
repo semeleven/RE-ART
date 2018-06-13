@@ -8,7 +8,7 @@ import { background, color, borderColor, hoverBackground, activeBackground } fro
 type Props = {
 	invertedDark?: boolean;
 	invertedPurple?: boolean;
-	dark?: boolean;
+	// dark?: boolean;
 	purple?: boolean;
 	spaced?: boolean;
 	onClick: () => any;
@@ -27,7 +27,8 @@ const StyledButton = styled.button`
 			border-width: 2px;
 			border-radius: 10px;
 			box-sizing: border-box;
-			font-family: GothamMedium;
+			font-family: 'Lato', sans-serif;
+			font-weight: 600;
 			text-transform: uppercase;
 			text-align: center;
 			padding: 11px 30px;

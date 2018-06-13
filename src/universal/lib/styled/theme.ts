@@ -22,34 +22,34 @@ const theme = {
 const background = {
 	invertedDark: theme.transparent,
 	invertedPurple: theme.transparent,
-	dark: theme.darkGray,
+	// dark: theme.darkGray,
 	purple: theme.purple,
 };
 
 const hoverBackground = {
 	invertedDark: theme.darkGray,
 	invertedPurple: theme.purple,
-	dark: lighten(0.1, theme.darkGray),
+	// dark: lighten(0.1, theme.darkGray),
 	purple: theme.darkPurple,
 };
 
 const activeBackground = {
-	invertedDark: darken(0.1, theme.darkGray),
+	invertedDark: lighten(0.15, theme.darkGray),
 	invertedPurple: theme.darkPurple,
-	dark: lighten(0.2, theme.darkGray),
+	// dark: lighten(0.15, theme.darkGray),
 	purple: darken(0.1, theme.darkPurple),
 };
 
 const color = {
 	invertedDark: theme.darkGray,
 	invertedPurple: theme.purple,
-	dark: theme.white,
+	// dark: theme.white,
 	purple: theme.white,
 };
 
 const borderColor = {
 	invertedDark: theme.darkGray,
-	dark: theme.darkGray,
+	// dark: theme.darkGray,
 	invertedPurple: theme.purple,
 	purple: theme.purple,
 };
