@@ -1,7 +1,13 @@
 import React from 'react';
 import styledProps from 'styled-props';
 import styled, { css } from '../../lib/styled';
-import { background, color, borderColor, hoverBackground, activeBackground } from '../../lib/styled/theme';
+import {
+	background,
+	buttonTextColor,
+	borderColor,
+	hoverBackground,
+	activeBackground
+} from '../../lib/styled/theme';
 
 // import { darken } from 'polished';
 
@@ -21,7 +27,7 @@ const StyledButton = styled.button`
 	${(props: Props) =>
 		css`
 			background-color: ${styledProps(background)};
-			color: ${styledProps(color)};
+			color: ${styledProps(buttonTextColor)};
 			border-color: ${styledProps(borderColor)};
 			border-style: solid;
 			border-width: 2px;

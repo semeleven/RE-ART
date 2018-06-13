@@ -1,6 +1,6 @@
 import { lighten, darken } from 'polished';
 
-interface ThemeInterface {
+interface colorsInterface {
 	white: string;
 	black: string;
 	lighterGray: string;
@@ -9,7 +9,7 @@ interface ThemeInterface {
 	darkPurple: string;
 }
 
-const theme = {
+const colors = {
 	white: '#ffffff',
 	black: '#000000',
 	lighterGray: '#707070',
@@ -20,38 +20,54 @@ const theme = {
 };
 
 const background = {
-	invertedDark: theme.transparent,
-	invertedPurple: theme.transparent,
-	// dark: theme.darkGray,
-	purple: theme.purple,
+	invertedDark: colors.transparent,
+	invertedPurple: colors.transparent,
+	// dark: colors.darkGray,
+	purple: colors.purple,
 };
 
 const hoverBackground = {
-	invertedDark: theme.darkGray,
-	invertedPurple: theme.purple,
-	// dark: lighten(0.1, theme.darkGray),
-	purple: theme.darkPurple,
+	invertedDark: colors.darkGray,
+	invertedPurple: colors.purple,
+	// dark: lighten(0.1, colors.darkGray),
+	purple: colors.darkPurple,
 };
 
 const activeBackground = {
-	invertedDark: lighten(0.15, theme.darkGray),
-	invertedPurple: theme.darkPurple,
-	// dark: lighten(0.15, theme.darkGray),
-	purple: darken(0.1, theme.darkPurple),
+	invertedDark: lighten(0.1, colors.darkGray),
+	invertedPurple: colors.darkPurple,
+	// dark: lighten(0.15, colors.darkGray),
+	purple: darken(0.1, colors.darkPurple),
 };
 
-const color = {
-	invertedDark: theme.darkGray,
-	invertedPurple: theme.purple,
-	// dark: theme.white,
-	purple: theme.white,
+const buttonTextColor = {
+	invertedDark: colors.darkGray,
+	invertedPurple: colors.purple,
+	// dark: colors.white,
+	purple: colors.white,
+};
+
+const fontSize = {
+	XL: 40,
+	L: 30,
+	M: 17,
+	S: 15,
 };
 
 const borderColor = {
-	invertedDark: theme.darkGray,
-	// dark: theme.darkGray,
-	invertedPurple: theme.purple,
-	purple: theme.purple,
+	invertedDark: colors.darkGray,
+	// dark: colors.darkGray,
+	invertedPurple: colors.purple,
+	purple: colors.purple,
 };
 
-export { theme, ThemeInterface, background, color, borderColor, hoverBackground, activeBackground };
+export {
+	colors,
+	colorsInterface,
+	background,
+	buttonTextColor,
+	borderColor,
+	hoverBackground,
+	activeBackground,
+	fontSize
+};

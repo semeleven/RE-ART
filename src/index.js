@@ -15,7 +15,7 @@ import globalStyles from './injectGlobal';
 import createStore from './universal/lib/redux/store';
 
 import { ThemeProvider } from './universal/lib/styled';
-import { theme } from './universal/lib/styled/theme';
+import { colors } from './universal/lib/styled/theme';
 
 import AppRoot from './App.jsx';
 
@@ -43,7 +43,7 @@ function render(Component) {
 			<ReduxProvider store={store}>
 				<AppContainer>
 					<Router>
-						<ThemeProvider theme={theme}>
+						<ThemeProvider theme={colors}>
 							<Component />
 						</ThemeProvider>
 					</Router>

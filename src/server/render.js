@@ -17,7 +17,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ServerStyleSheet, injectGlobal } from 'styled-components';
 import globalStyles from '../injectGlobal';
 import { ThemeProvider } from '../universal/lib/styled';
-import { theme } from '../universal/lib/styled/theme';
+import { colors } from '../universal/lib/styled/theme';
 
 import createStore from '../universal/lib/redux/store';
 
@@ -58,7 +58,7 @@ export default ({ clientStats }) => async (req, res) => {
 			<ReduxProvider store={store}>
 				<StaticRouter location={req.url} context={context}>
 					{/* <StyleSheetManager sheet={sheet.instance}> */}
-					<ThemeProvider theme={theme}>
+					<ThemeProvider theme={colors}>
 						<AppRoot />
 					</ThemeProvider>
 					{/* </StyleSheetManager> */}
@@ -77,7 +77,8 @@ export default ({ clientStats }) => async (req, res) => {
 					${helmet.title.toString()}
 	                ${helmet.meta.toString()}
 	                ${helmet.link.toString()}
-					<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
+	                <meta name="viewport" content="width=device-width, initial-scale=1" />
+					<link href="https://fonts.googleapis.com/css?family=Lato|Source+Code+Pro" rel="stylesheet" />
 					${styledComponents}
 				</head>
 	            <body ${helmet.bodyAttributes.toString()}>

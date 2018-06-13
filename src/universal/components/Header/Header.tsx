@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from '../../lib/styled';
 
-import { Button, Icon } from '../../components';
+import { Button, Icon, Heading } from '../../components';
 
 const StyledHeader = styled.header`
 	display: flex;
@@ -29,7 +29,9 @@ class Header extends Component<any, any> {
 			<StyledHeader>
 				<Icon icon="hamburger" />
 				<Wrapper>
-					<h1>RE:ART</h1>
+					<Heading>
+						RE:ART
+					</Heading>
 				</Wrapper>
 				<Wrapper>
 					<Button invertedPurple onClick={() => console.log('LOGIN')} spaced>

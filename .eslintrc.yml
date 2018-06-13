@@ -16,7 +16,7 @@ rules:
     indent: [error, tab]
     no-tabs: 0
     consistent-return: off
-    max-len: [error, {code: 120, ignoreUrls: true}]
+    max-len: [error, {code: 80, ignoreUrls: true}]
     comma-dangle: [error, always-multiline]
     no-plusplus: [error, {allowForLoopAfterthoughts: true}]
     object-curly-spacing: [error, always]

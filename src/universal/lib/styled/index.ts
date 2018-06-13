@@ -1,5 +1,5 @@
 import * as styledComponents from 'styled-components';
-import { ThemeInterface } from './theme';
+import { colorsInterface } from './theme';
 
 const {
 	default: styled,
@@ -7,7 +7,7 @@ const {
 	injectGlobal,
 	keyframes,
 	ThemeProvider,
-} = styledComponents as styledComponents.ThemedStyledComponentsModule<ThemeInterface>;
+} = styledComponents as styledComponents.ThemedStyledComponentsModule<colorsInterface>;
 
 export { css, injectGlobal, keyframes, ThemeProvider };
 export default styled;
