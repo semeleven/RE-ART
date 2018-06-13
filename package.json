@@ -21,18 +21,23 @@
   },
   "jest": {
     "transform": {
-      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      "^.+\\.jsx?$": "babel-jest",
+      "^.+\\.tsx?$": "ts-jest"
     },
     "testPathIgnorePatterns": [
       "/node_modules/",
       "/lib/"
     ],
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     "moduleFileExtensions": [
       "ts",
       "tsx",
       "js",
+      "jsx",
       "json"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
     ]
   },
   "dependencies": {
@@ -83,8 +88,9 @@
     "@types/react-test-renderer": "^16.0.1",
     "@types/storybook__react": "^3.0.7",
     "awesome-typescript-loader": "^5.0.0",
-    "babel-core": "^7.0.0-0",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^8.2.3",
+    "babel-jest": "^23.0.1",
     "babel-loader": "^8.0.0-beta.3",
     "babel-plugin-import-graphql": "^2.5.2",
     "babel-plugin-styled-components": "^1.5.1",
@@ -94,6 +100,8 @@
     "brotli-webpack-plugin": "^1.0.0",
     "compression-webpack-plugin": "^1.1.11",
     "css-loader": "^0.28.11",
+    "enzyme": "^3.3.0",
+    "enzyme-to-json": "^3.3.4",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.12.0",
@@ -104,7 +112,7 @@
     "file-loader": "^1.1.11",
     "graphql-tag": "^2.9.2",
     "husky": "^1.0.0-rc.8",
-    "jest": "^23.1.0",
+    "jest": "^21.3.0-beta.15",
     "jest-styled-components": "^5.0.1",
     "lodash": "^4.17.10",
     "lodash-webpack-plugin": "^0.11.5",

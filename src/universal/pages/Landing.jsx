@@ -1,14 +1,14 @@
 import React from 'react';
-import { Button } from '../components/';
+import { Button, Main } from '../components';
 
 const Landing = () => (
-	<div>
+	<Main title="Home Page">
 		<Button invertedDark onClick={() => console.log('transparentDark')}>
 			invertedDark
 		</Button>
 		<Button invertedPurple>invertedPurple</Button>
 		<Button purple>PURPLE</Button>
-	</div>
+	</Main>
 );
 
 export default Landing;

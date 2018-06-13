@@ -24,7 +24,7 @@
           "useBuiltIns": true,
           "decoratorsLegacy": true
         }],
-        "@babel/preset-react"
+        "@babel/preset-react",
       ]
     },
     "production": {
@@ -44,6 +44,25 @@
               "browsers": ["last 2 versions"]
             },
             "debug": false
+          }
+        ],
+        ["@babel/preset-stage-0", {
+          "useBuiltIns": true,
+          "decoratorsLegacy": true
+        }],
+        "@babel/preset-react"
+      ]
+    },
+    "test": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "debug": false,
+            "modules": "commonjs",
+            "targets": {
+              "node": "current"
+            }
           }
         ],
         ["@babel/preset-stage-0", {

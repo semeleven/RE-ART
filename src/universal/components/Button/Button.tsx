@@ -9,9 +9,7 @@ import {
 	activeBackground,
 } from '../../lib/styled/theme';
 
-// import { darken } from 'polished';
-
-type Props = {
+interface Props {
 	invertedDark?: boolean;
 	invertedPurple?: boolean;
 	// dark?: boolean;
