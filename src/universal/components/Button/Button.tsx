@@ -19,7 +19,7 @@ interface Props {
 	theme?: any;
 	className?: string;
 	children: React.ReactNode;
-};
+}
 
 const StyledButton = styled.button`
 	${(props: Props) =>

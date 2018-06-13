@@ -1,14 +1,21 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
+import sinon from 'sinon';
+
 import Button from './Button';
 
-test('it renders purple button', () => {
-	const tree = renderer.create(
-		<Button purple>
-			PURPLE
-		</Button>
-	)
-		.toJSON();
+it('renders purple button', () => {
+	const wrapper = shallow(<Button purple>PURPLE</Button>);
+	expect(wrapper).toMatchSnapshot();
+});
 
-	expect(tree).toMatchSnapshot();
+it('simulates click events', () => {
+	const onButtonClick = sinon.spy();
+	const wrapper = shallow(
+		<Button onClick={onButtonClick}>
+			TEST
+		</Button>
+	);
+	wrapper.find('button').simulate('click');
+	expect(onButtonClick.calledOnce).toEqual(true);
 });

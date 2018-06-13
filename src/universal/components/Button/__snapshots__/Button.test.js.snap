@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`it renders purple button 1`] = `
+exports[`renders purple button 1`] = `
 <button
   className="sc-bdVaJa fOLVSD"
 >

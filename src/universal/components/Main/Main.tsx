@@ -4,12 +4,12 @@ import Helmet from 'react-helmet';
 import styled from '../../lib/styled';
 
 interface Props {
-	children: React.ReactNode
-	className?: string
-	title?: string
+	children: React.ReactNode;
+	className?: string;
+	title?: string;
 }
 
-const Main: React.SFC<Props> = ({ className, title,  children }) => (
+const Main: React.SFC<Props> = ({ className, title, children }) => (
 	<main className={className}>
 		<Helmet>
 			<title>{title}</title>
@@ -19,7 +19,7 @@ const Main: React.SFC<Props> = ({ className, title,  children }) => (
 );
 
 Main.defaultProps = {
-	title: 'RE:ART'
+	title: 'RE:ART',
 };
 
 const StyledMain = styled(Main)`
