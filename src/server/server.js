@@ -26,7 +26,11 @@ const done = () => {
 	if (!isBuilt) {
 		return app.listen(PORT, () => {
 			isBuilt = true;
-			signale.success(`Server listening on http://localhost:${PORT} in ${process.env.NODE_ENV}`);
+			signale.success(
+				`Server listening on http://localhost:${PORT} in ${
+					process.env.NODE_ENV
+				}`
+			);
 		});
 	}
 };
@@ -42,10 +46,16 @@ if (isDev) {
 	// const serverCompiler = compiler.compilers[1];
 
 	/* eslint-disable-next-line */
-	const webpackDevMiddleware = require('webpack-dev-middleware')(compiler, configDevClient.devServer);
+	const webpackDevMiddleware = require('webpack-dev-middleware')(
+		compiler,
+		configDevClient.devServer
+	);
 
 	/* eslint-disable-next-line */
-	const webpackHotMiddlware = require('webpack-hot-middleware')(clientCompiler, configDevClient.devServer);
+	const webpackHotMiddlware = require('webpack-hot-middleware')(
+		clientCompiler,
+		configDevClient.devServer
+	);
 
 	app.use(webpackDevMiddleware);
 	app.use(webpackHotMiddlware);

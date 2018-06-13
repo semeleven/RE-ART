@@ -87,8 +87,14 @@ export default ({ clientStats }) => async (req, res) => {
 					<script 
 						dangerouslySetInnerHTML={{
 							__html: 
-							\`window.__APOLLO_STATE__=${JSON.stringify(apolloState).replace(/</g, '\\\u003c')};\`,
-							\`window.__REDUX_STATE__=${JSON.stringify(reduxState).replace(/</g, '\\\\\u003c')};\`,	
+							\`window.__APOLLO_STATE__=${JSON.stringify(apolloState).replace(
+		/</g,
+		'\\\u003c'
+	)};\`,
+							\`window.__REDUX_STATE__=${JSON.stringify(reduxState).replace(
+		/</g,
+		'\\\\\u003c'
+	)};\`,	
 						}}
 					/>
 				</body>

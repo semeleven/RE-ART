@@ -7,7 +7,9 @@ const {
 	injectGlobal,
 	keyframes,
 	ThemeProvider,
-} = styledComponents as styledComponents.ThemedStyledComponentsModule<colorsInterface>;
+} = styledComponents as styledComponents.ThemedStyledComponentsModule<
+	colorsInterface
+>;
 
 export { css, injectGlobal, keyframes, ThemeProvider };
 export default styled;

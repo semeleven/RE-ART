@@ -6,7 +6,7 @@ import {
 	buttonTextColor,
 	borderColor,
 	hoverBackground,
-	activeBackground
+	activeBackground,
 } from '../../lib/styled/theme';
 
 // import { darken } from 'polished';

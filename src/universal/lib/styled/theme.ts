@@ -69,5 +69,5 @@ export {
 	borderColor,
 	hoverBackground,
 	activeBackground,
-	fontSize
+	fontSize,
 };

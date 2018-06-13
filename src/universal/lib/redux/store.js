@@ -27,7 +27,8 @@ const createNewStore = (preloadedState = null) => {
 			userData: initialState,
 		},
 		compose(
-			!process.env.SERVER && typeof window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined'
+			!process.env.SERVER &&
+			typeof window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined'
 				? window.__REDUX_DEVTOOLS_EXTENSION__()
 				: f => f
 		)

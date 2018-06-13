@@ -29,9 +29,7 @@ class Header extends Component<any, any> {
 			<StyledHeader>
 				<Icon icon="hamburger" />
 				<Wrapper>
-					<Heading>
-						RE:ART
-					</Heading>
+					<Heading>RE:ART</Heading>
 				</Wrapper>
 				<Wrapper>
 					<Button invertedPurple onClick={() => console.log('LOGIN')} spaced>
