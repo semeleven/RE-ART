@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SearchIcon = props => (
+const Search = props => (
 	<svg viewBox="0 0 30.887 32" {...props}>
 		<g data-name="Group 1">
 			<path
@@ -12,4 +12,4 @@ const SearchIcon = props => (
 	</svg>
 );
 
-export default SearchIcon;
+export default Search;
