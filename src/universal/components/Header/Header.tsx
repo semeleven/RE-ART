@@ -29,40 +29,29 @@ class Header extends Component<any, any> {
 		showMenu: false,
 	};
 
-	handleMenu = () => (
-		this.setState(state => ({ showMenu: !state.showMenu }))
-	);
+	handleMenu = () => this.setState(state => ({ showMenu: !state.showMenu }));
 
 	render() {
 		return (
-			<>
-				<StyledHeader>
-					<Icon
-						icon="hamburger"
-						onClick={this.handleMenu}
-					/>
-					<Wrapper>
-						<Icon
-							small={false}
-							icon="logo"
-						/>
-					</Wrapper>
-					<Wrapper>
-						<Button invertedPurple onClick={() => console.log('LOGIN')} spaced>
+			<>'			'<StyledHeader>
+				<Icon icon="hamburger" onClick={this.handleMenu} />
+				<Wrapper>
+					<Icon small={false} icon="logo" />
+				</Wrapper>
+				<Wrapper>
+					<Button invertedPurple onClick={() => console.log('LOGIN')} spaced>
 							LOGIN
-						</Button>
-						<Button purple onClick={() => console.log('SIGN UP')} spaced>
+					</Button>
+					<Button purple onClick={() => console.log('SIGN UP')} spaced>
 							SIGN UP
-						</Button>
-						<Icon icon="cart" />
-					</Wrapper>
-				</StyledHeader>
-				{this.state.showMenu && (
-					<SideMenu>
-						<h1>HELLO WORLD</h1>
-					</SideMenu>
-				)}
-			</>
+					</Button>
+					<Icon icon="cart" />
+				</Wrapper>
+			</StyledHeader>'			'{this.state.showMenu && (
+				<SideMenu>
+					<h1>HELLO WORLD</h1>
+   </SideMenu>
+			)}'		'</>
 		);
 	}
 }

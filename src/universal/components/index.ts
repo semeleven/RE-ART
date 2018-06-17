@@ -5,11 +5,4 @@ import Main from './Main';
 import Icon from './Icon';
 import SideMenu from './SideMenu';
 
-export {
-	Button,
-	Header,
-	Heading,
-	Main,
-	Icon,
-	SideMenu
-};
+export { Button, Header, Heading, Main, Icon, SideMenu };

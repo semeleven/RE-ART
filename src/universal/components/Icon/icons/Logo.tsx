@@ -1,11 +1,7 @@
-import React from "react"
+import React from 'react';
 
 const Logo = props => (
-	<svg
-		viewBox="0 0 89.558 75.78"
-		style={{ fill: '#fff' }}
-		{...props}
-	>
+	<svg viewBox="0 0 89.558 75.78" style={{ fill: '#fff' }} {...props}>
 		<defs />
 		<g id="LOGO" transform="translate(-347.442 -3.066)">
 			<text

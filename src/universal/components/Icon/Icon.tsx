@@ -15,9 +15,9 @@ const icons = {
 
 // TODO: add medium, large etc props
 interface Props {
-	small?: boolean
-	icon?: 'hamburger' | 'search' | 'logo' | 'cart'
-	onClick?: () => void
+	small?: boolean;
+	icon?: 'hamburger' | 'search' | 'logo' | 'cart';
+	onClick?: () => void;
 }
 
 const IconWrapper = styled.div`
@@ -28,16 +28,13 @@ const IconWrapper = styled.div`
 			height: ${size};
 			cursor: pointer;
 		`;
-	}}
+	}};
 `;
 
 const Icon: React.SFC<Props> = ({ icon, small, onClick }) => {
 	const SelectedIcon = icons[icon];
 	return (
-		<IconWrapper
-			small={small}
-			onClick={onClick}
-		>
+		<IconWrapper small={small} onClick={onClick}>
 			<SelectedIcon />
 		</IconWrapper>
 	);
