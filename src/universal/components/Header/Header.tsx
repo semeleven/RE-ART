@@ -1,7 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import styled from '../../lib/styled';
 
 import { Button, Icon, SideMenu } from '../../components';
+
+interface State {
+	showMenu: boolean
+}
 
 const StyledHeader = styled.header`
 	display: flex;
@@ -24,7 +28,7 @@ const Wrapper = styled.div`
 	align-items: center;
 `;
 
-class Header extends Component<any, any> {
+class Header extends Component<any, State> {
 	state = {
 		showMenu: false,
 	};
@@ -32,26 +36,29 @@ class Header extends Component<any, any> {
 	handleMenu = () => this.setState(state => ({ showMenu: !state.showMenu }));
 
 	render() {
+		const { showMenu } = this.state;
+
 		return (
-			<>'			'<StyledHeader>
-				<Icon icon="hamburger" onClick={this.handleMenu} />
-				<Wrapper>
-					<Icon small={false} icon="logo" />
-				</Wrapper>
-				<Wrapper>
+			<Fragment>
+				<StyledHeader>
+					<Icon icon="hamburger" onClick={this.handleMenu} />
+					<Wrapper>
+						<Icon small={false} icon="logo" />
+					</Wrapper>
+					<Wrapper>
 					<Button invertedPurple onClick={() => console.log('LOGIN')} spaced>
-							LOGIN
+						LOGIN
 					</Button>
 					<Button purple onClick={() => console.log('SIGN UP')} spaced>
-							SIGN UP
+						SIGN UP
 					</Button>
-					<Icon icon="cart" />
-				</Wrapper>
-			</StyledHeader>'			'{this.state.showMenu && (
-				<SideMenu>
+						<Icon icon="cart" />
+					</Wrapper>
+				</StyledHeader>
+				<SideMenu showMenu={showMenu}>
 					<h1>HELLO WORLD</h1>
-   </SideMenu>
-			)}'		'</>
+				</SideMenu>
+			</Fragment>
 		);
 	}
 }

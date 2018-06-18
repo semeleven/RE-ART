@@ -11,5 +11,5 @@ const {
 	colorsInterface
 >;
 
-export { css, injectGlobal, keyframes, ThemeProvider };
+export { css, injectGlobal, keyframes, ThemeProvider, colorsInterface };
 export default styled;
