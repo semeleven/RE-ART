@@ -4,7 +4,7 @@ import styled, { css } from '../../lib/styled';
 import { Button, Icon, SideMenu } from '../../components';
 
 interface Props {
-	flex: 'start' | 'end'
+	flex: 'start' | 'end';
 }
 
 interface State {
@@ -24,15 +24,14 @@ const StyledHeader = styled.header`
 `;
 
 const FlexWrapper = styled.div`
-	${(props: Props) => (
+	${(props: Props) =>
 		css`
 			display: flex;
 			width: 100%;
 			flex: 1;
 			align-items: center;
 			justify-content: ${props.flex === 'start' ? 'flex-start' : 'flex-end'};
-		`
-	)}
+		`};
 `;
 
 const LogoWrapper = styled.div`
