@@ -4,7 +4,7 @@ import styled from '../../lib/styled';
 import { Button, Icon, SideMenu } from '../../components';
 
 interface State {
-	showMenu: boolean
+	showMenu: boolean;
 }
 
 const StyledHeader = styled.header`
@@ -46,12 +46,12 @@ class Header extends Component<any, State> {
 						<Icon small={false} icon="logo" />
 					</Wrapper>
 					<Wrapper>
-					<Button invertedPurple onClick={() => console.log('LOGIN')} spaced>
-						LOGIN
-					</Button>
-					<Button purple onClick={() => console.log('SIGN UP')} spaced>
-						SIGN UP
-					</Button>
+						<Button invertedPurple onClick={() => console.log('LOGIN')} spaced>
+							LOGIN
+						</Button>
+						<Button purple onClick={() => console.log('SIGN UP')} spaced>
+							SIGN UP
+						</Button>
 						<Icon icon="cart" />
 					</Wrapper>
 				</StyledHeader>

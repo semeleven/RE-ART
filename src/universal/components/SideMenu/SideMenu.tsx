@@ -2,12 +2,12 @@ import { darken } from 'polished';
 import styled, { css, colorsInterface } from '../../lib/styled';
 
 interface Props {
-	showMenu: boolean
-	theme?: colorsInterface
+	showMenu: boolean;
+	theme?: colorsInterface;
 }
 
 const StyledSideMenu = styled.div`
-	${(props: Props) => (
+	${(props: Props) =>
 		css`
 			position: fixed;
 			visibility: ${props.showMenu ? 'visible' : 'hidden'};
@@ -17,8 +17,7 @@ const StyledSideMenu = styled.div`
 			height: 100%;
 			width: 25vw;
 			z-index: 777;
-		`
-	)}
+		`};
 `;
 
 export default StyledSideMenu;
