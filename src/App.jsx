@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter, Switch } from 'react-router';
 import { Route } from 'react-router-dom';
-import { Header } from './universal/components/';
+import { Canvas } from './universal/components';
+import { Header } from './universal/containers';
 import Landing from './universal/pages/Landing';
 
 @withRouter
@@ -10,7 +11,7 @@ export default class App extends Component {
 		const { ...rest } = this.props;
 
 		return (
-			<div>
+			<Canvas>
 				<Header />
 				<Switch>
 					<Route exact path="/">
@@ -21,7 +22,7 @@ export default class App extends Component {
 				<footer>
 					<h1>FOOTER</h1>
 				</footer>
-			</div>
+			</Canvas>
 		);
 	}
 }

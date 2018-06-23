@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
-import styled, { css } from '../../lib/styled';
+import styled, { css } from '../../../lib/styled/';
 
-import { Button, Icon, SideMenu } from '../../components';
+import { Button, Icon, SideMenu } from '../../../components/index';
 
 interface Props {
 	flex: 'start' | 'end';
@@ -47,7 +47,7 @@ class Header extends Component<any, State> {
 		showMenu: false,
 	};
 
-	handleMenu = () => this.setState(state => ({ showMenu: !state.showMenu }));
+	toggleMenu = () => this.setState(state => ({ showMenu: !state.showMenu }));
 
 	render() {
 		const { showMenu } = this.state;
@@ -56,7 +56,7 @@ class Header extends Component<any, State> {
 			<Fragment>
 				<StyledHeader>
 					<FlexWrapper flex="start">
-						<Icon icon="hamburger" onClick={this.handleMenu} />
+						<Icon icon="hamburger" onClick={this.toggleMenu} />
 					</FlexWrapper>
 					<LogoWrapper>
 						<Icon small={false} icon="logo" />

@@ -9,7 +9,7 @@ import userReducer from './reducers/userReducer';
 const persistConfig = {
 	key: 'primary',
 	storage,
-	whitelist: ['userData'], // only userData reducer will be persisted
+	whitelist: ['user'], // only userData reducer will be persisted
 };
 
 // const hasState = !!(!SERVER && window.__STATE__);
@@ -21,10 +21,10 @@ const createNewStore = (preloadedState = null) => {
 
 	const store = createStore(
 		combineReducers({
-			userData: persistedReducer,
+			user: persistedReducer,
 		}),
 		{
-			userData: initialState,
+			user: initialState,
 		},
 		compose(
 			!process.env.SERVER &&

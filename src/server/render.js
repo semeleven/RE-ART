@@ -21,7 +21,7 @@ import { colors } from '../universal/lib/styled/theme';
 
 import createStore from '../universal/lib/redux/store';
 
-import AppRoot from '../App.jsx';
+import AppRoot from '../App';
 
 export default ({ clientStats }) => async (req, res) => {
 	const sheet = new ServerStyleSheet();

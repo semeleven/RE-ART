@@ -43,6 +43,7 @@ const StyledButton = styled.button`
 			transition: 0.2s ease-in-out;
 			user-select: none;
 			text-decoration: none;
+			white-space: nowrap;
 			margin-right: ${props.spaced && '20px'};
 			:hover {
 				background-color: ${styledProps(hoverBackground)};
@@ -54,7 +55,8 @@ const StyledButton = styled.button`
 				border-color: ${styledProps(activeBackground)};
 				color: white;
 			}
-		`};
+		`
+	};
 `;
 
 export default StyledButton;
