@@ -1,5 +1,3 @@
 import Header from './Header/index';
 
-export {
-	Header,
-};
+export { Header };

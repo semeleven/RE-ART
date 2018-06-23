@@ -15,8 +15,8 @@ const StyledSideMenu = styled.div`
 			visibility: ${props.showMenu ? 'visible' : 'hidden'};
 			background-color: ${darken(0.05, props.theme.darkGray)};
 			top: 82px;
-			left: 0;		
-			height: ${props.showMenu ? '320px' : '0px'}; 
+			left: 0;
+			height: ${props.showMenu ? '320px' : '0px'};
 			width: 100%;
 			z-index: 777;
 			transition: 0.3s ease-in-out all;
@@ -30,9 +30,7 @@ const Wrapper = styled.div`
 
 const SideMenu: React.SFC<Props> = ({ children, showMenu }) => (
 	<StyledSideMenu showMenu={showMenu}>
-		<Wrapper>
-			{children}
-		</Wrapper>
+		<Wrapper>{children}</Wrapper>
 	</StyledSideMenu>
 );
 

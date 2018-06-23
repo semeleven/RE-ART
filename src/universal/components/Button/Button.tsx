@@ -55,8 +55,7 @@ const StyledButton = styled.button`
 				border-color: ${styledProps(activeBackground)};
 				color: white;
 			}
-		`
-	};
+		`};
 `;
 
 export default StyledButton;

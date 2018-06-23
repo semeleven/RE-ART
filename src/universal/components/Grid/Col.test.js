@@ -6,11 +6,7 @@ import Col from './Col';
 
 for (let i = 0; i < 12; i++) {
 	it(`renders Col ${i}`, () => {
-		const wrapper = shallow(
-			<Col size={i}>
-				${i}
-			</Col>
-		);
+		const wrapper = shallow(<Col size={i}>${i}</Col>);
 		expect(wrapper).toMatchSnapshot();
 	});
 }
