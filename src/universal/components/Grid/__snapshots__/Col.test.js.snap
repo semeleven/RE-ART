@@ -3,8 +3,8 @@
 exports[`renders Col 0 1`] = `
 .c0 {
   width: 0;
-  padding-left: 20;
-  padding-right: 20;
+  padding-left: 20px;
+  padding-right: 20px;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
@@ -22,8 +22,8 @@ exports[`renders Col 0 1`] = `
 exports[`renders Col 1 1`] = `
 .c0 {
   width: 8.333333333333334;
-  padding-left: 20;
-  padding-right: 20;
+  padding-left: 20px;
+  padding-right: 20px;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
@@ -41,8 +41,8 @@ exports[`renders Col 1 1`] = `
 exports[`renders Col 2 1`] = `
 .c0 {
   width: 16.666666666666668;
-  padding-left: 20;
-  padding-right: 20;
+  padding-left: 20px;
+  padding-right: 20px;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
@@ -60,8 +60,8 @@ exports[`renders Col 2 1`] = `
 exports[`renders Col 3 1`] = `
 .c0 {
   width: 25;
-  padding-left: 20;
-  padding-right: 20;
+  padding-left: 20px;
+  padding-right: 20px;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
@@ -79,8 +79,8 @@ exports[`renders Col 3 1`] = `
 exports[`renders Col 4 1`] = `
 .c0 {
   width: 33.333333333333336;
-  padding-left: 20;
-  padding-right: 20;
+  padding-left: 20px;
+  padding-right: 20px;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
@@ -98,8 +98,8 @@ exports[`renders Col 4 1`] = `
 exports[`renders Col 5 1`] = `
 .c0 {
   width: 41.66666666666667;
-  padding-left: 20;
-  padding-right: 20;
+  padding-left: 20px;
+  padding-right: 20px;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
@@ -117,8 +117,8 @@ exports[`renders Col 5 1`] = `
 exports[`renders Col 6 1`] = `
 .c0 {
   width: 50;
-  padding-left: 20;
-  padding-right: 20;
+  padding-left: 20px;
+  padding-right: 20px;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
@@ -136,8 +136,8 @@ exports[`renders Col 6 1`] = `
 exports[`renders Col 7 1`] = `
 .c0 {
   width: 58.333333333333336;
-  padding-left: 20;
-  padding-right: 20;
+  padding-left: 20px;
+  padding-right: 20px;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
@@ -155,8 +155,8 @@ exports[`renders Col 7 1`] = `
 exports[`renders Col 8 1`] = `
 .c0 {
   width: 66.66666666666667;
-  padding-left: 20;
-  padding-right: 20;
+  padding-left: 20px;
+  padding-right: 20px;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
@@ -174,8 +174,8 @@ exports[`renders Col 8 1`] = `
 exports[`renders Col 9 1`] = `
 .c0 {
   width: 75;
-  padding-left: 20;
-  padding-right: 20;
+  padding-left: 20px;
+  padding-right: 20px;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
@@ -193,8 +193,8 @@ exports[`renders Col 9 1`] = `
 exports[`renders Col 10 1`] = `
 .c0 {
   width: 83.33333333333334;
-  padding-left: 20;
-  padding-right: 20;
+  padding-left: 20px;
+  padding-right: 20px;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
@@ -212,8 +212,8 @@ exports[`renders Col 10 1`] = `
 exports[`renders Col 11 1`] = `
 .c0 {
   width: 91.66666666666667;
-  padding-left: 20;
-  padding-right: 20;
+  padding-left: 20px;
+  padding-right: 20px;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
@@ -231,8 +231,8 @@ exports[`renders Col 11 1`] = `
 exports[`renders centered Col 1`] = `
 .c0 {
   width: 100;
-  padding-left: 20;
-  padding-right: 20;
+  padding-left: 20px;
+  padding-right: 20px;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;

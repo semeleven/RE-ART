@@ -13,8 +13,8 @@ const StyledDiv = styled.div`
 	${(props: Props) =>
 		css`
 			width: ${singleColWidth * props.size};
-			padding-left: 20;
-			padding-right: 20;
+			padding-left: 20px;
+			padding-right: 20px;
 			flex: none;
 			text-align: ${props.centered && 'center'};
 		`};
