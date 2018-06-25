@@ -42,4 +42,13 @@ export default `
 	    border-collapse: collapse;
 	    border-spacing: 0;
 	}
+	.swiper {
+		margin: 0 auto;
+		position: relative;
+		overflow: hidden;
+		list-style: none;
+		padding: 0;
+		z-index: 1;
+		width: auto;
+	}
 `;
