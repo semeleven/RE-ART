@@ -12,7 +12,7 @@ interface Props {
 const StyledDiv = styled.div`
 	${(props: Props) =>
 		css`
-			width: ${singleColWidth * props.size};
+			width: ${singleColWidth * props.size}%;
 			padding-left: 20px;
 			padding-right: 20px;
 			flex: none;
