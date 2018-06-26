@@ -50,11 +50,8 @@ export default `
 		list-style: none;
 		padding: 0;
 		z-index: 1;
-		width: auto;
+		width: 100%;
 		height: 530px;
-	}
-	
-	.swiper-wrapper {
 		display: flex;
 	}
 `;
