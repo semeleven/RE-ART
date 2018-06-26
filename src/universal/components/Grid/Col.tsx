@@ -15,7 +15,7 @@ const StyledDiv = styled.div`
 			width: ${singleColWidth * props.size}%;
 			padding-left: 20px;
 			padding-right: 20px;
-			flex: none;
+			flex: 0 1 auto;
 			text-align: ${props.centered && 'center'};
 		`};
 `;

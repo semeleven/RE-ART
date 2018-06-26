@@ -18,6 +18,7 @@ export default `
 	    font-size: 100%;
 	    font: inherit;
 	    vertical-align: baseline;
+	    box-sizing: border-box;
 	}
 	/* HTML5 display-role reset for older browsers */
 	article, aside, details, figcaption, figure,
@@ -50,5 +51,10 @@ export default `
 		padding: 0;
 		z-index: 1;
 		width: auto;
+		height: 530px;
+	}
+	
+	.swiper-wrapper {
+		display: flex;
 	}
 `;

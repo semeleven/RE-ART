@@ -6,43 +6,42 @@ import styled from '../lib/styled';
 const SliderParams = {
 	containerClass: 'swiper',
 	slidesPerView: 1,
+	slidesPerRow: 1,
+	slidesPerColumn: 1,
+	spaceBetween: 50,
+	height: 530,
 };
 
-const ImageWrapper = styled.div`
-	background-size: cover;
+const StyledImage = styled.div`
 	overflow: hidden;
-	height: 530px;
 	width: 100%;
+	background-image: url(https://pp.userapi.com/c7007/v7007477/37e0e/qbny9kC12nw.jpg);
+	background-size: cover;
+	background-position: center;
 `;
 
 const Landing = () => (
 	<Main title="Home Page">
 		<Row>
 			<Col size={12}>
-				<Slider>
-					<Col size={12}>
-						<img src="https://pp.userapi.com/c7007/v7007477/37e0e/qbny9kC12nw.jpg" />
-					</Col>
-					<Col size={12}>
-						<img src="https://pp.userapi.com/c7007/v7007477/37e0e/qbny9kC12nw.jpg" />
-					</Col>
-					<Col size={12}>
-						<img src="https://pp.userapi.com/c7007/v7007477/37e0e/qbny9kC12nw.jpg" />
-					</Col>
+				<Slider {...SliderParams}>
+					<StyledImage />
+					<StyledImage />
+					<StyledImage />
 				</Slider>
 			</Col>
 		</Row>
 		<Row>
-			<Col size={2}>
+			<Col size={3}>
 				<Card>PAINTING</Card>
 			</Col>
-			<Col size={2}>
+			<Col size={3}>
 				<Card>SCULPTURE</Card>
 			</Col>
-			<Col size={2}>
+			<Col size={3}>
 				<Card>WHATEVER</Card>
 			</Col>
-			<Col size={2}>
+			<Col size={3}>
 				<Card>CLOTHES</Card>
 			</Col>
 		</Row>
