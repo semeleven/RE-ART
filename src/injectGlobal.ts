@@ -51,7 +51,6 @@ export default `
 		padding: 0;
 		z-index: 1;
 		width: 100%;
-		height: 530px;
 		display: flex;
 	}
 	.swiper-wrapper {

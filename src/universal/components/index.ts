@@ -6,5 +6,6 @@ import Main from './Main';
 import Icon from './Icon';
 import SideMenu from '../containers/Header/components/SideMenu';
 import { Row, Col } from './Grid';
+import Swiper from './Swiper';
 
-export { Button, Canvas, Card, Col, Heading, Main, Icon, Row, SideMenu };
+export { Button, Canvas, Card, Col, Heading, Main, Icon, Row, SideMenu, Swiper };
