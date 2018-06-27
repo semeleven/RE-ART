@@ -27,16 +27,15 @@ const mockImages = [
 
 export default class Spotlight extends PureComponent {
 	render(): React.ReactNode {
-
 		return (
 			<Swiper height={530}>
 				<Slide slides={mockImages} />
-				{/*{mockImages.map(item => (*/}
-					{/*<Image*/}
-						{/*key={item.id}*/}
-						{/*url={item.url}*/}
-					{/*/>*/}
-				{/*))}*/}
+				{/* {mockImages.map(item => ( */}
+				{/* <Image */}
+				{/* key={item.id} */}
+				{/* url={item.url} */}
+				{/* /> */}
+				{/* ))} */}
 			</Swiper>
 		);
 	}

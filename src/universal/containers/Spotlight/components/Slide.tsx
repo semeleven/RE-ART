@@ -21,36 +21,23 @@ const StyledSlide = styled.div`
 	left: 50px;
 `;
 
-const Slide : React.SFC<any> = ({ slides }) => (
+const Slide: React.SFC<any> = ({ slides }) =>
 	// There's an issue typing components that return arrays without Fragments
 	// https://github.com/DefinitelyTyped/DefinitelyTyped/issues/26890
 	// TODO: return typings for slides prop when issue is resolved
-	//<Fragment>
-		slides.map(item => (
-			<Image
-				key={item.id}
-				url={item.url}
-			>
-				<StyledSlide>
-					<Heading
-						uppercase
-						mono
-						size="M"
-					>
-						{item.type}
-					</Heading>
-					<Heading
-						uppercase
-						mono
-						size="XL"
-						marginTop={25}
-					>
-						{item.title}
-					</Heading>
-				</StyledSlide>
-			</Image>
-		))
-	//</Fragment>
-);
+	// <Fragment>
+	slides.map(item => (
+		<Image key={item.id} url={item.url}>
+			<StyledSlide>
+				<Heading uppercase mono size="M">
+					{item.type}
+				</Heading>
+				<Heading uppercase mono size="XL" marginTop={25}>
+					{item.title}
+				</Heading>
+			</StyledSlide>
+		</Image>
+	));
+	// </Fragment>
 
 export default Slide;

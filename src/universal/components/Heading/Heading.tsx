@@ -9,12 +9,12 @@ interface Props {
 	mono?: boolean;
 	children: React.ReactNode;
 	className?: string;
-	white?: boolean
-	black?: boolean
-	lighterGray?: boolean
-	uppercase?: boolean
-	marginTop?: number | string
-	marginBottom?: number | string
+	white?: boolean;
+	black?: boolean;
+	lighterGray?: boolean;
+	uppercase?: boolean;
+	marginTop?: number | string;
+	marginBottom?: number | string;
 }
 
 const Sizes = {
@@ -34,15 +34,9 @@ const StyledHeading = styled(Heading)`
 	color: ${styledProps(colors)};
 	text-transform: ${props => props.uppercase && 'uppercase'};
 	margin-top: ${props =>
-		props.marginTop
-			? props.marginTop + 'px'
-			: headingMargin[props.size]
-	};
-	margin-bottom: ${props => 
-		props.marginBottom 
-			? props.marginBottom + 'px' 
-			: headingMargin[props.size]
-	};
+		(props.marginTop ? `${props.marginTop}px` : headingMargin[props.size])};
+	margin-bottom: ${props =>
+		(props.marginBottom ? `${props.marginBottom}px` : headingMargin[props.size])};
 `;
 
 StyledHeading.defaultProps = {
