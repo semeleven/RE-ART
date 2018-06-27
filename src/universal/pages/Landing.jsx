@@ -15,6 +15,7 @@ const SliderParams = {
 const StyledImage = styled.div`
 	overflow: hidden;
 	width: 100%;
+	height: 100%;
 	background-image: url(https://pp.userapi.com/c7007/v7007477/37e0e/qbny9kC12nw.jpg);
 	background-size: cover;
 	background-position: center;

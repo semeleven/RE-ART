@@ -54,4 +54,7 @@ export default `
 		height: 530px;
 		display: flex;
 	}
+	.swiper-wrapper {
+		display: flex;
+	}
 `;
