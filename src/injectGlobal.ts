@@ -52,8 +52,10 @@ export default `
 		z-index: 1;
 		width: 100%;
 		display: flex;
+		height: 530px;
 	}
 	.swiper-wrapper {
 		display: flex;
+		width: 100%;
 	}
 `;

@@ -48,10 +48,17 @@ const buttonTextColor = {
 };
 
 const fontSize = {
-	XL: 40,
-	L: 30,
-	M: 17,
-	S: 15,
+	XL: '40px',
+	L: '30px',
+	M: '17px',
+	S: '15px',
+};
+
+const headingMargin = {
+	XL: '50px',
+	L: '40px',
+	M: '20px',
+	S: '10px',
 };
 
 const borderColor = {
@@ -70,4 +77,5 @@ export {
 	hoverBackground,
 	activeBackground,
 	fontSize,
+	headingMargin,
 };
