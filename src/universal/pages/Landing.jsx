@@ -2,7 +2,6 @@ import React from 'react';
 import { Card, Main, Row, Col } from '../components';
 import Spotlight from '../containers/Spotlight';
 
-
 const Landing = () => (
 	<Main title="Home Page">
 		<Spotlight />

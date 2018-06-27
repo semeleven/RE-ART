@@ -3,12 +3,17 @@ import Slider from 'react-id-swiper';
 import { Row, Col } from '../../components';
 
 interface Props {
-	slidesPerView?: number
-	height: number
-	spaceBetween?: number
+	slidesPerView?: number;
+	height: number;
+	spaceBetween?: number;
 }
 
-const Swiper: React.SFC<Props> = ({ children, slidesPerView, height, spaceBetween }) => {
+const Swiper: React.SFC<Props> = ({
+	children,
+	slidesPerView,
+	height,
+	spaceBetween,
+}) => {
 	const SliderParams = {
 		containerClass: 'swiper',
 		spaceBetween,
@@ -19,9 +24,7 @@ const Swiper: React.SFC<Props> = ({ children, slidesPerView, height, spaceBetwee
 	return (
 		<Row>
 			<Col size={12}>
-				<Slider {...SliderParams}>
-					{children}
-				</Slider>
+				<Slider {...SliderParams}>{children}</Slider>
 			</Col>
 		</Row>
 	);
