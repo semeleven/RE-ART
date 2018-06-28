@@ -5,35 +5,35 @@ import { Row, Col, Card, Heading } from '../../components';
 const mockCards = [
 	{
 		id: 0,
-		category: 'PAINTING'
+		category: 'PAINTING',
 	},
 	{
 		id: 1,
-		category: 'SCULPTURE'
+		category: 'SCULPTURE',
 	},
 	{
 		id: 2,
-		category: 'JEWELRY'
+		category: 'JEWELRY',
 	},
 	{
 		id: 3,
-		category: 'CLOTHES'
+		category: 'CLOTHES',
 	},
 	{
 		id: 4,
-		category: 'WHATEVER'
+		category: 'WHATEVER',
 	},
 	{
 		id: 5,
-		category: 'WHATEVER'
+		category: 'WHATEVER',
 	},
 	{
 		id: 6,
-		category: 'WHATEVER'
+		category: 'WHATEVER',
 	},
 	{
 		id: 7,
-		category: 'WHATEVER'
+		category: 'WHATEVER',
 	},
 ];
 
@@ -43,12 +43,7 @@ export default class Categories extends PureComponent {
 			<Fragment>
 				<Row>
 					<Col size={12}>
-						<Heading
-							size="L"
-							black
-							marginTop={50}
-							marginBottom={50}
-						>
+						<Heading size="L" black marginTop={50} marginBottom={50}>
 							Browse Categories
 						</Heading>
 					</Col>
