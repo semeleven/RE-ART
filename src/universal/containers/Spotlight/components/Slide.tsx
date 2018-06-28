@@ -4,16 +4,16 @@ import { Heading } from '../../../components';
 import styled from '../../../lib/styled';
 import Image from './Image';
 
-// type SlideItem = {
-// 	id: number,
-// 	url: string,
-// 	type?: string,
-// 	title: string,
-// }
-//
-// interface Props {
-// 	slides: Array<SlideItem>
-// }
+type SlideItem = {
+	id: number,
+	url: string,
+	type?: string,
+	title: string,
+}
+
+interface Props {
+	item: SlideItem
+}
 
 const StyledSlide = styled.div`
 	position: absolute;
@@ -21,13 +21,11 @@ const StyledSlide = styled.div`
 	left: 50px;
 `;
 
-const Slide: React.SFC<any> = ({ slides }) =>
+const Slide: React.SFC<Props> = ({ item }) => (
 	// There's an issue typing components that return arrays without Fragments
 	// https://github.com/DefinitelyTyped/DefinitelyTyped/issues/26890
-	// TODO: return typings for slides prop when issue is resolved
 	// <Fragment>
-	slides.map(item => (
-		<Image key={item.id} url={item.url}>
+		<Image url={item.url}>
 			<StyledSlide>
 				<Heading white uppercase mono size="M">
 					{item.type}
@@ -37,7 +35,7 @@ const Slide: React.SFC<any> = ({ slides }) =>
 				</Heading>
 			</StyledSlide>
 		</Image>
-	));
+);
 // </Fragment>
 
 export default Slide;
