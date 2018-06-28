@@ -29,15 +29,15 @@ const Slide: React.SFC<any> = ({ slides }) =>
 	slides.map(item => (
 		<Image key={item.id} url={item.url}>
 			<StyledSlide>
-				<Heading uppercase mono size="M">
+				<Heading white uppercase mono size="M">
 					{item.type}
 				</Heading>
-				<Heading uppercase mono size="XL" marginTop={25}>
+				<Heading white uppercase mono size="XL" marginTop={25}>
 					{item.title}
 				</Heading>
 			</StyledSlide>
 		</Image>
 	));
-	// </Fragment>
+// </Fragment>
 
 export default Slide;

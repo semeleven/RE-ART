@@ -1,3 +1,5 @@
-import Header from './Header/index';
+import Categories from './Categories';
+import Header from './Header';
+import Spotlight from './Spotlight';
 
-export { Header };
+export { Categories, Header, Spotlight };

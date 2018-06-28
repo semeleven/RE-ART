@@ -11,6 +11,7 @@ interface Props {
 	className?: string;
 	white?: boolean;
 	black?: boolean;
+	darkGray?: boolean;
 	lighterGray?: boolean;
 	uppercase?: boolean;
 	marginTop?: number | string;
@@ -40,7 +41,6 @@ const StyledHeading = styled(Heading)`
 `;
 
 StyledHeading.defaultProps = {
-	white: true,
 	size: 'XL',
 	mono: false,
 	uppercase: false,
