@@ -79,6 +79,7 @@ export default ({ clientStats }) => async (req, res) => {
 	                ${helmet.link.toString()}
 	                <meta name="viewport" content="width=device-width, initial-scale=1" />
 					<link href="https://fonts.googleapis.com/css?family=Lato|Source+Code+Pro" rel="stylesheet" />
+					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.min.css" />
 					${styledComponents}
 				</head>
 	            <body ${helmet.bodyAttributes.toString()}>
