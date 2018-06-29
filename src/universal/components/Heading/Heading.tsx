@@ -31,23 +31,21 @@ const Heading: React.SFC<Props> = ({ size = 'XL', className, children }) =>
 
 const StyledHeading = styled(Heading)`
 	${(props: Props) => {
-		const handleSize = (param) : string => param 
-			? param 
-			: headingMargin[props.size];
-		
-		return css `
+		const handleSize = (param): string =>
+			(param || headingMargin[props.size]);
+
+		return css`
 			font-size: ${fontSize[props.size]};
-			font-family: ${props.mono ?
-				'Source Code Pro, monospace'
-				: 'Lato, sans-serif'
-			};
+			font-family: ${props.mono
+		? 'Source Code Pro, monospace'
+		: 'Lato, sans-serif'};
 			font-weight: ${props.bold && 'bold'};
 			color: ${styledProps(colors)};
 			text-transform: ${props.uppercase && 'uppercase'};
 			margin-top: ${handleSize(props.marginTop)};
 			margin-bottom: ${handleSize(props.marginBottom)};
 		`;
-	}}
+	}};
 `;
 
 StyledHeading.defaultProps = {

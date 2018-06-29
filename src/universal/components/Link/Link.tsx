@@ -4,12 +4,12 @@ import styled, { css } from '../../lib/styled';
 import { colors, fontSize, headingMargin } from '../../lib/styled/theme';
 
 interface Props {
-	size?: string
-	marginTop?: string
-	marginBottom?: string
-	className?: string
-	to: string
-	children: React.ReactNode
+	size?: string;
+	marginTop?: string;
+	marginBottom?: string;
+	className?: string;
+	to: string;
+	children: React.ReactNode;
 }
 
 const LinkComponent: React.SFC<Props> = ({ className, to, children }) => (
@@ -21,11 +21,9 @@ const LinkComponent: React.SFC<Props> = ({ className, to, children }) => (
 const StyledLink = styled(LinkComponent)`
 	${(props: Props) => {
 		const size: string = props.size || 'M';
-		
-		const handleSize = (param) : string => param
-			? param
-			: headingMargin[size];
-		
+
+		const handleSize = (param): string => (param || headingMargin[size]);
+
 		return css`
 			font-size: ${fontSize[size]};
 			font-family: Source Code Pro, monospace;
@@ -37,7 +35,7 @@ const StyledLink = styled(LinkComponent)`
 				color: ${colors.lighterGray};
 			}
 		`;
-	}}
+	}};
 `;
 
 export default StyledLink;

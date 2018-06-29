@@ -36,20 +36,14 @@ const mockSlides = [
 
 export default class Categories extends PureComponent {
 	renderSlides = () => (
-		<Row>
-			{mockSlides.map(item => (
-				<Product key={item.id} item={item} />
-			))}
-		</Row>
+		<Row>{mockSlides.map(item => <Product key={item.id} item={item} />)}</Row>
 	);
 
 	render() {
 		return (
 			<Fragment>
 				<Title>Recently Dropped</Title>
-				<Row>
-					{this.renderSlides()}
-				</Row>
+				<Row>{this.renderSlides()}</Row>
 			</Fragment>
 		);
 	}

@@ -79,10 +79,10 @@ const MediaSizes = {
 
 const media = Object.keys(MediaSizes).reduce((acc, label) => {
 	acc[label] = (literals: TemplateStringsArray, ...args: any[]) => css`
-	    @media (max-width: ${MediaSizes[label] / 16}em) {
-			 ${css(literals, ...args)}
-	    }
-  	`;
+		@media (max-width: ${MediaSizes[label] / 16}em) {
+			${css(literals, ...args)};
+		}
+	`;
 
 	return acc;
 }, {});

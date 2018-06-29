@@ -29,7 +29,7 @@ const Slide: React.SFC<Props> = ({ item }) => (
 			<Heading white uppercase mono size="M">
 				{item.type}
 			</Heading>
-			<Heading white uppercase mono size="XL" marginTop='25px'>
+			<Heading white uppercase mono size="XL" marginTop="25px">
 				{item.title}
 			</Heading>
 		</StyledSlide>

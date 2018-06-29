@@ -4,7 +4,7 @@ import { Row, Col, Heading } from '../../components';
 const Title = ({ children }) => (
 	<Row>
 		<Col size={12}>
-			<Heading bold size="L" black marginTop='50px' marginBottom='50px'>
+			<Heading bold size="L" black marginTop="50px" marginBottom="50px">
 				{children}
 			</Heading>
 		</Col>
