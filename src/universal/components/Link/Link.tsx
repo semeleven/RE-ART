@@ -22,7 +22,7 @@ const StyledLink = styled(LinkComponent)`
 	${(props: Props) => {
 		const size: string = props.size || 'M';
 
-		const handleSize = (param): string => (param || headingMargin[size]);
+		const handleSize = (param): string => param || headingMargin[size];
 
 		return css`
 			font-size: ${fontSize[size]};

@@ -18,7 +18,6 @@ const Swiper: React.SFC<Props> = ({
 		spaceBetween,
 		slidesPerView,
 	};
-	console.log(SliderParams, 'SliderParams');
 
 	return (
 		<Row>

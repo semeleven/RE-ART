@@ -58,4 +58,10 @@ export default `
 		display: flex;
 		width: 100%;
 	}
+	@media only screen and (max-width: 600px) {
+        .swiper {
+			height: 370px;
+        }
+    }
+}
 `;

@@ -1,5 +1,7 @@
 import 'isomorphic-fetch';
 import express from 'express';
+import cors from 'cors';
+import morgan from 'morgan';
 import { graphiqlExpress, graphqlExpress } from 'apollo-server-express';
 import expressStaticGzip from 'express-static-gzip';
 import webpack from 'webpack';
@@ -15,6 +17,15 @@ import configProdServer from '../../config/webpack.prod-server.js';
 import schema from '../universal/lib/graphql/schema';
 
 const app = express();
+
+const corsOptions = {
+	// temporary
+	origin: 'http://localhost:8080',
+	credentials: true,
+};
+app.use(cors(corsOptions));
+
+app.use(morgan('dev'));
 
 const isProd = process.env.NODE_ENV === 'production';
 const isDev = !isProd;

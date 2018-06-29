@@ -31,8 +31,7 @@ const Heading: React.SFC<Props> = ({ size = 'XL', className, children }) =>
 
 const StyledHeading = styled(Heading)`
 	${(props: Props) => {
-		const handleSize = (param): string =>
-			(param || headingMargin[props.size]);
+		const handleSize = (param): string => param || headingMargin[props.size];
 
 		return css`
 			font-size: ${fontSize[props.size]};

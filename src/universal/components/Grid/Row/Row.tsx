@@ -1,4 +1,4 @@
-import styled from '../../lib/styled';
+import styled from '../../../lib/styled/index';
 
 const StyledRow = styled.div`
 	width: 100%;
