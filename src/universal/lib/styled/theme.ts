@@ -77,7 +77,7 @@ const MediaSizes = {
 	small: 320,
 };
 
-const media : any = Object.keys(MediaSizes).reduce((acc, label) => {
+const media: any = Object.keys(MediaSizes).reduce((acc, label) => {
 	acc[label] = (literals: TemplateStringsArray, ...args: any[]) => css`
 		@media (max-width: ${MediaSizes[label] / 16}em) {
 			${css(literals, ...args)};

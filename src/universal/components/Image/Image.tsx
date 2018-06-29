@@ -4,7 +4,7 @@ interface Props {
 	url: string;
 	height?: string;
 	width?: string;
-	margin?: boolean
+	margin?: boolean;
 }
 
 const StyledImage = styled.div`

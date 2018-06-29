@@ -5,25 +5,23 @@ import { media } from '../../../lib/styled/theme';
 const singleColWidth = 100 / 12;
 // const colGapMobile = 30;
 
-type Size =  1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+type Size = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
 interface Props {
-	size: Size
-	sizeL?: Size
-	sizeMd?: Size
-	sizeSm?: Size
+	size: Size;
+	sizeL?: Size;
+	sizeMd?: Size;
+	sizeSm?: Size;
 	centered?: boolean;
 	children: React.ReactNode;
-	noMobilePadding?: boolean
+	noMobilePadding?: boolean;
 }
 
 const StyledDiv = styled.div`
 	${(props: Props) => {
-		const handleWidth = param => `${param 
-			? singleColWidth * param
-			: singleColWidth * props.size
-		}%`;
-		
+		const handleWidth = param =>
+			`${param ? singleColWidth * param : singleColWidth * props.size}%`;
+
 		return css`
 			width: ${handleWidth(props.size)};
 			padding-left: 20px;
@@ -39,7 +37,8 @@ const StyledDiv = styled.div`
 			${media.small`
 				width: ${handleWidth(props.sizeSm)};
 			`}
-		`}};
+		`;
+	}};
 `;
 
 export default StyledDiv;
