@@ -1,6 +1,6 @@
 import React, { PureComponent, Fragment } from 'react';
 // import { connect } from 'react-redux';
-import { Row, Col, Card, Heading } from '../../components';
+import { Row, Col, Card, Title } from '../../components';
 
 const mockCards = [
 	{
@@ -41,13 +41,7 @@ export default class Categories extends PureComponent {
 	render() {
 		return (
 			<Fragment>
-				<Row>
-					<Col size={12}>
-						<Heading size="L" black marginTop={50} marginBottom={50}>
-							Browse Categories
-						</Heading>
-					</Col>
-				</Row>
+				<Title>Browse Categories</Title>
 				<Row>
 					{mockCards.map(item => (
 						<Col key={item.id} size={3}>

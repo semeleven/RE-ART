@@ -1,12 +1,13 @@
 import React from 'react';
 import styledProps from 'styled-props';
 
-import styled from '../../lib/styled';
+import styled, { css } from '../../lib/styled';
 import { fontSize, colors, headingMargin } from '../../lib/styled/theme';
 
 interface Props {
 	size?: 'XL' | 'L' | 'M' | 'S';
 	mono?: boolean;
+	bold?: boolean;
 	children: React.ReactNode;
 	className?: string;
 	white?: boolean;
@@ -14,8 +15,8 @@ interface Props {
 	darkGray?: boolean;
 	lighterGray?: boolean;
 	uppercase?: boolean;
-	marginTop?: number | string;
-	marginBottom?: number | string;
+	marginTop?: string;
+	marginBottom?: string;
 }
 
 const Sizes = {
@@ -29,20 +30,30 @@ const Heading: React.SFC<Props> = ({ size = 'XL', className, children }) =>
 	React.createElement(`h${Sizes[size]}`, { className }, children);
 
 const StyledHeading = styled(Heading)`
-	font-size: ${props => fontSize[props.size]};
-	font-family: ${props =>
-		(props.mono ? 'Source Code Pro, monospace' : 'Lato, sans-serif')};
-	color: ${styledProps(colors)};
-	text-transform: ${props => props.uppercase && 'uppercase'};
-	margin-top: ${props =>
-		(props.marginTop ? `${props.marginTop}px` : headingMargin[props.size])};
-	margin-bottom: ${props =>
-		(props.marginBottom ? `${props.marginBottom}px` : headingMargin[props.size])};
+	${(props: Props) => {
+		const handleSize = (param) : string => param 
+			? param 
+			: headingMargin[props.size];
+		
+		return css `
+			font-size: ${fontSize[props.size]};
+			font-family: ${props.mono ?
+				'Source Code Pro, monospace'
+				: 'Lato, sans-serif'
+			};
+			font-weight: ${props.bold && 'bold'};
+			color: ${styledProps(colors)};
+			text-transform: ${props.uppercase && 'uppercase'};
+			margin-top: ${handleSize(props.marginTop)};
+			margin-bottom: ${handleSize(props.marginBottom)};
+		`;
+	}}
 `;
 
 StyledHeading.defaultProps = {
 	size: 'XL',
 	mono: false,
+	bold: false,
 	uppercase: false,
 	marginTop: null,
 	marginBottom: null,

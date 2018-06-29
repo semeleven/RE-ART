@@ -20,16 +20,19 @@ import { colors } from './universal/lib/styled/theme';
 import AppRoot from './App.jsx';
 
 const preloadedReduxState = window.__REDUX_STATE__;
+const preloadedApolloState = window.__APOLLO_STATE__;
 // const preloadedApolloState = window.__APOLLO_STATE__;
 
 // Allow the passed state to be garbage-collected
 delete window.__REDUX_STATE__;
+delete window.__APOLLO_STATE__;
 
 const client = new ApolloClient({
 	// By default, this client will send queries to the
 	//  `/graphql` endpoint on the same host
 	link: new HttpLink(),
 	cache: new InMemoryCache(),
+	initialState: preloadedApolloState,
 });
 
 const { store } = createStore(preloadedReduxState);

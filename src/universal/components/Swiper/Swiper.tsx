@@ -11,15 +11,14 @@ interface Props {
 const Swiper: React.SFC<Props> = ({
 	children,
 	slidesPerView,
-	height,
 	spaceBetween,
 }) => {
 	const SliderParams = {
 		containerClass: 'swiper',
 		spaceBetween,
 		slidesPerView,
-		height,
 	};
+	console.log(SliderParams, 'SliderParams');
 
 	return (
 		<Row>

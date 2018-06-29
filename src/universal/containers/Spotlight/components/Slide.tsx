@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { Heading } from '../../../components';
+import { Heading, Image } from '../../../components';
 import styled from '../../../lib/styled';
-import Image from './Image';
 
 type SlideItem = {
 	id: number;
@@ -30,7 +29,7 @@ const Slide: React.SFC<Props> = ({ item }) => (
 			<Heading white uppercase mono size="M">
 				{item.type}
 			</Heading>
-			<Heading white uppercase mono size="XL" marginTop={25}>
+			<Heading white uppercase mono size="XL" marginTop='25px'>
 				{item.title}
 			</Heading>
 		</StyledSlide>

@@ -1,4 +1,5 @@
 import { lighten, darken } from 'polished';
+import { css } from '../styled';
 
 interface colorsInterface {
 	white: string;
@@ -7,6 +8,7 @@ interface colorsInterface {
 	darkGray: string;
 	purple: string;
 	darkPurple: string;
+	transparent: string;
 }
 
 const colors = {
@@ -68,6 +70,23 @@ const borderColor = {
 	purple: colors.purple,
 };
 
+const MediaSizes = {
+	desktop: 1190,
+	tablet: 960,
+	mobile: 630,
+	small: 320,
+};
+
+const media = Object.keys(MediaSizes).reduce((acc, label) => {
+	acc[label] = (literals: TemplateStringsArray, ...args: any[]) => css`
+	    @media (max-width: ${MediaSizes[label] / 16}em) {
+			 ${css(literals, ...args)}
+	    }
+  	`;
+
+	return acc;
+}, {});
+
 export {
 	colors,
 	colorsInterface,
@@ -78,4 +97,5 @@ export {
 	activeBackground,
 	fontSize,
 	headingMargin,
+	media,
 };
