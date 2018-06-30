@@ -5,6 +5,7 @@ import Heading from './Heading';
 import Link from './Link';
 import Main from './Main';
 import Icon from './Icon';
+import Input from './Input';
 import Image from './Image';
 import SideMenu from '../containers/Header/components/SideMenu';
 import { Row, Col } from './Grid';
@@ -21,6 +22,7 @@ export {
 	Link,
 	Main,
 	Icon,
+	Input,
 	Image,
 	Row,
 	Product,

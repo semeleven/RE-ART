@@ -21,7 +21,7 @@ const StyledDiv = styled.div`
 	${(props: Props) => {
 		const handleWidth = param =>
 			`${param ? singleColWidth * param : singleColWidth * props.size}%`;
-		
+
 		const noMobilePadding = props.noMobilePadding && '0px';
 
 		return css`
