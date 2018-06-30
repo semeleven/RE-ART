@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import {TextMask, InputAdapter} from 'react-text-mask-hoc';
+import { TextMask, InputAdapter } from 'react-text-mask-hoc';
 import styled from '../../lib/styled';
-
 
 // const rule = ({theme, centered}) => ({
 // 	color: theme.colors.blue,
@@ -27,12 +26,12 @@ import styled from '../../lib/styled';
 // 	},
 // });
 interface Props {
-	type: 'text' | 'email' | 'number' | 'password' | 'search'
-	centered?: boolean
-	mask?: [string]
-	inputRef?: (any) => any
-	disabled?: boolean
-	className?: string
+	type: 'text' | 'email' | 'number' | 'password' | 'search';
+	centered?: boolean;
+	mask?: [string];
+	inputRef?: (any) => any;
+	disabled?: boolean;
+	className?: string;
 }
 
 class Input extends Component<Props> {
@@ -47,7 +46,11 @@ class Input extends Component<Props> {
 	// };
 
 	setSelectionRange(selectionStart, selectionEnd, selectionDirection) {
-		this.input.setSelectionRange(selectionStart, selectionEnd, selectionDirection);
+		this.input.setSelectionRange(
+			selectionStart,
+			selectionEnd,
+			selectionDirection
+		);
 	}
 
 	blur() {
@@ -62,7 +65,7 @@ class Input extends Component<Props> {
 		this.input.focus();
 	}
 
-	_getRef = (ref) => {
+	_getRef = ref => {
 		const { mask, inputRef } = this.props;
 
 		const input = mask == null ? ref : ref.input;
@@ -74,13 +77,7 @@ class Input extends Component<Props> {
 	};
 
 	render() {
-		const {
-			mask,
-			className,
-			centered,
-			inputRef,
-			...rest
-		} = this.props;
+		const { mask, className, centered, inputRef, ...rest } = this.props;
 
 		if (mask != null) {
 			return (
@@ -99,10 +96,10 @@ class Input extends Component<Props> {
 }
 
 const StyledInput = styled(Input)`
- 	color: black;
- 	font-size: 18;
- 	font-weight: 700;
- 	width: 100%;
+	color: black;
+	font-size: 18;
+	font-weight: 700;
+	width: 100%;
 `;
 
 export default StyledInput;
