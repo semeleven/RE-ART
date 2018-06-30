@@ -21,6 +21,8 @@ const StyledDiv = styled.div`
 	${(props: Props) => {
 		const handleWidth = param =>
 			`${param ? singleColWidth * param : singleColWidth * props.size}%`;
+		
+		const noMobilePadding = props.noMobilePadding && '0px';
 
 		return css`
 			width: ${handleWidth(props.size)};
@@ -33,6 +35,8 @@ const StyledDiv = styled.div`
 			`}
 			${media.mobile`
 				width: ${handleWidth(props.sizeMd)};
+				padding-left: ${noMobilePadding};
+				padding-right: ${noMobilePadding};
 			`}
 			${media.small`
 				width: ${handleWidth(props.sizeSm)};

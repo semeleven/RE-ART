@@ -21,7 +21,7 @@ const Swiper: React.SFC<Props> = ({
 
 	return (
 		<Row>
-			<Col size={12}>
+			<Col size={12} noMobilePadding>
 				<Slider {...SliderParams}>{children}</Slider>
 			</Col>
 		</Row>
