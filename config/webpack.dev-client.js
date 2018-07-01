@@ -7,8 +7,6 @@ module.exports = {
 		vendor: ['react', 'react-dom'],
 		main: [
 			'react-hot-loader/patch',
-			'@babel/polyfill',
-			// 'babel-runtime/regenerator',
 			'webpack-hot-middleware/client?reload=true',
 			'./src/index.js'
 		]

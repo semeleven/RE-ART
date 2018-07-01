@@ -14,7 +14,6 @@ module.exports = {
 			'react-dom'
 		],
 		main: [
-			'@babel/polyfill',
 			'./src/index.js'
 		]
 	},

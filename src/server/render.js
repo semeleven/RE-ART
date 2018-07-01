@@ -42,7 +42,7 @@ export default ({ clientStats }) => async (req, res) => {
 	const client = new ApolloClient({
 		ssrMode: true,
 		link: createHttpLink({
-			uri: 'http://localhost:4444',
+			uri: 'http://localhost:8080/graphql',
 			credentials: 'same-origin',
 			headers: {
 				cookie: req.header('Cookie'),

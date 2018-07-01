@@ -17,6 +17,7 @@ interface Props {
 	uppercase?: boolean;
 	marginTop?: string;
 	marginBottom?: string;
+	onClick?: () => void;
 }
 
 const Sizes = {
@@ -26,8 +27,13 @@ const Sizes = {
 	S: 4,
 };
 
-const Heading: React.SFC<Props> = ({ size = 'XL', className, children }) =>
-	React.createElement(`h${Sizes[size]}`, { className }, children);
+const Heading: React.SFC<Props> = ({
+   size = 'XL',
+   className,
+   onClick = () => {},
+   children
+}) =>
+	React.createElement(`h${Sizes[size]}`, { className, onClick, }, children);
 
 const StyledHeading = styled(Heading)`
 	${(props: Props) => {

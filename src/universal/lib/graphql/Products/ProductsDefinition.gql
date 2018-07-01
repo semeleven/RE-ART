@@ -1,0 +1,14 @@
+type Product {
+    id: Int!
+    owner_id: Int!
+    name: String!
+    description: String!
+    code: String!
+    price: Int!
+    author: String!
+    url: String!
+}
+
+extend type Query {
+    getProducts: [Product!]!
+}

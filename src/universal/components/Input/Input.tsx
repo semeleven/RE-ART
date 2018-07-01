@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { TextMask, InputAdapter } from 'react-text-mask-hoc';
+import { darken } from 'polished';
 import styled from '../../lib/styled';
+import { colors, fontSize } from '../../lib/styled/theme';
 
 // const rule = ({theme, centered}) => ({
 // 	color: theme.colors.blue,
@@ -25,25 +27,25 @@ import styled from '../../lib/styled';
 // 		backgroundColor: darken(0.1, theme.colors.white),
 // 	},
 // });
+
+type FormEvent = (e: React.FormEvent<HTMLInputElement>) => void;
+
 interface Props {
 	type: 'text' | 'email' | 'number' | 'password' | 'search';
+	placeholder: string
 	centered?: boolean;
+	big?: boolean
 	mask?: [string];
 	inputRef?: (any) => any;
 	disabled?: boolean;
 	className?: string;
+	onChange?: FormEvent;
+	onBlur?: FormEvent;
+	onFocus?: FormEvent;
 }
 
 class Input extends Component<Props> {
 	input = null;
-
-	// static defaultProps = {
-	// 	type: 'text',
-	// 	centered: false,
-	// 	mask: null,
-	// 	inputRef: null,
-	// 	disabled: false,
-	// };
 
 	setSelectionRange(selectionStart, selectionEnd, selectionDirection) {
 		this.input.setSelectionRange(
@@ -77,7 +79,8 @@ class Input extends Component<Props> {
 	};
 
 	render() {
-		const { mask, className, centered, inputRef, ...rest } = this.props;
+		// avoid passing inputRef and centered props to the DOM
+		const { mask, className, inputRef, centered, placeholder, ...rest } = this.props;
 
 		if (mask != null) {
 			return (
@@ -91,15 +94,38 @@ class Input extends Component<Props> {
 			);
 		}
 
-		return <input className={className} ref={this._getRef} {...rest} />;
+		return (
+			<input
+				placeholder={placeholder}
+				className={className}
+				ref={this._getRef}
+				{...rest}
+			/>
+		);
 	}
 }
 
 const StyledInput = styled(Input)`
-	color: black;
-	font-size: 18;
-	font-weight: 700;
+	color: ${colors.darkGray};
+	font-size: ${fontSize.M};
+	//font-weight: 700;
 	width: 100%;
+    padding-left: 20px;
+ 	padding-right: 20px;
+ 	height: ${props => props.big ? '55px' : '35px'};
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.16);
+ 	border-radius: 3px;
+ 	border: 1px solid ${colors.lighterGray};
+ 	text-align: ${props => props.centered ? 'center' : 'auto'};
+ 	vertical-align: middle;
+ 	outline: none;
+    :focus {
+    	background-color: ${colors.white};
+    	border: 1px solid ${colors.darkGray};
+    }
+ 	:disabled {
+ 		background-color: ${darken(0.1, colors.white)};
+ 	},
 `;
 
 export default StyledInput;

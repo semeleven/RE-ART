@@ -7,7 +7,6 @@ module.exports = {
 	target: 'node',
 	externals: [nodeExternals()],
 	entry: [
-		'@babel/polyfill',
 		'./src/server/render.js',
 	],
 	mode: 'production',

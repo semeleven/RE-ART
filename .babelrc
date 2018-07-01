@@ -2,6 +2,7 @@
   "env": {
     "development": {
       "plugins": [
+        "@babel/plugin-transform-runtime",
         "@babel/syntax-dynamic-import",
         "universal-import",
         "import-graphql",
@@ -15,7 +16,8 @@
           "@babel/preset-env",
           {
             "targets": {
-              "browsers": ["last 2 versions"]
+              "browsers": ["last 2 versions"],
+              "node": "current"
             },
             "debug": false
           }
@@ -24,11 +26,12 @@
           "useBuiltIns": true,
           "decoratorsLegacy": true
         }],
-        "@babel/preset-react",
+        "@babel/preset-react"
       ]
     },
     "production": {
       "plugins": [
+        "@babel/plugin-transform-runtime",
         ["babel-plugin-styled-components", {
           "ssr": true
         }],
@@ -41,7 +44,8 @@
           "@babel/preset-env",
           {
             "targets": {
-              "browsers": ["last 2 versions"]
+              "browsers": ["last 2 versions"],
+              "node": "current"
             },
             "debug": false
           }
@@ -70,6 +74,9 @@
           "decoratorsLegacy": true
         }],
         "@babel/preset-react"
+      ],
+      "plugins": [
+        "@babel/plugin-transform-runtime"
       ]
     }
   }

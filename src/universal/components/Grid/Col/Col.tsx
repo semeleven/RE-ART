@@ -13,6 +13,7 @@ interface Props {
 	sizeMd?: Size;
 	sizeSm?: Size;
 	centered?: boolean;
+	right?: boolean;
 	children: React.ReactNode;
 	noMobilePadding?: boolean;
 }
@@ -29,7 +30,11 @@ const StyledDiv = styled.div`
 			padding-left: 20px;
 			padding-right: 20px;
 			flex: 0 1 auto;
-			text-align: ${props.centered && 'center'};
+			align-items: center;
+			text-align: ${
+				props.centered && 'center'
+				|| props.right && 'right'
+			};
 			${media.tablet`
 				width: ${handleWidth(props.sizeL)};
 			`}
