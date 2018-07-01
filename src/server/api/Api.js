@@ -15,7 +15,6 @@ export default class Api {
 		this.baseURL = baseURL;
 		this.token = token;
 
-
 		this.instance = axios.create({
 			baseURL,
 			timeout: 10000,
@@ -40,7 +39,7 @@ export default class Api {
 				url: opts.uri,
 				headers: {
 					...this.headers,
-					...opts.headers
+					...opts.headers,
 				},
 				params: opts.params,
 				data: opts.body,
@@ -62,7 +61,7 @@ export default class Api {
 				logger.info(response.data, 'responseLog');
 				return response.data;
 			})
-			.catch((error) => {
+			.catch(error => {
 				logger.warn(error.request, error.message, 'requestErrorLog');
 				if (/timeout/i.test(error.message)) {
 					console.error(error.message, 'timeout!');

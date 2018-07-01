@@ -7,7 +7,11 @@ interface Props {
 	showFilters: boolean;
 }
 
-const Controls : React.SFC<Props> = ({ handleSearch, handleFilters, showFilters }) => (
+const Controls: React.SFC<Props> = ({
+	handleSearch,
+	handleFilters,
+	showFilters,
+}) => (
 	<Row marginTop="50px">
 		<Col size={3}>
 			<Heading lighterGray size="M" onClick={handleFilters}>
@@ -22,7 +26,9 @@ const Controls : React.SFC<Props> = ({ handleSearch, handleFilters, showFilters 
 				onChange={e => handleSearch(e)}
 			/>
 		</Col>
-		<Col right size={3}>SORT BY</Col>
+		<Col right size={3}>
+			SORT BY
+		</Col>
 	</Row>
 );
 

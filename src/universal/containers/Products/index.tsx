@@ -11,9 +11,7 @@ export default class ProductsContainer extends PureComponent {
 
 	render() {
 		return (
-			<Query
-				query={getProductsQuery}
-			>
+			<Query query={getProductsQuery}>
 				{({ data, loading, error }) => {
 					if (error) return <h1>Error!</h1>;
 					if (loading) return <h1>Loading...</h1>;

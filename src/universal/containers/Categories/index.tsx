@@ -38,21 +38,18 @@ const mockCards = [
 ];
 
 export default class Categories extends PureComponent {
-	renderCards = () => (
+	renderCards = () =>
 		mockCards.map(item => (
 			<Col key={item.id} size={3} sizeMd={6} sizeSm={6}>
 				<Card>{item.category}</Card>
 			</Col>
-		))
-	);
+		));
 
 	render() {
 		return (
 			<Fragment>
 				<Title>Browse Categories</Title>
-				<Row>
-					{this.renderCards()}
-				</Row>
+				<Row>{this.renderCards()}</Row>
 			</Fragment>
 		);
 	}

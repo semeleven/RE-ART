@@ -31,10 +31,7 @@ const StyledDiv = styled.div`
 			padding-right: 20px;
 			flex: 0 1 auto;
 			align-items: center;
-			text-align: ${
-				props.centered && 'center'
-				|| props.right && 'right'
-			};
+			text-align: ${(props.centered && 'center') || (props.right && 'right')};
 			${media.tablet`
 				width: ${handleWidth(props.sizeL)};
 			`}

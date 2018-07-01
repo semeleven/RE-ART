@@ -28,12 +28,11 @@ const Sizes = {
 };
 
 const Heading: React.SFC<Props> = ({
-   size = 'XL',
-   className,
-   onClick = () => {},
-   children
-}) =>
-	React.createElement(`h${Sizes[size]}`, { className, onClick, }, children);
+	size = 'XL',
+	className,
+	onClick = () => {},
+	children,
+}) => React.createElement(`h${Sizes[size]}`, { className, onClick }, children);
 
 const StyledHeading = styled(Heading)`
 	${(props: Props) => {

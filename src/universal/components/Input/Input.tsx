@@ -32,9 +32,9 @@ type FormEvent = (e: React.FormEvent<HTMLInputElement>) => void;
 
 interface Props {
 	type: 'text' | 'email' | 'number' | 'password' | 'search';
-	placeholder: string
+	placeholder: string;
 	centered?: boolean;
-	big?: boolean
+	big?: boolean;
 	mask?: [string];
 	inputRef?: (any) => any;
 	disabled?: boolean;
@@ -80,7 +80,14 @@ class Input extends Component<Props> {
 
 	render() {
 		// avoid passing inputRef and centered props to the DOM
-		const { mask, className, inputRef, centered, placeholder, ...rest } = this.props;
+		const {
+			mask,
+			className,
+			inputRef,
+			centered,
+			placeholder,
+			...rest
+		} = this.props;
 
 		if (mask != null) {
 			return (
@@ -112,11 +119,11 @@ const StyledInput = styled(Input)`
 	width: 100%;
     padding-left: 20px;
  	padding-right: 20px;
- 	height: ${props => props.big ? '55px' : '35px'};
+ 	height: ${props => (props.big ? '55px' : '35px')};
     box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.16);
  	border-radius: 3px;
  	border: 1px solid ${colors.lighterGray};
- 	text-align: ${props => props.centered ? 'center' : 'auto'};
+ 	text-align: ${props => (props.centered ? 'center' : 'auto')};
  	vertical-align: middle;
  	outline: none;
     :focus {

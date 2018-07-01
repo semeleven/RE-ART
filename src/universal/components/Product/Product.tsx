@@ -6,7 +6,7 @@ type Item = {
 	url: string;
 	author: string;
 	// title: string;
-	name: string
+	name: string;
 	price: string | number;
 };
 
@@ -17,7 +17,7 @@ interface Props {
 const Product: React.SFC<Props> = ({ item }) => (
 	<Col centered size={3} sizeMd={6} sizeSm={6}>
 		<Image margin height="220px" url={item.url} />
-		<Link to="/">{'@' + item.author}</Link>
+		<Link to="/">{`@${item.author}`}</Link>
 		<Heading
 			size="M"
 			darkGray

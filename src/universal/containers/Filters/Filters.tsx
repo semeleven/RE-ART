@@ -6,8 +6,8 @@ import Controls from './components/Controls';
 import FiltersBlock from './components/FiltersBlock';
 
 interface State {
-	showFilters: boolean
-	searchText: string
+	showFilters: boolean;
+	searchText: string;
 }
 
 export default class FiltersContainer extends PureComponent<any, State> {
@@ -16,14 +16,15 @@ export default class FiltersContainer extends PureComponent<any, State> {
 		searchText: '',
 	};
 
-	handleSearch = (e) => {
-		const { currentTarget: { value } } = e;
-		this.setState({ searchText: value })
+	handleSearch = e => {
+		const {
+			currentTarget: { value },
+		} = e;
+		this.setState({ searchText: value });
 	};
 
-	handleFilters = () => (
-		this.setState(state => ({ showFilters: !state.showFilters }))
-	);
+	handleFilters = () =>
+		this.setState(state => ({ showFilters: !state.showFilters }));
 
 	render() {
 		const { showFilters } = this.state;
@@ -35,9 +36,7 @@ export default class FiltersContainer extends PureComponent<any, State> {
 					handleFilters={this.handleFilters}
 					showFilters={showFilters}
 				/>
-				{showFilters && (
-					<FiltersBlock />
-				)}
+				{showFilters && <FiltersBlock />}
 			</Fragment>
 		);
 	}
