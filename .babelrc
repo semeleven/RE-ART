@@ -7,7 +7,7 @@
         "universal-import",
         "import-graphql",
         "react-hot-loader/babel",
-        ["babel-plugin-styled-components", {
+        ["styled-components", {
           "ssr": true
         }]
       ],
@@ -32,12 +32,12 @@
     "production": {
       "plugins": [
         "@babel/plugin-transform-runtime",
-        ["babel-plugin-styled-components", {
-          "ssr": true
-        }],
         "@babel/syntax-dynamic-import",
         "universal-import",
-        "import-graphql"
+        "import-graphql",
+        ["styled-components", {
+          "ssr": true
+        }]
       ],
       "presets": [
         [

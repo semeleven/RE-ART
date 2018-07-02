@@ -4,7 +4,6 @@ import { Row, Col } from '../../components';
 
 interface Props {
 	slidesPerView?: number;
-	height: number;
 	spaceBetween?: number;
 }
 

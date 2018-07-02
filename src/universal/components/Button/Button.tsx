@@ -12,9 +12,10 @@ import {
 interface Props {
 	invertedDark?: boolean;
 	invertedPurple?: boolean;
-	// dark?: boolean;
+	dark?: boolean;
 	purple?: boolean;
 	spaced?: boolean;
+	width?: string;
 	onClick: () => any;
 	theme?: any;
 	className?: string;
@@ -24,6 +25,7 @@ interface Props {
 const StyledButton = styled.button`
 	${(props: Props) =>
 		css`
+			width: ${props.width ? props.width : 'auto'}
 			background-color: ${styledProps(background)};
 			color: ${styledProps(buttonTextColor)};
 			border-color: ${styledProps(borderColor)};

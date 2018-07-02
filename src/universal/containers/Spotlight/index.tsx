@@ -34,6 +34,6 @@ export default class Spotlight extends PureComponent {
 		));
 
 	render(): React.ReactNode {
-		return <Swiper height={530}>{this.renderSlides()}</Swiper>;
+		return <Swiper>{this.renderSlides()}</Swiper>;
 	}
 }

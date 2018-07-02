@@ -24,28 +24,28 @@ const colors = {
 const background = {
 	invertedDark: colors.transparent,
 	invertedPurple: colors.transparent,
-	// dark: colors.darkGray,
+	dark: colors.darkGray,
 	purple: colors.purple,
 };
 
 const hoverBackground = {
 	invertedDark: colors.darkGray,
 	invertedPurple: colors.purple,
-	// dark: lighten(0.1, colors.darkGray),
+	dark: lighten(0.1, colors.darkGray),
 	purple: colors.darkPurple,
 };
 
 const activeBackground = {
 	invertedDark: lighten(0.1, colors.darkGray),
 	invertedPurple: colors.darkPurple,
-	// dark: lighten(0.15, colors.darkGray),
+	dark: lighten(0.15, colors.darkGray),
 	purple: darken(0.1, colors.darkPurple),
 };
 
 const buttonTextColor = {
 	invertedDark: colors.darkGray,
 	invertedPurple: colors.purple,
-	// dark: colors.white,
+	dark: colors.white,
 	purple: colors.white,
 };
 
@@ -58,14 +58,14 @@ const fontSize = {
 
 const headingMargin = {
 	XL: '50px',
-	L: '40px',
-	M: '20px',
+	L: '20px',
+	M: '15px',
 	S: '10px',
 };
 
 const borderColor = {
 	invertedDark: colors.darkGray,
-	// dark: colors.darkGray,
+	dark: colors.darkGray,
 	invertedPurple: colors.purple,
 	purple: colors.purple,
 };

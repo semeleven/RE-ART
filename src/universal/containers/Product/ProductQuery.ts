@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
 export const getProductQuery = gql`
-	query ($id: Int!) {
+	query($id: Int!) {
 		getProduct(input: { id: $id }) {
 			id
 			price

@@ -2,26 +2,31 @@ import React, { PureComponent } from 'react';
 import { Query } from 'react-apollo';
 import { getProductQuery } from './ProductQuery';
 // import { connect } from 'react-redux';
+import InnerProduct from './components/InnerProduct';
 
-export default class Product extends PureComponent<any> {
+export default class ProductContainer extends PureComponent<any> {
 	render() {
-		const { match: { params: { id } } } = this.props;
+		const {
+			match: {
+				params: { id },
+			},
+		} = this.props;
 
 		return (
-				<Query
-					query={getProductQuery}
-					variables={{
-						id,
-					}}
-				>
-					{({ data, error, loading }) => {
-						if (error) return <h1>ERROR!</h1>;
-						if (loading) return <h1>LOADING...</h1>;
+			<Query
+				query={getProductQuery}
+				variables={{
+					id,
+				}}
+			>
+				{({ data, error, loading }) => {
+					if (error) return <h1>ERROR!</h1>;
+					if (loading) return <h1>LOADING...</h1>;
 
-						console.log(data, 'data!!!');
-						return <h1>HELLO WORLD!</h1>
-					}}
-				</Query>
+					const { getProduct } = data;
+					return <InnerProduct item={getProduct[0]} />;
+				}}
+			</Query>
 		);
 	}
 }
