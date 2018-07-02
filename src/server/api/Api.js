@@ -9,11 +9,11 @@ export default class Api {
 	 * @param token {string}
 	 */
 
-	constructor(baseURL, token) {
+	constructor(baseURL) {
 		this.headers = {};
 
 		this.baseURL = baseURL;
-		this.token = token;
+		// this.token = token;
 
 		this.instance = axios.create({
 			baseURL,
