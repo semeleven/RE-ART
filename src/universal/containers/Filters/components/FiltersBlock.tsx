@@ -6,9 +6,7 @@ interface Props {}
 
 const FiltersBlock: React.SFC<Props> = () => (
 	<Row marginBottom="50px">
-		<Col size={3}>
-			HELLO!
-		</Col>
+		<Col size={3}>HELLO!</Col>
 		<Col size={6}>
 			<Input
 				centered

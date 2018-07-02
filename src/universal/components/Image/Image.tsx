@@ -1,4 +1,5 @@
 import styled, { css } from '../../lib/styled';
+import { media } from '../../lib/styled/theme';
 
 interface Props {
 	url: string;
@@ -18,6 +19,15 @@ const StyledImage = styled.div`
 			background-size: cover;
 			background-position: center;
 			margin-bottom: ${props.margin && '20px'};
+			${media.tablet`
+				height: ${props.height && '270px'}
+			`};
+			${media.mobile`
+				height: ${props.height && '220px'}
+			`};
+			${media.small`
+				height: ${props.height && '220px'}
+			`};
 		`;
 	}};
 `;

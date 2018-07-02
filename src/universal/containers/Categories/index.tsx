@@ -40,7 +40,7 @@ const mockCards = [
 export default class Categories extends PureComponent {
 	renderCards = () =>
 		mockCards.map(item => (
-			<Col key={item.id} size={3} sizeMd={6} sizeSm={6}>
+			<Col key={item.id} size={3} sizeL={6} sizeMd={6} sizeSm={6}>
 				<Card>{item.category}</Card>
 			</Col>
 		));

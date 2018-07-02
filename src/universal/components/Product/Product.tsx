@@ -12,11 +12,16 @@ type Item = {
 
 interface Props {
 	item: Item;
+	small?: boolean;
 }
 
-const Product: React.SFC<Props> = ({ item }) => (
-	<Col centered size={3} sizeL={6} sizeMd={6} sizeSm={6}>
-		<Image margin height="220px" url={item.url} />
+const Product: React.SFC<Props> = ({ item, small }) => (
+	<Col centered size={3} sizeL={6} sizeMd={6} sizeSm={12}>
+		<Image
+			margin
+			height={small ? "220px" : "390px"}
+			url={item.url}
+		/>
 		<Link to="/">{`@${item.author}`}</Link>
 		<Heading
 			size="M"
@@ -27,6 +32,7 @@ const Product: React.SFC<Props> = ({ item }) => (
 		</Heading>
 		<Heading
 			size="M"
+			marginBottom="50px"
 			darkGray
 			bold
 			// mono

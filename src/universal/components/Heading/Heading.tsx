@@ -14,6 +14,8 @@ interface Props {
 	white?: boolean;
 	black?: boolean;
 	darkGray?: boolean;
+	purple?: boolean;
+	darkPurple?: boolean;
 	lighterGray?: boolean;
 	uppercase?: boolean;
 	marginTop?: string;
@@ -46,7 +48,7 @@ const StyledHeading = styled(Heading)`
 		? 'Source Code Pro, monospace'
 		: 'Lato, sans-serif'};
 			font-weight: ${props.bold && 'bold'};
-			color: ${styledProps(colors)};
+			color: ${styledProps(colors) || 'black'};
 			text-transform: ${props.uppercase && 'uppercase'};
 			margin-top: ${handleSize(props.marginTop)};
 			margin-bottom: ${handleSize(props.marginBottom)};

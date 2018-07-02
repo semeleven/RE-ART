@@ -12,16 +12,22 @@ interface Props {
 	sizeL?: Size;
 	sizeMd?: Size;
 	sizeSm?: Size;
+	deviceOrder?: number; // flex order prop on devices other than desktop
 	centered?: boolean;
 	right?: boolean;
 	children: React.ReactNode;
 	noMobilePadding?: boolean;
+	marginTop?: string
+	marginBottom?: string
 }
 
 const StyledDiv = styled.div`
 	${(props: Props) => {
 		const handleWidth = param =>
 			`${param ? singleColWidth * param : singleColWidth * props.size}%`;
+		
+		const handleOrder = param =>
+			`${param ? param : 0}`;
 
 		const noMobilePadding = props.noMobilePadding && '0px';
 
@@ -32,16 +38,21 @@ const StyledDiv = styled.div`
 			flex: 0 1 auto;
 			align-items: center;
 			text-align: ${(props.centered && 'center') || (props.right && 'right')};
+			margin-top: ${props.marginTop && props.marginTop};
+			margin-bottom: ${props.marginBottom && props.marginBottom};
 			${media.tablet`
 				width: ${handleWidth(props.sizeL)};
+				order: ${handleOrder(props.deviceOrder)};
 			`}
 			${media.mobile`
 				width: ${handleWidth(props.sizeMd)};
 				padding-left: ${noMobilePadding};
 				padding-right: ${noMobilePadding};
+				order: ${handleOrder(props.deviceOrder)};
 			`}
 			${media.small`
 				width: ${handleWidth(props.sizeSm)};
+				order: ${handleOrder(props.deviceOrder)};
 			`}
 		`;
 	}};
