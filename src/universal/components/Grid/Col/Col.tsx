@@ -17,17 +17,16 @@ interface Props {
 	right?: boolean;
 	children: React.ReactNode;
 	noMobilePadding?: boolean;
-	marginTop?: string
-	marginBottom?: string
+	marginTop?: string;
+	marginBottom?: string;
 }
 
 const StyledDiv = styled.div`
 	${(props: Props) => {
 		const handleWidth = param =>
 			`${param ? singleColWidth * param : singleColWidth * props.size}%`;
-		
-		const handleOrder = param =>
-			`${param ? param : 0}`;
+
+		const handleOrder = param => `${param || 0}`;
 
 		const noMobilePadding = props.noMobilePadding && '0px';
 

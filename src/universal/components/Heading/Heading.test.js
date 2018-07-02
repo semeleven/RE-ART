@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import 'jest-styled-components';
 
 import Heading from './Heading';
-import sinon from "sinon";
+import sinon from 'sinon';
 
 const sizes = ['XL', 'L', 'M', 'S'];
 
@@ -48,30 +48,18 @@ it(`renders black (default color prop) Heading with vertical margins`, () => {
 });
 
 it(`renders purple Heading`, () => {
-	const wrapper = shallow(
-		<Heading purple>
-			MONO
-		</Heading>
-	);
+	const wrapper = shallow(<Heading purple>MONO</Heading>);
 	expect(wrapper).toMatchSnapshot();
 });
 
 it(`renders dark purple Heading`, () => {
-	const wrapper = shallow(
-		<Heading darkPurple>
-			MONO
-		</Heading>
-	);
+	const wrapper = shallow(<Heading darkPurple>MONO</Heading>);
 	expect(wrapper).toMatchSnapshot();
 });
 
 it('simulates click events', () => {
 	const onHeadingClick = sinon.spy();
-	const wrapper = shallow(
-		<Heading onClick={onHeadingClick}>
-			CLICK!
-		</Heading>
-	);
+	const wrapper = shallow(<Heading onClick={onHeadingClick}>CLICK!</Heading>);
 	wrapper.find('Heading').simulate('click');
 	expect(onHeadingClick.calledOnce).toEqual(true);
 });

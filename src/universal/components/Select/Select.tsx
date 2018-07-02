@@ -52,7 +52,12 @@ interface Props {
 	onChange: (e: React.FormEvent<HTMLInputElement>) => void;
 }
 
-const StyledSelect: React.SFC<Props> = ({ options, styles, onChange, placeholder }) => {
+const StyledSelect: React.SFC<Props> = ({
+	options,
+	styles,
+	onChange,
+	placeholder,
+}) => {
 	const styleBag = {
 		...customStyles,
 		...(styles != null && styles),
