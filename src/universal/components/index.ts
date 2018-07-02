@@ -11,6 +11,7 @@ import SideMenu from '../containers/Header/components/SideMenu';
 import { Row, Col } from './Grid';
 import Product from './Product';
 import Swiper from './Swiper';
+import Select from './Select';
 import Title from './Title';
 
 export {
@@ -28,5 +29,6 @@ export {
 	Product,
 	SideMenu,
 	Swiper,
+	Select,
 	Title,
 };

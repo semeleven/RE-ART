@@ -1,11 +1,14 @@
 import React from 'react';
 import { Row, Col, Input } from '../../../components';
+// import Select from 'react-select';
 
 interface Props {}
 
 const FiltersBlock: React.SFC<Props> = () => (
-	<Row marginTop="50px">
-		<Col size={3} />
+	<Row marginBottom="50px">
+		<Col size={3}>
+			HELLO!
+		</Col>
 		<Col size={6}>
 			<Input
 				centered

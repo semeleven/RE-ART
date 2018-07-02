@@ -7,6 +7,7 @@ import { fontSize, colors, headingMargin } from '../../lib/styled/theme';
 interface Props {
 	size?: 'XL' | 'L' | 'M' | 'S';
 	mono?: boolean;
+	inline?: boolean;
 	bold?: boolean;
 	children: React.ReactNode;
 	className?: string;
@@ -39,6 +40,7 @@ const StyledHeading = styled(Heading)`
 		const handleSize = (param): string => param || headingMargin[props.size];
 
 		return css`
+			display: ${props.inline && 'inline'};
 			font-size: ${fontSize[props.size]};
 			font-family: ${props.mono
 		? 'Source Code Pro, monospace'
