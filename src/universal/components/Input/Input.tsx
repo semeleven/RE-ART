@@ -113,7 +113,7 @@ class Input extends Component<Props> {
 					{...rest}
 				/>
 			);
-		}
+		};
 
 		return (
 			<label>
@@ -124,7 +124,7 @@ class Input extends Component<Props> {
 				)}
 				<Input />
 			</label>
-		)
+		);
 	}
 }
 

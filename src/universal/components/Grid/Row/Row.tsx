@@ -3,7 +3,7 @@ import styled, { css } from '../../../lib/styled';
 interface Props {
 	marginTop?: string;
 	marginBottom?: string;
-	justifyContent?: 'flex-end' | 'center' | 'space-between' | 'space-around'
+	justifyContent?: 'flex-end' | 'center' | 'space-between' | 'space-around';
 }
 
 const StyledRow = styled.div`

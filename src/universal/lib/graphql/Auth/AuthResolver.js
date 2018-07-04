@@ -1,4 +1,4 @@
-import { SignInRequest, SignUpRequest} from '../../../../server/api/ApiAuth';
+import { SignInRequest, SignUpRequest } from '../../../../server/api/ApiAuth';
 
 export default {
 	Mutation: {

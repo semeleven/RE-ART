@@ -7,16 +7,17 @@ interface MatchParams {
 	sign: 'in' | 'up';
 }
 
-interface Props extends RouteComponentProps<MatchParams> {
-}
+interface Props extends RouteComponentProps<MatchParams> {}
 
 export default class Auth extends PureComponent<Props> {
 	render() {
-		const { match: { params: { sign } } } = this.props;
+		const {
+			match: {
+				params: { sign },
+			},
+		} = this.props;
 		const isLogin = sign === 'in';
 
-		return (
-			<SignForm login={isLogin}/>
-		);
+		return <SignForm login={isLogin} />;
 	}
 }
