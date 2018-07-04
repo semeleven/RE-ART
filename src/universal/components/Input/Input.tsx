@@ -3,6 +3,7 @@ import { TextMask, InputAdapter } from 'react-text-mask-hoc';
 import { darken } from 'polished';
 import styled from '../../lib/styled';
 import { colors, fontSize } from '../../lib/styled/theme';
+import { Heading } from '../../components';
 
 // const rule = ({theme, centered}) => ({
 // 	color: theme.colors.blue,
@@ -33,6 +34,7 @@ type FormEvent = (e: React.FormEvent<HTMLInputElement>) => void;
 interface Props {
 	type: 'text' | 'email' | 'number' | 'password' | 'search';
 	placeholder: string;
+	label?: string;
 	centered?: boolean;
 	big?: boolean;
 	mask?: [string];
@@ -85,30 +87,44 @@ class Input extends Component<Props> {
 			className,
 			inputRef,
 			centered,
+			label,
 			placeholder,
 			...rest
 		} = this.props;
 
-		if (mask != null) {
+		const Input = () => {
+			if (mask != null) {
+				return (
+					<TextMask
+						className={className}
+						componentRef={this._getRef}
+						Component={InputAdapter}
+						mask={mask}
+						{...rest}
+					/>
+				);
+			}
+
 			return (
-				<TextMask
+				<input
+					placeholder={placeholder}
 					className={className}
-					componentRef={this._getRef}
-					Component={InputAdapter}
-					mask={mask}
+					ref={this._getRef}
 					{...rest}
 				/>
 			);
 		}
 
 		return (
-			<input
-				placeholder={placeholder}
-				className={className}
-				ref={this._getRef}
-				{...rest}
-			/>
-		);
+			<label>
+				{label && (
+					<Heading bold darkGray size="S">
+						{label}
+					</Heading>
+				)}
+				<Input />
+			</label>
+		)
 	}
 }
 

@@ -6,17 +6,17 @@ import { Header } from './universal/containers';
 
 import Landing from './universal/pages/Landing';
 import Product from './universal/pages/Product';
+import Sign from './universal/pages/Sign';
 
 @withRouter
 export default class App extends Component {
 	render() {
-		const { ...rest } = this.props;
-
 		return (
 			<Canvas>
 				<Header />
 				<Switch>
 					<Route exact path="/" component={Landing} />
+					<Route path="/sign/:sign" component={Sign} />
 					<Route path="/product/:id" component={Product} />
 				</Switch>
 				<footer>

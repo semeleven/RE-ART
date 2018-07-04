@@ -1294,6 +1294,10 @@
   version "0.12.6"
   resolved "https://registry.yarnpkg.com/@types/graphql/-/graphql-0.12.6.tgz#3d619198585fcabe5f4e1adfb5cf5f3388c66c13"
 
+"@types/history@*":
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/@types/history/-/history-4.6.2.tgz#12cfaba693ba20f114ed5765467ff25fdf67ddb0"
+
 "@types/jest@^23.0.0":
   version "23.0.0"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.0.0.tgz#760cac74f00bb9c3075587716d2b3b4435663bc0"
@@ -1319,6 +1323,21 @@
   dependencies:
     "@types/react" "*"
     redux "^4.0.0"
+
+"@types/react-router-dom@^4.2.7":
+  version "4.2.7"
+  resolved "https://registry.yarnpkg.com/@types/react-router-dom/-/react-router-dom-4.2.7.tgz#9d36bfe175f916dd8d7b6b0237feed6cce376b4c"
+  dependencies:
+    "@types/history" "*"
+    "@types/react" "*"
+    "@types/react-router" "*"
+
+"@types/react-router@*", "@types/react-router@^4.0.28":
+  version "4.0.28"
+  resolved "https://registry.yarnpkg.com/@types/react-router/-/react-router-4.0.28.tgz#b0445fc38613c81e92ca9ec0e08ab36697d51003"
+  dependencies:
+    "@types/history" "*"
+    "@types/react" "*"
 
 "@types/react-test-renderer@^16.0.1":
   version "16.0.1"

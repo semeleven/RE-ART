@@ -4,7 +4,7 @@ const initialState = {
 
 export default function userReducer(state = initialState, action) {
 	switch (action.type) {
-	case 'TEST':
+	case 'AUTHORIZATION':
 		return {
 			...state,
 			user: {
@@ -18,7 +18,7 @@ export default function userReducer(state = initialState, action) {
 	}
 }
 
-export const Test = data => ({
-	type: 'TEST',
-	payload: { token: 'token' },
+export const Test = ({ token }) => ({
+	type: 'AUTHORIZATION',
+	payload: { token },
 });

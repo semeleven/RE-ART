@@ -7,7 +7,10 @@ import RootResolver from './RootResolver';
 import ProductsDefinition from './Products/ProductsDefinition.gql';
 import ProductsResolver from './Products/ProductsResolver';
 
+import AuthDefinition from './Auth/AuthDefinition.gql';
+import AuthResolver from './Auth/AuthResolver';
+
 export default makeExecutableSchema({
-	typeDefs: [RootDefinition, ProductsDefinition],
-	resolvers: _.merge({}, RootResolver, ProductsResolver),
+	typeDefs: [RootDefinition, ProductsDefinition, AuthDefinition],
+	resolvers: _.merge({}, RootResolver, ProductsResolver, AuthResolver),
 });

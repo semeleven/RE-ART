@@ -3,6 +3,7 @@ import styled, { css } from '../../../lib/styled';
 interface Props {
 	marginTop?: string;
 	marginBottom?: string;
+	justifyContent?: 'flex-end' | 'center' | 'space-between' | 'space-around'
 }
 
 const StyledRow = styled.div`
@@ -17,6 +18,7 @@ const StyledRow = styled.div`
 			display: flex;
 			flex-wrap: wrap;
 			align-items: center;
+			justify-content: ${props.justifyContent && props.justifyContent};
 		`};
 `;
 
