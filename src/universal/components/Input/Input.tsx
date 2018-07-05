@@ -5,30 +5,6 @@ import styled from '../../lib/styled';
 import { colors, fontSize } from '../../lib/styled/theme';
 import { Heading } from '../../components';
 
-// const rule = ({theme, centered}) => ({
-// 	color: theme.colors.blue,
-// 	fontSize: 18,
-// 	fontWeight: 700,
-// 	width: '100%',
-// 	height: 55,
-// 	boxShadow: 'inset 0 0 3px rgba(0, 0, 0, 0.16)',
-// 	borderRadius: 3,
-// 	borderWidth: 1,
-// 	borderStyle: 'solid',
-// 	borderColor: theme.colors.lightGray,
-// 	backgroundColor: theme.colors.white,
-// 	paddingLeft: 20,
-// 	paddingRight: 20,
-// 	textAlign: centered ? 'center' : 'auto',
-// 	verticalAlign: 'middle',
-// 	':focus': {
-// 		backgroundColor: '#fff',
-// 	},
-// 	':disabled': {
-// 		backgroundColor: darken(0.1, theme.colors.white),
-// 	},
-// });
-
 type FormEvent = (e: React.FormEvent<HTMLInputElement>) => void;
 
 interface Props {
@@ -94,20 +70,20 @@ class Input extends Component<Props> {
 			...rest
 		} = this.props;
 
-		const Input = () => {
-			if (mask != null) {
-				return (
-					<TextMask
-						className={className}
-						componentRef={this._getRef}
-						Component={InputAdapter}
-						mask={mask}
-						{...rest}
-					/>
-				);
-			}
+		let Input;
 
-			return (
+		if (mask != null) {
+			Input = (
+				<TextMask
+					className={className}
+					componentRef={this._getRef}
+					Component={InputAdapter}
+					mask={mask}
+					{...rest}
+				/>
+			);
+		} else {
+			Input = (
 				<input
 					placeholder={placeholder}
 					className={className}
@@ -115,7 +91,7 @@ class Input extends Component<Props> {
 					{...rest}
 				/>
 			);
-		};
+		}
 
 		return (
 			<label>
@@ -124,7 +100,7 @@ class Input extends Component<Props> {
 						{label}
 					</Heading>
 				)}
-				<Input />
+				{Input}
 			</label>
 		);
 	}

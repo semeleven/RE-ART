@@ -46,8 +46,7 @@ class AuthContainer extends PureComponent<getUserAndLayoutType & Actions, any> {
 	onChange = ({ target: { name, value, }}) : void => {
 		this.setState({ [name]: value });
 	};
-
-
+	
 	// switch between sign in and sign up
 	switchScreen = () => this.setState(state => ({ isLogin: !state.isLogin }));
 
