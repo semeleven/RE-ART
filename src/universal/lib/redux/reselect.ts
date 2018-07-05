@@ -1,3 +1,4 @@
+import { Dispatch } from 'redux';
 import { createStructuredSelector } from 'reselect';
 
 import { UserData } from '../../lib/redux/reducers/User/UserReducer';
@@ -14,4 +15,5 @@ export const getUserAndLayout = createStructuredSelector({
 export type getUserAndLayoutType = {
 	user: UserData;
 	layout: LayoutType;
+	dispatch?: Dispatch
 };

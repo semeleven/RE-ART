@@ -33,6 +33,8 @@ type FormEvent = (e: React.FormEvent<HTMLInputElement>) => void;
 
 interface Props {
 	type: 'text' | 'email' | 'number' | 'password' | 'search';
+	name: string;
+	value: string;
 	placeholder: string;
 	label?: string;
 	centered?: boolean;

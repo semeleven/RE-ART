@@ -8,15 +8,36 @@ interface Props {
 	marginTop?: string;
 	marginBottom?: string;
 	className?: string;
-	to: string;
+	to?: string;
+	onClick?: () => void;
 	children: React.ReactNode;
 }
 
-const LinkComponent: React.SFC<Props> = ({ className, to, children }) => (
-	<Link className={className} to={to}>
-		{children}
-	</Link>
-);
+// const LinkComponent: React.SFC<Partial<Props>> = ({
+const LinkComponent: React.SFC<Props> = ({
+  onClick,
+  className,
+  to,
+  children
+}) => {
+	if (to) {
+		return (
+			<Link className={className} to={to}>
+				{children}
+			</Link>
+		);
+	}
+
+	return (
+		<a className={className} onClick={onClick}>
+			{children}
+		</a>
+	);
+};
+
+// LinkComponent.defaultProps = {
+// 	onClick: () => {}
+// };
 
 const StyledLink = styled(LinkComponent)`
 	${(props: Props) => {
@@ -25,6 +46,7 @@ const StyledLink = styled(LinkComponent)`
 		const handleSize = (param): string => param || headingMargin[size];
 
 		return css`
+			cursor: pointer;
 			font-size: ${fontSize[size]};
 			font-family: Source Code Pro, monospace;
 			font-weight: bold;

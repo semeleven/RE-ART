@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Query } from 'react-apollo';
 import { getProductQuery } from './ProductQuery';
-// import { connect } from 'react-redux';
+// import { helpers } from 'react-redux';
 import InnerProduct from './components/InnerProduct';
 
 export default class ProductContainer extends PureComponent<any> {

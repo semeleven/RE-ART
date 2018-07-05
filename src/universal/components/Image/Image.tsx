@@ -40,19 +40,27 @@ const StyledImage = styled.div`
 `;
 
 const Image: React.SFC<ImageProps> = ({
-	height,
-	width,
-	imageSrc,
+	// height,
+	// width,
+	// imageSrc,
 	id,
 	hideLink,
+	children,
+	...rest
 }) => {
+	const renderStyledImage = () => (
+		<StyledImage {...rest}>
+			{children}
+		</StyledImage>
+	);
+
 	if (hideLink) {
-		return <StyledImage height={height} width={width} imageSrc={imageSrc} />;
+		return renderStyledImage();
 	}
 
 	return (
 		<Link to={`/product/${id}/`}>
-			<StyledImage height={height} width={width} imageSrc={imageSrc} />
+			{renderStyledImage()}
 		</Link>
 	);
 };

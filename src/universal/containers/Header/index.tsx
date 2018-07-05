@@ -1,11 +1,13 @@
 import React, { PureComponent } from 'react';
-import { Dispatch } from 'redux';
+// import { Dispatch, bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-import { connect } from '../../lib/redux/connect';
 import {
 	getUserAndLayout,
 	getUserAndLayoutType,
 } from '../../lib/redux/reselect';
+
+import { mapDispatchToProps } from '../../lib/redux/helpers';
 
 import {
 	ToggleModal,
@@ -14,26 +16,33 @@ import {
 
 import Header from './components/Header';
 
-interface Props {
-	dispatch?: Dispatch;
+interface Actions {
+	toggleModal: () => void;
+	toggleMenu: () => void;
 }
 
-@connect(getUserAndLayout)
-export default class HeaderContainer extends PureComponent<
-	getUserAndLayoutType & Props
-	> {
+class HeaderContainer extends PureComponent<getUserAndLayoutType & Actions> {
 	render() {
 		const {
-			dispatch,
+			toggleModal,
+			toggleMenu,
 			layout: { showMenu },
 		} = this.props;
+
 
 		return (
 			<Header
 				showMenu={showMenu}
-				toggleModal={() => dispatch(ToggleModal())}
-				toggleMenu={() => dispatch(ToggleMenu())}
+				toggleModal={toggleModal}
+				toggleMenu={toggleMenu}
 			/>
 		);
 	}
 }
+
+const actionCreators = {
+	toggleModal: ToggleModal,
+	toggleMenu: ToggleMenu,
+};
+
+export default connect(getUserAndLayout, mapDispatchToProps(actionCreators))(HeaderContainer);

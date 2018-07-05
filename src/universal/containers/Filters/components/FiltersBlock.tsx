@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Input } from '../../../components';
+import { Row, Col } from '../../../components';
 // import Select from 'react-select';
 
 interface Props {}
@@ -8,12 +8,7 @@ const FiltersBlock: React.SFC<Props> = () => (
 	<Row marginBottom="50px">
 		<Col size={3}>HELLO!</Col>
 		<Col size={6}>
-			<Input
-				centered
-				type="text"
-				placeholder="Search..."
-				onChange={e => console.log(e.currentTarget.value)}
-			/>
+			LOREM IPSUM
 		</Col>
 		<Col right size={3}>
 			SORT BY

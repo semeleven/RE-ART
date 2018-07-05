@@ -2,9 +2,10 @@ import React from 'react';
 import { Row, Col, Input, Heading, Select } from '../../../components';
 
 interface Props {
-	handleSearch: (e: React.FormEvent<HTMLInputElement>) => void;
+	handleSearch: (any) => void;
 	handleFilters: () => void;
 	showFilters: boolean;
+	searchText: string;
 }
 
 const options = [
@@ -17,6 +18,7 @@ const Controls: React.SFC<Props> = ({
 	handleSearch,
 	handleFilters,
 	showFilters,
+    searchText,
 }) => (
 	<Row marginTop="50px">
 		<Col
@@ -41,6 +43,8 @@ const Controls: React.SFC<Props> = ({
 		>
 			<Input
 				centered
+				name="search"
+				value={searchText}
 				type="text"
 				placeholder="Search..."
 				onChange={e => handleSearch(e)}

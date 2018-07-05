@@ -1,5 +1,5 @@
 import React, { PureComponent, Fragment } from 'react';
-// import { connect } from 'react-redux';
+// import { helpers } from 'react-redux';
 // import styled from '../../lib/styled';
 // import { Row, Col, Input } from '../../components';
 import Controls from './components/Controls';
@@ -27,7 +27,7 @@ export default class FiltersContainer extends PureComponent<any, State> {
 		this.setState(state => ({ showFilters: !state.showFilters }));
 
 	render() {
-		const { showFilters } = this.state;
+		const { showFilters, searchText } = this.state;
 
 		return (
 			<Fragment>
@@ -35,6 +35,7 @@ export default class FiltersContainer extends PureComponent<any, State> {
 					handleSearch={this.handleSearch}
 					handleFilters={this.handleFilters}
 					showFilters={showFilters}
+					searchText={searchText}
 				/>
 				{showFilters && <FiltersBlock />}
 			</Fragment>

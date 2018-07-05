@@ -7,7 +7,7 @@ interface ModalContainerProps {
 }
 
 interface ModalProps {
-	closeModal: () => void;
+	toggleModal: () => void;
 }
 
 const ModalContainer = styled.div`
@@ -41,18 +41,28 @@ const ModalWrapper = styled.div`
 `;
 
 @enhanceWithClickOutside
-export default class Modal extends Component<ModalProps & ModalContainerProps> {
+class Wrapper extends Component<ModalProps & ModalContainerProps> {
 	handleClickOutside() {
-		this.props.closeModal();
+		const { showModal, toggleModal } = this.props;
+		if (showModal) {
+			toggleModal();
+		}
 	}
 
 	render() {
-		const { children, showModal } = this.props;
-
+		const { children } = this.props;
 		return (
-			<ModalContainer showModal={showModal}>
-				<ModalWrapper>{children}</ModalWrapper>
-			</ModalContainer>
+			<ModalWrapper>{children}</ModalWrapper>
 		);
 	}
 }
+
+const Modal = ({ toggleModal, showModal, children }) => (
+	<ModalContainer showModal={showModal}>
+		<Wrapper toggleModal={toggleModal} showModal={showModal}>
+			{children}
+		</Wrapper>
+	</ModalContainer>
+);
+
+export default Modal;

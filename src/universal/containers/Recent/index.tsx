@@ -1,5 +1,5 @@
 import React, { PureComponent, Fragment } from 'react';
-// import { connect } from 'react-redux';
+// import { helpers } from 'react-redux';
 import { Row, Title, Product } from '../../components';
 
 const mockSlides = [

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {
 	connect as originalConnect,
 	MapDispatchToPropsParam,
@@ -6,6 +6,11 @@ import {
 	MergeProps,
 	Options,
 } from 'react-redux';
+
+import { Dispatch, bindActionCreators } from 'redux';
+
+export const mapDispatchToProps = actionCreators => (dispatch: Dispatch) =>
+	bindActionCreators(actionCreators, dispatch);
 
 export type InferableComponentEnhancerWithProps < TInjectedProps , TNeedsProps > = <
 	TComponent extends React.ComponentType<TInjectedProps & TNeedsProps>

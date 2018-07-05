@@ -1,42 +1,71 @@
 import React, { PureComponent } from 'react';
+// import { Dispatch, bindActionCreators } from 'redux';
 import { createPortal } from 'react-dom';
-// import { connect } from 'react-redux';
 // import { Mutation } from 'react-apollo';
 
-import SignForm from './components/SignForm';
+import { connect } from 'react-redux';
 import {
 	getUserAndLayout,
 	getUserAndLayoutType,
 } from '../../lib/redux/reselect';
-import { connect } from '../../lib/redux/connect';
+import { mapDispatchToProps } from "../../lib/redux/helpers";
+import { ToggleModal } from '../../lib/redux/reducers/Layout/LayoutActions';
 
-interface State {
-	isLogin: boolean;
+import SignForm from './components/SignForm';
+
+// interface State {
+// 	isLogin: boolean;
+// 	username: string
+// 	email: string
+// 	password: string
+// }
+
+interface Actions {
+	toggleModal: () => void;
 }
+
+// export type onChangeType = {
+// 	key: 'username' | 'email' | 'password',
+// 	e: React.FormEvent<HTMLInputElement>
+// };
 
 let modalRoot;
 if (!process.env.SERVER) {
 	modalRoot = document.getElementById('modal-root') as HTMLElement;
 }
 
-@connect(getUserAndLayout)
-export default class Auth extends PureComponent<getUserAndLayoutType, State> {
+class AuthContainer extends PureComponent<getUserAndLayoutType & Actions, any> {
 	state = {
 		isLogin: false,
+		username: '',
+		email: '',
+		password: '',
 	};
 
+	// TODO: I suppose I can't type state with dynamic keys like that, am I wrong?
+	onChange = ({ target: { name, value, }}) : void => {
+		this.setState({ [name]: value });
+	};
+
+
+	// switch between sign in and sign up
+	switchScreen = () => this.setState(state => ({ isLogin: !state.isLogin }));
+
 	render() {
-		const { isLogin } = this.state;
 		const {
+			toggleModal,
 			layout: { showModal },
 		} = this.props;
 
+		console.log(this.state, 'state in signform!');
 		if (modalRoot) {
 			return createPortal(
 				<SignForm
-					closeModal={() => {}}
+					onChange={this.onChange}
+					toggleModal={toggleModal}
+					switchScreen={this.switchScreen}
 					showModal={showModal}
-					login={isLogin}
+					{...this.state}
 				/>,
 				modalRoot
 			);
@@ -45,3 +74,9 @@ export default class Auth extends PureComponent<getUserAndLayoutType, State> {
 		return null;
 	}
 }
+
+const actionCreators = {
+	toggleModal: ToggleModal,
+};
+
+export default connect(getUserAndLayout, mapDispatchToProps(actionCreators))(AuthContainer)
