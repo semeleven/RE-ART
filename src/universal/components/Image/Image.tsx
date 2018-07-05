@@ -12,7 +12,7 @@ interface StyledImageProps {
 
 interface ImageProps extends StyledImageProps {
 	id?: string | number;
-	hideLink?: boolean // hide Link if it ain't list of products
+	hideLink?: boolean; // hide Link if it ain't list of products
 }
 
 const StyledImage = styled.div`
@@ -39,14 +39,20 @@ const StyledImage = styled.div`
 	}};
 `;
 
-const Image : React.SFC<ImageProps> = ({ height, width, imageSrc, id, hideLink }) => {
+const Image: React.SFC<ImageProps> = ({
+	height,
+	width,
+	imageSrc,
+	id,
+	hideLink,
+}) => {
 	if (hideLink) {
-		return <StyledImage height={height} width={width} imageSrc={imageSrc}/>;
+		return <StyledImage height={height} width={width} imageSrc={imageSrc} />;
 	}
 
 	return (
 		<Link to={`/product/${id}/`}>
-			<StyledImage height={height} width={width} imageSrc={imageSrc}/>
+			<StyledImage height={height} width={width} imageSrc={imageSrc} />
 		</Link>
 	);
 };

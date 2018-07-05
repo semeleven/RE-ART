@@ -12,6 +12,6 @@ export const getUserAndLayout = createStructuredSelector({
 });
 
 export type getUserAndLayoutType = {
-	user: UserData
-	layout: LayoutType
-}
+	user: UserData;
+	layout: LayoutType;
+};

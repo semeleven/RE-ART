@@ -7,15 +7,15 @@ import * as actionTypes from './UserConstants';
 import * as actions from './UserActions';
 
 export type UserData = {
-	token: string
-	username: string
-	email: string
-	ID: number
-}
+	token: string;
+	username: string;
+	email: string;
+	ID: number;
+};
 
 type State = {
-	user: UserData
-}
+	user: UserData;
+};
 
 const initialState: State = {
 	user: {
@@ -28,7 +28,7 @@ const initialState: State = {
 
 type UserActions = ActionType<typeof actions>;
 
-const userReducer = (state = initialState, action : UserActions) =>
+const userReducer = (state = initialState, action: UserActions) =>
 	produce(state, draft => {
 		switch (action.type) {
 			case actionTypes.AUTHORIZATION:

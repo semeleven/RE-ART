@@ -1,5 +1,13 @@
 import React from 'react';
-import { Row, Col, Heading, Input, Button, Link, Modal } from '../../../components';
+import {
+	Row,
+	Col,
+	Heading,
+	Input,
+	Button,
+	Link,
+	Modal,
+} from '../../../components';
 
 interface Props {
 	login: boolean;
@@ -12,7 +20,6 @@ const ColWithMargin = ({ children }) => (
 		{children}
 	</Col>
 );
-
 
 const SignForm: React.SFC<Props> = ({ closeModal, showModal, login }) => (
 	<Modal closeModal={closeModal} showModal={showModal}>

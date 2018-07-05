@@ -4,11 +4,14 @@ import { createPortal } from 'react-dom';
 // import { Mutation } from 'react-apollo';
 
 import SignForm from './components/SignForm';
-import { getUserAndLayout, getUserAndLayoutType } from '../../lib/redux/reselect';
+import {
+	getUserAndLayout,
+	getUserAndLayoutType,
+} from '../../lib/redux/reselect';
 import { connect } from '../../lib/redux/connect';
 
 interface State {
-	isLogin: boolean
+	isLogin: boolean;
 }
 
 let modalRoot;
@@ -24,12 +27,18 @@ export default class Auth extends PureComponent<getUserAndLayoutType, State> {
 
 	render() {
 		const { isLogin } = this.state;
-		const { layout: { showModal } } = this.props;
+		const {
+			layout: { showModal },
+		} = this.props;
 
 		if (modalRoot) {
 			return createPortal(
-				<SignForm closeModal={() => {}} showModal={showModal} login={isLogin} />,
-				modalRoot,
+				<SignForm
+					closeModal={() => {}}
+					showModal={showModal}
+					login={isLogin}
+				/>,
+				modalRoot
 			);
 		}
 

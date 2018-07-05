@@ -6,7 +6,7 @@ import { Button, Icon, SideMenu } from '../../../components/index';
 interface Props {
 	toggleModal: () => void;
 	toggleMenu: () => void;
-	showMenu: boolean
+	showMenu: boolean;
 }
 
 const StyledHeader = styled.header`
@@ -44,7 +44,7 @@ const LogoWrapper = styled.div`
 	justify-content: center;
 `;
 
-const Header : React.SFC<Props> = ({ showMenu, toggleModal, toggleMenu }) => (
+const Header: React.SFC<Props> = ({ showMenu, toggleModal, toggleMenu }) => (
 	<Fragment>
 		<StyledHeader>
 			<FlexWrapper flex="start">
