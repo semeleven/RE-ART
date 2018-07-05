@@ -19,7 +19,11 @@ type LayoutActions = ActionType<typeof actions>;
 
 const LayoutReducer = (state = initialState, action: LayoutActions) =>
 	produce(state, draft => {
-		const handleToggle = (draft: LayoutType, disableParam: string, enableParam: string) => {
+		const handleToggle = (
+			draft: LayoutType,
+			disableParam: string,
+			enableParam: string
+		) => {
 			if (draft[disableParam]) {
 				draft[disableParam] = !draft[disableParam];
 			}

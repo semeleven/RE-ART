@@ -29,7 +29,6 @@ class HeaderContainer extends PureComponent<getUserAndLayoutType & Actions> {
 			layout: { showMenu },
 		} = this.props;
 
-
 		return (
 			<Header
 				showMenu={showMenu}
@@ -45,4 +44,7 @@ const actionCreators = {
 	toggleMenu: ToggleMenu,
 };
 
-export default connect(getUserAndLayout, mapDispatchToProps(actionCreators))(HeaderContainer);
+export default connect(
+	getUserAndLayout,
+	mapDispatchToProps(actionCreators)
+)(HeaderContainer);

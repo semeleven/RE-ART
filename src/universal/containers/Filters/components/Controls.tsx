@@ -18,7 +18,7 @@ const Controls: React.SFC<Props> = ({
 	handleSearch,
 	handleFilters,
 	showFilters,
-    searchText,
+	searchText,
 }) => (
 	<Row marginTop="50px">
 		<Col

@@ -22,7 +22,7 @@ interface Props {
 	password: string;
 }
 
-const ColWithMargin = ({ children, ...rest  }) => (
+const ColWithMargin = ({ children, ...rest }) => (
 	<Col size={12} marginBottom="30px" {...rest}>
 		{children}
 	</Col>
@@ -32,11 +32,7 @@ const renderConditionalBottomPart = (isLogin, switchScreen) => {
 	if (isLogin) {
 		return (
 			<ColWithMargin marginTop="15px">
-				<Button
-					width="100%"
-					invertedDark
-					onClick={switchScreen}
-				>
+				<Button width="100%" invertedDark onClick={switchScreen}>
 					SIGN UP
 				</Button>
 			</ColWithMargin>
@@ -57,10 +53,10 @@ const renderConditionalBottomPart = (isLogin, switchScreen) => {
 
 const SignForm: React.SFC<Props> = ({
 	onChange,
-    switchScreen,
-    toggleModal,
-    showModal,
-    isLogin,
+	switchScreen,
+	toggleModal,
+	showModal,
+	isLogin,
 	username,
 	email,
 	password,
@@ -119,7 +115,7 @@ const SignForm: React.SFC<Props> = ({
 				</Col>
 			</Row>
 		</Modal>
-	)
-}
+	);
+};
 
 export default SignForm;

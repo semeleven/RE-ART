@@ -8,7 +8,7 @@ import {
 	getUserAndLayout,
 	getUserAndLayoutType,
 } from '../../lib/redux/reselect';
-import { mapDispatchToProps } from "../../lib/redux/helpers";
+import { mapDispatchToProps } from '../../lib/redux/helpers';
 import { ToggleModal } from '../../lib/redux/reducers/Layout/LayoutActions';
 
 import SignForm from './components/SignForm';
@@ -43,10 +43,10 @@ class AuthContainer extends PureComponent<getUserAndLayoutType & Actions, any> {
 	};
 
 	// TODO: I suppose I can't type state with dynamic keys like that, am I wrong?
-	onChange = ({ target: { name, value, }}) : void => {
+	onChange = ({ target: { name, value } }): void => {
 		this.setState({ [name]: value });
 	};
-	
+
 	// switch between sign in and sign up
 	switchScreen = () => this.setState(state => ({ isLogin: !state.isLogin }));
 
@@ -78,4 +78,7 @@ const actionCreators = {
 	toggleModal: ToggleModal,
 };
 
-export default connect(getUserAndLayout, mapDispatchToProps(actionCreators))(AuthContainer)
+export default connect(
+	getUserAndLayout,
+	mapDispatchToProps(actionCreators)
+)(AuthContainer);

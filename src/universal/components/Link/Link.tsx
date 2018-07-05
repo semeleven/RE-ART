@@ -15,10 +15,10 @@ interface Props {
 
 // const LinkComponent: React.SFC<Partial<Props>> = ({
 const LinkComponent: React.SFC<Props> = ({
-  onClick,
-  className,
-  to,
-  children
+	onClick,
+	className,
+	to,
+	children,
 }) => {
 	if (to) {
 		return (

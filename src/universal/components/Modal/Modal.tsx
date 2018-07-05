@@ -51,9 +51,7 @@ class Wrapper extends Component<ModalProps & ModalContainerProps> {
 
 	render() {
 		const { children } = this.props;
-		return (
-			<ModalWrapper>{children}</ModalWrapper>
-		);
+		return <ModalWrapper>{children}</ModalWrapper>;
 	}
 }
 

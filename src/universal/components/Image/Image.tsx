@@ -49,20 +49,14 @@ const Image: React.SFC<ImageProps> = ({
 	...rest
 }) => {
 	const renderStyledImage = () => (
-		<StyledImage {...rest}>
-			{children}
-		</StyledImage>
+		<StyledImage {...rest}>{children}</StyledImage>
 	);
 
 	if (hideLink) {
 		return renderStyledImage();
 	}
 
-	return (
-		<Link to={`/product/${id}/`}>
-			{renderStyledImage()}
-		</Link>
-	);
+	return <Link to={`/product/${id}/`}>{renderStyledImage()}</Link>;
 };
 
 export default Image;

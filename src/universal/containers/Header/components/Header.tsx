@@ -54,10 +54,14 @@ const Header: React.SFC<Props> = ({ showMenu, toggleModal, toggleMenu }) => (
 				<Icon small={false} icon="logo" />
 			</LogoWrapper>
 			<FlexWrapper flex="end">
-				<Button purple onClick={() => {
-					console.log('toggleModal!');
-					return toggleModal();
-				}} spaced>
+				<Button
+					purple
+					onClick={() => {
+						console.log('toggleModal!');
+						return toggleModal();
+					}}
+					spaced
+				>
 					LOGIN
 				</Button>
 				<Icon icon="search" />

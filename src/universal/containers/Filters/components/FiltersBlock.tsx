@@ -7,9 +7,7 @@ interface Props {}
 const FiltersBlock: React.SFC<Props> = () => (
 	<Row marginBottom="50px">
 		<Col size={3}>HELLO!</Col>
-		<Col size={6}>
-			LOREM IPSUM
-		</Col>
+		<Col size={6}>LOREM IPSUM</Col>
 		<Col right size={3}>
 			SORT BY
 		</Col>
