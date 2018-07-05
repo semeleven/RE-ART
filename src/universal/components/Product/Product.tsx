@@ -17,7 +17,12 @@ interface Props {
 
 const Product: React.SFC<Props> = ({ item, small }) => (
 	<Col centered size={3} sizeL={6} sizeMd={6} sizeSm={12}>
-		<Image margin height={small ? '220px' : '390px'} url={item.url} />
+		<Image
+			margin
+			id={item.id}
+			height={small ? '220px' : '390px'}
+			imageSrc={item.url}
+		/>
 		<Link to="/">{`@${item.author}`}</Link>
 		<Heading
 			size="M"

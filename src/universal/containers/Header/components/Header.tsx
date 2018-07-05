@@ -1,14 +1,12 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import styled, { css } from '../../../lib/styled/';
 
 import { Button, Icon, SideMenu } from '../../../components/index';
 
 interface Props {
-	flex: 'start' | 'end';
-}
-
-interface State {
-	showMenu: boolean;
+	toggleModal: () => void;
+	toggleMenu: () => void;
+	showMenu: boolean
 }
 
 const StyledHeader = styled.header`
@@ -23,8 +21,12 @@ const StyledHeader = styled.header`
 	margin-bottom: 50px;
 `;
 
+interface FlexWrapperProps {
+	flex: 'start' | 'end';
+}
+
 const FlexWrapper = styled.div`
-	${(props: Props) =>
+	${(props: FlexWrapperProps) =>
 		css`
 			display: flex;
 			width: 100%;
@@ -42,41 +44,26 @@ const LogoWrapper = styled.div`
 	justify-content: center;
 `;
 
-class Header extends Component<any, State> {
-	state = {
-		showMenu: false,
-	};
-
-	toggleMenu = () => this.setState(state => ({ showMenu: !state.showMenu }));
-
-	render() {
-		const { showMenu } = this.state;
-
-		return (
-			<Fragment>
-				<StyledHeader>
-					<FlexWrapper flex="start">
-						<Icon icon="hamburger" onClick={this.toggleMenu} />
-					</FlexWrapper>
-					<LogoWrapper>
-						<Icon small={false} icon="logo" />
-					</LogoWrapper>
-					<FlexWrapper flex="end">
-						<Button invertedPurple onClick={() => console.log('LOGIN')} spaced>
-							LOGIN
-						</Button>
-						<Button purple onClick={() => console.log('SIGN UP')} spaced>
-							SIGN UP
-						</Button>
-						<Icon icon="search" />
-					</FlexWrapper>
-				</StyledHeader>
-				<SideMenu showMenu={showMenu}>
-					<h1>HELLO WORLD</h1>
-				</SideMenu>
-			</Fragment>
-		);
-	}
-}
+const Header : React.SFC<Props> = ({ showMenu, toggleModal, toggleMenu }) => (
+	<Fragment>
+		<StyledHeader>
+			<FlexWrapper flex="start">
+				<Icon icon="hamburger" onClick={toggleMenu} />
+			</FlexWrapper>
+			<LogoWrapper>
+				<Icon small={false} icon="logo" />
+			</LogoWrapper>
+			<FlexWrapper flex="end">
+				<Button purple onClick={toggleModal} spaced>
+					LOGIN
+				</Button>
+				<Icon icon="search" />
+			</FlexWrapper>
+		</StyledHeader>
+		<SideMenu showMenu={showMenu}>
+			<h1>HELLO WORLD</h1>
+		</SideMenu>
+	</Fragment>
+);
 
 export default Header;

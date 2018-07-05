@@ -33,6 +33,7 @@ const IconWrapper = styled.div`
 
 const Icon: React.SFC<Props> = ({ icon, small, onClick }) => {
 	const SelectedIcon = icons[icon];
+
 	return (
 		<IconWrapper small={small} onClick={onClick}>
 			<SelectedIcon />

@@ -84,7 +84,8 @@ export default ({ clientStats }) => async (req, res) => {
 					${styledComponents}
 				</head>
 	            <body ${helmet.bodyAttributes.toString()}>
-	                <div id='react-root'>${renderToString(App)}</div>
+	                <div id="react-root">${renderToString(App)}</div>
+	                <div id="modal-root"></div>
 					${js}
 					<script 
 						dangerouslySetInnerHTML={{

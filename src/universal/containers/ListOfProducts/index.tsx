@@ -6,7 +6,11 @@ import { Row, Product } from '../../components';
 
 export default class ProductsContainer extends PureComponent {
 	renderProducts = products => (
-		<Row>{products.map(item => <Product key={item.id} item={item} />)}</Row>
+		<Row>
+			{products.map(item => (
+				<Product key={item.id} item={item} />
+			))}
+		</Row>
 	);
 
 	render() {

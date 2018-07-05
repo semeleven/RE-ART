@@ -26,7 +26,7 @@ const InnerProduct: React.SFC<Props> = ({ item }) => {
 	// temporary function, cause there's single image in the response yet
 	const renderSlides = () => (
 		<div key={item.id} className="swiper-slide">
-			<Image url={item.url} />
+			<Image hideLink id={item.id} imageSrc={item.url} />
 		</div>
 	);
 

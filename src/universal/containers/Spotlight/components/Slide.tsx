@@ -24,7 +24,7 @@ const Slide: React.SFC<Props> = ({ item }) => (
 	// There's an issue typing components that return arrays without Fragments
 	// https://github.com/DefinitelyTyped/DefinitelyTyped/issues/26890
 	// <Fragment>
-	<Image url={item.url}>
+	<Image hideLink imageSrc={item.url}>
 		<StyledSlide>
 			<Heading white uppercase mono size="M">
 				{item.type}

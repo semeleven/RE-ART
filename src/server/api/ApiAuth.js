@@ -14,11 +14,10 @@ export function SignUpRequest({ username, email, password }) {
 	});
 }
 
-export function SignInRequest({ username = '', email = '', password }) {
+export function SignInRequest({ email = '', password }) {
 	return ApiProducts.request({
 		uri: '/signin/',
 		body: {
-			username,
 			email,
 			password,
 		},

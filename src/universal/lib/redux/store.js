@@ -1,28 +1,14 @@
-import { createStore, combineReducers, compose } from 'redux';
+import { createStore, compose } from 'redux';
 
-import { persistStore, persistReducer } from 'redux-persist';
+import { persistStore } from 'redux-persist';
 
-import storage from 'redux-persist/lib/storage';
-
-import userReducer from './reducers/userReducer';
-
-const persistConfig = {
-	key: 'primary',
-	storage,
-	whitelist: ['user'], // only userData reducer will be persisted
-};
-
-// const hasState = !!(!SERVER && window.__STATE__);
+import reducers from './reducers/index';
 
 const createNewStore = (preloadedState = null) => {
 	const initialState = preloadedState == null ? {} : preloadedState;
 
-	const persistedReducer = persistReducer(persistConfig, userReducer);
-
 	const store = createStore(
-		combineReducers({
-			user: persistedReducer,
-		}),
+		reducers,
 		{
 			user: initialState,
 		},

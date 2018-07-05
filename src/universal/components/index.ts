@@ -4,6 +4,7 @@ import Card from './Card';
 import Heading from './Heading';
 import Link from './Link';
 import Main from './Main';
+import Modal from './Modal';
 import Icon from './Icon';
 import Input from './Input';
 import Image from './Image';
@@ -22,6 +23,7 @@ export {
 	Heading,
 	Link,
 	Main,
+	Modal,
 	Icon,
 	Input,
 	Image,

@@ -1,23 +1,38 @@
 import React, { PureComponent } from 'react';
+import { createPortal } from 'react-dom';
 // import { connect } from 'react-redux';
-import SignForm from './components/SignForm';
-import { RouteComponentProps } from 'react-router';
+// import { Mutation } from 'react-apollo';
 
-interface MatchParams {
-	sign: 'in' | 'up';
+import SignForm from './components/SignForm';
+import { getUserAndLayout, getUserAndLayoutType } from '../../lib/redux/reselect';
+import { connect } from '../../lib/redux/connect';
+
+interface State {
+	isLogin: boolean
 }
 
-interface Props extends RouteComponentProps<MatchParams> {}
+let modalRoot;
+if (!process.env.SERVER) {
+	modalRoot = document.getElementById('modal-root') as HTMLElement;
+}
 
-export default class Auth extends PureComponent<Props> {
+@connect(getUserAndLayout)
+export default class Auth extends PureComponent<getUserAndLayoutType, State> {
+	state = {
+		isLogin: false,
+	};
+
 	render() {
-		const {
-			match: {
-				params: { sign },
-			},
-		} = this.props;
-		const isLogin = sign === 'in';
+		const { isLogin } = this.state;
+		const { layout: { showModal } } = this.props;
 
-		return <SignForm login={isLogin} />;
+		if (modalRoot) {
+			return createPortal(
+				<SignForm closeModal={() => {}} showModal={showModal} login={isLogin} />,
+				modalRoot,
+			);
+		}
+
+		return null;
 	}
 }
