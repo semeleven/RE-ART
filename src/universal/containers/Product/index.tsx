@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Query } from 'react-apollo';
-import { getProductQuery } from './ProductQuery';
+import { getProductQuery } from './ProductSchema';
 import InnerProduct from './components/InnerProduct';
 
 export default class ProductContainer extends PureComponent<any> {

@@ -20,6 +20,7 @@ interface Props {
 	username: string;
 	email: string;
 	password: string;
+	SignUpRequest: () => void;
 }
 
 const ColWithMargin = ({ children, ...rest }) => (
@@ -60,6 +61,7 @@ const SignForm: React.SFC<Props> = ({
 	username,
 	email,
 	password,
+    SignUpRequest,
 }) => {
 	console.log('render in signform');
 	return (
@@ -68,7 +70,7 @@ const SignForm: React.SFC<Props> = ({
 				<Col size={12} sizeL={12} sizeMd={12} sizeSm={12}>
 					<Col size={12} centered marginBottom="50px">
 						<Heading mono uppercase size="L">
-							{isLogin ? 'sign in to re-art' : 'join the art community'}
+							{`sign ${isLogin ? 'in' : 'up'} to re-art`}
 						</Heading>
 					</Col>
 					<ColWithMargin>
@@ -82,7 +84,7 @@ const SignForm: React.SFC<Props> = ({
 							placeholder="Email"
 						/>
 					</ColWithMargin>
-					{isLogin && (
+					{!isLogin && (
 						<ColWithMargin>
 							<Input
 								key="username"
@@ -107,7 +109,7 @@ const SignForm: React.SFC<Props> = ({
 						/>
 					</ColWithMargin>
 					<Col size={12}>
-						<Button width="100%" dark onClick={() => console.log('click!')}>
+						<Button width="100%" dark onClick={SignUpRequest}>
 							{isLogin ? 'SIGN IN' : 'SIGN UP'}
 						</Button>
 					</Col>

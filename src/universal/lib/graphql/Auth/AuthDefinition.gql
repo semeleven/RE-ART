@@ -1,15 +1,27 @@
 type SignResponse {
     success: Boolean!
-    message: String
-    data: Sign
+    message: String # error description
+    data: SignData # data is empty if error occurs
 }
 
-type Sign {
-    sign: Token
+type SignData {
+    sign: Token!
+    user: UserData!
 }
 
 type Token {
     token: String!
+}
+
+type Sign {
+    token: String!
+    user: UserData
+}
+
+type UserData {
+    username: String!
+    email: String!
+    ID: Int!
 }
 
 input SignInInput {

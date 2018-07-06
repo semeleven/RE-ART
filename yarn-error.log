@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /home/slyshadow/.yarn/bin/yarn.js add localforage
+  /usr/bin/node /home/slyshadow/.yarn/bin/yarn.js remove redux-logger
 
 PATH: 
   /home/slyshadow/bin:/home/slyshadow/.local/bin:/home/slyshadow/.yarn/bin:/home/slyshadow/.config/yarn/global/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Windows/System32:/mnt/c/Windows:/mnt/c/Windows/System32/wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/Windows/System32/OpenSSH:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/nodejs:/mnt/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit:/mnt/c/Go/bin:/mnt/c/PostgreSQL/pg10/bin:/mnt/c/Program Files/Git LFS:/mnt/c/Users/Vanko/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Vanko/AppData/Roaming/npm:/mnt/c/Users/Vanko/AppData/Local/hyper/app-2.0.0/resources/bin:/snap/bin
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: ENOENT: no such file or directory, lstat '/home/slyshadow/.cache/yarn/v1/npm-es5-shim-4.5.10-b7e17ef4df2a145b821f1497b50c25cf94026205/tests/lib/jasmine.css'
+  Error: ENOENT: no such file or directory, scandir '/mnt/c/Users/Vanko/Documents/Projects/ReART/node_modules/jsdom/lib/jsdom/browser'
 
 npm manifest: 
   {
@@ -75,6 +75,7 @@ npm manifest:
       "graphql": "^0.13.2",
       "graphql-tools": "^3.0.2",
       "isomorphic-fetch": "^2.2.1",
+      "localforage": "^1.7.2",
       "morgan": "^1.9.0",
       "polished": "^1.9.2",
       "react": "^16.4.0",
@@ -4325,6 +4326,10 @@ Lockfile:
     dependencies:
       mimic-response "^1.0.0"
   
+  deep-diff@^0.3.5:
+    version "0.3.8"
+    resolved "https://registry.yarnpkg.com/deep-diff/-/deep-diff-0.3.8.tgz#c01de63efb0eec9798801d40c7e0dae25b582c84"
+  
   deep-equal@^1.0.1:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/deep-equal/-/deep-equal-1.0.1.tgz#f5d260292b660e084eff4cdbc9f08ad3247448b5"
@@ -6021,6 +6026,10 @@ Lockfile:
       prebuild-install "^3.0.0"
       which-pm-runs "^1.0.0"
   
+  immediate@~3.0.5:
+    version "3.0.6"
+    resolved "https://registry.yarnpkg.com/immediate/-/immediate-3.0.6.tgz#9db1dbd0faf8de6fbe0f5dd5e56bb606280de69b"
+  
   immer@^1.3.1:
     version "1.3.1"
     resolved "https://registry.yarnpkg.com/immer/-/immer-1.3.1.tgz#3a8c18d9d618c8b7169760a79beec24a1da6a43e"
@@ -7165,6 +7174,12 @@ Lockfile:
       prelude-ls "~1.1.2"
       type-check "~0.3.2"
   
+  lie@3.1.1:
+    version "3.1.1"
+    resolved "https://registry.yarnpkg.com/lie/-/lie-3.1.1.tgz#9a436b2cc7746ca59de7a41fa469b3efb76bd87e"
+    dependencies:
+      immediate "~3.0.5"
+  
   load-json-file@^1.0.0:
     version "1.1.0"
     resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-1.1.0.tgz#956905708d58b4bab4c2261b04f59f31c99374c0"
@@ -7213,6 +7228,12 @@ Lockfile:
       emojis-list "^2.0.0"
       json5 "^0.5.0"
       object-assign "^4.0.1"
+  
+  localforage@^1.7.2:
+    version "1.7.2"
+    resolved "https://registry.yarnpkg.com/localforage/-/localforage-1.7.2.tgz#fa4442602f806edd2bca6a54ab4e656f031f121c"
+    dependencies:
+      lie "3.1.1"
   
   locate-path@^2.0.0:
     version "2.0.0"
@@ -9387,6 +9408,12 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/reduce-function-call/-/reduce-function-call-1.0.2.tgz#5a200bf92e0e37751752fe45b0ab330fd4b6be99"
     dependencies:
       balanced-match "^0.4.2"
+  
+  redux-logger@^3.0.6:
+    version "3.0.6"
+    resolved "https://registry.yarnpkg.com/redux-logger/-/redux-logger-3.0.6.tgz#f7555966f3098f3c88604c449cf0baf5778274bf"
+    dependencies:
+      deep-diff "^0.3.5"
   
   redux-persist@^5.10.0:
     version "5.10.0"

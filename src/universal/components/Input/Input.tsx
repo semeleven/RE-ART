@@ -117,7 +117,7 @@ const StyledInput = styled(Input)`
     box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.16);
  	border-radius: 3px;
  	border: 1px solid ${colors.lighterGray};
- 	text-align: ${props => (props.centered ? 'center' : 'auto')};
+ 	text-align: ${props => (props.centered ? 'center' : 'left')};
  	vertical-align: middle;
  	outline: none;
     :focus {

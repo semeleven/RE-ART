@@ -25,7 +25,7 @@ interface Props {
 const StyledButton = styled.button`
 	${(props: Props) =>
 		css`
-			width: ${props.width ? props.width : 'auto'}
+			width: ${props.width ? props.width : 'auto'};
 			background-color: ${styledProps(background)};
 			color: ${styledProps(buttonTextColor)};
 			border-color: ${styledProps(borderColor)};

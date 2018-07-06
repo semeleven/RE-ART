@@ -6,6 +6,7 @@ export default {
 			return SignInRequest(input);
 		},
 		async SignUp(_, { input }) {
+			console.log(input, 'input in signup resolver!');
 			return SignUpRequest(input);
 		},
 	},
