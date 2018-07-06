@@ -61,7 +61,7 @@ const SignForm: React.SFC<Props> = ({
 	username,
 	email,
 	password,
-    SignUpRequest,
+	SignUpRequest,
 }) => {
 	console.log('render in signform');
 	return (

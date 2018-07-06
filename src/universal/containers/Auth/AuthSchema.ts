@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 
 export const SignUpMutation = gql`
 	mutation($email: String!, $username: String!, $password: String!) {
-		SignUp(input: {email: $email, username: $username, password: $password}) {
+		SignUp(input: { email: $email, username: $username, password: $password }) {
 			success
 			message
 			data {
@@ -15,7 +15,7 @@ export const SignUpMutation = gql`
 					email
 				}
 			}
-	    }
+		}
 	}
 `;
 

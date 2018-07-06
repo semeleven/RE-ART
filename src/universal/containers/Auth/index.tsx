@@ -15,7 +15,6 @@ import { ToggleModal } from '../../lib/redux/reducers/Layout/LayoutActions';
 import { UserData } from '../../lib/redux/reducers/User/UserReducer';
 import { Authorize } from '../../lib/redux/reducers/User/UserActions';
 
-
 import SignForm from './components/SignForm';
 // interface State {
 // 	isLogin: boolean;
@@ -27,18 +26,18 @@ interface Actions {
 }
 
 interface SignUpResponseInterface {
-	success: boolean
-	message?: string // validation errors, etc
+	success: boolean;
+	message?: string; // validation errors, etc
 	data: {
 		sign: {
-			token: string
-		}
+			token: string;
+		};
 		user: {
-			username: string
+			username: string;
 			ID: number;
 			email: string;
-		}
-	}
+		};
+	};
 }
 
 // export type onChangeType = {
@@ -53,7 +52,6 @@ if (!process.env.SERVER) {
 
 // type State = <Partial
 
-
 class AuthContainer extends PureComponent<getUserAndLayoutType & Actions, any> {
 	state = {
 		isLogin: true,
@@ -63,16 +61,14 @@ class AuthContainer extends PureComponent<getUserAndLayoutType & Actions, any> {
 	};
 
 	// TODO: I suppose I can't type state with dynamic keys like that, am I wrong?
-	onChange = ({ target: { name, value } }) : void => (
-		this.setState({ [name]: value })
-	);
+	onChange = ({ target: { name, value } }): void =>
+		this.setState({ [name]: value });
 
 	// switch between sign in and sign up screens
-	switchScreen = () : void => (
-		this.setState(state => ({ isLogin: !state.isLogin }))
-	);
+	switchScreen = (): void =>
+		this.setState(state => ({ isLogin: !state.isLogin }));
 
-	handleSignUpResponse = (response : SignUpResponseInterface) => {
+	handleSignUpResponse = (response: SignUpResponseInterface) => {
 		const { authorize, user } = this.props;
 		console.log(user, user.token, 'user prop!');
 		// prevent infinite loop
@@ -81,7 +77,7 @@ class AuthContainer extends PureComponent<getUserAndLayoutType & Actions, any> {
 				if (response.data.sign.token && response.data.user) {
 					const payload = {
 						...response.data.sign,
-						...response.data.user
+						...response.data.user,
 					};
 
 					return authorize(payload);
@@ -101,8 +97,8 @@ class AuthContainer extends PureComponent<getUserAndLayoutType & Actions, any> {
 
 		const { isLogin, username, email, password } = this.state;
 
-		const variables : SignUpVariables = {
-			...isLogin === false && { username },
+		const variables: SignUpVariables = {
+			...(isLogin === false && { username }),
 			email,
 			password,
 		};
@@ -112,8 +108,8 @@ class AuthContainer extends PureComponent<getUserAndLayoutType & Actions, any> {
 		console.log(this.state, 'state in signform!');
 		if (modalRoot) {
 			return createPortal(
-		<Mutation mutation={SignUpMutation} variables={variables}>
-					{(SignUpRequest, { data = {}, error, loading } ) => {
+				<Mutation mutation={SignUpMutation} variables={variables}>
+					{(SignUpRequest, { data = {}, error, loading }) => {
 						if (error) return <h1>Error!</h1>;
 						if (loading) return <h1>Loading...</h1>;
 
@@ -150,5 +146,5 @@ const actionCreators = {
 
 export default connect(
 	getUserAndLayout,
-	mapDispatchToProps(actionCreators),
+	mapDispatchToProps(actionCreators)
 )(AuthContainer);
