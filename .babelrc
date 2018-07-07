@@ -1,61 +1,37 @@
 {
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "debug": true
+      }
+    ],
+    [
+      "@babel/preset-stage-0",
+      {
+        "decoratorsLegacy": true,
+        "useBuiltIns": true
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    "@babel/syntax-dynamic-import",
+    "universal-import",
+    "import-graphql",
+    "@babel/plugin-transform-spread",
+    [
+      "styled-components",
+      {
+        "ssr": true,
+        "displayName": true
+      }
+    ]
+  ],
   "env": {
     "development": {
-      "plugins": [
-        "@babel/plugin-transform-runtime",
-        "@babel/syntax-dynamic-import",
-        "universal-import",
-        "import-graphql",
-        "react-hot-loader/babel",
-        ["styled-components", {
-          "ssr": true
-        }]
-      ],
-      "presets": [
-        [
-          "@babel/preset-env",
-          {
-            "targets": {
-              "browsers": ["last 2 versions"],
-              "node": "current"
-            },
-            "debug": false
-          }
-        ],
-        ["@babel/preset-stage-0", {
-          "useBuiltIns": true,
-          "decoratorsLegacy": true
-        }],
-        "@babel/preset-react"
-      ]
-    },
-    "production": {
-      "plugins": [
-        "@babel/plugin-transform-runtime",
-        "@babel/syntax-dynamic-import",
-        "universal-import",
-        "import-graphql",
-        ["styled-components", {
-          "ssr": true
-        }]
-      ],
-      "presets": [
-        [
-          "@babel/preset-env",
-          {
-            "targets": {
-              "browsers": ["last 2 versions"],
-              "node": "current"
-            },
-            "debug": false
-          }
-        ],
-        ["@babel/preset-stage-0", {
-          "useBuiltIns": true,
-          "decoratorsLegacy": true
-        }],
-        "@babel/preset-react"
-      ]
+      "plugins": ["react-hot-loader/babel"]
     },
     "test": {
       "presets": [

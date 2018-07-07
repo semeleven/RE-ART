@@ -60,9 +60,9 @@ function render(Component) {
 render(AppRoot);
 
 if (module.hot) {
-	module.hot.accept('./App.jsx', () => {
+	module.hot.accept('./App', () => {
 		// eslint-disable-next-line
-		const NewAppRoot = require('./App.jsx').default;
+		const NewAppRoot = require('./App').default;
 		render(NewAppRoot);
 	});
 }

@@ -3,3 +3,4 @@ dist
 .gitignore
 .idea
 build
+.awcache

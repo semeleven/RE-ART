@@ -35,7 +35,7 @@ export default ({ clientStats }) => async (req, res) => {
 	const site = req.hostname.split('.')[0];
 	const context = { site };
 
-	const { js } = flushChunks(clientStats, {
+	const { js, css } = flushChunks(clientStats, {
 		chunkNames: flushChunkNames(),
 	});
 
@@ -77,29 +77,35 @@ export default ({ clientStats }) => async (req, res) => {
 					${helmet.title.toString()}
 	                ${helmet.meta.toString()}
 	                ${helmet.link.toString()}
-	                <meta name="viewport" content="width=device-width, initial-scale=1" />
-					<link href="https://fonts.googleapis.com/css?family=Lato|Source+Code+Pro" rel="stylesheet" />
-					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.min.css" />
-					<link rel="stylesheet" href="https://unpkg.com/react-select@1.2.1/dist/react-select.css" />
+	                <meta 
+	                	name="viewport" 
+	                	content="width=device-width, initial-scale=1" 
+                    />
+					<link 
+						href="https://fonts.googleapis.com/css?family=Lato|Source+Code+Pro" 
+						rel="stylesheet" 
+					/>
+					<link 
+						href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.min.css" 
+						rel="stylesheet" 
+					/>
+					<link 
+						href="https://unpkg.com/react-select@1.2.1/dist/react-select.css" 
+						rel="stylesheet" 
+					/>
+					${css}
 					${styledComponents}
 				</head>
 	            <body ${helmet.bodyAttributes.toString()}>
 	                <div id="react-root">${renderToString(App)}</div>
 	                <div id="modal-root"></div>
 					${js}
-					<script 
-						dangerouslySetInnerHTML={{
-							__html: 
-							\`window.__APOLLO_STATE__=${JSON.stringify(apolloState).replace(
-		/</g,
-		'\\\u003c'
-	)};\`,
-							\`window.__REDUX_STATE__=${JSON.stringify(reduxState).replace(
-		/</g,
-		'\\\\\u003c'
-	)};\`,	
-						}}
-					/>
+				<script id="redux-state">
+					window.__REDUX_STATE__=${JSON.stringify(reduxState)}
+				</script>
+				<script id="apollo-state">
+					window.__APOLLO_STATE__=${JSON.stringify(apolloState)}
+				</script>
 				</body>
 			</html>
   		`);
