@@ -2,6 +2,7 @@
 
 exports[`renders purple button 1`] = `
 .c0 {
+  width: auto;
   background-color: #6C5FC7;
   color: #ffffff;
   border-color: #6C5FC7;

@@ -2,8 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import 'jest-styled-components';
 
-import Heading from './Heading';
 import sinon from 'sinon';
+import Heading from './Heading';
 
 const sizes = ['XL', 'L', 'M', 'S'];
 
@@ -13,7 +13,8 @@ for (let i = 0; i < sizes.length; i++) {
 	it(`renders black ${currentSize} Heading`, () => {
 		const wrapper = shallow(
 			<Heading black size={currentSize}>
-				${currentSize}
+				$
+				{currentSize}
 			</Heading>
 		);
 		expect(wrapper).toMatchSnapshot();

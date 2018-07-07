@@ -7,10 +7,11 @@
       }
     ],
     [
-      "@babel/preset-stage-0",
+      "@babel/preset-stage-2",
       {
         "decoratorsLegacy": true,
-        "useBuiltIns": true
+        "useBuiltIns": true,
+        "pipelineProposal": true
       }
     ],
     "@babel/preset-react"
@@ -45,7 +46,7 @@
             }
           }
         ],
-        ["@babel/preset-stage-0", {
+        ["@babel/preset-stage-2", {
           "useBuiltIns": true,
           "decoratorsLegacy": true
         }],
