@@ -2,13 +2,11 @@ import webpack from 'webpack';
 import webpackHotServerMiddleware from 'webpack-hot-server-middleware';
 import expressStaticGzip from 'express-static-gzip';
 
-
 import configDevClient from '../../config/webpack.dev-client.js';
 import configDevServer from '../../config/webpack.dev-server.js';
 
 import configProdClient from '../../config/webpack.prod-client.js';
 import configProdServer from '../../config/webpack.prod-server.js';
-
 
 export const webpackDev = app => {
 	const compiler = webpack([configDevClient, configDevServer]);

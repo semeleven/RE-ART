@@ -5,7 +5,6 @@ import { storiesOf } from '@storybook/react';
 
 import { Heading } from '../src/universal/components/';
 
-storiesOf('Heading', module)
-	.add('with text', () => (
-		<Heading>STORYBOOK</Heading>
-	));
+storiesOf('Heading', module).add('with text', () => (
+	<Heading>STORYBOOK</Heading>
+));
