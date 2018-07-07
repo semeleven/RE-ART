@@ -10,13 +10,6 @@ import Sign from './universal/pages/Sign';
 
 @withRouter
 export default class App extends Component {
-	state = {
-		showModal: false,
-	};
-
-	componentDidMount() {
-		this.setState({ showModal: true });
-	}
 	render() {
 		return (
 			<Canvas>

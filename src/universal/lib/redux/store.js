@@ -9,7 +9,7 @@ const createNewStore = (preloadedState = null) => {
 
 	const store = createStore(
 		reducers,
-		{},
+		initialState,
 		compose(
 			!process.env.SERVER &&
 			typeof window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined'
