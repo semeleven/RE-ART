@@ -52,15 +52,15 @@ const renderConditionalBottomPart = (isLogin, switchScreen) => {
 };
 
 const SignForm: React.SFC<Props> = ({
-    onChange,
-    switchScreen,
-    toggleModal,
-    showModal,
-    isLogin,
-    username,
-    email,
-    password,
-    SignUpRequest,
+	onChange,
+	switchScreen,
+	toggleModal,
+	showModal,
+	isLogin,
+	username,
+	email,
+	password,
+	SignUpRequest,
 }) => (
 	<Modal toggleModal={toggleModal} showModal={showModal}>
 		<Row justifyContent="center">
