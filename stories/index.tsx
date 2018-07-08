@@ -3,8 +3,12 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 // import { action } from '@storybook/addon-actions';
 
-import { Heading } from '../src/universal/components/';
+import { Button, Icon } from '../src/universal/components/';
 
-storiesOf('Heading', module).add('with text', () => (
-	<Heading>STORYBOOK</Heading>
-));
+storiesOf('Button', module)
+	.add('with loading state', () => (
+		<Button width="100%" loading onClick={() => {}}>
+			<Icon icon="loading" absolute />
+			SIGN UP
+		</Button>
+	));

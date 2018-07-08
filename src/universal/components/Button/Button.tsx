@@ -8,6 +8,7 @@ import {
 	hoverBackground,
 	activeBackground,
 } from '../../lib/styled/theme';
+import { Icon } from '../../components';
 
 interface Props {
 	invertedDark?: boolean;
@@ -15,6 +16,8 @@ interface Props {
 	dark?: boolean;
 	purple?: boolean;
 	spaced?: boolean;
+	disabled?: boolean;
+	loading?: boolean;
 	width?: string;
 	onClick: () => any;
 	theme?: any;
@@ -24,6 +27,10 @@ interface Props {
 
 const StyledButton = styled.button`
 	${(props: Props) => css`
+		display: ${props.loading && 'flex'};
+		justify-content: ${props.loading && 'center'};
+		align-items: ${props.loading && 'center'};
+		cursor: ${props.disabled || props.loading ? 'default' : 'pointer'};
 		width: ${props.width ? props.width : 'auto'};
 		background-color: ${styledProps(background)};
 		color: ${styledProps(buttonTextColor)};
@@ -59,4 +66,13 @@ const StyledButton = styled.button`
 	`};
 `;
 
-export default StyledButton;
+const Button : React.SFC<Props> = ({ children, onClick, loading = false, ...rest }) => (
+	<StyledButton onClick={onClick} loading={loading} {...rest}>
+		{loading && (
+			<Icon icon="loading" absolute />
+		)}
+		{children}
+	</StyledButton>
+);
+
+export default Button;

@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { createPortal } from 'react-dom';
 
 import { Mutation } from 'react-apollo';
-import { SignUpMutation, SignUpVariables } from './AuthSchema';
+import { SignMutation, SignUpVariables } from './AuthSchema';
 
 import { connect } from 'react-redux';
 import {
@@ -71,6 +71,7 @@ class AuthContainer extends PureComponent<getUserAndLayoutType & Actions, any> {
 	handleSignUpResponse = (response: SignUpResponseInterface) => {
 		const { authorize, user } = this.props;
 		console.log(user, user.token, 'user prop!');
+		console.log(response, 'response!!!');
 		// prevent infinite loop
 		if (user.token == null) {
 			if (response.success === true) {
@@ -108,15 +109,15 @@ class AuthContainer extends PureComponent<getUserAndLayoutType & Actions, any> {
 		console.log(this.state, 'state in signform!');
 		if (modalRoot) {
 			return createPortal(
-				<Mutation mutation={SignUpMutation} variables={variables}>
+				<Mutation mutation={SignMutation} variables={variables}>
 					{(SignUpRequest, { data = {}, error, loading }) => {
 						if (error) return <h1>Error!</h1>;
-						if (loading) return <h1>Loading...</h1>;
+						// if (loading) return <h1>Loading...</h1>;
 
-						const { SignUp = null } = data;
+						const { Sign = null } = data;
 
-						if (SignUp) {
-							this.handleSignUpResponse(SignUp);
+						if (Sign) {
+							this.handleSignUpResponse(Sign);
 						}
 
 						return (
@@ -126,6 +127,7 @@ class AuthContainer extends PureComponent<getUserAndLayoutType & Actions, any> {
 								switchScreen={this.switchScreen}
 								showModal={showModal}
 								SignUpRequest={SignUpRequest}
+								loading={loading}
 								{...this.state}
 							/>
 						);

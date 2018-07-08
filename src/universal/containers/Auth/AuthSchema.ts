@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 
-export const SignUpMutation = gql`
-	mutation($email: String!, $username: String!, $password: String!) {
-		SignUp(input: { email: $email, username: $username, password: $password }) {
+export const SignMutation = gql`
+	mutation($email: String!, $username: String, $password: String!) {
+		Sign(input: { email: $email, username: $username, password: $password }) {
 			success
 			message
 			data {
@@ -22,5 +22,5 @@ export const SignUpMutation = gql`
 export type SignUpVariables = {
 	email: string;
 	username?: string;
-	password?: string;
+	password: string;
 };

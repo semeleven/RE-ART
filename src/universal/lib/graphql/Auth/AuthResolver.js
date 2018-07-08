@@ -1,13 +1,10 @@
-import { SignInRequest, SignUpRequest } from '../../../../server/api/ApiAuth';
+import { SignRequest } from '../../../../server/api/ApiAuth';
 
 export default {
 	Mutation: {
-		SignIn(_, { input }) {
-			return SignInRequest(input);
-		},
-		async SignUp(_, { input }) {
-			console.log(input, 'input in signup resolver!');
-			return SignUpRequest(input);
+		async Sign(_, { input }) {
+			console.log(input, 'input in sign resolver!');
+			return SignRequest(input);
 		},
 	},
 };

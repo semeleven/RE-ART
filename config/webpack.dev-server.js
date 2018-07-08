@@ -30,7 +30,10 @@ module.exports = {
 			},
 			{
 				test : /\.(ts|tsx)$/,
-				loader: 'awesome-typescript-loader'
+				use: [
+					{ loader: 'babel-loader' },
+					{ loader: 'awesome-typescript-loader' },
+				],
 			},
 			{
 				test: /\.css$/,

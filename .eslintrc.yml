@@ -33,9 +33,11 @@ rules:
 
     react/jsx-indent: [error, tab]
     react/jsx-indent-props: [error, tab]
-    react/prop-types: [error, {ignore: [className, styles, children]}]
+    react/prop-types: [0]
+    react/jsx-max-props-per-line: [1, { maximum: 2 }]
     react/no-unused-prop-types: off
     react/prefer-stateless-function: off
+    react/jsx-filename-extension: [0]
 
     jsx-a11y/anchor-is-valid: off
 

@@ -2,25 +2,22 @@ import Api from './Api';
 
 const ApiProducts = new Api('http://localhost:7077');
 
-export function SignUpRequest({ username, email, password }) {
-	return ApiProducts.request({
-		uri: '/signup/',
-		body: {
-			username,
-			email,
-			password,
-		},
-		method: 'post',
-	});
-}
+// eslint-disable-next-line
+export function SignRequest({ username = null, email, password }) {
+	const isSignUp = username != null;
 
-export function SignInRequest({ email = '', password }) {
+	const body = {
+		email,
+		password,
+	};
+
+	if (isSignUp) {
+		body.username = username;
+	}
+
 	return ApiProducts.request({
-		uri: '/signin/',
-		body: {
-			email,
-			password,
-		},
+		uri: isSignUp ? '/signup/' : '/signin/',
 		method: 'post',
+		body,
 	});
 }

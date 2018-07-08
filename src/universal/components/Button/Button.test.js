@@ -4,9 +4,20 @@ import sinon from 'sinon';
 import 'jest-styled-components';
 
 import Button from './Button';
+import Icon from '../Icon';
 
 it('renders purple button', () => {
 	const wrapper = shallow(<Button purple>PURPLE</Button>);
+	expect(wrapper).toMatchSnapshot();
+});
+
+it('renders loading button', () => {
+	const wrapper = shallow(
+		<Button width="100%" loading onClick={() => {}}>
+			<Icon icon="loading" absolute />
+			SIGN UP
+		</Button>
+	);
 	expect(wrapper).toMatchSnapshot();
 });
 

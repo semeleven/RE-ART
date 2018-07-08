@@ -20,6 +20,7 @@ interface Props {
 	email: string;
 	password: string;
 	SignUpRequest: () => void;
+	loading: boolean;
 }
 
 const ColWithMargin = ({ children, ...rest }) => (
@@ -61,6 +62,7 @@ const SignForm: React.SFC<Props> = ({
 	email,
 	password,
 	SignUpRequest,
+	loading,
 }) => (
 	<Modal toggleModal={toggleModal} showModal={showModal}>
 		<Row justifyContent="center">
@@ -106,7 +108,7 @@ const SignForm: React.SFC<Props> = ({
 					/>
 				</ColWithMargin>
 				<Col size={12}>
-					<Button width="100%" dark onClick={SignUpRequest}>
+					<Button loading={loading} width="100%" dark={!loading} onClick={SignUpRequest}>
 						{isLogin ? 'SIGN IN' : 'SIGN UP'}
 					</Button>
 				</Col>

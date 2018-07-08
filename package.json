@@ -9,7 +9,7 @@
   "scripts": {
     "prod": "NODE_ENV=production node src/server/index.js",
     "dev": "NODE_ENV=development nodemon --watch src/server --watch config --inspect src/server/index.js",
-    "lint": "eslint \"**/*.js\"",
+    "lint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "prettier": "prettier-eslint \"**/*.{js,jsx,ts,tsx}\" --write",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"

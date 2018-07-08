@@ -24,19 +24,13 @@ type UserData {
     ID: Int!
 }
 
-input SignInInput {
+input SignInput {
     username: String
-    email: String
-    password: String!
-}
-
-input SignUpInput {
-    username: String!
     email: String!
     password: String!
 }
 
+
 extend type Mutation {
-    SignIn(input: SignInInput!): SignResponse!
-    SignUp(input: SignUpInput!): SignResponse!
+    Sign(input: SignInput!): SignResponse!
 }

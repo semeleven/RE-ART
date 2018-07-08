@@ -13,6 +13,7 @@ interface colorsInterface {
 
 const colors = {
 	white: '#ffffff',
+	gray: '#e2e2e2',
 	black: '#000000',
 	lighterGray: '#707070',
 	darkGray: '#16111C',
@@ -26,6 +27,8 @@ const background = {
 	invertedPurple: colors.transparent,
 	dark: colors.darkGray,
 	purple: colors.purple,
+	disabled: colors.gray,
+	loading: colors.gray,
 };
 
 const hoverBackground = {
@@ -33,6 +36,8 @@ const hoverBackground = {
 	invertedPurple: colors.purple,
 	dark: lighten(0.1, colors.darkGray),
 	purple: colors.darkPurple,
+	disabled: colors.gray,
+	loading: colors.gray,
 };
 
 const activeBackground = {
@@ -40,6 +45,8 @@ const activeBackground = {
 	invertedPurple: colors.darkPurple,
 	dark: lighten(0.15, colors.darkGray),
 	purple: darken(0.1, colors.darkPurple),
+	disabled: colors.gray,
+	loading: colors.gray,
 };
 
 const buttonTextColor = {
@@ -47,6 +54,8 @@ const buttonTextColor = {
 	invertedPurple: colors.purple,
 	dark: colors.white,
 	purple: colors.white,
+	disabled: colors.white,
+	loading: colors.white,
 };
 
 const fontSize = {
@@ -68,6 +77,7 @@ const borderColor = {
 	dark: colors.darkGray,
 	invertedPurple: colors.purple,
 	purple: colors.purple,
+	disabled: colors.gray,
 };
 
 const MediaSizes = {
