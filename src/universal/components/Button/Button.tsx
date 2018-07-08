@@ -66,11 +66,14 @@ const StyledButton = styled.button`
 	`};
 `;
 
-const Button : React.SFC<Props> = ({ children, onClick, loading = false, ...rest }) => (
+const Button: React.SFC<Props> = ({
+	children,
+	onClick,
+	loading = false,
+	...rest
+}) => (
 	<StyledButton onClick={onClick} loading={loading} {...rest}>
-		{loading && (
-			<Icon icon="loading" absolute />
-		)}
+		{loading && <Icon icon="loading" absolute />}
 		{children}
 	</StyledButton>
 );

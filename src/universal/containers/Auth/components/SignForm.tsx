@@ -108,7 +108,12 @@ const SignForm: React.SFC<Props> = ({
 					/>
 				</ColWithMargin>
 				<Col size={12}>
-					<Button loading={loading} width="100%" dark={!loading} onClick={SignUpRequest}>
+					<Button
+						loading={loading}
+						width="100%"
+						dark={!loading}
+						onClick={SignUpRequest}
+					>
 						{isLogin ? 'SIGN IN' : 'SIGN UP'}
 					</Button>
 				</Col>

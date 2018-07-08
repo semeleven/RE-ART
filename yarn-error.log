@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /home/slyshadow/.yarn/bin/yarn.js
+  /usr/bin/node /home/slyshadow/.yarn/bin/yarn.js add yup
 
 PATH: 
   /home/slyshadow/bin:/home/slyshadow/.local/bin:/home/slyshadow/.yarn/bin:/home/slyshadow/.config/yarn/global/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Windows/System32:/mnt/c/Windows:/mnt/c/Windows/System32/wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/Windows/System32/OpenSSH:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/nodejs:/mnt/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit:/mnt/c/Go/bin:/mnt/c/PostgreSQL/pg10/bin:/mnt/c/Program Files/Git LFS:/mnt/c/Users/Vanko/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Vanko/AppData/Roaming/npm:/mnt/c/Users/Vanko/AppData/Local/hyper/app-2.0.0/resources/bin:/snap/bin
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: ENOENT: no such file or directory, lstat '/home/slyshadow/.cache/yarn/v1/npm-core-js-2.5.7-f972608ff0cead68b841a16a932d0b183791814e/fn/math/asinh.js'
+  Error: ENOENT: no such file or directory, scandir '/mnt/c/Users/Vanko/Documents/Projects/ReART/node_modules/fbjs/node_modules/core-js/library/core'
 
 npm manifest: 
   {
@@ -28,7 +28,7 @@ npm manifest:
     "scripts": {
       "prod": "NODE_ENV=production node src/server/index.js",
       "dev": "NODE_ENV=development nodemon --watch src/server --watch config --inspect src/server/index.js",
-      "lint": "eslint \"**/*.js\"",
+      "lint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
       "prettier": "prettier-eslint \"**/*.{js,jsx,ts,tsx}\" --write",
       "storybook": "start-storybook -p 6006",
       "build-storybook": "build-storybook"
@@ -4637,21 +4637,17 @@ Lockfile:
     optionalDependencies:
       source-map "~0.6.1"
   
-  eslint-config-airbnb-base@^13.0.0:
-    version "13.0.0"
-    resolved "https://registry.yarnpkg.com/eslint-config-airbnb-base/-/eslint-config-airbnb-base-13.0.0.tgz#2ee6279c4891128e49d6445b24aa13c2d1a21450"
+  eslint-config-airbnb-base@^12.1.0:
+    version "12.1.0"
+    resolved "https://registry.yarnpkg.com/eslint-config-airbnb-base/-/eslint-config-airbnb-base-12.1.0.tgz#386441e54a12ccd957b0a92564a4bafebd747944"
     dependencies:
       eslint-restricted-globals "^0.1.1"
-      object.assign "^4.1.0"
-      object.entries "^1.0.4"
   
-  eslint-config-airbnb@^17.0.0:
-    version "17.0.0"
-    resolved "https://registry.yarnpkg.com/eslint-config-airbnb/-/eslint-config-airbnb-17.0.0.tgz#1bb8c4255483320bb68c3b614f71ae6058b0b2db"
+  eslint-config-airbnb@^16.1.0:
+    version "16.1.0"
+    resolved "https://registry.yarnpkg.com/eslint-config-airbnb/-/eslint-config-airbnb-16.1.0.tgz#2546bfb02cc9fe92284bf1723ccf2e87bc45ca46"
     dependencies:
-      eslint-config-airbnb-base "^13.0.0"
-      object.assign "^4.1.0"
-      object.entries "^1.0.4"
+      eslint-config-airbnb-base "^12.1.0"
   
   eslint-import-resolver-node@^0.3.1:
     version "0.3.2"
@@ -4667,7 +4663,7 @@ Lockfile:
       debug "^2.6.8"
       pkg-dir "^1.0.0"
   
-  eslint-plugin-import@^2.13.0:
+  eslint-plugin-import@^2.12.0:
     version "2.13.0"
     resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.13.0.tgz#df24f241175e312d91662dc91ca84064caec14ed"
     dependencies:
@@ -4686,7 +4682,7 @@ Lockfile:
     version "21.17.0"
     resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-21.17.0.tgz#fdb00e2f9ff16987d6ebcf2c75c7add105760bbb"
   
-  eslint-plugin-jsx-a11y@^6.1.0:
+  eslint-plugin-jsx-a11y@^6.0.3:
     version "6.1.0"
     resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.1.0.tgz#569f6f2d29546cab82cedaa077ec829693b0c42d"
     dependencies:
@@ -4703,7 +4699,7 @@ Lockfile:
     version "3.8.0"
     resolved "https://registry.yarnpkg.com/eslint-plugin-promise/-/eslint-plugin-promise-3.8.0.tgz#65ebf27a845e3c1e9d6f6a5622ddd3801694b621"
   
-  eslint-plugin-react@^7.10.0:
+  eslint-plugin-react@^7.9.1:
     version "7.10.0"
     resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.10.0.tgz#af5c1fef31c4704db02098f9be18202993828b50"
     dependencies:

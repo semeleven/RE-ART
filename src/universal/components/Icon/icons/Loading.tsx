@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 
 const Loading = props => (
 	<svg
@@ -74,6 +74,6 @@ const Loading = props => (
 			/>
 		</g>
 	</svg>
-)
+);
 
 export default Loading;
