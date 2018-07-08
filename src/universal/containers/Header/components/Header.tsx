@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import styled, { css } from '../../../lib/styled/';
 
 import { Button, Icon, SideMenu, Link } from '../../../components';
-import {media} from "../../../lib/styled/theme";
+import { media } from '../../../lib/styled/theme';
 
 interface Props {
 	toggleModal: () => void;
@@ -76,19 +76,12 @@ const Header: React.SFC<Props> = ({ showMenu, toggleModal, toggleMenu }) => (
 			<FlexWrapper flex="end">
 				{/* render login link instead of button on mobile devices */}
 				<ShowOnMobileOnly>
-					<Link
-						onClick={() => toggleModal()}
-				        size="S"
-					>
+					<Link onClick={() => toggleModal()} size="S">
 						LOGIN
 					</Link>
 				</ShowOnMobileOnly>
 				<HideOnMobile>
-					<Button
-						purple
-						onClick={() => toggleModal()}
-						spaced
-					>
+					<Button purple onClick={() => toggleModal()} spaced>
 						LOGIN
 					</Button>
 				</HideOnMobile>
