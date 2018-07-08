@@ -5,11 +5,12 @@ import { persistStore } from 'redux-persist';
 import reducers from './reducers';
 
 const createNewStore = (preloadedState = null) => {
-	const initialState = preloadedState == null ? {} : preloadedState;
+	// TODO: redux-persist doesn't work if I pass initial state to the store
+	// const initialState = preloadedState == null ? {} : preloadedState;
 
 	const store = createStore(
 		reducers,
-		initialState,
+		{},
 		compose(
 			!process.env.SERVER &&
 			typeof window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined'

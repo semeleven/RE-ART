@@ -102,7 +102,7 @@ class AuthContainer extends PureComponent<getUserAndLayoutType & Actions, any> {
 			layout: { showModal },
 		} = this.props;
 
-		// const { isLogin } = this.state;
+		const { isLogin } = this.state;
 
 		// let variables: SignFormValues = {
 		// 	...(isLogin === false && { username: '' }),
@@ -128,11 +128,12 @@ class AuthContainer extends PureComponent<getUserAndLayoutType & Actions, any> {
 						return (
 							<Formik
 								initialValues={{
-									username: '',
+									...(isLogin === false && { username: ''}),
 									email: '',
 									password: '',
 								}}
 								onSubmit={(variables: SignFormValues) => {
+									console.log(variables, 'variables right before submit!');
 									SignUpRequest({ variables });
 								}}
 								// validationSchema={getSignSchemaValidation}
