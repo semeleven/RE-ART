@@ -54,7 +54,11 @@ export default class SignForm extends PureComponent<Props> {
 		const { errors, touched } = this.props;
 
 		if (errors[field] && touched[field]) {
-			return <Heading size="S" red>{errors[field]}</Heading>;
+			return (
+				<Heading size="S" red>
+					{errors[field]}
+				</Heading>
+			);
 		}
 	};
 
@@ -81,8 +85,8 @@ export default class SignForm extends PureComponent<Props> {
 				/>
 				{this.renderError(field)}
 			</ColWithMargin>
-		)
-	}
+		);
+	};
 
 	render() {
 		const {
@@ -106,9 +110,7 @@ export default class SignForm extends PureComponent<Props> {
 								</Heading>
 							</Col>
 							{this.renderInput('email')}
-							{!isLogin && (
-								this.renderInput('username')
-							)}
+							{!isLogin && this.renderInput('username')}
 							{this.renderInput('password')}
 							<Col size={12}>
 								<Button
@@ -116,7 +118,7 @@ export default class SignForm extends PureComponent<Props> {
 									loading={loading}
 									width="100%"
 									dark={!loading}
-									onClick={()=>{}}
+									onClick={() => {}}
 								>
 									{isLogin ? 'SIGN IN' : 'SIGN UP'}
 								</Button>

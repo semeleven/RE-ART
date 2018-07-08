@@ -21,17 +21,19 @@ export const validateSignForm = (values: SignFormValues) => {
 
 	if (!values.email) {
 		errors.email = 'E-mail is required';
-	} else if (
-		!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
-	) {
+	} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
 		errors.email = 'Please provide a valid E-mail';
 	}
 
 	if (!values.password) {
 		errors.password = 'Password is required';
-	} else if (!/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/.test(values.password)) {
-		errors.password = 'Password must contain minimum eight characters, \n at least one letter, \n one number and one special character'
+	} else if (
+		!/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/.test(
+			values.password
+		)
+	) {
+		errors.password =
+			'Password must contain minimum eight characters, \n at least one letter, \n one number and one special character';
 	}
 	return errors;
-}
-
+};

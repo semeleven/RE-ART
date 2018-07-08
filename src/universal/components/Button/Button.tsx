@@ -11,7 +11,7 @@ import {
 import { Icon } from '../../components';
 
 interface Props {
-	type?: 'button' | 'submit' | 'reset'
+	type?: 'button' | 'submit' | 'reset';
 	invertedDark?: boolean;
 	invertedPurple?: boolean;
 	dark?: boolean;

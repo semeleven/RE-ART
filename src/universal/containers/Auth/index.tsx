@@ -17,14 +17,14 @@ import { UserData } from '../../lib/redux/reducers/User/UserReducer';
 import { Authorize } from '../../lib/redux/reducers/User/UserActions';
 
 import SignForm from './components/SignForm';
-import {validateSignForm} from "../../helpers/validation/SignValidation";
+import { validateSignForm } from '../../helpers/validation/SignValidation';
 // import getSignSchemaValidation from "../../helpers/validation/SignValidation";
 
 export type SignFormValues = {
 	email: string;
 	username?: string;
 	password: string;
-}
+};
 
 interface Actions {
 	toggleModal: () => void;
@@ -137,7 +137,7 @@ class AuthContainer extends PureComponent<getUserAndLayoutType & Actions, any> {
 								}}
 								// validationSchema={getSignSchemaValidation}
 								validate={(values: SignFormValues) => validateSignForm(values)}
-								render={({ ...rest } : FormikProps<SignFormValues>) => (
+								render={({ ...rest }: FormikProps<SignFormValues>) => (
 									<SignForm
 										toggleModal={toggleModal}
 										switchScreen={this.switchScreen}
@@ -147,9 +147,7 @@ class AuthContainer extends PureComponent<getUserAndLayoutType & Actions, any> {
 										{...rest}
 									/>
 								)}
-							>
-							</Formik>
-
+							/>
 						);
 					}}
 				</Mutation>,
