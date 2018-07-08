@@ -2,7 +2,7 @@ import { createStore, compose } from 'redux';
 
 import { persistStore } from 'redux-persist';
 
-import reducers from './reducers/index';
+import reducers from './reducers';
 
 const createNewStore = (preloadedState = null) => {
 	const initialState = preloadedState == null ? {} : preloadedState;

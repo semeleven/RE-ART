@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
+import { FormikProps } from 'formik';
+import { SignFormValues } from '../../Auth';
+
 import {
 	Row,
 	Col,
@@ -8,18 +11,12 @@ import {
 	Link,
 	Modal,
 } from '../../../components';
-// import { onChangeType } from '../../Auth';
-interface Props {
+
+interface Props extends FormikProps<SignFormValues> {
 	isLogin: boolean;
 	showModal: boolean;
-	onChange: (any) => void;
 	toggleModal: () => void;
 	switchScreen: () => void; // switch between sign in and sign up screens
-	// form values
-	username: string;
-	email: string;
-	password: string;
-	SignUpRequest: () => void;
 	loading: boolean;
 }
 
@@ -29,98 +26,106 @@ const ColWithMargin = ({ children, ...rest }) => (
 	</Col>
 );
 
-const renderConditionalBottomPart = (isLogin, switchScreen) => {
-	if (isLogin) {
+export default class SignForm extends PureComponent<Props> {
+	renderConditionalBottomPart = (isLogin, switchScreen) => {
+		if (isLogin) {
+			return (
+				<ColWithMargin marginTop="15px">
+					<Button width="100%" invertedDark onClick={switchScreen}>
+						SIGN UP
+					</Button>
+				</ColWithMargin>
+			);
+		}
+
 		return (
-			<ColWithMargin marginTop="15px">
-				<Button width="100%" invertedDark onClick={switchScreen}>
-					SIGN UP
-				</Button>
+			<ColWithMargin marginTop="30px">
+				<Heading size="S" lighterGray inline>
+					Already have an account?{'  '}
+				</Heading>
+				<Link onClick={switchScreen} size="S">
+					SIGN IN
+				</Link>
 			</ColWithMargin>
 		);
+	};
+
+	renderError = (field: string) => {
+		const { errors, touched } = this.props;
+
+		if (errors[field] && touched[field]) {
+			return <Heading size="S" red>{errors[field]}</Heading>;
+		}
+	};
+
+	renderInput = (field: string) => {
+		const { values, handleChange, handleBlur } = this.props;
+
+		const inputType = {
+			email: 'email',
+			password: 'password',
+			username: 'text',
+		};
+
+		return (
+			<ColWithMargin>
+				<Input
+					key={field}
+					name={field}
+					value={values[field]}
+					onChange={handleChange}
+					onBlur={handleBlur}
+					label={field}
+					type={inputType[field]}
+					placeholder={field}
+				/>
+				{this.renderError(field)}
+			</ColWithMargin>
+		)
 	}
 
-	return (
-		<ColWithMargin marginTop="30px">
-			<Heading size="S" lighterGray inline>
-				Already have an account?{'  '}
-			</Heading>
-			<Link onClick={switchScreen} size="S">
-				SIGN IN
-			</Link>
-		</ColWithMargin>
-	);
-};
+	render() {
+		const {
+			switchScreen,
+			toggleModal,
+			showModal,
+			isLogin,
+			loading,
+			handleSubmit,
+		} = this.props;
 
-const SignForm: React.SFC<Props> = ({
-	onChange,
-	switchScreen,
-	toggleModal,
-	showModal,
-	isLogin,
-	username,
-	email,
-	password,
-	SignUpRequest,
-	loading,
-}) => (
-	<Modal toggleModal={toggleModal} showModal={showModal}>
-		<Row justifyContent="center">
-			<Col size={12} sizeL={12} sizeMd={12} sizeSm={12}>
-				<Col size={12} centered marginBottom="50px">
-					<Heading mono uppercase size="L">
-						{`sign ${isLogin ? 'in' : 'up'} to re-art`}
-					</Heading>
-				</Col>
-				<ColWithMargin>
-					<Input
-						key="email"
-						name="email"
-						value={email}
-						onChange={onChange}
-						label="Email"
-						type="email"
-						placeholder="Email"
-					/>
-				</ColWithMargin>
-				{!isLogin && (
-					<ColWithMargin>
-						<Input
-							key="username"
-							name="username"
-							value={username}
-							onChange={onChange}
-							label="Username"
-							type="text"
-							placeholder="Username"
-						/>
-					</ColWithMargin>
-				)}
-				<ColWithMargin>
-					<Input
-						key="password"
-						name="password"
-						value={password}
-						onChange={onChange}
-						label="Password"
-						type="password"
-						placeholder="Password"
-					/>
-				</ColWithMargin>
-				<Col size={12}>
-					<Button
-						loading={loading}
-						width="100%"
-						dark={!loading}
-						onClick={SignUpRequest}
-					>
-						{isLogin ? 'SIGN IN' : 'SIGN UP'}
-					</Button>
-				</Col>
-				{renderConditionalBottomPart(isLogin, switchScreen)}
-			</Col>
-		</Row>
-	</Modal>
-);
-
-export default SignForm;
+		console.log(this.props, 'props!');
+		return (
+			<Modal toggleModal={toggleModal} showModal={showModal}>
+				<Row justifyContent="center">
+					<Col size={12} sizeL={12} sizeMd={12} sizeSm={12}>
+						<form onSubmit={handleSubmit}>
+							<Col size={12} centered marginBottom="50px">
+								<Heading mono uppercase size="L">
+									{`sign ${isLogin ? 'in' : 'up'} to re-art`}
+								</Heading>
+							</Col>
+							{this.renderInput('email')}
+							{!isLogin && (
+								this.renderInput('username')
+							)}
+							{this.renderInput('password')}
+							<Col size={12}>
+								<Button
+									type="submit"
+									loading={loading}
+									width="100%"
+									dark={!loading}
+									onClick={()=>{}}
+								>
+									{isLogin ? 'SIGN IN' : 'SIGN UP'}
+								</Button>
+							</Col>
+							{this.renderConditionalBottomPart(isLogin, switchScreen)}
+						</form>
+					</Col>
+				</Row>
+			</Modal>
+		);
+	}
+}

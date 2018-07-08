@@ -17,6 +17,7 @@ interface Props {
 	purple?: boolean;
 	darkPurple?: boolean;
 	lighterGray?: boolean;
+	red?: boolean;
 	uppercase?: boolean;
 	marginTop?: string;
 	marginBottom?: string;

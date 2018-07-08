@@ -20,6 +20,7 @@ const colors = {
 	purple: '#6C5FC7',
 	darkPurple: '#5346AE',
 	transparent: 'transparent',
+	red: '#8b0000',
 };
 
 const background = {

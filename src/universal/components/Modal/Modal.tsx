@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import enhanceWithClickOutside from 'react-click-outside';
 import styled from '../../lib/styled';
+import {media} from "../../lib/styled/theme";
 
 interface ModalContainerProps {
 	showModal: boolean;
@@ -32,12 +33,16 @@ const ModalWrapper = styled.div`
 	background: #fff;
 	border-radius: 2px;
 	display: inline-block;
-	min-height: 300px;
+	min-height: 500px;
 	margin: 1rem;
 	position: relative;
-	min-width: 300px;
+	min-width: 500px;
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 	justify-self: center;
+	${media.tablet`
+		min-height: 300px;
+		min-width: 300px;
+	`};
 `;
 
 @enhanceWithClickOutside

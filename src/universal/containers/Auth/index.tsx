@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
 import { createPortal } from 'react-dom';
+import { Formik, FormikProps } from 'formik';
 
 import { Mutation } from 'react-apollo';
-import { SignMutation, SignUpVariables } from './AuthSchema';
+import { SignMutation } from './AuthSchema';
 
 import { connect } from 'react-redux';
 import {
@@ -16,9 +17,14 @@ import { UserData } from '../../lib/redux/reducers/User/UserReducer';
 import { Authorize } from '../../lib/redux/reducers/User/UserActions';
 
 import SignForm from './components/SignForm';
-// interface State {
-// 	isLogin: boolean;
-// }
+import {validateSignForm} from "../../helpers/validation/SignValidation";
+// import getSignSchemaValidation from "../../helpers/validation/SignValidation";
+
+export type SignFormValues = {
+	email: string;
+	username?: string;
+	password: string;
+}
 
 interface Actions {
 	toggleModal: () => void;
@@ -96,20 +102,19 @@ class AuthContainer extends PureComponent<getUserAndLayoutType & Actions, any> {
 			layout: { showModal },
 		} = this.props;
 
-		const { isLogin, username, email, password } = this.state;
+		// const { isLogin } = this.state;
 
-		const variables: SignUpVariables = {
-			...(isLogin === false && { username }),
-			email,
-			password,
-		};
+		// let variables: SignFormValues = {
+		// 	...(isLogin === false && { username: '' }),
+		// 	email: '',
+		// 	password: '',
+		// };
 
-		console.log(variables, 'variables!');
+		// console.log(variables, 'variables!');
 
-		console.log(this.state, 'state in signform!');
 		if (modalRoot) {
 			return createPortal(
-				<Mutation mutation={SignMutation} variables={variables}>
+				<Mutation mutation={SignMutation}>
 					{(SignUpRequest, { data = {}, error, loading }) => {
 						if (error) return <h1>Error!</h1>;
 						// if (loading) return <h1>Loading...</h1>;
@@ -121,15 +126,30 @@ class AuthContainer extends PureComponent<getUserAndLayoutType & Actions, any> {
 						}
 
 						return (
-							<SignForm
-								onChange={this.onChange}
-								toggleModal={toggleModal}
-								switchScreen={this.switchScreen}
-								showModal={showModal}
-								SignUpRequest={SignUpRequest}
-								loading={loading}
-								{...this.state}
-							/>
+							<Formik
+								initialValues={{
+									username: '',
+									email: '',
+									password: '',
+								}}
+								onSubmit={(variables: SignFormValues) => {
+									SignUpRequest({ variables });
+								}}
+								// validationSchema={getSignSchemaValidation}
+								validate={(values: SignFormValues) => validateSignForm(values)}
+								render={({ ...rest } : FormikProps<SignFormValues>) => (
+									<SignForm
+										toggleModal={toggleModal}
+										switchScreen={this.switchScreen}
+										showModal={showModal}
+										loading={loading}
+										{...this.state}
+										{...rest}
+									/>
+								)}
+							>
+							</Formik>
+
 						);
 					}}
 				</Mutation>,
