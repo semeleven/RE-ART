@@ -3,6 +3,7 @@ import Canvas from './Canvas';
 import Card from './Card';
 import Heading from './Heading';
 import Link from './Link';
+import Loading from './Loading';
 import Main from './Main';
 import Modal from './Modal';
 import Icon from './Icon';
@@ -22,6 +23,7 @@ export {
 	Col,
 	Heading,
 	Link,
+	Loading,
 	Main,
 	Modal,
 	Icon,

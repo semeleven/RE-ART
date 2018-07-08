@@ -128,7 +128,7 @@ class AuthContainer extends PureComponent<getUserAndLayoutType & Actions, any> {
 						return (
 							<Formik
 								initialValues={{
-									...(isLogin === false && { username: ''}),
+									...(isLogin === false && { username: '' }),
 									email: '',
 									password: '',
 								}}

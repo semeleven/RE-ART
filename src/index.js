@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider as ReduxProvider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 import { AppContainer } from 'react-hot-loader';
 import { ApolloProvider } from 'react-apollo';
 
@@ -10,6 +11,7 @@ import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 import { injectGlobal } from 'styled-components';
+import { Loading } from './universal/components';
 import globalStyles from './injectGlobal';
 // eslint-disable-next-line
 import createStore from './universal/lib/redux/store';
@@ -17,7 +19,7 @@ import createStore from './universal/lib/redux/store';
 import { ThemeProvider } from './universal/lib/styled';
 import { colors } from './universal/lib/styled/theme';
 
-import AppRoot from './App.jsx';
+import AppRoot from './App';
 
 const preloadedReduxState = window.__REDUX_STATE__;
 const preloadedApolloState = window.__APOLLO_STATE__;
@@ -35,7 +37,7 @@ const client = new ApolloClient({
 	initialState: preloadedApolloState,
 });
 
-const { store } = createStore(preloadedReduxState);
+const { store, persistor } = createStore(preloadedReduxState);
 
 // eslint-disable-next-line
 injectGlobal`${globalStyles}`;
@@ -44,13 +46,15 @@ function render(Component) {
 	ReactDOM.hydrate(
 		<ApolloProvider client={client}>
 			<ReduxProvider store={store}>
-				<AppContainer>
-					<Router>
-						<ThemeProvider theme={colors}>
-							<Component />
-						</ThemeProvider>
-					</Router>
-				</AppContainer>
+				<PersistGate loading={<Loading />} persistor={persistor}>
+					<AppContainer>
+						<Router>
+							<ThemeProvider theme={colors}>
+								<Component />
+							</ThemeProvider>
+						</Router>
+					</AppContainer>
+				</PersistGate>
 			</ReduxProvider>
 		</ApolloProvider>,
 		document.getElementById('react-root')
