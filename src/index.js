@@ -46,7 +46,7 @@ function render(Component) {
 	ReactDOM.hydrate(
 		<ApolloProvider client={client}>
 			<ReduxProvider store={store}>
-				<PersistGate loading={<Loading />} persistor={persistor}>
+				<PersistGate loading={null} persistor={persistor}>
 					<AppContainer>
 						<Router>
 							<ThemeProvider theme={colors}>

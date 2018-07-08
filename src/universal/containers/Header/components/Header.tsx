@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
 import styled, { css } from '../../../lib/styled/';
 
-import { Button, Icon, SideMenu } from '../../../components/index';
+import { Button, Icon, SideMenu, Link } from '../../../components';
+import {media} from "../../../lib/styled/theme";
 
 interface Props {
 	toggleModal: () => void;
@@ -19,6 +20,10 @@ const StyledHeader = styled.header`
 	padding-right: 24px;
 	height: 82px;
 	margin-bottom: 50px;
+	${media.mobile`
+		padding-left: 12px;
+		padding-right: 12px;
+	`};
 `;
 
 interface FlexWrapperProps {
@@ -44,6 +49,21 @@ const LogoWrapper = styled.div`
 	justify-content: center;
 `;
 
+const HideOnMobile = styled.div`
+	${media.mobile`
+		display: none;
+	`};
+`;
+
+const ShowOnMobileOnly = styled.div`
+	display: none;
+	${media.mobile`
+		display: flex;
+		color: white;
+		padding-right: 10px;
+	`};
+`;
+
 const Header: React.SFC<Props> = ({ showMenu, toggleModal, toggleMenu }) => (
 	<Fragment>
 		<StyledHeader>
@@ -54,16 +74,24 @@ const Header: React.SFC<Props> = ({ showMenu, toggleModal, toggleMenu }) => (
 				<Icon small={false} icon="logo" />
 			</LogoWrapper>
 			<FlexWrapper flex="end">
-				<Button
-					purple
-					onClick={() => {
-						console.log('toggleModal!');
-						return toggleModal();
-					}}
-					spaced
-				>
-					LOGIN
-				</Button>
+				{/* render login link instead of button on mobile devices */}
+				<ShowOnMobileOnly>
+					<Link
+						onClick={() => toggleModal()}
+				        size="S"
+					>
+						LOGIN
+					</Link>
+				</ShowOnMobileOnly>
+				<HideOnMobile>
+					<Button
+						purple
+						onClick={() => toggleModal()}
+						spaced
+					>
+						LOGIN
+					</Button>
+				</HideOnMobile>
 				<Icon icon="search" />
 			</FlexWrapper>
 		</StyledHeader>

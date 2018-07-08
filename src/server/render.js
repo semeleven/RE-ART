@@ -23,7 +23,7 @@ import { colors } from '../universal/lib/styled/theme';
 import createStore from '../universal/lib/redux/store';
 
 import AppRoot from '../App';
-import { Loading } from '../universal/components';
+// import { Loading } from '../universal/components';
 
 export default ({ clientStats }) => async (req, res) => {
 	const sheet = new ServerStyleSheet();
@@ -58,7 +58,7 @@ export default ({ clientStats }) => async (req, res) => {
 	const App = (
 		<ApolloProvider client={client}>
 			<ReduxProvider store={store}>
-				<PersistGate loading={<Loading />} persistor={persistor}>
+				<PersistGate loading={null} persistor={persistor}>
 					<StaticRouter location={req.url} context={context}>
 						{/* <StyleSheetManager sheet={sheet.instance}> */}
 						<ThemeProvider theme={colors}>
