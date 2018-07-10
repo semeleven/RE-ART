@@ -1,10 +1,10 @@
 import React from 'react';
 import { darken } from 'polished';
-import styled, { css, colorsInterface } from '../../../lib/styled/index';
+import styled, { css } from '../../../lib/styled';
+import { colors } from '../../../lib/styled/theme';
 
 interface Props {
 	showMenu: boolean;
-	theme?: colorsInterface;
 }
 
 // TODO: add media queries for width
@@ -13,7 +13,7 @@ const StyledSideMenu = styled.div`
 		css`
 			position: absolute;
 			visibility: ${props.showMenu ? 'visible' : 'hidden'};
-			background-color: ${darken(0.05, props.theme.darkGray)};
+			background-color: ${darken(0.05, colors.darkGray)};
 			top: 82px;
 			left: 0;
 			height: ${props.showMenu ? '320px' : '0px'};

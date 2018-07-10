@@ -23,7 +23,7 @@ const Product: React.SFC<Props> = ({ item, small }) => (
 			height={small ? '220px' : '390px'}
 			imageSrc={item.url}
 		/>
-		<Link to="/">{`@${item.author}`}</Link>
+		<Link darkGray to="/">{`@${item.author}`}</Link>
 		<Heading
 			size="M"
 			darkGray

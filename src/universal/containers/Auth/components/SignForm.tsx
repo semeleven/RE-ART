@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { FormikProps } from 'formik';
+import styled from '../../../lib/styled';
 import { SignFormValues } from '../../Auth';
 
 import {
@@ -19,6 +20,10 @@ interface Props extends FormikProps<SignFormValues> {
 	switchScreen: () => void; // switch between sign in and sign up screens
 	loading: boolean;
 }
+
+const StyledErrorWrapper = styled.div`
+	max-width: 300px;
+`;
 
 const ColWithMargin = ({ children, ...rest }) => (
 	<Col size={12} marginBottom="30px" {...rest}>
@@ -55,9 +60,11 @@ export default class SignForm extends PureComponent<Props> {
 
 		if (errors[field] && touched[field]) {
 			return (
-				<Heading size="S" red>
-					{errors[field]}
-				</Heading>
+				<StyledErrorWrapper>
+					<Heading size="S" red>
+						{errors[field]}
+					</Heading>
+				</StyledErrorWrapper>
 			);
 		}
 	};

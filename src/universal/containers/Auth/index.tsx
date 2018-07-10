@@ -18,7 +18,6 @@ import { Authorize } from '../../lib/redux/reducers/User/UserActions';
 
 import SignForm from './components/SignForm';
 import { validateSignForm } from '../../helpers/validation/SignValidation';
-// import getSignSchemaValidation from "../../helpers/validation/SignValidation";
 
 export type SignFormValues = {
 	email: string;
@@ -26,9 +25,14 @@ export type SignFormValues = {
 	password: string;
 };
 
-interface Actions {
+interface Props extends getUserAndLayoutType {
 	toggleModal: () => void;
 	authorize: (data: UserData) => void; // log in user
+}
+
+interface State extends SignFormValues {
+	isLogin: boolean; // whether or not show login page
+	apiErrors: SignFormValues // wrong password and errors like that
 }
 
 interface SignUpResponseInterface {
@@ -46,29 +50,23 @@ interface SignUpResponseInterface {
 	};
 }
 
-// export type onChangeType = {
-// 	key: 'username' | 'email' | 'password',
-// 	e: React.FormEvent<HTMLInputElement>
-// };
-
 let modalRoot;
 if (!process.env.SERVER) {
 	modalRoot = document.getElementById('modal-root') as HTMLElement;
 }
 
-// type State = <Partial
-
-class AuthContainer extends PureComponent<getUserAndLayoutType & Actions, any> {
+class AuthContainer extends PureComponent<Props, State> {
 	state = {
 		isLogin: true,
 		username: '',
 		email: '',
 		password: '',
+		apiErrors: {
+			username: null,
+			email: null,
+			password: null,
+		},
 	};
-
-	// TODO: I suppose I can't type state with dynamic keys like that, am I wrong?
-	onChange = ({ target: { name, value } }): void =>
-		this.setState({ [name]: value });
 
 	// switch between sign in and sign up screens
 	switchScreen = (): void =>
@@ -91,7 +89,7 @@ class AuthContainer extends PureComponent<getUserAndLayoutType & Actions, any> {
 				}
 			} else if (response.success === false) {
 				console.log(response.message, 'message!');
-				this.setState({ errorMsg: response.message });
+				// this.setState({ errorMsg: response.message });
 			}
 		}
 	};
@@ -104,13 +102,11 @@ class AuthContainer extends PureComponent<getUserAndLayoutType & Actions, any> {
 
 		const { isLogin } = this.state;
 
-		// let variables: SignFormValues = {
-		// 	...(isLogin === false && { username: '' }),
-		// 	email: '',
-		// 	password: '',
-		// };
-
-		// console.log(variables, 'variables!');
+		const initialValues : SignFormValues = {
+			...(isLogin === false && { username: '' }),
+			email: '',
+			password: '',
+		};
 
 		if (modalRoot) {
 			return createPortal(
@@ -127,17 +123,13 @@ class AuthContainer extends PureComponent<getUserAndLayoutType & Actions, any> {
 
 						return (
 							<Formik
-								initialValues={{
-									...(isLogin === false && { username: '' }),
-									email: '',
-									password: '',
-								}}
+								initialValues={initialValues}
 								onSubmit={(variables: SignFormValues) => {
 									console.log(variables, 'variables right before submit!');
 									SignUpRequest({ variables });
 								}}
 								// validationSchema={getSignSchemaValidation}
-								validate={(values: SignFormValues) => validateSignForm(values)}
+								validate={(values: SignFormValues) => validateSignForm(values, isLogin)}
 								render={({ ...rest }: FormikProps<SignFormValues>) => (
 									<SignForm
 										toggleModal={toggleModal}

@@ -1,15 +1,19 @@
 import { lighten, darken } from 'polished';
 import { css } from '../styled';
 
+// for styled-props module
 interface colorsInterface {
-	white: string;
-	black: string;
-	lighterGray: string;
-	darkGray: string;
-	purple: string;
-	darkPurple: string;
-	transparent: string;
+	white: boolean;
+	black: boolean;
+	lighterGray: boolean;
+	darkGray: boolean;
+	purple: boolean;
+	darkPurple: boolean;
+	transparent: boolean;
+	red: boolean;
 }
+
+export type colorsPartialInterface = Partial<colorsInterface>;
 
 const colors = {
 	white: '#ffffff',
