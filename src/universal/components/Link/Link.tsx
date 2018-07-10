@@ -2,7 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styledProps from 'styled-props';
 import styled, { css } from '../../lib/styled';
-import { colors, colorsPartialInterface, fontSize, headingMargin } from '../../lib/styled/theme';
+import {
+	colors,
+	colorsPartialInterface,
+	fontSize,
+	headingMargin,
+} from '../../lib/styled/theme';
 
 interface Props extends colorsPartialInterface {
 	size?: string;
@@ -19,7 +24,7 @@ const LinkComponent: React.SFC<Props> = ({
 	onClick,
 	className,
 	to,
-	children
+	children,
 }) => {
 	if (to) {
 		return (
@@ -45,7 +50,7 @@ const StyledLink = styled(LinkComponent)`
 		const size: string = props.size || 'M';
 
 		const handleSize = (param): string => param || headingMargin[size];
-		
+
 		return css`
 			cursor: pointer;
 			font-size: ${fontSize[size]};

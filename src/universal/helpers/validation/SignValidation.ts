@@ -1,8 +1,8 @@
 import { SignFormValues } from '../../containers/Auth';
 
-
 export const ApiErrorMessages = {
-	EmailAndUsernameAreTaken: 'The email address and username you have entered is already registered.',
+	EmailAndUsernameAreTaken:
+		'The email address and username you have entered is already registered.',
 	EmailTaken: 'The username you have entered is already registered.',
 	UsernameTaken: 'The email address you have entered is already registered.',
 	WrongPassword: 'The password you have entered is wrong.',
@@ -13,8 +13,10 @@ export const validateSignForm = (values: SignFormValues, isLogin?: boolean) => {
 	const errors: any = {};
 
 	const requiredField = (field: string): string => `${field} is required`;
-	const minimumLength = (field: string, num?: number): string => `${field} must contain minimum ${num || 8} characters`;
-	const maximumLength = (field: string, num?: number): string => `${field} must contain maximum ${num || 24} characters`;
+	const minimumLength = (field: string, num?: number): string =>
+		`${field} must contain minimum ${num || 8} characters`;
+	const maximumLength = (field: string, num?: number): string =>
+		`${field} must contain maximum ${num || 24} characters`;
 
 	if (!isLogin) {
 		if (!values.username) {
@@ -39,8 +41,9 @@ export const validateSignForm = (values: SignFormValues, isLogin?: boolean) => {
 			values.password
 		)
 	) {
-		errors.password =
-			`${minimumLength('Password')}, at least 1 letter, 1 number and 1 special character`;
+		errors.password = `${minimumLength(
+			'Password'
+		)}, at least 1 letter, 1 number and 1 special character`;
 	} else if (values.password.length > 24) {
 		errors.password = maximumLength('Password');
 	}

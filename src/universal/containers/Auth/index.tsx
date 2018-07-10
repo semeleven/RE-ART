@@ -32,7 +32,7 @@ interface Props extends getUserAndLayoutType {
 
 interface State extends SignFormValues {
 	isLogin: boolean; // whether or not show login page
-	apiErrors: SignFormValues // wrong password and errors like that
+	apiErrors: SignFormValues; // wrong password and errors like that
 }
 
 interface SignUpResponseInterface {
@@ -102,7 +102,7 @@ class AuthContainer extends PureComponent<Props, State> {
 
 		const { isLogin } = this.state;
 
-		const initialValues : SignFormValues = {
+		const initialValues: SignFormValues = {
 			...(isLogin === false && { username: '' }),
 			email: '',
 			password: '',
@@ -129,7 +129,9 @@ class AuthContainer extends PureComponent<Props, State> {
 									SignUpRequest({ variables });
 								}}
 								// validationSchema={getSignSchemaValidation}
-								validate={(values: SignFormValues) => validateSignForm(values, isLogin)}
+								validate={(values: SignFormValues) =>
+									validateSignForm(values, isLogin)
+								}
 								render={({ ...rest }: FormikProps<SignFormValues>) => (
 									<SignForm
 										toggleModal={toggleModal}

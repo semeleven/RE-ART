@@ -2,7 +2,12 @@ import React from 'react';
 import styledProps from 'styled-props';
 
 import styled, { css } from '../../lib/styled';
-import { fontSize, colors, colorsPartialInterface, headingMargin } from '../../lib/styled/theme';
+import {
+	fontSize,
+	colors,
+	colorsPartialInterface,
+	headingMargin,
+} from '../../lib/styled/theme';
 
 interface Props extends colorsPartialInterface {
 	size?: 'XL' | 'L' | 'M' | 'S';
@@ -34,14 +39,13 @@ const Heading: React.SFC<Props> = ({
 const StyledHeading = styled(Heading)`
 	${(props: Props) => {
 		const handleSize = (param): string => param || headingMargin[props.size];
-		
+
 		return css`
 			display: ${props.inline && 'inline'};
 			font-size: ${fontSize[props.size]};
 			font-family: ${props.mono
-				? 'Source Code Pro, monospace'
-				: 'Lato, sans-serif'
-			};
+		? 'Source Code Pro, monospace'
+		: 'Lato, sans-serif'};
 			font-weight: ${props.bold && 'bold'};
 			color: ${styledProps(colors) || 'black'};
 			text-transform: ${props.uppercase && 'uppercase'};
