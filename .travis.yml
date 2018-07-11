@@ -22,7 +22,7 @@ script:
 
   - zip -q -r reart-archive.zip .
   - ls -l reart-archive.zip
-  - scp -v -C reart-archive slyshadow@138.68.85.252:~/node/.
+  - scp -v -C reart-archive.zip slyshadow@138.68.85.252:~/node/.
   - ssh slyshadow@138.68.85.252 '
       cd ~/node/ &&
       && mkdir -p reart
