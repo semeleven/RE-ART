@@ -5,6 +5,8 @@ cache: yarn
 branches:
   only:
     - master
+addons:
+  ssh_known_hosts: 138.68.85.252
 before_install:
 - openssl aes-256-cbc -K $encrypted_113a7075fbd8_key -iv $encrypted_113a7075fbd8_iv
   -in deploy_rsa.enc -out /tmp/deploy_rsa -d
