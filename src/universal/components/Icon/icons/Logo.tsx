@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 const Logo = props => (
 	<svg viewBox="0 0 89.558 75.78" style={{ fill: '#fff' }} {...props}>

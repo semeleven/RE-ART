@@ -26,7 +26,12 @@ interface Props {
 	children: React.ReactNode;
 }
 
-const Button: React.SFC<Props> = ({ className, loading, children, ...rest }) => (
+const Button: React.SFC<Props> = ({
+	className,
+	loading,
+	children,
+	...rest
+}) => (
 	<button className={className} {...rest}>
 		{loading && <Icon icon="loading" absolute />}
 		{children}

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 const Cart = props => (
 	<svg viewBox="0 0 20 20" style={{ fill: '#fff' }} {...props}>

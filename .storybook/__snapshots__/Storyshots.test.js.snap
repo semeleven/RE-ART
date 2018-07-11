@@ -1,0 +1,392 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Button with loading state 1`] = `
+<h1>
+  BUTTON???
+</h1>
+`;
+
+exports[`Storyshots Icon account 1`] = `
+.c0 {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+<div
+  className="c0"
+  icon="account"
+  onClick={[Function]}
+>
+  <svg
+    height={30}
+    viewBox="0 0 20 20"
+    width={30}
+  >
+    <path
+      d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2a7.2 7.2 0 0 1-6-3.22c.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08a7.2 7.2 0 0 1-6 3.22z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Icon cart 1`] = `
+.c0 {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+<div
+  className="c0"
+  icon="cart"
+  onClick={[Function]}
+>
+  <svg
+    style={
+      Object {
+        "fill": "#fff",
+      }
+    }
+    viewBox="0 0 20 20"
+  >
+    <path
+      d="M18 17.987V7H2v11l16-.013zM4.077 5A5.996 5.996 0 0 1 10 0c2.973 0 5.562 2.162 6.038 5H20v14.986L0 20V5h4.077zm9.902-.005C13.531 3.275 11.86 2 10 2 8.153 2 6.604 3.294 6.144 4.995c.92 0 7.654.03 7.835 0z"
+      fill="#FFF"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Icon hamburger 1`] = `
+.c0 {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+<div
+  className="c0"
+  icon="hamburger"
+  onClick={[Function]}
+>
+  <svg
+    style={
+      Object {
+        "fill": "#fff",
+      }
+    }
+    viewBox="0 0 42 32"
+  >
+    <defs />
+    <g
+      id="Hamburger"
+      transform="translate(-24 -25)"
+    >
+      <rect
+        className="cls-1"
+        data-name="Rectangle 12"
+        height={6}
+        id="Rectangle_12"
+        rx={3}
+        transform="translate(24 51)"
+        width={42}
+      />
+      <rect
+        className="cls-1"
+        data-name="Rectangle 13"
+        height={6}
+        id="Rectangle_13"
+        rx={3}
+        transform="translate(24 38)"
+        width={42}
+      />
+      <rect
+        className="cls-1"
+        data-name="Rectangle 19"
+        height={6}
+        id="Rectangle_19"
+        rx={3}
+        transform="translate(24 25)"
+        width={42}
+      />
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Icon loading 1`] = `
+.c0 {
+  position: absolute;
+  left: 12px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+<div
+  className="c0"
+  icon="loading"
+  onClick={[Function]}
+>
+  <svg
+    height={32}
+    version={1}
+    viewBox="0 0 128 128"
+    width={32}
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+  >
+    <script
+      type="text/ecmascript"
+    />
+    <g>
+      <circle
+        cx={16}
+        cy={64}
+        fill="#ffffff"
+        r={16}
+      />
+      <circle
+        cx={16}
+        cy={64}
+        fill="#ffffff"
+        r={14.344}
+        transform="rotate(45 64 64)"
+      />
+      <circle
+        cx={16}
+        cy={64}
+        fill="#ffffff"
+        r={12.531}
+        transform="rotate(90 64 64)"
+      />
+      <circle
+        cx={16}
+        cy={64}
+        fill="#ffffff"
+        r={10.75}
+        transform="rotate(135 64 64)"
+      />
+      <circle
+        cx={16}
+        cy={64}
+        fill="#ffffff"
+        r={10.063}
+        transform="rotate(180 64 64)"
+      />
+      <circle
+        cx={16}
+        cy={64}
+        fill="#ffffff"
+        r={8.063}
+        transform="rotate(225 64 64)"
+      />
+      <circle
+        cx={16}
+        cy={64}
+        fill="#ffffff"
+        r={6.438}
+        transform="rotate(270 64 64)"
+      />
+      <circle
+        cx={16}
+        cy={64}
+        fill="#ffffff"
+        r={5.375}
+        transform="rotate(315 64 64)"
+      />
+      <animateTransform
+        attributeName="transform"
+        calcMode="discrete"
+        dur="720ms"
+        repeatCount="indefinite"
+        type="rotate"
+        values="0 64 64;315 64 64;270 64 64;225 64 64;180 64 64;135 64 64;90 64 64;45 64 64"
+      />
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Icon logout 1`] = `
+.c0 {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+<div
+  className="c0"
+  icon="logout"
+  onClick={[Function]}
+>
+  <svg
+    height={20}
+    width={18}
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+  >
+    <title>
+      icn/entrance
+    </title>
+    <defs>
+      <path
+        d="M6 2h12c1.11 0 2 .89 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1.974h2V20h12V4H6v2H4V4a2 2 0 0 1 2-2zm3.243 9L7.414 9.172l1.414-1.415L13.071 12l-4.243 4.243-1.414-1.415L9.243 13H2v-2h7.243z"
+        id="a"
+      />
+    </defs>
+    <g
+      fill="none"
+      fillRule="evenodd"
+      transform="translate(-2 -2)"
+    >
+      <mask
+        fill="#fff"
+        id="b"
+      >
+        <use
+          xlinkHref="#a"
+        />
+      </mask>
+      <use
+        fill="#000"
+        fillRule="nonzero"
+        xlinkHref="#a"
+      />
+      <g
+        fill="#000"
+        mask="url(#b)"
+      >
+        <path
+          d="M0 0h24v24H0z"
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Icon notifications 1`] = `
+.c0 {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+<div
+  className="c0"
+  icon="notifications"
+  onClick={[Function]}
+>
+  <svg
+    height={30}
+    viewBox="0 0 16 20"
+    width={25}
+  >
+    <path
+      d="M8 20c1.1 0 2-.9 2-2H6a2 2 0 0 0 2 2zm6-6V9c0-3.07-1.64-5.64-4.5-6.32V2C9.5 1.17 8.83.5 8 .5S6.5 1.17 6.5 2v.68C3.63 3.36 2 5.93 2 9v5l-2 2v1h16v-1l-2-2z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Icon plus 1`] = `
+.c0 {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+<div
+  className="c0"
+  icon="plus"
+  onClick={[Function]}
+>
+  <svg
+    height={16}
+    width={16}
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+  >
+    <defs>
+      <path
+        d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h4v2h-4v4h-2v-4H7v-2h4V7h2v4z"
+        id="a"
+      />
+    </defs>
+    <use
+      fill="gray"
+      fillRule="evenodd"
+      transform="rotate(90 12 8)"
+      xlinkHref="#a"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Icon question 1`] = `
+.c0 {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+<div
+  className="c0"
+  icon="question"
+  onClick={[Function]}
+>
+  <svg
+    height={16}
+    width={16}
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+  >
+    <defs>
+      <path
+        d="M12 4c4.416 0 8 3.584 8 8s-3.584 8-8 8-8-3.584-8-8 3.584-8 8-8zm-1 13h2v-2h-2v2zm1-10c-1.658 0-3 1.392-3 3.111h1.5c0-.855.675-1.555 1.5-1.555s1.5.7 1.5 1.555c0 1.556-2.25 1.361-2.25 3.889h1.5c0-1.75 2.25-1.944 2.25-3.889C15 8.392 13.658 7 12 7z"
+        id="a"
+      />
+    </defs>
+    <use
+      fill="#000"
+      fillRule="nonzero"
+      transform="translate(-4 -4)"
+      xlinkHref="#a"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Icon search 1`] = `
+.c0 {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+<div
+  className="c0"
+  icon="search"
+  onClick={[Function]}
+>
+  <svg
+    viewBox="0 0 30.887 32"
+  >
+    <g
+      data-name="Group 1"
+    >
+      <path
+        d="M3.137 3.254a10.438 10.438 0 0 1 15.146 0 11.419 11.419 0 0 1 .8 14.781l11.804 12.248L29.232 32l-11.8-12.242a10.427 10.427 0 0 1-14.294-.792 11.405 11.405 0 0 1-.001-15.712zm1.5 14.157a8.375 8.375 0 0 0 12.152 0 9.151 9.151 0 0 0 0-12.606A8.375 8.375 0 0 0 4.636 4.8a9.151 9.151 0 0 0 0 12.611z"
+        data-name="Path 1"
+        fill="#fff"
+      />
+    </g>
+  </svg>
+</div>
+`;
