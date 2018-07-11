@@ -24,14 +24,15 @@ script:
   - ls -l reart-archive.zip
   - scp -v -C reart-archive.zip slyshadow@138.68.85.252:~/node/.
   - ssh slyshadow@138.68.85.252 '
-      cd ~/node/
-      && mkdir -p reart
-      && unzip -qo reart-archive.zip -d reart-new
-      && rm -f reart-archive.zip
-      && mv reart reart-old
-      && mv reart-new reart
-      && cd reart
-      && rm -rf ./node_modules/ && yarn
-      && pm2 delete -s reart && pm2 start app.json
-      && rm -rf ../reart-old
-      && exit'
+      cd ~/node/ &&
+      mkdir -p reart &&
+      unzip -qo reart-archive.zip -d reart-new &&
+      rm -f reart-archive.zip &&
+      mv reart reart-old &&
+      mv reart-new reart &&
+      cd reart &&
+      rm -rf ./node_modules/ && yarn &&
+      pm2 delete -s reart &&
+      pm2 start app.json &&
+      rm -rf ../reart-old &&
+      exit'
