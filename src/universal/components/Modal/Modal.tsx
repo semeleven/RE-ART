@@ -66,7 +66,11 @@ class Wrapper extends Component<ModalProps & ModalContainerProps> {
 
 const Modal = ({ toggleModal, showModal, handleReset, children }) => (
 	<ModalContainer showModal={showModal}>
-		<Wrapper handleReset={handleReset} toggleModal={toggleModal} showModal={showModal}>
+		<Wrapper
+			handleReset={handleReset}
+			toggleModal={toggleModal}
+			showModal={showModal}
+		>
 			{children}
 		</Wrapper>
 	</ModalContainer>

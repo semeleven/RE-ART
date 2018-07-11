@@ -45,7 +45,9 @@ const InnerProduct: React.SFC<Props> = ({ item }) => {
 					<Heading inline bold size="S">
 						{'by' + ' '}
 					</Heading>
-					<Link darkGray to="/">@{item.author}</Link>
+					<Link darkGray to="/">
+						@{item.author}
+					</Link>
 				</Col>
 				<Col size={12}>
 					<Heading size="L">{item.price} $</Heading>
