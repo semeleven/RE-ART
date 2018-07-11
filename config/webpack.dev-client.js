@@ -1,5 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+
 
 module.exports = {
 	name: 'client',
@@ -77,5 +79,6 @@ module.exports = {
 			}
 		}),
 		new webpack.HotModuleReplacementPlugin(),
+		new LodashModuleReplacementPlugin,
 	]
 };

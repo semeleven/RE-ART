@@ -1,13 +1,27 @@
 import { SignFormValues } from '../../containers/Auth';
 
-export const ApiErrorMessages = {
-	EmailAndUsernameAreTaken:
-		'The email address and username you have entered is already registered.',
-	EmailTaken: 'The username you have entered is already registered.',
-	UsernameTaken: 'The email address you have entered is already registered.',
-	WrongPassword: 'The password you have entered is wrong.',
-	NoSuchUserFound: 'No such user found',
-};
+export const possibleApiErrorMessages = [
+	{
+		error: 'The email address and username you have entered is already registered.',
+		field: 'email',
+	},
+	{
+		error: 'The email address you have entered is already registered.',
+		field: 'email',
+	},
+	{
+		error: 'No such user found',
+		field: 'email',
+	},
+	{
+		error: 'The username you have entered is already registered.',
+		field: 'username',
+	},
+	{
+		error: 'The password you have entered is wrong.',
+		field: 'password',
+	},
+];
 
 export const validateSignForm = (values: SignFormValues, isLogin?: boolean) => {
 	const errors: any = {};

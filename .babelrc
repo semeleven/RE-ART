@@ -18,6 +18,7 @@
   "plugins": [
     "@babel/plugin-transform-runtime",
     "@babel/syntax-dynamic-import",
+    "lodash",
     "universal-import",
     "import-graphql",
     "@babel/plugin-transform-spread",

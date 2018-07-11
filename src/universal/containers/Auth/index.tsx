@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { createPortal } from 'react-dom';
 import { Formik, FormikProps } from 'formik';
+import _ from 'lodash';
 
 import { Mutation } from 'react-apollo';
 import { SignMutation } from './AuthSchema';
@@ -17,7 +18,7 @@ import { UserData } from '../../lib/redux/reducers/User/UserReducer';
 import { Authorize } from '../../lib/redux/reducers/User/UserActions';
 
 import SignForm from './components/SignForm';
-import { validateSignForm } from '../../helpers/validation/SignValidation';
+import { validateSignForm, possibleApiErrorMessages } from '../../helpers/validation/SignValidation';
 
 export type SignFormValues = {
 	email: string;
@@ -32,7 +33,7 @@ interface Props extends getUserAndLayoutType {
 
 interface State extends SignFormValues {
 	isLogin: boolean; // whether or not show login page
-	apiErrors: SignFormValues; // wrong password and errors like that
+	apiErrors: Partial<SignFormValues>; // wrong password and errors like that
 }
 
 interface SignUpResponseInterface {
@@ -55,41 +56,73 @@ if (!process.env.SERVER) {
 	modalRoot = document.getElementById('modal-root') as HTMLElement;
 }
 
-class AuthContainer extends PureComponent<Props, State> {
+export class AuthContainer extends PureComponent<Props, State> {
+	// I will pass this to resetErrors handler when onChange event occurs to reset errors,
+	// cause formik doesn't handle these
+	apiErrorsInitialState : Partial<SignFormValues> = {
+		username: null,
+		email: null,
+		password: null,
+	};
+
 	state = {
 		isLogin: true,
 		username: '',
 		email: '',
 		password: '',
-		apiErrors: {
-			username: null,
-			email: null,
-			password: null,
-		},
+		apiErrors: this.apiErrorsInitialState,
 	};
 
 	// switch between sign in and sign up screens
-	switchScreen = (): void =>
-		this.setState(state => ({ isLogin: !state.isLogin }));
+	switchScreen = (): void => (
+		this.setState(state => ({ isLogin: !state.isLogin }))
+	);
+
+	resetErrors = () => (
+		this.setState({ apiErrors: this.apiErrorsInitialState })
+	);
 
 	handleSignUpResponse = (response: SignUpResponseInterface) => {
-		const { authorize, user } = this.props;
-		console.log(user, user.token, 'user prop!');
-		console.log(response, 'response!!!');
-		// prevent infinite loop
-		if (user.token == null) {
-			if (response.success === true) {
-				if (response.data.sign.token && response.data.user) {
-					const payload = {
-						...response.data.sign,
-						...response.data.user,
-					};
+		const { authorize, toggleModal } = this.props;
 
-					return authorize(payload);
+		if (response.success === true) {
+			const { data = {} } = response;
+
+			// since optional chaining operator isn't implemented yet in ts
+			const hasToken = _.has(data, 'sign');
+			const hasUser = _.has(data, 'user');
+
+			if (hasToken && hasUser) {
+				const payload = {
+					...response.data.sign,
+					...response.data.user,
+				};
+
+				authorize(payload);
+				return toggleModal();
+			}
+		} else if (response.success === false) {
+			const { message = null } = response;
+
+			if (message) {
+				type oneOfFields = 'username' | 'email' | 'password';
+
+				type Error = {
+					error: string;
+					field: oneOfFields;
+				};
+
+				// get field containing error message, e.g. "email"
+				const { field = null } : Error = {} = _.find(possibleApiErrorMessages, item => item.error = message);
+
+				if (field) {
+					this.setState(state => ({
+						apiErrors: {
+							...state.apiErrors,
+							[field] : message,
+						},
+					}));
 				}
-			} else if (response.success === false) {
-				console.log(response.message, 'message!');
-				// this.setState({ errorMsg: response.message });
 			}
 		}
 	};
@@ -100,7 +133,7 @@ class AuthContainer extends PureComponent<Props, State> {
 			layout: { showModal },
 		} = this.props;
 
-		const { isLogin } = this.state;
+		const { isLogin, apiErrors } = this.state;
 
 		const initialValues: SignFormValues = {
 			...(isLogin === false && { username: '' }),
@@ -110,30 +143,30 @@ class AuthContainer extends PureComponent<Props, State> {
 
 		if (modalRoot) {
 			return createPortal(
-				<Mutation mutation={SignMutation}>
+				<Mutation
+					mutation={SignMutation}
+					onCompleted={({ Sign }) => this.handleSignUpResponse(Sign)}
+				>
 					{(SignUpRequest, { data = {}, error, loading }) => {
+						// TODO: Design error component
 						if (error) return <h1>Error!</h1>;
-						// if (loading) return <h1>Loading...</h1>;
-
-						const { Sign = null } = data;
-
-						if (Sign) {
-							this.handleSignUpResponse(Sign);
-						}
 
 						return (
 							<Formik
 								initialValues={initialValues}
-								onSubmit={(variables: SignFormValues) => {
-									console.log(variables, 'variables right before submit!');
-									SignUpRequest({ variables });
-								}}
-								// validationSchema={getSignSchemaValidation}
-								validate={(values: SignFormValues) =>
+								onSubmit={(variables: SignFormValues) => (
+									SignUpRequest({ variables })
+								)}
+								validate={(values: SignFormValues) => (
 									validateSignForm(values, isLogin)
-								}
-								render={({ ...rest }: FormikProps<SignFormValues>) => (
+								)}
+								render={({ handleChange, ...rest }: FormikProps<SignFormValues>) => (
 									<SignForm
+										apiErrors={apiErrors}
+										handleChange={e => {
+											this.resetErrors();
+											return handleChange(e);
+										}}
 										toggleModal={toggleModal}
 										switchScreen={this.switchScreen}
 										showModal={showModal}

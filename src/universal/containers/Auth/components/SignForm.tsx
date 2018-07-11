@@ -14,6 +14,7 @@ import {
 } from '../../../components';
 
 interface Props extends FormikProps<SignFormValues> {
+	apiErrors: Partial<SignFormValues>;
 	isLogin: boolean;
 	showModal: boolean;
 	toggleModal: () => void;
@@ -56,13 +57,13 @@ export default class SignForm extends PureComponent<Props> {
 	};
 
 	renderError = (field: string) => {
-		const { errors, touched } = this.props;
+		const { apiErrors, errors, touched } = this.props;
 
-		if (errors[field] && touched[field]) {
+		if (apiErrors[field] || errors[field] && touched[field]) {
 			return (
 				<StyledErrorWrapper>
 					<Heading size="S" red>
-						{errors[field]}
+						{apiErrors[field] || errors[field]}
 					</Heading>
 				</StyledErrorWrapper>
 			);
@@ -105,7 +106,8 @@ export default class SignForm extends PureComponent<Props> {
 			handleSubmit,
 		} = this.props;
 
-		console.log(this.props, 'props!');
+		const heading = `sign ${isLogin ? 'in' : 'up'} to re-art`;
+
 		return (
 			<Modal toggleModal={toggleModal} showModal={showModal}>
 				<Row justifyContent="center">
@@ -113,7 +115,7 @@ export default class SignForm extends PureComponent<Props> {
 						<form onSubmit={handleSubmit}>
 							<Col size={12} centered marginBottom="50px">
 								<Heading mono uppercase size="L">
-									{`sign ${isLogin ? 'in' : 'up'} to re-art`}
+									{heading}
 								</Heading>
 							</Col>
 							{this.renderInput('email')}

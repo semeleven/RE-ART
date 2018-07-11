@@ -1,6 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+
 
 module.exports = {
 	name: 'server',
@@ -71,5 +73,6 @@ module.exports = {
 				SERVER: true
 			}
 		}),
+		new LodashModuleReplacementPlugin,
 	]
 };
