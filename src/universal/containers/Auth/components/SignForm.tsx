@@ -59,7 +59,7 @@ export default class SignForm extends PureComponent<Props> {
 	renderError = (field: string) => {
 		const { apiErrors, errors, touched } = this.props;
 
-		if (apiErrors[field] || errors[field] && touched[field]) {
+		if (apiErrors[field] || (errors[field] && touched[field])) {
 			return (
 				<StyledErrorWrapper>
 					<Heading size="S" red>

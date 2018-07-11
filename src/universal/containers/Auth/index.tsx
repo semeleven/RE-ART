@@ -18,7 +18,10 @@ import { UserData } from '../../lib/redux/reducers/User/UserReducer';
 import { Authorize } from '../../lib/redux/reducers/User/UserActions';
 
 import SignForm from './components/SignForm';
-import { validateSignForm, possibleApiErrorMessages } from '../../helpers/validation/SignValidation';
+import {
+	validateSignForm,
+	possibleApiErrorMessages,
+} from '../../helpers/validation/SignValidation';
 
 export type SignFormValues = {
 	email: string;
@@ -59,7 +62,7 @@ if (!process.env.SERVER) {
 export class AuthContainer extends PureComponent<Props, State> {
 	// I will pass this to resetErrors handler when onChange event occurs to reset errors,
 	// cause formik doesn't handle these
-	apiErrorsInitialState : Partial<SignFormValues> = {
+	apiErrorsInitialState: Partial<SignFormValues> = {
 		username: null,
 		email: null,
 		password: null,
@@ -74,13 +77,10 @@ export class AuthContainer extends PureComponent<Props, State> {
 	};
 
 	// switch between sign in and sign up screens
-	switchScreen = (): void => (
-		this.setState(state => ({ isLogin: !state.isLogin }))
-	);
+	switchScreen = (): void =>
+		this.setState(state => ({ isLogin: !state.isLogin }));
 
-	resetErrors = () => (
-		this.setState({ apiErrors: this.apiErrorsInitialState })
-	);
+	resetErrors = () => this.setState({ apiErrors: this.apiErrorsInitialState });
 
 	handleSignUpResponse = (response: SignUpResponseInterface) => {
 		const { authorize, toggleModal } = this.props;
@@ -113,13 +113,16 @@ export class AuthContainer extends PureComponent<Props, State> {
 				};
 
 				// get field containing error message, e.g. "email"
-				const { field = null } : Error = {} = _.find(possibleApiErrorMessages, item => item.error = message);
+				const { field = null }: Error = ({} = _.find(
+					possibleApiErrorMessages,
+					item => (item.error = message)
+				));
 
 				if (field) {
 					this.setState(state => ({
 						apiErrors: {
 							...state.apiErrors,
-							[field] : message,
+							[field]: message,
 						},
 					}));
 				}
@@ -154,13 +157,16 @@ export class AuthContainer extends PureComponent<Props, State> {
 						return (
 							<Formik
 								initialValues={initialValues}
-								onSubmit={(variables: SignFormValues) => (
+								onSubmit={(variables: SignFormValues) =>
 									SignUpRequest({ variables })
-								)}
-								validate={(values: SignFormValues) => (
+								}
+								validate={(values: SignFormValues) =>
 									validateSignForm(values, isLogin)
-								)}
-								render={({ handleChange, ...rest }: FormikProps<SignFormValues>) => (
+								}
+								render={({
+									handleChange,
+									...rest
+								}: FormikProps<SignFormValues>) => (
 									<SignForm
 										apiErrors={apiErrors}
 										handleChange={e => {

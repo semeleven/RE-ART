@@ -2,7 +2,8 @@ import { SignFormValues } from '../../containers/Auth';
 
 export const possibleApiErrorMessages = [
 	{
-		error: 'The email address and username you have entered is already registered.',
+		error:
+			'The email address and username you have entered is already registered.',
 		field: 'email',
 	},
 	{
@@ -35,6 +36,8 @@ export const validateSignForm = (values: SignFormValues, isLogin?: boolean) => {
 	if (!isLogin) {
 		if (!values.username) {
 			errors.username = requiredField('Username');
+		} else if (!/^[0-9a-zA-Z]+$/.test(values.username)) {
+			errors.username = 'Username must contain only letters and numbers';
 		} else if (values.username.length < 8) {
 			errors.username = minimumLength('Username');
 		} else if (values.username.length > 24) {
