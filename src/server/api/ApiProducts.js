@@ -1,6 +1,6 @@
 import Api from './Api';
 
-const ApiProducts = new Api('http://localhost:7077');
+const ApiProducts = new Api('http://138.68.85.252:4580');
 
 // eslint-disable-next-line
 export async function GetProductsRequest({ id = null } = {}) {

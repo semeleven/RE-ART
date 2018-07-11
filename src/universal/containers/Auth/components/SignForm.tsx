@@ -116,7 +116,7 @@ export default class SignForm extends PureComponent<Props> {
 				showModal={showModal}
 			>
 				<Row justifyContent="center">
-					<Col size={12} sizeL={12} sizeMd={12} sizeSm={12}>
+					<Col size={12}>
 						<form onSubmit={handleSubmit}>
 							<Col size={12} centered marginBottom="50px">
 								<Heading mono uppercase size="L">

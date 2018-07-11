@@ -37,7 +37,7 @@ export default ({ clientStats }) => async (req, res) => {
 	const site = req.hostname.split('.')[0];
 	const context = { site };
 
-	const { js, css } = flushChunks(clientStats, {
+	const { js } = flushChunks(clientStats, {
 		chunkNames: flushChunkNames(),
 	});
 
@@ -97,7 +97,6 @@ export default ({ clientStats }) => async (req, res) => {
 						href="https://unpkg.com/react-select@1.2.1/dist/react-select.css" 
 						rel="stylesheet" 
 					/>
-					${css}
 					${styledComponents}
 				</head>
 	            <body ${helmet.bodyAttributes.toString()}>
