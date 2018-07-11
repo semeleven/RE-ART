@@ -28,7 +28,17 @@ const icons = {
 // TODO: add medium, large etc props
 interface Props {
 	small?: boolean;
-	icon: 'account' | 'hamburger' | 'search' | 'logo' | 'logout' | 'cart' | 'loading' | 'notifications' | 'plus' | 'question';
+	icon:
+		| 'account'
+		| 'hamburger'
+		| 'search'
+		| 'logo'
+		| 'logout'
+		| 'cart'
+		| 'loading'
+		| 'notifications'
+		| 'plus'
+		| 'question';
 	onClick?: () => void;
 	pointer?: boolean; // cursor: pointer
 	absolute?: boolean; // position absolute for preloaders etc

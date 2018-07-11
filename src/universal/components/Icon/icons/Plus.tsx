@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from 'react';
 
 const Plus = props => (
 	<svg
@@ -20,6 +20,6 @@ const Plus = props => (
 			fillRule="evenodd"
 		/>
 	</svg>
-)
+);
 
 export default Plus;
