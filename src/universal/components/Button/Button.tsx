@@ -26,7 +26,14 @@ interface Props {
 	children: React.ReactNode;
 }
 
-const StyledButton = styled.button`
+const Button: React.SFC<Props> = ({ className, loading, children, ...rest }) => (
+	<button className={className} {...rest}>
+		{loading && <Icon icon="loading" absolute />}
+		{children}
+	</button>
+);
+
+const StyledButton = styled(Button)`
 	${(props: Props) => css`
 		display: ${props.loading && 'flex'};
 		justify-content: ${props.loading && 'center'};
@@ -67,16 +74,4 @@ const StyledButton = styled.button`
 	`};
 `;
 
-const Button: React.SFC<Props> = ({
-	children,
-	onClick,
-	loading = false,
-	...rest
-}) => (
-	<StyledButton onClick={onClick} loading={loading} {...rest}>
-		{loading && <Icon icon="loading" absolute />}
-		{children}
-	</StyledButton>
-);
-
-export default Button;
+export default StyledButton;

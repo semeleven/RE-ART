@@ -4,7 +4,6 @@ import sinon from 'sinon';
 import 'jest-styled-components';
 
 import Button from './Button';
-import Icon from '../Icon';
 
 it('renders purple button', () => {
 	const wrapper = shallow(<Button purple>PURPLE</Button>);
@@ -14,7 +13,6 @@ it('renders purple button', () => {
 it('renders loading button', () => {
 	const wrapper = shallow(
 		<Button width="100%" loading onClick={() => {}}>
-			<Icon icon="loading" absolute />
 			SIGN UP
 		</Button>
 	);
@@ -24,6 +22,7 @@ it('renders loading button', () => {
 it('simulates click events', () => {
 	const onButtonClick = sinon.spy();
 	const wrapper = shallow(<Button onClick={onButtonClick}>TEST</Button>);
-	wrapper.find('button').simulate('click');
+	console.log(wrapper, 'wrapper?');
+	wrapper.simulate('click');
 	expect(onButtonClick.calledOnce).toEqual(true);
 });
