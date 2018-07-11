@@ -104,12 +104,13 @@ export default class SignForm extends PureComponent<Props> {
 			isLogin,
 			loading,
 			handleSubmit,
+			handleReset,
 		} = this.props;
 
 		const heading = `sign ${isLogin ? 'in' : 'up'} to re-art`;
 
 		return (
-			<Modal toggleModal={toggleModal} showModal={showModal}>
+			<Modal handleReset={handleReset} toggleModal={toggleModal} showModal={showModal}>
 				<Row justifyContent="center">
 					<Col size={12} sizeL={12} sizeMd={12} sizeSm={12}>
 						<form onSubmit={handleSubmit}>

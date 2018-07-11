@@ -9,6 +9,7 @@ interface ModalContainerProps {
 
 interface ModalProps {
 	toggleModal: () => void;
+	handleReset?: () => void; // reset formik form if Modal component is used in it
 }
 
 const ModalContainer = styled.div`
@@ -48,9 +49,12 @@ const ModalWrapper = styled.div`
 @enhanceWithClickOutside
 class Wrapper extends Component<ModalProps & ModalContainerProps> {
 	handleClickOutside() {
-		const { showModal, toggleModal } = this.props;
+		const { showModal, toggleModal, handleReset } = this.props;
 		if (showModal) {
-			toggleModal();
+			if (handleReset) {
+				handleReset();
+			}
+			return toggleModal();
 		}
 	}
 
@@ -60,9 +64,9 @@ class Wrapper extends Component<ModalProps & ModalContainerProps> {
 	}
 }
 
-const Modal = ({ toggleModal, showModal, children }) => (
+const Modal = ({ toggleModal, showModal, handleReset, children }) => (
 	<ModalContainer showModal={showModal}>
-		<Wrapper toggleModal={toggleModal} showModal={showModal}>
+		<Wrapper handleReset={handleReset} toggleModal={toggleModal} showModal={showModal}>
 			{children}
 		</Wrapper>
 	</ModalContainer>
