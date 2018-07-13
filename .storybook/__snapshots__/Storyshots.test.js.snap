@@ -47,6 +47,7 @@ exports[`Storyshots Button dark color 1`] = `
   className="c0"
   dark={true}
   onClick={[Function]}
+  title="dark color"
 >
   BUTTON
 </button>
@@ -99,6 +100,7 @@ exports[`Storyshots Button disabled 1`] = `
   className="c0"
   disabled={true}
   onClick={[Function]}
+  title="disabled"
 >
   BUTTON
 </button>
@@ -151,6 +153,7 @@ exports[`Storyshots Button inverted dark color 1`] = `
   className="c0"
   invertedDark={true}
   onClick={[Function]}
+  title="inverted dark color"
 >
   BUTTON
 </button>
@@ -203,12 +206,13 @@ exports[`Storyshots Button inverted purple color 1`] = `
   className="c0"
   invertedPurple={true}
   onClick={[Function]}
+  title="inverted purple color"
 >
   BUTTON
 </button>
 `;
 
-exports[`Storyshots Button loading state 1`] = `
+exports[`Storyshots Button loading state, width 100% 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -273,6 +277,7 @@ exports[`Storyshots Button loading state 1`] = `
 <button
   className="c0"
   onClick={[Function]}
+  title="loading state, width 100%"
   width="100%"
 >
   <div
@@ -361,7 +366,7 @@ exports[`Storyshots Button loading state 1`] = `
 </button>
 `;
 
-exports[`Storyshots Button purple 1`] = `
+exports[`Storyshots Button purple color 1`] = `
 .c0 {
   cursor: pointer;
   width: auto;
@@ -408,6 +413,7 @@ exports[`Storyshots Button purple 1`] = `
   className="c0"
   onClick={[Function]}
   purple={true}
+  title="purple color"
 >
   BUTTON
 </button>
@@ -1629,118 +1635,6 @@ exports[`Storyshots Select react-select 1`] = `
             d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
           />
         </svg>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Swiper Swiper 1`] = `
-.c2 {
-  overflow: hidden;
-  height: 300px;
-  width: 300px;
-  background-image: url(https://cdn-images-1.medium.com/max/1319/1*LLQbi3xIoG7BehaeVBSMvA.jpeg);
-  background-size: cover;
-  background-position: center;
-}
-
-.c0 {
-  width: 100%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c1 {
-  width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-@media (max-width:60em) {
-  .c2 {
-    height: 270px;
-  }
-}
-
-@media (max-width:39.375em) {
-  .c2 {
-    height: 220px;
-  }
-}
-
-@media (max-width:20em) {
-  .c2 {
-    height: 220px;
-  }
-}
-
-@media (max-width:60em) {
-  .c1 {
-    width: 100%;
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-  }
-}
-
-@media (max-width:39.375em) {
-  .c1 {
-    width: 100%;
-    padding-left: 0px;
-    padding-right: 0px;
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-  }
-}
-
-@media (max-width:20em) {
-  .c1 {
-    width: 100%;
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-  }
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1"
-    size={12}
-  >
-    <div
-      className="swiper"
-    >
-      <div
-        className="swiper-wrapper"
-      >
-        <div
-          className="swiper-slide c2"
-          height="300px"
-          width="300px"
-        />
       </div>
     </div>
   </div>
