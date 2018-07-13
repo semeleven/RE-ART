@@ -32,7 +32,6 @@ script:
       mv reart-new reart &&
       mv reart-old/app.json reart &&
       cd reart &&
-      rm -rf ./node_modules/ && yarn &&
       pm2 delete -s reart &&
       pm2 start app.json &&
       rm -rf ../reart-old &&
