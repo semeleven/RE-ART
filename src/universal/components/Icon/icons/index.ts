@@ -19,5 +19,5 @@ export {
 	Loading,
 	Notifications,
 	Plus,
-	Question
+	Question,
 };

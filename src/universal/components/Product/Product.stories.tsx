@@ -17,14 +17,5 @@ storiesOf('Product', module)
 	.addDecorator(story => (
 		<MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>
 	))
-	.add('regular size', () => (
-		<Product
-			item={item}
-		/>
-	))
-	.add('small size', () => (
-		<Product
-			item={item}
-			small
-		/>
-	));
+	.add('regular size', () => <Product item={item} />)
+	.add('small size', () => <Product item={item} small />);

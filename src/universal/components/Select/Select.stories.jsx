@@ -2,7 +2,6 @@ import * as React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-
 import { Select } from '../../components';
 
 const options = [
@@ -13,14 +12,9 @@ const options = [
 	{
 		value: 'storybook2',
 		label: 'storybook2',
-	}
+	},
 ];
 
-storiesOf('Select', module)
-	.add('react-select', () => (
-		<Select
-			placeholder="storybook"
-			options={options}
-			onChange={() => {}}
-		/>
-	));
+storiesOf('Select', module).add('react-select', () => (
+	<Select placeholder="storybook" options={options} onChange={() => {}} />
+));

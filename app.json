@@ -1,9 +1,0 @@
-{
-  "apps": [
-    {
-      "name": "reart",
-      "script": "yarn",
-      "args" : "prod"
-    }
-  ]
-}

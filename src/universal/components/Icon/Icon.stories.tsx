@@ -12,9 +12,6 @@ import { Icon } from '../../components';
 // };
 
 const IconStory = storiesOf('Icon', module);
-const keys : Array<any> = Object.keys(Icons);
+const keys: Array<any> = Object.keys(Icons);
 
-keys.forEach(key => IconStory.add(key, () => (
-	<Icon icon={key} />
-)));
-
+keys.forEach(key => IconStory.add(key, () => <Icon icon={key} />));

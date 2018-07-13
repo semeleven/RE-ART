@@ -11,7 +11,7 @@ import {
 	Loading,
 	Notifications,
 	Plus,
-	Question
+	Question,
 } from './icons';
 
 const icons = {
@@ -28,7 +28,7 @@ const icons = {
 };
 
 export type ListOfIcons =
-	'Account'
+	| 'Account'
 	| 'Hamburger'
 	| 'Search'
 	| 'Logo'

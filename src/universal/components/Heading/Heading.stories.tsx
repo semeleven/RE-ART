@@ -2,7 +2,6 @@ import * as React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-
 import { Heading } from '../../components';
 
 storiesOf('Heading', module)
@@ -11,21 +10,9 @@ storiesOf('Heading', module)
 			HEADING
 		</Heading>
 	))
-	.add('L', () => (
-		<Heading size="L">
-			HEADING
-		</Heading>
-	))
-	.add('M', () => (
-		<Heading size="M">
-			HEADING
-		</Heading>
-	))
-	.add('S', () => (
-		<Heading size="S">
-			HEADING
-		</Heading>
-	))
+	.add('L', () => <Heading size="L">HEADING</Heading>)
+	.add('M', () => <Heading size="M">HEADING</Heading>)
+	.add('S', () => <Heading size="S">HEADING</Heading>)
 	.add('mono dark gray Heading', () => (
 		<Heading mono darkGray>
 			HEADING
@@ -41,13 +28,5 @@ storiesOf('Heading', module)
 			HEADING
 		</Heading>
 	))
-	.add('purple Heading', () => (
-		<Heading purple>
-			HEADING
-		</Heading>
-	))
-	.add('dark purple Heading', () => (
-		<Heading darkPurple>
-			HEADING
-		</Heading>
-	));
+	.add('purple Heading', () => <Heading purple>HEADING</Heading>)
+	.add('dark purple Heading', () => <Heading darkPurple>HEADING</Heading>);

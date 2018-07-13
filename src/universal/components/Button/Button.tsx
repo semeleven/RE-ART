@@ -43,7 +43,9 @@ const StyledButton = styled(Button)`
 		display: ${props.loading && 'flex'};
 		justify-content: ${props.loading && 'center'};
 		align-items: ${props.loading && 'center'};
-		cursor: ${props.disabled || props.loading ? 'no-drop !important' : 'pointer'};
+		cursor: ${props.disabled || props.loading
+		? 'no-drop !important'
+		: 'pointer'};
 		width: ${props.width ? props.width : 'auto'};
 		background-color: ${styledProps(background)};
 		color: ${styledProps(buttonTextColor)};
