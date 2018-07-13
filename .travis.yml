@@ -30,6 +30,7 @@ script:
       rm -f reart-archive.zip &&
       mv reart reart-old &&
       mv reart-new reart &&
+      mv reart-old/app.json reart &&
       cd reart &&
       rm -rf ./node_modules/ && yarn &&
       pm2 delete -s reart &&
