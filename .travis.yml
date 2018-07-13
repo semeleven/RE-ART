@@ -30,7 +30,7 @@ script:
       rm -f reart-archive.zip &&
       mv reart reart-old &&
       mv reart-new reart &&
-      mv reart-old/app.json reart &&
+      mv reart-config/app.json reart &&
       cd reart &&
       pm2 delete -s reart &&
       pm2 start app.json &&
