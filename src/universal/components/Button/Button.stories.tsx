@@ -35,13 +35,13 @@ const buttonProps = [
 	},
 ];
 
-buttonProps.forEach(props => (
+buttonProps.forEach(props =>
 	ButtonStory.add(props.title, () => (
 		<Button {...props} onClick={action('click')}>
 			BUTTON
 		</Button>
-	)
-)));
+	))
+);
 
 // storiesOf('Button', module)
 // 	.add('loading state and width 100%', () => (
