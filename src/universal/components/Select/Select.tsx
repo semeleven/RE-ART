@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import Select from 'react-select';
 import { lighten } from 'polished';
 import { colors } from '../../lib/styled/theme';

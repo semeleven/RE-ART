@@ -1,44 +1,48 @@
 import * as React from 'react';
 import styled, { css } from '../../lib/styled';
 
-import Account from './icons/Account';
-import Cart from './icons/Cart';
-import Hamburger from './icons/Hamburger';
-import Search from './icons/Search';
-import Logo from './icons/Logo';
-import Logout from './icons/Logout';
-import Loading from './icons/Loading';
-import Notifications from './icons/Notifications';
-import Plus from './icons/Plus';
-import Question from './icons/Question';
+import {
+	Account,
+	Cart,
+	Hamburger,
+	Search,
+	Logo,
+	Logout,
+	Loading,
+	Notifications,
+	Plus,
+	Question
+} from './icons';
 
 const icons = {
-	account: Account,
-	hamburger: Hamburger,
-	search: Search,
-	loading: Loading,
-	logout: Logout,
-	notifications: Notifications,
-	plus: Plus,
-	question: Question,
-	logo: Logo, // Temporary
-	cart: Cart, // Temporary
+	Account,
+	Hamburger,
+	Search,
+	Loading,
+	Logout,
+	Notifications,
+	Plus,
+	Question,
+	Logo, // Temporary
+	Cart, // Temporary
 };
+
+export type ListOfIcons =
+	'Account'
+	| 'Hamburger'
+	| 'Search'
+	| 'Logo'
+	| 'Logout'
+	| 'Cart'
+	| 'Loading'
+	| 'Notifications'
+	| 'Plus'
+	| 'Question';
 
 // TODO: add medium, large etc props
 interface Props {
 	small?: boolean;
-	icon:
-		| 'account'
-		| 'hamburger'
-		| 'search'
-		| 'logo'
-		| 'logout'
-		| 'cart'
-		| 'loading'
-		| 'notifications'
-		| 'plus'
-		| 'question';
+	icon: ListOfIcons;
 	onClick?: () => void;
 	pointer?: boolean; // cursor: pointer
 	absolute?: boolean; // position absolute for preloaders etc

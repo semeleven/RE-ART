@@ -67,10 +67,10 @@ const Header: React.SFC<Props> = ({ showMenu, toggleModal, toggleMenu }) => (
 	<Fragment>
 		<StyledHeader>
 			<FlexWrapper flex="start">
-				<Icon icon="hamburger" onClick={toggleMenu} />
+				<Icon icon="Hamburger" onClick={toggleMenu} />
 			</FlexWrapper>
 			<LogoWrapper>
-				<Icon small={false} icon="logo" />
+				<Icon small={false} icon="Logo" />
 			</LogoWrapper>
 			<FlexWrapper flex="end">
 				{/* render login link instead of button on mobile devices */}
@@ -84,7 +84,7 @@ const Header: React.SFC<Props> = ({ showMenu, toggleModal, toggleMenu }) => (
 						LOGIN
 					</Button>
 				</HideOnMobile>
-				<Icon icon="search" />
+				<Icon icon="Search" />
 			</FlexWrapper>
 		</StyledHeader>
 		<SideMenu showMenu={showMenu}>

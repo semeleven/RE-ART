@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import enhanceWithClickOutside from 'react-click-outside';
 import styled from '../../lib/styled';
 import { media } from '../../lib/styled/theme';
@@ -47,7 +47,7 @@ const ModalWrapper = styled.div`
 `;
 
 @enhanceWithClickOutside
-class Wrapper extends Component<ModalProps & ModalContainerProps> {
+class Wrapper extends React.Component<ModalProps & ModalContainerProps> {
 	handleClickOutside() {
 		const { showModal, toggleModal, handleReset } = this.props;
 		if (showModal) {

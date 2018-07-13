@@ -3,11 +3,11 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import 'jest-styled-components';
 
-import Button from './Button';
+import Link from './Link';
 
 it('simulates click events', () => {
 	const onButtonClick = sinon.spy();
-	const wrapper = shallow(<Button onClick={onButtonClick}>TEST</Button>);
+	const wrapper = shallow(<Link onClick={onButtonClick}>TEST</Link>);
 	wrapper.simulate('click');
 	expect(onButtonClick.calledOnce).toEqual(true);
 });

@@ -1,12 +1,616 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Button with loading state 1`] = `
-<h1>
-  BUTTON???
+exports[`Storyshots Button dark color 1`] = `
+.c0 {
+  cursor: pointer;
+  width: auto;
+  background-color: #16111C;
+  color: #ffffff;
+  border-color: #16111C;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-family: 'Lato',sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 11px 30px;
+  outline: none;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.c0:hover {
+  background-color: #2f243c;
+  border-color: #2f243c;
+  color: white;
+}
+
+.c0:active {
+  background-color: #3b2e4c;
+  border-color: #3b2e4c;
+  color: white;
+}
+
+<button
+  className="c0"
+  dark={true}
+  onClick={[Function]}
+>
+  BUTTON
+</button>
+`;
+
+exports[`Storyshots Button disabled 1`] = `
+.c0 {
+  cursor: no-drop !important;
+  width: auto;
+  background-color: #e2e2e2;
+  color: #ffffff;
+  border-color: #e2e2e2;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-family: 'Lato',sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 11px 30px;
+  outline: none;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.c0:hover {
+  background-color: #e2e2e2;
+  border-color: #e2e2e2;
+  color: white;
+}
+
+.c0:active {
+  background-color: #e2e2e2;
+  border-color: #e2e2e2;
+  color: white;
+}
+
+<button
+  className="c0"
+  disabled={true}
+  onClick={[Function]}
+>
+  BUTTON
+</button>
+`;
+
+exports[`Storyshots Button inverted dark color 1`] = `
+.c0 {
+  cursor: pointer;
+  width: auto;
+  background-color: transparent;
+  color: #16111C;
+  border-color: #16111C;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-family: 'Lato',sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 11px 30px;
+  outline: none;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.c0:hover {
+  background-color: #16111C;
+  border-color: #16111C;
+  color: white;
+}
+
+.c0:active {
+  background-color: #2f243c;
+  border-color: #2f243c;
+  color: white;
+}
+
+<button
+  className="c0"
+  invertedDark={true}
+  onClick={[Function]}
+>
+  BUTTON
+</button>
+`;
+
+exports[`Storyshots Button inverted purple color 1`] = `
+.c0 {
+  cursor: pointer;
+  width: auto;
+  background-color: transparent;
+  color: #6C5FC7;
+  border-color: #6C5FC7;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-family: 'Lato',sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 11px 30px;
+  outline: none;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.c0:hover {
+  background-color: #6C5FC7;
+  border-color: #6C5FC7;
+  color: white;
+}
+
+.c0:active {
+  background-color: #5346AE;
+  border-color: #5346AE;
+  color: white;
+}
+
+<button
+  className="c0"
+  invertedPurple={true}
+  onClick={[Function]}
+>
+  BUTTON
+</button>
+`;
+
+exports[`Storyshots Button loading state 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: no-drop !important;
+  width: 100%;
+  background-color: #e2e2e2;
+  color: #ffffff;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-family: 'Lato',sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 11px 30px;
+  outline: none;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.c0:hover {
+  background-color: #e2e2e2;
+  border-color: #e2e2e2;
+  color: white;
+}
+
+.c0:active {
+  background-color: #e2e2e2;
+  border-color: #e2e2e2;
+  color: white;
+}
+
+.c1 {
+  position: absolute;
+  left: 12px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+<button
+  className="c0"
+  onClick={[Function]}
+  width="100%"
+>
+  <div
+    className="c1"
+    icon="Loading"
+    onClick={[Function]}
+  >
+    <svg
+      height={32}
+      version={1}
+      viewBox="0 0 128 128"
+      width={32}
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+    >
+      <script
+        type="text/ecmascript"
+      />
+      <g>
+        <circle
+          cx={16}
+          cy={64}
+          fill="#ffffff"
+          r={16}
+        />
+        <circle
+          cx={16}
+          cy={64}
+          fill="#ffffff"
+          r={14.344}
+          transform="rotate(45 64 64)"
+        />
+        <circle
+          cx={16}
+          cy={64}
+          fill="#ffffff"
+          r={12.531}
+          transform="rotate(90 64 64)"
+        />
+        <circle
+          cx={16}
+          cy={64}
+          fill="#ffffff"
+          r={10.75}
+          transform="rotate(135 64 64)"
+        />
+        <circle
+          cx={16}
+          cy={64}
+          fill="#ffffff"
+          r={10.063}
+          transform="rotate(180 64 64)"
+        />
+        <circle
+          cx={16}
+          cy={64}
+          fill="#ffffff"
+          r={8.063}
+          transform="rotate(225 64 64)"
+        />
+        <circle
+          cx={16}
+          cy={64}
+          fill="#ffffff"
+          r={6.438}
+          transform="rotate(270 64 64)"
+        />
+        <circle
+          cx={16}
+          cy={64}
+          fill="#ffffff"
+          r={5.375}
+          transform="rotate(315 64 64)"
+        />
+        <animateTransform
+          attributeName="transform"
+          calcMode="discrete"
+          dur="720ms"
+          repeatCount="indefinite"
+          type="rotate"
+          values="0 64 64;315 64 64;270 64 64;225 64 64;180 64 64;135 64 64;90 64 64;45 64 64"
+        />
+      </g>
+    </svg>
+  </div>
+  BUTTON
+</button>
+`;
+
+exports[`Storyshots Button purple 1`] = `
+.c0 {
+  cursor: pointer;
+  width: auto;
+  background-color: #6C5FC7;
+  color: #ffffff;
+  border-color: #6C5FC7;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-family: 'Lato',sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 11px 30px;
+  outline: none;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.c0:hover {
+  background-color: #5346AE;
+  border-color: #5346AE;
+  color: white;
+}
+
+.c0:active {
+  background-color: #42378a;
+  border-color: #42378a;
+  color: white;
+}
+
+<button
+  className="c0"
+  onClick={[Function]}
+  purple={true}
+>
+  BUTTON
+</button>
+`;
+
+exports[`Storyshots Card card 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: 'Lato',sans-serif;
+  font-weight: 600;
+  outline: none;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  width: 100%;
+  background-color: #ffffff;
+  color: #16111C;
+  padding: 40px;
+  border: 1px solid #16111C;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-bottom: 20px;
+}
+
+.c0:hover {
+  background-color: #16111C;
+  color: #ffffff;
+}
+
+<div
+  className="c0"
+>
+  CARD
+</div>
+`;
+
+exports[`Storyshots Heading L 1`] = `
+.c0 {
+  font-size: 30px;
+  font-family: Lato,sans-serif;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+<h2
+  className="c0"
+  onClick={[Function]}
+>
+  HEADING
+</h2>
+`;
+
+exports[`Storyshots Heading M 1`] = `
+.c0 {
+  font-size: 17px;
+  font-family: Lato,sans-serif;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+<h3
+  className="c0"
+  onClick={[Function]}
+>
+  HEADING
+</h3>
+`;
+
+exports[`Storyshots Heading S 1`] = `
+.c0 {
+  font-size: 15px;
+  font-family: Lato,sans-serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+<h4
+  className="c0"
+  onClick={[Function]}
+>
+  HEADING
+</h4>
+`;
+
+exports[`Storyshots Heading black (default color prop) Heading with vertical margins 1`] = `
+.c0 {
+  font-size: 40px;
+  font-family: Lato,sans-serif;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+<h1
+  className="c0"
+  onClick={[Function]}
+>
+  HEADING
 </h1>
 `;
 
-exports[`Storyshots Icon account 1`] = `
+exports[`Storyshots Heading bold and uppercase lighter gray Heading 1`] = `
+.c0 {
+  font-size: 40px;
+  font-family: Lato,sans-serif;
+  font-weight: bold;
+  color: #707070;
+  text-transform: uppercase;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+<h1
+  className="c0"
+  onClick={[Function]}
+>
+  HEADING
+</h1>
+`;
+
+exports[`Storyshots Heading dark purple Heading 1`] = `
+.c0 {
+  font-size: 40px;
+  font-family: Lato,sans-serif;
+  color: #5346AE;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+<h1
+  className="c0"
+  onClick={[Function]}
+>
+  HEADING
+</h1>
+`;
+
+exports[`Storyshots Heading default prop XL 1`] = `
+.c0 {
+  font-size: 40px;
+  font-family: Source Code Pro,monospace;
+  color: #16111C;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+<h1
+  className="c0"
+  onClick={[Function]}
+>
+  HEADING
+</h1>
+`;
+
+exports[`Storyshots Heading mono dark gray Heading 1`] = `
+.c0 {
+  font-size: 40px;
+  font-family: Source Code Pro,monospace;
+  color: #16111C;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+<h1
+  className="c0"
+  onClick={[Function]}
+>
+  HEADING
+</h1>
+`;
+
+exports[`Storyshots Heading purple Heading 1`] = `
+.c0 {
+  font-size: 40px;
+  font-family: Lato,sans-serif;
+  color: #6C5FC7;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+<h1
+  className="c0"
+  onClick={[Function]}
+>
+  HEADING
+</h1>
+`;
+
+exports[`Storyshots Icon Account 1`] = `
 .c0 {
   position: relative;
   width: 32px;
@@ -16,7 +620,7 @@ exports[`Storyshots Icon account 1`] = `
 
 <div
   className="c0"
-  icon="account"
+  icon="Account"
   onClick={[Function]}
 >
   <svg
@@ -31,7 +635,7 @@ exports[`Storyshots Icon account 1`] = `
 </div>
 `;
 
-exports[`Storyshots Icon cart 1`] = `
+exports[`Storyshots Icon Cart 1`] = `
 .c0 {
   position: relative;
   width: 32px;
@@ -41,15 +645,10 @@ exports[`Storyshots Icon cart 1`] = `
 
 <div
   className="c0"
-  icon="cart"
+  icon="Cart"
   onClick={[Function]}
 >
   <svg
-    style={
-      Object {
-        "fill": "#fff",
-      }
-    }
     viewBox="0 0 20 20"
   >
     <path
@@ -60,7 +659,7 @@ exports[`Storyshots Icon cart 1`] = `
 </div>
 `;
 
-exports[`Storyshots Icon hamburger 1`] = `
+exports[`Storyshots Icon Hamburger 1`] = `
 .c0 {
   position: relative;
   width: 32px;
@@ -70,7 +669,7 @@ exports[`Storyshots Icon hamburger 1`] = `
 
 <div
   className="c0"
-  icon="hamburger"
+  icon="Hamburger"
   onClick={[Function]}
 >
   <svg
@@ -118,10 +717,9 @@ exports[`Storyshots Icon hamburger 1`] = `
 </div>
 `;
 
-exports[`Storyshots Icon loading 1`] = `
+exports[`Storyshots Icon Loading 1`] = `
 .c0 {
-  position: absolute;
-  left: 12px;
+  position: relative;
   width: 32px;
   height: 32px;
   cursor: pointer;
@@ -129,7 +727,7 @@ exports[`Storyshots Icon loading 1`] = `
 
 <div
   className="c0"
-  icon="loading"
+  icon="Loading"
   onClick={[Function]}
 >
   <svg
@@ -211,7 +809,7 @@ exports[`Storyshots Icon loading 1`] = `
 </div>
 `;
 
-exports[`Storyshots Icon logout 1`] = `
+exports[`Storyshots Icon Logo 1`] = `
 .c0 {
   position: relative;
   width: 32px;
@@ -221,7 +819,78 @@ exports[`Storyshots Icon logout 1`] = `
 
 <div
   className="c0"
-  icon="logout"
+  icon="Logo"
+  onClick={[Function]}
+>
+  <svg
+    style={
+      Object {
+        "fill": "#fff",
+      }
+    }
+    viewBox="0 0 89.558 75.78"
+  >
+    <defs />
+    <g
+      id="LOGO"
+      transform="translate(-347.442 -3.066)"
+    >
+      <text
+        fill="#fff"
+        fontFamily="Lato"
+        fontSize={30}
+        fontWeight={500}
+        id="ART"
+        transform="translate(360 51)"
+      >
+        <tspan
+          x={0}
+          y={0}
+        >
+          ART
+        </tspan>
+      </text>
+      <g
+        id="refresh"
+        transform="translate(347.442 -44.011)"
+      >
+        <g
+          data-name="Group 2"
+          id="Group_2"
+          transform="translate(0 47.077)"
+        >
+          <path
+            className="cls-2"
+            d="M109.381 300.258a34.426 34.426 0 0 1-29.775-17.116h-3.93a37.9 37.9 0 0 0 71.44-13.885h7.044l-8.611-10.334-8.611 10.334h6.72a34.453 34.453 0 0 1-34.277 31.001z"
+            data-name="Path 2"
+            id="Path_2"
+            transform="translate(-64.602 -227.922)"
+          />
+          <path
+            className="cls-2"
+            d="M44.779 47.077a37.906 37.906 0 0 0-37.267 31H0l8.611 10.334 8.611-10.334h-6.2A34.453 34.453 0 0 1 72.3 64.255h4.209a37.864 37.864 0 0 0-31.73-17.178z"
+            data-name="Path 3"
+            id="Path_3"
+            transform="translate(0 -47.077)"
+          />
+        </g>
+      </g>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Icon Logout 1`] = `
+.c0 {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+<div
+  className="c0"
+  icon="Logout"
   onClick={[Function]}
 >
   <svg
@@ -269,7 +938,7 @@ exports[`Storyshots Icon logout 1`] = `
 </div>
 `;
 
-exports[`Storyshots Icon notifications 1`] = `
+exports[`Storyshots Icon Notifications 1`] = `
 .c0 {
   position: relative;
   width: 32px;
@@ -279,7 +948,7 @@ exports[`Storyshots Icon notifications 1`] = `
 
 <div
   className="c0"
-  icon="notifications"
+  icon="Notifications"
   onClick={[Function]}
 >
   <svg
@@ -294,7 +963,7 @@ exports[`Storyshots Icon notifications 1`] = `
 </div>
 `;
 
-exports[`Storyshots Icon plus 1`] = `
+exports[`Storyshots Icon Plus 1`] = `
 .c0 {
   position: relative;
   width: 32px;
@@ -304,7 +973,7 @@ exports[`Storyshots Icon plus 1`] = `
 
 <div
   className="c0"
-  icon="plus"
+  icon="Plus"
   onClick={[Function]}
 >
   <svg
@@ -328,7 +997,7 @@ exports[`Storyshots Icon plus 1`] = `
 </div>
 `;
 
-exports[`Storyshots Icon question 1`] = `
+exports[`Storyshots Icon Question 1`] = `
 .c0 {
   position: relative;
   width: 32px;
@@ -338,7 +1007,7 @@ exports[`Storyshots Icon question 1`] = `
 
 <div
   className="c0"
-  icon="question"
+  icon="Question"
   onClick={[Function]}
 >
   <svg
@@ -362,7 +1031,7 @@ exports[`Storyshots Icon question 1`] = `
 </div>
 `;
 
-exports[`Storyshots Icon search 1`] = `
+exports[`Storyshots Icon Search 1`] = `
 .c0 {
   position: relative;
   width: 32px;
@@ -372,7 +1041,7 @@ exports[`Storyshots Icon search 1`] = `
 
 <div
   className="c0"
-  icon="search"
+  icon="Search"
   onClick={[Function]}
 >
   <svg
@@ -388,5 +1057,692 @@ exports[`Storyshots Icon search 1`] = `
       />
     </g>
   </svg>
+</div>
+`;
+
+exports[`Storyshots Image Image 300x300 with hideLink prop 1`] = `
+.c0 {
+  overflow: hidden;
+  height: 300px;
+  width: 300px;
+  background-image: url(https://cdn-ak-scissors.b.st-hatena.com/image/square/ce9f8283a3718aa3efaee9f49f9edbe6e93fa596/height=280;version=1;width=400/https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F22632046%3Fs%3D400%26v%3D4);
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width:60em) {
+  .c0 {
+    height: 270px;
+  }
+}
+
+@media (max-width:39.375em) {
+  .c0 {
+    height: 220px;
+  }
+}
+
+@media (max-width:20em) {
+  .c0 {
+    height: 220px;
+  }
+}
+
+<div
+  className="c0"
+  height="300px"
+  width="300px"
+/>
+`;
+
+exports[`Storyshots Link L 1`] = `
+.c0 {
+  cursor: pointer;
+  font-size: 30px;
+  font-family: Source Code Pro,monospace;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.c0:hover {
+  color: #707070;
+}
+
+<a
+  className="c0"
+>
+  LINK
+</a>
+`;
+
+exports[`Storyshots Link M (default prop) 1`] = `
+.c0 {
+  cursor: pointer;
+  font-size: 17px;
+  font-family: Source Code Pro,monospace;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.c0:hover {
+  color: #707070;
+}
+
+<a
+  className="c0"
+>
+  LINK
+</a>
+`;
+
+exports[`Storyshots Link S 1`] = `
+.c0 {
+  cursor: pointer;
+  font-size: 15px;
+  font-family: Source Code Pro,monospace;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.c0:hover {
+  color: #707070;
+}
+
+<a
+  className="c0"
+>
+  LINK
+</a>
+`;
+
+exports[`Storyshots Link XL 1`] = `
+.c0 {
+  cursor: pointer;
+  font-size: 40px;
+  font-family: Source Code Pro,monospace;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.c0:hover {
+  color: #707070;
+}
+
+<a
+  className="c0"
+>
+  LINK
+</a>
+`;
+
+exports[`Storyshots Link with margins 1`] = `
+.c0 {
+  cursor: pointer;
+  font-size: 15px;
+  font-family: Source Code Pro,monospace;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.c0:hover {
+  color: #707070;
+}
+
+<a
+  className="c0"
+>
+  LINK
+</a>
+`;
+
+exports[`Storyshots Modal modal 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: rgba(0,0,0,0.3);
+  z-index: 10;
+  height: 100vh;
+  opacity: 1;
+  -webkit-transition: 150ms opacity ease-in-out;
+  transition: 150ms opacity ease-in-out;
+}
+
+.c1 {
+  padding: 20px;
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  min-height: 500px;
+  margin: 1rem;
+  position: relative;
+  min-width: 500px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
+  justify-self: center;
+}
+
+@media (max-width:60em) {
+  .c1 {
+    min-height: 300px;
+    min-width: 300px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    MODAL
+  </div>
+</div>
+`;
+
+exports[`Storyshots Product regular size 1`] = `
+.c3 {
+  font-size: 17px;
+  font-family: Lato,sans-serif;
+  color: #16111C;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.c4 {
+  font-size: 17px;
+  font-family: Lato,sans-serif;
+  font-weight: bold;
+  color: #16111C;
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+
+.c2 {
+  cursor: pointer;
+  font-size: 17px;
+  font-family: Source Code Pro,monospace;
+  font-weight: bold;
+  color: #16111C;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.c2:hover {
+  color: #707070;
+}
+
+.c1 {
+  overflow: hidden;
+  height: 390px;
+  width: 100%;
+  background-image: url(https://pp.userapi.com/c630117/v630117754/2d72d/fBdlOlnOvUk.jpg);
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 20px;
+}
+
+.c0 {
+  width: 25%;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-width:60em) {
+  .c1 {
+    height: 270px;
+  }
+}
+
+@media (max-width:39.375em) {
+  .c1 {
+    height: 220px;
+  }
+}
+
+@media (max-width:20em) {
+  .c1 {
+    height: 220px;
+  }
+}
+
+@media (max-width:60em) {
+  .c0 {
+    width: 50%;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (max-width:39.375em) {
+  .c0 {
+    width: 50%;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (max-width:20em) {
+  .c0 {
+    width: 100%;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+<div
+  className="c0"
+  size={3}
+>
+  <a
+    href="/product/1/"
+    onClick={[Function]}
+  >
+    <div
+      className="c1"
+      height="390px"
+    />
+  </a>
+  <a
+    className="c2"
+    href="/"
+    onClick={[Function]}
+  >
+    @author
+  </a>
+  <h3
+    className="c3"
+    onClick={[Function]}
+  >
+    name
+  </h3>
+  <h3
+    className="c4"
+    onClick={[Function]}
+  >
+    7777$
+  </h3>
+</div>
+`;
+
+exports[`Storyshots Product small size 1`] = `
+.c3 {
+  font-size: 17px;
+  font-family: Lato,sans-serif;
+  color: #16111C;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.c4 {
+  font-size: 17px;
+  font-family: Lato,sans-serif;
+  font-weight: bold;
+  color: #16111C;
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+
+.c2 {
+  cursor: pointer;
+  font-size: 17px;
+  font-family: Source Code Pro,monospace;
+  font-weight: bold;
+  color: #16111C;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.c2:hover {
+  color: #707070;
+}
+
+.c1 {
+  overflow: hidden;
+  height: 220px;
+  width: 100%;
+  background-image: url(https://pp.userapi.com/c630117/v630117754/2d72d/fBdlOlnOvUk.jpg);
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 20px;
+}
+
+.c0 {
+  width: 25%;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-width:60em) {
+  .c1 {
+    height: 270px;
+  }
+}
+
+@media (max-width:39.375em) {
+  .c1 {
+    height: 220px;
+  }
+}
+
+@media (max-width:20em) {
+  .c1 {
+    height: 220px;
+  }
+}
+
+@media (max-width:60em) {
+  .c0 {
+    width: 50%;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (max-width:39.375em) {
+  .c0 {
+    width: 50%;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (max-width:20em) {
+  .c0 {
+    width: 100%;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+<div
+  className="c0"
+  size={3}
+>
+  <a
+    href="/product/1/"
+    onClick={[Function]}
+  >
+    <div
+      className="c1"
+      height="220px"
+    />
+  </a>
+  <a
+    className="c2"
+    href="/"
+    onClick={[Function]}
+  >
+    @author
+  </a>
+  <h3
+    className="c3"
+    onClick={[Function]}
+  >
+    name
+  </h3>
+  <h3
+    className="c4"
+    onClick={[Function]}
+  >
+    7777$
+  </h3>
+</div>
+`;
+
+exports[`Storyshots Select react-select 1`] = `
+<div
+  className="css-10nd86i"
+  onKeyDown={[Function]}
+>
+  <div
+    className="css-10v6a7x"
+    onMouseDown={[Function]}
+    onTouchEnd={[Function]}
+  >
+    <div
+      className="css-1rtrksz"
+    >
+      <div
+        className="css-1492t68"
+      >
+        storybook
+      </div>
+      <div
+        className="css-rsyb7x"
+      >
+        <div
+          className=""
+          style={
+            Object {
+              "display": "inline-block",
+            }
+          }
+        >
+          <input
+            aria-autocomplete="list"
+            autoCapitalize="none"
+            autoComplete="off"
+            autoCorrect="off"
+            disabled={false}
+            id="react-select-2-input"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            spellCheck="false"
+            style={
+              Object {
+                "background": 0,
+                "border": 0,
+                "boxSizing": "content-box",
+                "color": "inherit",
+                "fontSize": "inherit",
+                "opacity": 1,
+                "outline": 0,
+                "padding": 0,
+                "width": "1px",
+              }
+            }
+            tabIndex="0"
+            type="text"
+            value=""
+          />
+          <div
+            style={
+              Object {
+                "height": 0,
+                "left": 0,
+                "overflow": "scroll",
+                "position": "absolute",
+                "top": 0,
+                "visibility": "hidden",
+                "whiteSpace": "pre",
+              }
+            }
+          >
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-1wy0on6"
+    >
+      <span
+        className="css-d8oujb"
+      />
+      <div
+        aria-hidden="true"
+        className="css-1ep9fjw"
+        onMouseDown={[Function]}
+        onTouchEnd={[Function]}
+      >
+        <svg
+          aria-hidden="true"
+          className="css-19bqh2r"
+          focusable="false"
+          height={20}
+          viewBox="0 0 20 20"
+          width={20}
+        >
+          <path
+            d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Swiper Swiper 1`] = `
+.c2 {
+  overflow: hidden;
+  height: 300px;
+  width: 300px;
+  background-image: url(https://cdn-images-1.medium.com/max/1319/1*LLQbi3xIoG7BehaeVBSMvA.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
+.c0 {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@media (max-width:60em) {
+  .c2 {
+    height: 270px;
+  }
+}
+
+@media (max-width:39.375em) {
+  .c2 {
+    height: 220px;
+  }
+}
+
+@media (max-width:20em) {
+  .c2 {
+    height: 220px;
+  }
+}
+
+@media (max-width:60em) {
+  .c1 {
+    width: 100%;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (max-width:39.375em) {
+  .c1 {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (max-width:20em) {
+  .c1 {
+    width: 100%;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    size={12}
+  >
+    <div
+      className="swiper"
+    >
+      <div
+        className="swiper-wrapper"
+      >
+        <div
+          className="swiper-slide c2"
+          height="300px"
+          width="300px"
+        />
+      </div>
+    </div>
+  </div>
 </div>
 `;

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import styledProps from 'styled-props';
 import styled, { css } from '../../lib/styled';
 import {
@@ -33,7 +33,7 @@ const Button: React.SFC<Props> = ({
 	...rest
 }) => (
 	<button className={className} {...rest}>
-		{loading && <Icon icon="loading" absolute />}
+		{loading && <Icon icon="Loading" absolute />}
 		{children}
 	</button>
 );
@@ -43,7 +43,7 @@ const StyledButton = styled(Button)`
 		display: ${props.loading && 'flex'};
 		justify-content: ${props.loading && 'center'};
 		align-items: ${props.loading && 'center'};
-		cursor: ${props.disabled || props.loading ? 'default' : 'pointer'};
+		cursor: ${props.disabled || props.loading ? 'no-drop !important' : 'pointer'};
 		width: ${props.width ? props.width : 'auto'};
 		background-color: ${styledProps(background)};
 		color: ${styledProps(buttonTextColor)};

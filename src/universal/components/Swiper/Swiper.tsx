@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import Slider from 'react-id-swiper';
 import { Row, Col } from '../../components';
 

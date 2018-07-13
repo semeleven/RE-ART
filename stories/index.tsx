@@ -7,7 +7,7 @@ import { Button, Icon } from '../src/universal/components/';
 
 storiesOf('Button', module).add('with loading state', () => (
 	<Button width="100%" loading onClick={() => {}}>
-		<Icon icon="loading" absolute />
+		<Icon icon="Loading" absolute />
 		SIGN UP
 	</Button>
 ));

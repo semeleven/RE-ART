@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import styledProps from 'styled-props';
 
 import styled, { css } from '../../lib/styled';
