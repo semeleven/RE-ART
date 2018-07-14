@@ -40,8 +40,7 @@ export type ListOfIcons =
 	| 'Notifications'
 	| 'Plus'
 	| 'Question'
-	| 'Chat'
-;
+	| 'Chat';
 
 // TODO: add medium, large etc props
 interface Props {

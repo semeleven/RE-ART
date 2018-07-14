@@ -69,7 +69,7 @@ const PersonalWrapper = styled.div`
 	margin-right: 60px;
 	${media.tablet`
 		margin-right: 30px;
-	`}
+	`};
 `;
 
 const IconWrapper = styled.div`
@@ -77,19 +77,16 @@ const IconWrapper = styled.div`
 `;
 
 export const Authorization = ({ toggleModal }) => (
-	<>
-		<ShowOnMobileOnly>
-			{/* render login link instead of button on mobile devices */}
-			<Link white onClick={toggleModal} size="S">
+	<>'	'<ShowOnMobileOnly>
+		{/* render login link instead of button on mobile devices */}
+		<Link white onClick={toggleModal} size="S">
 				LOGIN
-			</Link>
-		</ShowOnMobileOnly>
-		<HideOnMobile>
-			<Button purple onClick={toggleModal} spaced>
+		</Link>
+	</ShowOnMobileOnly>'	'<HideOnMobile>
+	<Button purple onClick={toggleModal} spaced>
 				LOGIN
-			</Button>
-		</HideOnMobile>
-	</>
+		</Button>
+	</HideOnMobile>''</>
 );
 
 export const Personal = () => (
@@ -108,27 +105,26 @@ export const Personal = () => (
 	</HideOnMobile>
 );
 
-const Header: React.SFC<Props> = ({ showMenu, toggleModal, toggleMenu, token }) => (
-	<>
-		<StyledHeader>
-			<FlexWrapper flex="start">
-				<Icon icon="Hamburger" onClick={toggleMenu} />
-			</FlexWrapper>
-			<LogoWrapper>
-				<Icon small={false} icon="Logo" />
-			</LogoWrapper>
-			<FlexWrapper flex="end">
-				{token
-					? <Personal />
-					: <Authorization toggleModal={toggleModal} />
-				}
-				<Icon icon="Cart" />
-			</FlexWrapper>
-		</StyledHeader>
-		<TopMenu showMenu={showMenu}>
-			<h1>HELLO WORLD</h1>
-		</TopMenu>
-	</>
+const Header: React.SFC<Props> = ({
+	showMenu,
+	toggleModal,
+	toggleMenu,
+	token,
+}) => (
+	<>'	'<StyledHeader>
+		<FlexWrapper flex="start">
+			<Icon icon="Hamburger" onClick={toggleMenu} />
+		</FlexWrapper>
+		<LogoWrapper>
+			<Icon small={false} icon="Logo" />
+		</LogoWrapper>
+		<FlexWrapper flex="end">
+			{token ? <Personal /> : <Authorization toggleModal={toggleModal} />}
+			<Icon icon="Cart" />
+		</FlexWrapper>
+	</StyledHeader>'	'<TopMenu showMenu={showMenu}>
+	<h1>HELLO WORLD</h1>
+	</TopMenu>''</>
 );
 
 export default Header;
