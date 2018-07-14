@@ -29,6 +29,9 @@ export type SignFormValues = {
 	password: string;
 };
 
+export type oneOfFields = 'username' | 'email' | 'password';
+
+
 interface Props extends getUserAndLayoutType {
 	toggleModal: () => void;
 	authorize: (data: UserData) => void; // log in user
@@ -105,8 +108,6 @@ export class AuthContainer extends PureComponent<Props, State> {
 			const { message = null } = response;
 
 			if (message) {
-				type oneOfFields = 'username' | 'email' | 'password';
-
 				type Error = {
 					error: string;
 					field: oneOfFields;

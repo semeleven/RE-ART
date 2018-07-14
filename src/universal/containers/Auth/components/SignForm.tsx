@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { FormikProps } from 'formik';
 import styled from '../../../lib/styled';
-import { SignFormValues } from '../../Auth';
+import { SignFormValues, oneOfFields } from '../../Auth';
 
 import {
 	Row,
@@ -56,7 +56,7 @@ export default class SignForm extends PureComponent<Props> {
 		);
 	};
 
-	renderError = (field: string) => {
+	renderError = (field: oneOfFields) => {
 		const { apiErrors, errors, touched } = this.props;
 
 		if (apiErrors[field] || (errors[field] && touched[field])) {
@@ -70,10 +70,10 @@ export default class SignForm extends PureComponent<Props> {
 		}
 	};
 
-	renderInput = (field: string) => {
+	renderInput = (field: oneOfFields) => {
 		const { values, handleChange, handleBlur } = this.props;
 
-		const inputType = {
+		const inputType : { [key: string]:  'email' | 'password' | 'text' } = {
 			email: 'email',
 			password: 'password',
 			username: 'text',

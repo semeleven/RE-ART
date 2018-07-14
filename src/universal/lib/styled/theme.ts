@@ -20,7 +20,7 @@ const colors = {
 	gray: '#e2e2e2',
 	black: '#000000',
 	lighterGray: '#707070',
-	darkGray: '#16111C',
+	darkGray: '#201828',
 	purple: '#6C5FC7',
 	darkPurple: '#5346AE',
 	transparent: 'transparent',

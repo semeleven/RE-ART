@@ -59,7 +59,7 @@ const ShowOnMobileOnly = styled.div`
 	${media.mobile`
 		display: flex;
 		color: white;
-		padding-right: 10px;
+		padding-right: 20px;
 	`};
 `;
 
