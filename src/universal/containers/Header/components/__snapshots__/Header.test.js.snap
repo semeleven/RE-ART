@@ -10,6 +10,7 @@ exports[`renders Authorization block 1`] = `
       LOGIN
     </Styled(LinkComponent)>
   </styled.div>
+  ' '
   <styled.div>
     <Styled(Button)
       purple={true}
@@ -112,6 +113,14 @@ exports[`renders Header for an unauthorized user 1`] = `
 exports[`renders Personal block 1`] = `
 <styled.div>
   <styled.div>
+    <styled.div>
+      <Icon
+        icon="Chat"
+        onClick={[Function]}
+        pointer={true}
+        small={true}
+      />
+    </styled.div>
     <styled.div>
       <Icon
         icon="Notifications"

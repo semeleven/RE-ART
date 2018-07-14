@@ -81,13 +81,13 @@ export const Authorization = ({ toggleModal }) => (
 		<ShowOnMobileOnly>
 			{/* render login link instead of button on mobile devices */}
 			<Link white onClick={toggleModal} size="S">
-					LOGIN
+				LOGIN
 			</Link>
 		</ShowOnMobileOnly>' '<HideOnMobile>
-		<Button purple onClick={toggleModal} spaced>
-					LOGIN
+			<Button purple onClick={toggleModal} spaced>
+				LOGIN
 			</Button>
-	    </HideOnMobile>
+		</HideOnMobile>
 	</React.Fragment>
 );
 
@@ -125,10 +125,10 @@ const Header: React.SFC<Props> = ({
 				{token ? <Personal /> : <Authorization toggleModal={toggleModal} />}
 				<Icon icon="Cart" />
 			</FlexWrapper>
-	    </StyledHeader>
+		</StyledHeader>
 		<TopMenu showMenu={showMenu}>
 			<h1>HELLO WORLD</h1>
-	   </TopMenu>
+		</TopMenu>
 	</React.Fragment>
 );
 

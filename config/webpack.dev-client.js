@@ -1,10 +1,13 @@
 const path = require('path');
 const webpack = require('webpack');
+const merge = require('webpack-merge');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
+const baseConfig = require('./webpack.base');
 
-module.exports = {
+const config = {
 	name: 'client',
+	mode: 'development',
 	entry: {
 		vendor: ['react', 'react-dom'],
 		main: [
@@ -13,7 +16,6 @@ module.exports = {
 			'./src/index.js'
 		]
 	},
-	mode: 'development',
 	output: {
 		filename: '[name]-bundle.js',
 		chunkFilename: '[name].js',
@@ -32,44 +34,14 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test : /\.(js|jsx)$/,
-				exclude: /node_modules/,
-				use: [
-					{
-						loader: 'babel-loader'
-					},
-				],
-			},
-			{
-				test : /\.(ts|tsx)$/,
-				use: [
-					{ loader: 'babel-loader' },
-					{ loader: 'awesome-typescript-loader' },
-				],
-			},
-			{
 				test: /\.css$/,
 				use: ['style-loader', 'css-loader'],
-			},
-			{
-				test: /\.(jpg|png|gif|ttf|eot|woff|woff2)$/,
-				use: [
-					{
-						loader: 'file-loader',
-						options: {
-							name: 'images/[name].[ext]'
-						},
-					},
-				],
 			},
 			{
 				test: /\.svg$/,
 				loader: 'svg-inline-loader'
 			}
 		]
-	},
-	resolve: {
-		extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx', 'svg'],
 	},
 	plugins: [
 		new webpack.DefinePlugin({
@@ -82,3 +54,5 @@ module.exports = {
 		new LodashModuleReplacementPlugin,
 	]
 };
+
+module.exports = merge(baseConfig, config);

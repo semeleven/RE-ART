@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 const Chat = props => (
 	<svg width={32} height={32} viewBox="0 0 576 576" {...props}>

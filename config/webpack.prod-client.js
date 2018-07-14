@@ -1,15 +1,18 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const merge = require('webpack-merge');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const BrotliPlugin = require('brotli-webpack-plugin');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
+const baseConfig = require('./webpack.base');
 
-module.exports = {
+const config = {
 	name: 'client',
+	mode: 'production',
 	entry: {
 		vendor: [
 			'react',
@@ -19,7 +22,6 @@ module.exports = {
 			'./src/index.js'
 		]
 	},
-	mode: 'production',
 	output: {
 		filename: '[name]-bundle.js',
 		chunkFilename: '[name].js',
@@ -40,37 +42,10 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.jsx?$/,
-				exclude: /node_modules/,
-				use: [
-					{
-						loader: 'babel-loader'
-					},
-				],
-			},
-			{
-				test : /\.(ts|tsx)$/,
-				loader: 'awesome-typescript-loader'
-			},
-			{
 				test: /\.css$/,
 				use: ['css-loader'],
 			},
-			{
-				test: /\.(jpg|png|gif|ttf|svg|eot|woff|woff2)$/,
-				use: [
-					{
-						loader: 'url-loader',
-						options: {
-							name: 'images/[name].[ext]'
-						},
-					},
-				],
-			},
 		]
-	},
-	resolve: {
-		extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx', 'svg'],
 	},
 	plugins: [
 		new OptimizeCssAssetsPlugin({
@@ -92,4 +67,6 @@ module.exports = {
 		new BrotliPlugin(),
 		new LodashModuleReplacementPlugin,
 	]
-}
+};
+
+module.exports = merge(config, baseConfig);

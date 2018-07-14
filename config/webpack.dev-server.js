@@ -1,17 +1,19 @@
 const path = require('path');
 const webpack = require('webpack');
-const nodeExternals = require('webpack-node-externals');
+const merge = require('webpack-merge');
+const externals = require('./externals');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
+const baseConfig = require('./webpack.base');
 
-module.exports = {
+const config = {
 	name: 'server',
+	mode: 'development',
 	target: 'node',
-	externals: [nodeExternals()],
+	externals,
 	entry: [
 		'./src/server/render.js',
 	],
-	mode: 'development',
 	output: {
 		filename: 'dev-server-bundle.js',
 		chunkFilename: '[name].js',
@@ -22,22 +24,6 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test : /\.(js|jsx)$/,
-				exclude: /node_modules/,
-				use: [
-					{
-						loader: 'babel-loader'
-					}
-				]
-			},
-			{
-				test : /\.(ts|tsx)$/,
-				use: [
-					{ loader: 'babel-loader' },
-					{ loader: 'awesome-typescript-loader' },
-				],
-			},
-			{
 				test: /\.css$/,
 				use: {
 					loader: 'css-loader',
@@ -46,22 +32,7 @@ module.exports = {
 					}
 				}
 			},
-			{
-				test: /\.(jpg|png|gif|ttf|svg|eot|woff|woff2)$/,
-				use: [
-					{
-						loader: 'file-loader',
-						options: {
-							name: '/images/[name].[ext]',
-							emitFile: false
-						}
-					}
-				]
-			},
 		]
-	},
-	resolve: {
-		extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx', 'svg'],
 	},
 	plugins: [
 		new webpack.optimize.LimitChunkCountPlugin({
@@ -76,3 +47,5 @@ module.exports = {
 		new LodashModuleReplacementPlugin,
 	]
 };
+
+module.exports = merge(baseConfig, config);
