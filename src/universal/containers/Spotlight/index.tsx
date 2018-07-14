@@ -27,6 +27,8 @@ const mockImages = [
 
 export default class Spotlight extends PureComponent {
 	renderSlides = () =>
+		// There's an issue typing components that return arrays
+		// https://github.com/DefinitelyTyped/DefinitelyTyped/issues/26890
 		mockImages.map(item => (
 			<div key={item.id} className="swiper-slide">
 				<Slide item={item} />

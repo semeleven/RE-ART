@@ -73,7 +73,7 @@ export default class SignForm extends PureComponent<Props> {
 	renderInput = (field: oneOfFields) => {
 		const { values, handleChange, handleBlur } = this.props;
 
-		const inputType : { [key: string]:  'email' | 'password' | 'text' } = {
+		const inputType: { [key: string]: 'email' | 'password' | 'text' } = {
 			email: 'email',
 			password: 'password',
 			username: 'text',

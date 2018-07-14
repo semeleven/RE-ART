@@ -31,7 +31,6 @@ export type SignFormValues = {
 
 export type oneOfFields = 'username' | 'email' | 'password';
 
-
 interface Props extends getUserAndLayoutType {
 	toggleModal: () => void;
 	authorize: (data: UserData) => void; // log in user
