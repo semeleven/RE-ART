@@ -28,10 +28,10 @@ const Wrapper = styled.div`
 	margin: 0 auto;
 `;
 
-const SideMenu: React.SFC<Props> = ({ children, showMenu }) => (
+const TopMenu: React.SFC<Props> = ({ children, showMenu }) => (
 	<StyledSideMenu showMenu={showMenu}>
 		<Wrapper>{children}</Wrapper>
 	</StyledSideMenu>
 );
 
-export default SideMenu;
+export default TopMenu;

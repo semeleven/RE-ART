@@ -1,13 +1,14 @@
-import React, { Fragment } from 'react';
+import * as React from 'react';
 import styled, { css } from '../../../lib/styled/';
 
-import { Button, Icon, SideMenu, Link } from '../../../components';
+import { Button, Icon, TopMenu, Link } from '../../../components';
 import { colors, media } from '../../../lib/styled/theme';
 
 interface Props {
 	toggleModal: () => void;
 	toggleMenu: () => void;
 	showMenu: boolean;
+	token?: string; // user's token
 }
 
 const StyledHeader = styled.header`
@@ -63,8 +64,52 @@ const ShowOnMobileOnly = styled.div`
 	`};
 `;
 
-const Header: React.SFC<Props> = ({ showMenu, toggleModal, toggleMenu }) => (
-	<Fragment>
+const PersonalWrapper = styled.div`
+	display: flex;
+	margin-right: 60px;
+	${media.tablet`
+		margin-right: 30px;
+	`}
+`;
+
+const IconWrapper = styled.div`
+	margin-left: 30px;
+`;
+
+export const Authorization = ({ toggleModal }) => (
+	<>
+		<ShowOnMobileOnly>
+			{/* render login link instead of button on mobile devices */}
+			<Link white onClick={toggleModal} size="S">
+				LOGIN
+			</Link>
+		</ShowOnMobileOnly>
+		<HideOnMobile>
+			<Button purple onClick={toggleModal} spaced>
+				LOGIN
+			</Button>
+		</HideOnMobile>
+	</>
+);
+
+export const Personal = () => (
+	<HideOnMobile>
+		<PersonalWrapper>
+			<IconWrapper>
+				<Icon icon="Chat" />
+			</IconWrapper>
+			<IconWrapper>
+				<Icon icon="Notifications" />
+			</IconWrapper>
+			<IconWrapper>
+				<Icon icon="Account" />
+			</IconWrapper>
+		</PersonalWrapper>
+	</HideOnMobile>
+);
+
+const Header: React.SFC<Props> = ({ showMenu, toggleModal, toggleMenu, token }) => (
+	<>
 		<StyledHeader>
 			<FlexWrapper flex="start">
 				<Icon icon="Hamburger" onClick={toggleMenu} />
@@ -73,24 +118,17 @@ const Header: React.SFC<Props> = ({ showMenu, toggleModal, toggleMenu }) => (
 				<Icon small={false} icon="Logo" />
 			</LogoWrapper>
 			<FlexWrapper flex="end">
-				{/* render login link instead of button on mobile devices */}
-				<ShowOnMobileOnly>
-					<Link white onClick={() => toggleModal()} size="S">
-						LOGIN
-					</Link>
-				</ShowOnMobileOnly>
-				<HideOnMobile>
-					<Button purple onClick={() => toggleModal()} spaced>
-						LOGIN
-					</Button>
-				</HideOnMobile>
-				<Icon icon="Search" />
+				{token
+					? <Personal />
+					: <Authorization toggleModal={toggleModal} />
+				}
+				<Icon icon="Cart" />
 			</FlexWrapper>
 		</StyledHeader>
-		<SideMenu showMenu={showMenu}>
+		<TopMenu showMenu={showMenu}>
 			<h1>HELLO WORLD</h1>
-		</SideMenu>
-	</Fragment>
+		</TopMenu>
+	</>
 );
 
 export default Header;

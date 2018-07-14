@@ -4,6 +4,7 @@ import styled, { css } from '../../lib/styled';
 import {
 	Account,
 	Cart,
+	Chat,
 	Hamburger,
 	Search,
 	Logo,
@@ -16,6 +17,7 @@ import {
 
 const icons = {
 	Account,
+	Chat,
 	Hamburger,
 	Search,
 	Loading,
@@ -37,7 +39,9 @@ export type ListOfIcons =
 	| 'Loading'
 	| 'Notifications'
 	| 'Plus'
-	| 'Question';
+	| 'Question'
+	| 'Chat'
+;
 
 // TODO: add medium, large etc props
 interface Props {

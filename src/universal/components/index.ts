@@ -8,7 +8,7 @@ import Modal from './Modal';
 import Icon from './Icon';
 import Input from './Input';
 import Image from './Image';
-import SideMenu from '../containers/Header/components/SideMenu';
+import TopMenu from '../containers/Header/components/TopMenu';
 import { Row, Col } from './Grid';
 import Product from './Product';
 import Swiper from './Swiper';
@@ -29,7 +29,7 @@ export {
 	Image,
 	Row,
 	Product,
-	SideMenu,
+	TopMenu,
 	Swiper,
 	Select,
 	Title,

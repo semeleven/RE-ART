@@ -1,4 +1,4 @@
 import Header from './Header';
-import SideMenu from './SideMenu';
+import TopMenu from './TopMenu';
 
-export { Header, SideMenu };
+export { Header, TopMenu };

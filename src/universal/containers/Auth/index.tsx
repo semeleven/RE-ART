@@ -87,44 +87,46 @@ export class AuthContainer extends PureComponent<Props, State> {
 	handleSignUpResponse = (response: SignUpResponseInterface) => {
 		const { authorize, toggleModal } = this.props;
 
-		if (response.success === true) {
-			const { data = {} } = response;
+		// since optional chaining operator isn't implemented yet in ts
+		if (response) {
+			if (response.success === true) {
+				const { data = {} } = response;
 
-			// since optional chaining operator isn't implemented yet in ts
-			const hasToken = _.has(data, 'sign');
-			const hasUser = _.has(data, 'user');
+				const hasToken = _.has(data, 'sign');
+				const hasUser = _.has(data, 'user');
 
-			if (hasToken && hasUser) {
-				const payload = {
-					...response.data.sign,
-					...response.data.user,
-				};
+				if (hasToken && hasUser) {
+					const payload = {
+						...response.data.sign,
+						...response.data.user,
+					};
 
-				authorize(payload);
-				return toggleModal();
-			}
-		} else if (response.success === false) {
-			const { message = null } = response;
+					authorize(payload);
+					return toggleModal();
+				}
+			} else if (response.success === false) {
+				const { message = null } = response;
 
-			if (message) {
-				type Error = {
-					error: string;
-					field: oneOfFields;
-				};
+				if (message) {
+					type Error = {
+						error: string;
+						field: oneOfFields;
+					};
 
-				// get field containing error message, e.g. "email"
-				const { field = null }: Error = ({} = _.find(
-					possibleApiErrorMessages,
-					item => (item.error = message)
-				));
+					// get field containing error message, e.g. "email"
+					const { field = null }: Error = ({} = _.find(
+						possibleApiErrorMessages,
+						item => (item.error = message)
+					));
 
-				if (field) {
-					this.setState(state => ({
-						apiErrors: {
-							...state.apiErrors,
-							[field]: message,
-						},
-					}));
+					if (field) {
+						this.setState(state => ({
+							apiErrors: {
+								...state.apiErrors,
+								[field]: message,
+							},
+						}));
+					}
 				}
 			}
 		}

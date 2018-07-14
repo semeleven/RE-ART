@@ -27,6 +27,7 @@ class HeaderContainer extends PureComponent<getUserAndLayoutType & Actions> {
 			toggleModal,
 			toggleMenu,
 			layout: { showMenu },
+			user: { token },
 		} = this.props;
 
 		return (
@@ -34,6 +35,7 @@ class HeaderContainer extends PureComponent<getUserAndLayoutType & Actions> {
 				showMenu={showMenu}
 				toggleModal={toggleModal}
 				toggleMenu={toggleMenu}
+				token={token}
 			/>
 		);
 	}
