@@ -22,7 +22,7 @@ const StyledSlide = styled.div`
 	${media.mobile`
 		bottom: 20px;
 		left: 20px;
-	`}
+	`};
 `;
 
 const HideOnDesktop = styled.div`
