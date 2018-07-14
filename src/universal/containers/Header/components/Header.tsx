@@ -77,16 +77,18 @@ const IconWrapper = styled.div`
 `;
 
 export const Authorization = ({ toggleModal }) => (
-	<>'	'<ShowOnMobileOnly>
-		{/* render login link instead of button on mobile devices */}
-		<Link white onClick={toggleModal} size="S">
-				LOGIN
-		</Link>
-	</ShowOnMobileOnly>'	'<HideOnMobile>
-	<Button purple onClick={toggleModal} spaced>
-				LOGIN
-		</Button>
-	</HideOnMobile>''</>
+	<React.Fragment>
+		<ShowOnMobileOnly>
+			{/* render login link instead of button on mobile devices */}
+			<Link white onClick={toggleModal} size="S">
+					LOGIN
+			</Link>
+		</ShowOnMobileOnly>' '<HideOnMobile>
+		<Button purple onClick={toggleModal} spaced>
+					LOGIN
+			</Button>
+	    </HideOnMobile>
+	</React.Fragment>
 );
 
 export const Personal = () => (
@@ -111,20 +113,23 @@ const Header: React.SFC<Props> = ({
 	toggleMenu,
 	token,
 }) => (
-	<>'	'<StyledHeader>
-		<FlexWrapper flex="start">
-			<Icon icon="Hamburger" onClick={toggleMenu} />
-		</FlexWrapper>
-		<LogoWrapper>
-			<Icon small={false} icon="Logo" />
-		</LogoWrapper>
-		<FlexWrapper flex="end">
-			{token ? <Personal /> : <Authorization toggleModal={toggleModal} />}
-			<Icon icon="Cart" />
-		</FlexWrapper>
-	</StyledHeader>'	'<TopMenu showMenu={showMenu}>
-	<h1>HELLO WORLD</h1>
-	</TopMenu>''</>
+	<React.Fragment>
+		<StyledHeader>
+			<FlexWrapper flex="start">
+				<Icon icon="Hamburger" onClick={toggleMenu} />
+			</FlexWrapper>
+			<LogoWrapper>
+				<Icon small={false} icon="Logo" />
+			</LogoWrapper>
+			<FlexWrapper flex="end">
+				{token ? <Personal /> : <Authorization toggleModal={toggleModal} />}
+				<Icon icon="Cart" />
+			</FlexWrapper>
+	    </StyledHeader>
+		<TopMenu showMenu={showMenu}>
+			<h1>HELLO WORLD</h1>
+	   </TopMenu>
+	</React.Fragment>
 );
 
 export default Header;
