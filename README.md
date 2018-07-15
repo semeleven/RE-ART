@@ -11,12 +11,12 @@
     <a href="https://github.com/facebook/jest"><img src="https://jestjs.io/img/jest-badge.svg" alt=Tested with Jest></a>
 </p>
 
-<h4>SSR, Hot Reload, React, React Apollo, Redux, Styled Components, Typescript</h3>
-<h4>Express, GraphQL</h3>
+<h4 align="center">SSR, Hot Reload, React, React Apollo, Redux, Styled Components, Typescript</h3>
+<h4 align="center">Express, GraphQL</h3>
 <h4 align="center">
     <a href="https://github.com/slyshadow/RE-ART-BACKEND" style="color:purple">
         Backend's Repo (Golang + Postgres) 
     </a>
 </h4>
-<h4>Unit Testing With Jest, Enzyme, Sinon and Storyshots</h4>
+<h4 align="center">Unit Testing With Jest, Enzyme, Sinon and Storyshots</h4>
 
