@@ -1,6 +1,6 @@
 import React, { PureComponent, Fragment } from 'react';
 // import { helpers } from 'react-redux';
-import { Row, Title, Product } from '../../components';
+import { Row, Title, Product } from '@Components';
 
 const mockSlides = [
 	{

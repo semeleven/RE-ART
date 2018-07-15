@@ -1,3 +1,5 @@
+const path = require('path');
+
 const baseConfig = {
 	module: {
 		rules: [
@@ -31,8 +33,16 @@ const baseConfig = {
 		],
 	},
 	resolve: {
-		extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx', 'svg'],
-	},
+		alias: {
+			'@Styled': path.resolve(__dirname, '../src/universal/lib/styled/'),
+			'@Redux': path.resolve(__dirname, '../src/universal/lib/redux/'),
+			"@GraphQL": path.resolve(__dirname, '../src/universal/lib/graphql/'),
+			'@Components': path.resolve(__dirname, '../src/universal/components/index.ts'),
+			'@Containers': path.resolve(__dirname, '../src/universal/containers/index.ts'),
+			'@API': path.resolve(__dirname, '../src/server/api/'),
+		},
+		extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx', 'svg']
+	}
 };
 
 module.exports = baseConfig;
