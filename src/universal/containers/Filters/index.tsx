@@ -1,7 +1,5 @@
 import React, { PureComponent, Fragment } from 'react';
-// import { helpers } from 'react-redux';
-// import styled from '../../lib/styled';
-// import { Row, Col, Input } from '../../components';
+
 import Controls from './components/Controls';
 import FiltersBlock from './components/FiltersBlock';
 

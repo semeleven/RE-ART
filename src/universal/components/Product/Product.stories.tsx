@@ -2,7 +2,7 @@ import * as React from 'react';
 import { MemoryRouter } from 'react-router';
 import { storiesOf } from '@storybook/react';
 
-import { Product } from '../../components';
+import { Product } from '@Components';
 
 const item = {
 	id: 1,

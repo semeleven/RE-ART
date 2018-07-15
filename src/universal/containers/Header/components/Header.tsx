@@ -1,8 +1,8 @@
 import * as React from 'react';
-import styled, { css } from '../../../lib/styled/';
+import styled, { css } from '@Styled';
 
-import { Button, Icon, TopMenu, Link } from '../../../components';
-import { colors, media } from '../../../lib/styled/theme';
+import { Button, Icon, TopMenu, Link } from '@Components';
+import { colors, media } from '@Styled/theme';
 
 interface Props {
 	toggleModal: () => void;

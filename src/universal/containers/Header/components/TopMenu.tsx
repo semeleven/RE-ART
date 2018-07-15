@@ -1,7 +1,7 @@
 import React from 'react';
 import { darken } from 'polished';
-import styled, { css } from '../../../lib/styled';
-import { colors } from '../../../lib/styled/theme';
+import styled, { css } from '@Styled';
+import { colors } from '@Styled/theme';
 
 interface Props {
 	showMenu: boolean;

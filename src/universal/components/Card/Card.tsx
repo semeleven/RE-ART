@@ -1,5 +1,5 @@
-import styled from '../../lib/styled';
-import { colors } from '../../lib/styled/theme';
+import styled from '@Styled';
+import { colors } from '@Styled/theme';
 
 const StyledCard = styled.div`
 	display: flex;

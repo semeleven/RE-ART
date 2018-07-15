@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Slider from 'react-id-swiper';
-import { Row, Col } from '../../components';
+import { Row, Col } from '@Components';
 
 interface Props {
 	slidesPerView?: number;

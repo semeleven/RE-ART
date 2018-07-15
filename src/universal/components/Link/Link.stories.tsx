@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import { Link } from '../../components';
+import { Link } from '@Components';
 
 storiesOf('Link', module)
 	.add('XL', () => <Link size="XL">LINK</Link>)

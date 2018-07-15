@@ -1,4 +1,4 @@
-import styled, { css } from '../../../lib/styled';
+import styled, { css } from '@Styled';
 
 interface Props {
 	marginTop?: string;

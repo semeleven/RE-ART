@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from '../../../components';
+import { Row, Col } from '@Components';
 // import Select from 'react-select';
 
 interface Props {}

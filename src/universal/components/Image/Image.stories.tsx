@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import { Image } from '../../components';
+import { Image } from '@Components';
 
 storiesOf('Image', module).add('Image 300x300 with hideLink prop', () => (
 	<Image

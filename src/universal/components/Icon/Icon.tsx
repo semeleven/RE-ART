@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled, { css } from '../../lib/styled';
+import styled, { css } from '@Styled';
 
 import {
 	Account,

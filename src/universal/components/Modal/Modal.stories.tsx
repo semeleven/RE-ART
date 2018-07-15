@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import { Modal } from '../../components';
+import { Modal } from '@Components';
 
 const noop = () => {};
 

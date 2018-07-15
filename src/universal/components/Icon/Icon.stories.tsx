@@ -3,7 +3,7 @@ import * as Icons from './icons';
 
 import { storiesOf } from '@storybook/react';
 
-import { Icon } from '../../components';
+import { Icon } from '@Components';
 // import { ListOfIcons } from './Icon';
 
 // // See https://github.com/Microsoft/TypeScript/issues/20503

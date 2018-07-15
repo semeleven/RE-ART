@@ -1,14 +1,14 @@
 import * as React from 'react';
 import styledProps from 'styled-props';
-import styled, { css } from '../../lib/styled';
+import styled, { css } from '@Styled';
 import {
 	background,
 	buttonTextColor,
 	borderColor,
 	hoverBackground,
 	activeBackground,
-} from '../../lib/styled/theme';
-import { Icon } from '../../components';
+} from '@Styled/theme';
+import { Icon } from '@Components';
 
 interface Props {
 	type?: 'button' | 'submit' | 'reset';

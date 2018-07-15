@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Heading, Image } from '../../../components';
-import styled from '../../../lib/styled';
-import { media } from '../../../lib/styled/theme';
+import { Heading, Image } from '@Components';
+import styled from '@Styled';
+import { media } from '@Styled/theme';
 
 type SlideItem = {
 	id: number;

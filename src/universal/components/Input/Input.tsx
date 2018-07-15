@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { TextMask, InputAdapter } from 'react-text-mask-hoc';
 import { darken } from 'polished';
-import styled from '../../lib/styled';
-import { colors, fontSize } from '../../lib/styled/theme';
-import { Heading } from '../../components';
+import styled from '@Styled';
+import { colors, fontSize } from '@Styled/theme';
+import { Heading } from '@Components';
 
 type FormEvent = (e: React.FormEvent<HTMLInputElement>) => void;
 

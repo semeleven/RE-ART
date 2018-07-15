@@ -1,13 +1,13 @@
 import * as React from 'react';
 import styledProps from 'styled-props';
 
-import styled, { css } from '../../lib/styled';
+import styled, { css } from '@Styled';
 import {
 	fontSize,
 	colors,
 	colorsPartialInterface,
 	headingMargin,
-} from '../../lib/styled/theme';
+} from '@Styled/theme';
 
 interface Props extends colorsPartialInterface {
 	size?: 'XL' | 'L' | 'M' | 'S';

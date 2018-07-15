@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Col, Image, Link, Heading } from '../../components';
+import { Col, Image, Link, Heading } from '@Components';
 
 type Item = {
 	id: number;

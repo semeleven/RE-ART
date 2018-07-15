@@ -1,7 +1,7 @@
 import * as React from 'react';
 import enhanceWithClickOutside from 'react-click-outside';
-import styled from '../../lib/styled';
-import { media } from '../../lib/styled/theme';
+import styled from '@Styled';
+import { media } from '@Styled/theme';
 
 interface ModalContainerProps {
 	showModal: boolean;

@@ -29,6 +29,11 @@
       "/lib/"
     ],
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleNameMapper": {
+      "^@Styled(.*)$": "<rootDir>/src/universal/lib/styled$1",
+      "^@Components(.*)$": "<rootDir>/src/universal/components$1",
+      "^@Redux(.*)$": "<rootDir>/src/lib/redux$1"
+    },
     "moduleFileExtensions": [
       "ts",
       "tsx",

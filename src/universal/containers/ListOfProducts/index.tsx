@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { Query } from 'react-apollo';
 
 import { getProductsQuery } from './ProductsQueries';
-import { Row, Product } from '../../components';
+import { Row, Product } from '@Components';
 
 export default class ProductsContainer extends PureComponent {
 	renderProducts = products => (

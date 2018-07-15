@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import styled from '../../lib/styled';
+import styled from '@Styled';
 
 interface Props {
 	children: React.ReactNode;

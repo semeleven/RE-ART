@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Heading } from '../../components';
+import { Row, Col, Heading } from '@Components';
 
 const Title = ({ children }) => (
 	<Row>

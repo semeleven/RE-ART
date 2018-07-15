@@ -10,12 +10,12 @@ import { connect } from 'react-redux';
 import {
 	getUserAndLayout,
 	getUserAndLayoutType,
-} from '../../lib/redux/reselect';
-import { mapDispatchToProps } from '../../lib/redux/helpers';
-import { ToggleModal } from '../../lib/redux/reducers/Layout/LayoutActions';
+} from '@Redux/reselect';
+import { mapDispatchToProps } from '@Redux/helpers';
+import { ToggleModal } from '@Redux/reducers/Layout/LayoutActions';
 
-import { UserData } from '../../lib/redux/reducers/User/UserReducer';
-import { Authorize } from '../../lib/redux/reducers/User/UserActions';
+import { UserData } from '@Redux/reducers/User/UserReducer';
+import { Authorize } from '@Redux/reducers/User/UserActions';
 
 import SignForm from './components/SignForm';
 import {

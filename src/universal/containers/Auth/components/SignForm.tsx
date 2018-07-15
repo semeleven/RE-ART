@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { FormikProps } from 'formik';
-import styled from '../../../lib/styled';
+import styled from '@Styled';
 import { SignFormValues, oneOfFields } from '../../Auth';
 
 import {
@@ -11,7 +11,7 @@ import {
 	Button,
 	Link,
 	Modal,
-} from '../../../components';
+} from '@Components';
 
 interface Props extends FormikProps<SignFormValues> {
 	apiErrors: Partial<SignFormValues>;

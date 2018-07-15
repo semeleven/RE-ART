@@ -3,7 +3,7 @@
 // import { storiesOf } from '@storybook/react';
 //
 //
-// import { Input } from '../../components';
+// import { Input } from '@Components';
 //
 // storiesOf('Card', module)
 // 	.add('card', () => (

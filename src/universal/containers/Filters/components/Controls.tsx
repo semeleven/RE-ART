@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Input, Heading, Select } from '../../../components';
+import { Row, Col, Input, Heading, Select } from '@Components';
 
 interface Props {
 	handleSearch: (any) => void;

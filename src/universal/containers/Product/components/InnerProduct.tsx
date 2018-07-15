@@ -7,7 +7,7 @@ import {
 	Swiper,
 	Image,
 	Link,
-} from '../../../components';
+} from '@Components';
 
 type Product = {
 	id: number;

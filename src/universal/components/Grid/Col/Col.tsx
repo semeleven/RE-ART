@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styled, { css } from '../../../lib/styled';
-import { media } from '../../../lib/styled/theme';
+import styled, { css } from '@Styled';
+import { media } from '@Styled/theme';
 
 const singleColWidth = 100 / 12;
 // const colGapMobile = 30;

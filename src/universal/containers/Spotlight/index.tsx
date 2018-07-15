@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Swiper } from '../../components';
+import { Swiper } from '@Components';
 import Slide from './components/Slide';
 // import Image from './components/Image';
 

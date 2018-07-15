@@ -7,12 +7,13 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@Styled": ["/src/universal/lib/styled/"],
-      "@Redux": ["/src/universal/lib/redux/*"],
-      "@GraphQL": ["src/universal/lib/graphql/"],
+      "@Styled": ["src/universal/lib/styled/index.ts"],
+      "@Styled/*": ["src/universal/lib/styled/*"],
+      "@Redux/*": ["src/universal/lib/redux/*"],
+      "@GraphQL/*": ["src/universal/lib/graphql/*"],
       "@Components": ["src/universal/components/index.ts"],
       "@Containers": ["src/universal/containers/index.ts"],
-      "@API" : ["src/server/api/"]
+      "@API/*" : ["src/server/api/*"]
     },
     "module": "es2015",
     "target": "es2015",
