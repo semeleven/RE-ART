@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 const HamburgerIcon = props => (
 	<svg viewBox="0 0 42 32" {...props} style={{ fill: '#fff' }}>

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import enhanceWithClickOutside from 'react-click-outside';
 import styled from '@Styled';
 import { media } from '@Styled/theme';

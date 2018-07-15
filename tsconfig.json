@@ -30,7 +30,8 @@
     "skipLibCheck": true,
     "noImplicitAny": false,
     "noUnusedLocals": true,
-    "noUnusedParameters": false
+    "noUnusedParameters": false,
+    "esModuleInterop": true
   },
   "include": ["./src/**/*"],
   "exclude": ["./node_modules", "./dist", "./build"]

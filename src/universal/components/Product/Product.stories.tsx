@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { MemoryRouter } from 'react-router';
 import { storiesOf } from '@storybook/react';
 

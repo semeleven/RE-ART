@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styled, { css } from '@Styled';
 import { media } from '@Styled/theme';

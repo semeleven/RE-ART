@@ -20,7 +20,7 @@ const DropdownList = styled.div`
 	padding: 5px 20px;
 `;
 
-const Dropdown : React.SFC<Props> = ({ children }) => (
+const Dropdown: React.SFC<Props> = ({ children }) => (
 	<DropdownContainer>
 		<DropdownList>
 			{children}

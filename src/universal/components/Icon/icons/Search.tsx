@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 const Search = props => (
 	<svg viewBox="0 0 30.887 32" {...props}>

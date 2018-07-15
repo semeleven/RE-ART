@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 const Account = props => (
 	<svg width={32} height={32} viewBox="0 0 20 20" {...props}>

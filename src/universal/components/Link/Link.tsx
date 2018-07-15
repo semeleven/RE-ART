@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styledProps from 'styled-props';
 import styled, { css } from '@Styled';

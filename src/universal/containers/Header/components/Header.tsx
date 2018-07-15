@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { Fragment } from 'react';
 import styled, { css } from '@Styled';
 
 import { Button, Icon, TopMenu, Link } from '@Components';
@@ -77,7 +77,7 @@ const IconWrapper = styled.div`
 `;
 
 export const Authorization = ({ toggleModal }) => (
-	<React.Fragment>
+	<Fragment>
 		<ShowOnMobileOnly>
 			{/* render login link instead of button on mobile devices */}
 			<Link white onClick={toggleModal} size="S">
@@ -89,7 +89,7 @@ export const Authorization = ({ toggleModal }) => (
 				LOGIN
 			</Button>
 		</HideOnMobile>
-	</React.Fragment>
+	</Fragment>
 );
 
 export const Personal = () => (
@@ -114,7 +114,7 @@ const Header: React.SFC<Props> = ({
 	toggleMenu,
 	token,
 }) => (
-	<React.Fragment>
+	<Fragment>
 		<StyledHeader>
 			<FlexWrapper flex="start">
 				<Icon icon="Hamburger" onClick={toggleMenu} />
@@ -130,7 +130,7 @@ const Header: React.SFC<Props> = ({
 		<TopMenu showMenu={showMenu}>
 			<h1>HELLO WORLD</h1>
 		</TopMenu>
-	</React.Fragment>
+	</Fragment>
 );
 
 export default Header;
