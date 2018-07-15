@@ -11,7 +11,7 @@
     <a href="https://github.com/facebook/jest"><img src="https://jestjs.io/img/jest-badge.svg" alt=Tested with Jest></a>
 </p>
 
-<h4 align="center">SSR, Hot Reload, React, React Apollo, Redux, Styled Components, Typescript</h3>
+<h4 align="center">SSR, Hot Reload, React, React Apollo, Redux, Storybook, Styled Components, Typescript</h3>
 <h4 align="center">Express, GraphQL</h3>
 <h4 align="center">
     <a href="https://github.com/slyshadow/RE-ART-BACKEND" style="color:purple">
