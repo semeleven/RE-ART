@@ -1,12 +1,16 @@
 import React, { Fragment } from 'react';
-import styled, { css } from '@Styled';
+import { Link as RouterLink } from 'react-router-dom';
 
-import { Button, Icon, TopMenu, Link } from '@Components';
+import styled, { css } from '@Styled';
 import { colors, media } from '@Styled/theme';
+
+import { Icon } from '@Components';
+import { Authorization, Personal, TopMenu } from '../components';
 
 interface Props {
 	toggleModal: () => void;
 	toggleMenu: () => void;
+	handleLogout: () => void;
 	showMenu: boolean;
 	token?: string; // user's token
 }
@@ -49,69 +53,11 @@ const LogoWrapper = styled.div`
 	justify-content: center;
 `;
 
-const HideOnMobile = styled.div`
-	${media.mobile`
-		display: none;
-	`};
-`;
-
-const ShowOnMobileOnly = styled.div`
-	display: none;
-	${media.mobile`
-		display: flex;
-		color: white;
-		padding-right: 20px;
-	`};
-`;
-
-const PersonalWrapper = styled.div`
-	display: flex;
-	margin-right: 60px;
-	${media.tablet`
-		margin-right: 30px;
-	`};
-`;
-
-const IconWrapper = styled.div`
-	margin-left: 30px;
-`;
-
-export const Authorization = ({ toggleModal }) => (
-	<Fragment>
-		<ShowOnMobileOnly>
-			{/* render login link instead of button on mobile devices */}
-			<Link white onClick={toggleModal} size="S">
-				LOGIN
-			</Link>
-		</ShowOnMobileOnly>
-		<HideOnMobile>
-			<Button purple onClick={toggleModal} spaced>
-				LOGIN
-			</Button>
-		</HideOnMobile>
-	</Fragment>
-);
-
-export const Personal = () => (
-	<HideOnMobile>
-		<PersonalWrapper>
-			<IconWrapper>
-				<Icon icon="Chat" />
-			</IconWrapper>
-			<IconWrapper>
-				<Icon icon="Notifications" />
-			</IconWrapper>
-			<IconWrapper>
-				<Icon icon="Account" />
-			</IconWrapper>
-		</PersonalWrapper>
-	</HideOnMobile>
-);
-
 const Header: React.SFC<Props> = ({
 	showMenu,
 	toggleModal,
 	toggleMenu,
+	handleLogout,
 	token,
 }) => (
 	<Fragment>
@@ -120,10 +66,15 @@ const Header: React.SFC<Props> = ({
 				<Icon icon="Hamburger" onClick={toggleMenu} />
 			</FlexWrapper>
 			<LogoWrapper>
-				<Icon small={false} icon="Logo" />
+				<RouterLink to="/">
+					<Icon small={false} icon="Logo" />
+				</RouterLink>
 			</LogoWrapper>
 			<FlexWrapper flex="end">
-				{token ? <Personal /> : <Authorization toggleModal={toggleModal} />}
+				{token
+					? <Personal handleLogout={handleLogout} />
+					: <Authorization toggleModal={toggleModal} />
+				}
 				<Icon icon="Cart" />
 			</FlexWrapper>
 		</StyledHeader>

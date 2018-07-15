@@ -4,6 +4,7 @@ exports[`renders Authorization block 1`] = `
 <React.Fragment>
   <styled.div>
     <Styled(LinkComponent)
+      onClick={[Function]}
       size="S"
       white={true}
     >
@@ -12,6 +13,7 @@ exports[`renders Authorization block 1`] = `
   </styled.div>
   <styled.div>
     <Styled(Button)
+      onClick={[Function]}
       purple={true}
       spaced={true}
     >
@@ -35,17 +37,22 @@ exports[`renders Header for an authorized user 1`] = `
       />
     </styled.div>
     <styled.div>
-      <Icon
-        icon="Logo"
-        onClick={[Function]}
-        pointer={true}
-        small={false}
-      />
+      <Link
+        replace={false}
+        to="/"
+      >
+        <Icon
+          icon="Logo"
+          onClick={[Function]}
+          pointer={true}
+          small={false}
+        />
+      </Link>
     </styled.div>
     <styled.div
       flex="end"
     >
-      <Component />
+      <Personal />
       <Icon
         icon="Cart"
         onClick={[Function]}
@@ -78,17 +85,22 @@ exports[`renders Header for an unauthorized user 1`] = `
       />
     </styled.div>
     <styled.div>
-      <Icon
-        icon="Logo"
-        onClick={[Function]}
-        pointer={true}
-        small={false}
-      />
+      <Link
+        replace={false}
+        to="/"
+      >
+        <Icon
+          icon="Logo"
+          onClick={[Function]}
+          pointer={true}
+          small={false}
+        />
+      </Link>
     </styled.div>
     <styled.div
       flex="end"
     >
-      <Component
+      <Authorization
         toggleModal={[Function]}
       />
       <Icon
@@ -120,22 +132,31 @@ exports[`renders Personal block 1`] = `
         small={true}
       />
     </styled.div>
-    <styled.div>
-      <Icon
-        icon="Notifications"
+    <clickOutside(Dropdown)
+      renderTitle={[Function]}
+    >
+      NOTIFICATIONS!
+    </clickOutside(Dropdown)>
+    <clickOutside(Dropdown)
+      renderTitle={[Function]}
+    >
+      <Option
         onClick={[Function]}
-        pointer={true}
-        small={true}
-      />
-    </styled.div>
-    <styled.div>
-      <Icon
-        icon="Account"
+      >
+        PROFILE
+      </Option>
+      <Option
         onClick={[Function]}
-        pointer={true}
-        small={true}
-      />
-    </styled.div>
+      >
+        SETTINGS
+      </Option>
+      <Option
+        isLogout={true}
+        onClick={[Function]}
+      >
+        LOGOUT
+      </Option>
+    </clickOutside(Dropdown)>
   </styled.div>
 </styled.div>
 `;
@@ -154,17 +175,22 @@ exports[`renders Top Menu 1`] = `
       />
     </styled.div>
     <styled.div>
-      <Icon
-        icon="Logo"
-        onClick={[Function]}
-        pointer={true}
-        small={false}
-      />
+      <Link
+        replace={false}
+        to="/"
+      >
+        <Icon
+          icon="Logo"
+          onClick={[Function]}
+          pointer={true}
+          small={false}
+        />
+      </Link>
     </styled.div>
     <styled.div
       flex="end"
     >
-      <Component />
+      <Personal />
       <Icon
         icon="Cart"
         onClick={[Function]}

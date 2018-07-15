@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Heading, Image } from '@Components';
+import { Heading, Image, HideOnMobile, ShowOnMobile } from '@Components';
 import styled from '@Styled';
 import { media } from '@Styled/theme';
 
@@ -25,20 +25,6 @@ const StyledSlide = styled.div`
 	`};
 `;
 
-const HideOnDesktop = styled.div`
-	display: none;
-	${media.mobile`
-		display: flex;
-	`};
-`;
-
-const ShowOnDesktop = styled.div`
-	display: flex;
-	${media.mobile`
-		display: none;
-	`};
-`;
-
 const Slide: React.SFC<Props> = ({ item }) => (
 	// There's an issue typing components that return arrays without Fragments
 	// https://github.com/DefinitelyTyped/DefinitelyTyped/issues/26890
@@ -47,16 +33,16 @@ const Slide: React.SFC<Props> = ({ item }) => (
 			<Heading white uppercase mono size="M">
 				{item.type}
 			</Heading>
-			<HideOnDesktop>
+			<ShowOnMobile>
 				<Heading white uppercase mono size="L" marginTop="25px">
 					{item.title}
 				</Heading>
-			</HideOnDesktop>
-			<ShowOnDesktop>
+			</ShowOnMobile>
+			<HideOnMobile>
 				<Heading white uppercase mono size="XL" marginTop="25px">
 					{item.title}
 				</Heading>
-			</ShowOnDesktop>
+			</HideOnMobile>
 		</StyledSlide>
 	</Image>
 );

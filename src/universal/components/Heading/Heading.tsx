@@ -20,6 +20,7 @@ interface Props extends colorsPartialInterface {
 	marginTop?: string;
 	marginBottom?: string;
 	onClick?: () => void;
+	centered?: boolean;
 }
 
 const Sizes = {
@@ -51,6 +52,7 @@ const StyledHeading = styled(Heading)`
 			text-transform: ${props.uppercase && 'uppercase'};
 			margin-top: ${handleSize(props.marginTop)};
 			margin-bottom: ${handleSize(props.marginBottom)};
+			text-align: ${props.centered && 'center'};
 		`;
 	}};
 `;

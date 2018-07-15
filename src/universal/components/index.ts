@@ -9,12 +9,17 @@ import Modal from './Modal';
 import Icon from './Icon';
 import Input from './Input';
 import Image from './Image';
-import TopMenu from '../containers/Header/components/TopMenu';
 import { Row, Col } from './Grid';
 import Product from './Product';
 import Swiper from './Swiper';
 import Select from './Select';
 import Title from './Title';
+import {
+	HideOnTablet,
+	HideOnMobile,
+	ShowOnMobile,
+	ShowOnTablet,
+} from './Media';
 
 export {
 	Button,
@@ -31,8 +36,11 @@ export {
 	Image,
 	Row,
 	Product,
-	TopMenu,
 	Swiper,
 	Select,
 	Title,
+	HideOnTablet,
+	HideOnMobile,
+	ShowOnMobile,
+	ShowOnTablet,
 };

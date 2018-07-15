@@ -2,17 +2,17 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import 'jest-styled-components';
 
-import Header, { Authorization, Personal } from './Header';
+import Header, { Personal, Authorization } from '../components';
 
 const noop = () => {};
 
 it('renders Authorization block', () => {
-	const wrapper = shallow(<Authorization />);
+	const wrapper = shallow(<Authorization toggleModal={noop} />);
 	expect(wrapper).toMatchSnapshot();
 });
 
 it('renders Personal block', () => {
-	const wrapper = shallow(<Personal />);
+	const wrapper = shallow(<Personal handleLogout={noop} />);
 	expect(wrapper).toMatchSnapshot();
 });
 

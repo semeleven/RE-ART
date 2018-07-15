@@ -5,4 +5,4 @@ import { UserData } from './UserReducer';
 export const Authorize = (userData: UserData) =>
 	action(actionTypes.AUTHORIZATION, userData);
 
-export const Logout = (payload: object) => action(actionTypes.LOGOUT, payload);
+export const Logout = () => action(actionTypes.LOGOUT);

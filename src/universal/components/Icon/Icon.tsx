@@ -4,6 +4,7 @@ import styled, { css } from '@Styled';
 import {
 	Account,
 	Cart,
+	Cancel,
 	Chat,
 	Hamburger,
 	Search,
@@ -17,6 +18,7 @@ import {
 
 const icons = {
 	Account,
+	Cancel,
 	Chat,
 	Hamburger,
 	Search,
@@ -40,7 +42,8 @@ export type ListOfIcons =
 	| 'Notifications'
 	| 'Plus'
 	| 'Question'
-	| 'Chat';
+	| 'Chat'
+	| 'Cancel';
 
 // TODO: add medium, large etc props
 interface Props {
@@ -48,15 +51,25 @@ interface Props {
 	icon: ListOfIcons;
 	onClick?: () => void;
 	pointer?: boolean; // cursor: pointer
-	absolute?: boolean; // position absolute for preloaders etc
+	absolute?: boolean;
+	// props for absolute positioning
+	left?: string;
+	top?: string;
+	right?: string;
+	bottom?: string;
 }
 
 const IconWrapper = styled.div`
 	${(props: Props) => {
 		const size = props.small ? '32px' : '64px';
+		const handlePosition = param => props.absolute ? param : 'auto';
+		
 		return css`
 			position: ${props.absolute ? 'absolute' : 'relative'};
-			left: ${props.absolute && '12px'};
+			left: ${handlePosition(props.left)};
+			top: ${handlePosition(props.top)};
+			right: ${handlePosition(props.right)};
+			bottom: ${handlePosition(props.bottom)};
 			width: ${size};
 			height: ${size};
 			cursor: ${props.pointer ? 'pointer' : 'default'};

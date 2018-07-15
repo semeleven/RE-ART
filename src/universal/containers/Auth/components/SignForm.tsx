@@ -3,7 +3,16 @@ import { FormikProps } from 'formik';
 import styled from '@Styled';
 import { SignFormValues, oneOfFields } from '../../Auth';
 
-import { Row, Col, Heading, Input, Button, Link, Modal } from '@Components';
+import {
+	Row,
+	Col,
+	Heading,
+	Input,
+	Icon,
+	Button,
+	Link,
+	Modal
+} from '@Components';
 
 interface Props extends FormikProps<SignFormValues> {
 	apiErrors: Partial<SignFormValues>;
@@ -99,7 +108,7 @@ export default class SignForm extends PureComponent<Props> {
 			handleReset,
 		} = this.props;
 
-		const heading = `sign ${isLogin ? 'in' : 'up'} to re-art`;
+		const heading = `sign ${isLogin ? 'in' : 'up'}`;
 
 		return (
 			<Modal
@@ -107,12 +116,22 @@ export default class SignForm extends PureComponent<Props> {
 				toggleModal={toggleModal}
 				showModal={showModal}
 			>
+				<Icon
+					onClick={toggleModal}
+					icon="Cancel"
+					absolute
+					top="5"
+					right="5"
+				 />
 				<Row justifyContent="center">
 					<Col size={12}>
 						<form onSubmit={handleSubmit}>
 							<Col size={12} centered marginBottom="50px">
 								<Heading mono uppercase size="L">
 									{heading}
+								</Heading>
+								<Heading mono uppercase size="L">
+									to re-art
 								</Heading>
 							</Col>
 							{this.renderInput('email')}

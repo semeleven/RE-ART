@@ -1,5 +1,6 @@
 import Account from './Account';
 import Cart from './Cart';
+import Cancel from './Cancel';
 import Chat from './Chat';
 import Hamburger from './Hamburger';
 import Search from './Search';
@@ -13,6 +14,7 @@ import Question from './Question';
 export {
 	Account,
 	Cart,
+	Cancel,
 	Chat,
 	Hamburger,
 	Search,

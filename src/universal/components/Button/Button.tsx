@@ -33,7 +33,7 @@ const Button: React.SFC<Props> = ({
 	...rest
 }) => (
 	<button className={className} {...rest}>
-		{loading && <Icon icon="Loading" absolute />}
+		{loading && <Icon icon="Loading" absolute left="12px" />}
 		{children}
 	</button>
 );

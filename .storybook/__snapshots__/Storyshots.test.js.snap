@@ -471,23 +471,39 @@ exports[`Storyshots Dropdown dropdown 1`] = `
 }
 
 .c1 {
-  min-width: 170px;
-  background-color: #ffffff;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.4),0 0 0 1px rgba(0,0,0,0.1);
-  position: absolute;
-  top: 100%;
-  right: 0;
-  z-index: 1;
-  padding: 5px 20px;
+  position: relative;
+  left: auto;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
 }
 
 <div
   className="c0"
 >
   <div
-    className="c1"
+    onClick={[Function]}
+    role="button"
   >
-    Dropdown
+    <div
+      className="c1"
+      icon="Chat"
+      onClick={[Function]}
+    >
+      <svg
+        height={32}
+        viewBox="0 0 576 576"
+        width={32}
+      >
+        <path
+          d="M240 32c132.549 0 240 86.957 240 194.224S372.549 420.448 240 420.448c-12.729 0-25.223-.81-37.417-2.355C151.03 469.44 91.497 478.647 32 480v-12.567c32.126-15.677 58-44.231 58-76.866 0-4.553-.356-9.023-1.015-13.396C34.706 341.562 0 287.175 0 226.224 0 118.957 107.452 32 240 32zm258 435.343c0 27.973 18.156 52.449 46 65.886V544c-51.562-1.159-98.893-9.051-143.57-53.062a260.865 260.865 0 0 1-32.43 2.021c-47.734 0-91.704-12.879-126.807-34.521 72.336-.254 140.629-23.428 192.417-65.336 26.105-21.127 46.697-45.914 61.207-73.675C510.199 289.994 518 258.636 518 226.224c0-5.224-.225-10.418-.629-15.584C553.656 240.607 576 281.451 576 326.479c0 52.244-30.078 98.86-77.119 129.383a76 76 0 0 0-.881 11.481z"
+          fill="#FFF"
+        />
+      </svg>
+    </div>
   </div>
 </div>
 `;
@@ -646,6 +662,10 @@ exports[`Storyshots Heading purple Heading 1`] = `
 exports[`Storyshots Icon Account 1`] = `
 .c0 {
   position: relative;
+  left: auto;
+  top: auto;
+  right: auto;
+  bottom: auto;
   width: 32px;
   height: 32px;
   cursor: pointer;
@@ -669,9 +689,60 @@ exports[`Storyshots Icon Account 1`] = `
 </div>
 `;
 
+exports[`Storyshots Icon Cancel 1`] = `
+.c0 {
+  position: relative;
+  left: auto;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+<div
+  className="c0"
+  icon="Cancel"
+  onClick={[Function]}
+>
+  <svg
+    height={32}
+    viewBox="0 0 375 375"
+    width={32}
+  >
+    <path
+      color="#000"
+      d="M187.5 2.5a185 185 0 0 0-185 185 185 185 0 0 0 185 185 185 185 0 0 0 185-185 185 185 0 0 0-185-185zm-85.906 78.875a20.232 20.232 0 0 1 14.518 6.132l71.388 71.388 71.388-71.388a20.232 20.232 0 0 1 13.909-6.121 20.232 20.232 0 0 1 14.702 34.73l-71.39 71.388 71.39 71.39a20.232 20.232 0 1 1-28.61 28.61L187.5 216.115l-71.388 71.389a20.232 20.232 0 1 1-28.611-28.61l71.39-71.39-71.39-71.388a20.232 20.232 0 0 1 14.093-34.74z"
+      fontFamily="sans-serif"
+      fontWeight={400}
+      overflow="visible"
+      style={
+        Object {
+          "isolation": "auto",
+          "lineHeight": "normal",
+          "mixBlendMode": "normal",
+          "msBlockProgression": "tb",
+          "textAlign": "start",
+          "textDecorationColor": "#000",
+          "textDecorationLine": "none",
+          "textDecorationStyle": "solid",
+          "textIndent": 0,
+          "textTransform": "none",
+        }
+      }
+    />
+  </svg>
+</div>
+`;
+
 exports[`Storyshots Icon Cart 1`] = `
 .c0 {
   position: relative;
+  left: auto;
+  top: auto;
+  right: auto;
+  bottom: auto;
   width: 32px;
   height: 32px;
   cursor: pointer;
@@ -696,6 +767,10 @@ exports[`Storyshots Icon Cart 1`] = `
 exports[`Storyshots Icon Chat 1`] = `
 .c0 {
   position: relative;
+  left: auto;
+  top: auto;
+  right: auto;
+  bottom: auto;
   width: 32px;
   height: 32px;
   cursor: pointer;
@@ -722,6 +797,10 @@ exports[`Storyshots Icon Chat 1`] = `
 exports[`Storyshots Icon Hamburger 1`] = `
 .c0 {
   position: relative;
+  left: auto;
+  top: auto;
+  right: auto;
+  bottom: auto;
   width: 32px;
   height: 32px;
   cursor: pointer;
@@ -780,6 +859,10 @@ exports[`Storyshots Icon Hamburger 1`] = `
 exports[`Storyshots Icon Loading 1`] = `
 .c0 {
   position: relative;
+  left: auto;
+  top: auto;
+  right: auto;
+  bottom: auto;
   width: 32px;
   height: 32px;
   cursor: pointer;
@@ -872,6 +955,10 @@ exports[`Storyshots Icon Loading 1`] = `
 exports[`Storyshots Icon Logo 1`] = `
 .c0 {
   position: relative;
+  left: auto;
+  top: auto;
+  right: auto;
+  bottom: auto;
   width: 32px;
   height: 32px;
   cursor: pointer;
@@ -917,6 +1004,10 @@ exports[`Storyshots Icon Logo 1`] = `
 exports[`Storyshots Icon Logout 1`] = `
 .c0 {
   position: relative;
+  left: auto;
+  top: auto;
+  right: auto;
+  bottom: auto;
   width: 32px;
   height: 32px;
   cursor: pointer;
@@ -975,6 +1066,10 @@ exports[`Storyshots Icon Logout 1`] = `
 exports[`Storyshots Icon Notifications 1`] = `
 .c0 {
   position: relative;
+  left: auto;
+  top: auto;
+  right: auto;
+  bottom: auto;
   width: 32px;
   height: 32px;
   cursor: pointer;
@@ -1001,6 +1096,10 @@ exports[`Storyshots Icon Notifications 1`] = `
 exports[`Storyshots Icon Plus 1`] = `
 .c0 {
   position: relative;
+  left: auto;
+  top: auto;
+  right: auto;
+  bottom: auto;
   width: 32px;
   height: 32px;
   cursor: pointer;
@@ -1035,6 +1134,10 @@ exports[`Storyshots Icon Plus 1`] = `
 exports[`Storyshots Icon Question 1`] = `
 .c0 {
   position: relative;
+  left: auto;
+  top: auto;
+  right: auto;
+  bottom: auto;
   width: 32px;
   height: 32px;
   cursor: pointer;
@@ -1069,6 +1172,10 @@ exports[`Storyshots Icon Question 1`] = `
 exports[`Storyshots Icon Search 1`] = `
 .c0 {
   position: relative;
+  left: auto;
+  top: auto;
+  right: auto;
+  bottom: auto;
   width: 32px;
   height: 32px;
   cursor: pointer;
