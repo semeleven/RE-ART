@@ -62,8 +62,8 @@ interface Props {
 const IconWrapper = styled.div`
 	${(props: Props) => {
 		const size = props.small ? '32px' : '64px';
-		const handlePosition = param => props.absolute ? param : 'auto';
-		
+		const handlePosition = param => (props.absolute ? param : 'auto');
+
 		return css`
 			position: ${props.absolute ? 'absolute' : 'relative'};
 			left: ${handlePosition(props.left)};

@@ -1,13 +1,8 @@
 import React from 'react';
-import styled  from '@Styled';
+import styled from '@Styled';
 import { colors, media } from '@Styled/theme';
 
-import {
-	Dropdown,
-	HideOnMobile,
-	Icon,
-	Heading
-} from '@Components';
+import { Dropdown, HideOnMobile, Icon, Heading } from '@Components';
 
 interface OptionProps {
 	isLogout?: boolean;
@@ -82,20 +77,9 @@ const Personal: React.SFC<PersonalProps> = ({ handleLogout }) => (
 					</IconWrapper>
 				)}
 			>
-				<Option
-					onClick={() => {}}
-				>
-						PROFILE
-				</Option>
-				<Option
-					onClick={() => {}}
-				>
-					SETTINGS
-				</Option>
-				<Option
-					isLogout
-					onClick={handleLogout}
-				>
+				<Option onClick={() => {}}>PROFILE</Option>
+				<Option onClick={() => {}}>SETTINGS</Option>
+				<Option isLogout onClick={handleLogout}>
 					LOGOUT
 				</Option>
 			</Dropdown>

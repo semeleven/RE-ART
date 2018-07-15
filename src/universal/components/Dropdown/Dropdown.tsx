@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import enhanceWithClickOutside from 'react-click-outside';
 import styled from '@Styled';
-import { colors } from "@Styled/theme";
+import { colors } from '@Styled/theme';
 
 interface Props {
 	children: React.ReactNode;
@@ -46,9 +46,7 @@ export default class Dropdown extends Component<Props, State> {
 		}
 	}
 
-	handleToggle = () => (
-		this.setState(state => ({ isOpen: !state.isOpen }))
-	);
+	handleToggle = () => this.setState(state => ({ isOpen: !state.isOpen }));
 
 	render() {
 		const { children, renderTitle } = this.props;
@@ -56,19 +54,11 @@ export default class Dropdown extends Component<Props, State> {
 
 		return (
 			<DropdownContainer>
-				<div
-					role="button"
-					onClick={this.handleToggle}
-				>
+				<div role="button" onClick={this.handleToggle}>
 					{renderTitle()}
 				</div>
-				{isOpen && (
-					<DropdownList>
-						{children}
-					</DropdownList>
-				)}
+				{isOpen && <DropdownList>{children}</DropdownList>}
 			</DropdownContainer>
-		)
+		);
 	}
 }
-

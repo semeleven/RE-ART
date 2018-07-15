@@ -71,10 +71,11 @@ const Header: React.SFC<Props> = ({
 				</RouterLink>
 			</LogoWrapper>
 			<FlexWrapper flex="end">
-				{token
-					? <Personal handleLogout={handleLogout} />
-					: <Authorization toggleModal={toggleModal} />
-				}
+				{token ? (
+					<Personal handleLogout={handleLogout} />
+				) : (
+					<Authorization toggleModal={toggleModal} />
+				)}
 				<Icon icon="Cart" />
 			</FlexWrapper>
 		</StyledHeader>

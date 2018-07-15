@@ -1,8 +1,8 @@
-import { HideOnTablet, HideOnMobile, ShowOnMobile, ShowOnTablet } from './Media';
-
-export {
+import {
 	HideOnTablet,
 	HideOnMobile,
 	ShowOnMobile,
-	ShowOnTablet
-};
+	ShowOnTablet,
+} from './Media';
+
+export { HideOnTablet, HideOnMobile, ShowOnMobile, ShowOnTablet };

@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Button, ShowOnMobile, HideOnMobile, Link } from "@Components";
+import { Button, ShowOnMobile, HideOnMobile, Link } from '@Components';
 
 const Authorization = ({ toggleModal }) => (
 	<Fragment>

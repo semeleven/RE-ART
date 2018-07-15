@@ -11,7 +11,7 @@ import {
 	Icon,
 	Button,
 	Link,
-	Modal
+	Modal,
 } from '@Components';
 
 interface Props extends FormikProps<SignFormValues> {
@@ -116,13 +116,7 @@ export default class SignForm extends PureComponent<Props> {
 				toggleModal={toggleModal}
 				showModal={showModal}
 			>
-				<Icon
-					onClick={toggleModal}
-					icon="Cancel"
-					absolute
-					top="5"
-					right="5"
-				 />
+				<Icon onClick={toggleModal} icon="Cancel" absolute top="5" right="5" />
 				<Row justifyContent="center">
 					<Col size={12}>
 						<form onSubmit={handleSubmit}>

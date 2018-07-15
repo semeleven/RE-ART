@@ -1,5 +1,5 @@
-import styled from "@Styled";
-import { media } from "@Styled/theme";
+import styled from '@Styled';
+import { media } from '@Styled/theme';
 
 export const HideOnTablet = styled.div`
 	display: flex;
