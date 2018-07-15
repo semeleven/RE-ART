@@ -22,9 +22,7 @@ const DropdownList = styled.div`
 
 const Dropdown: React.SFC<Props> = ({ children }) => (
 	<DropdownContainer>
-		<DropdownList>
-			{children}
-		</DropdownList>
+		<DropdownList>{children}</DropdownList>
 	</DropdownContainer>
 );
 
