@@ -83,7 +83,8 @@ export const Authorization = ({ toggleModal }) => (
 			<Link white onClick={toggleModal} size="S">
 				LOGIN
 			</Link>
-		</ShowOnMobileOnly>' '<HideOnMobile>
+		</ShowOnMobileOnly>
+		<HideOnMobile>
 			<Button purple onClick={toggleModal} spaced>
 				LOGIN
 			</Button>

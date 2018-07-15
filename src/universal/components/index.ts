@@ -1,6 +1,7 @@
 import Button from './Button';
 import Canvas from './Canvas';
 import Card from './Card';
+import Dropdown from './Dropdown';
 import Heading from './Heading';
 import Link from './Link';
 import Main from './Main';
@@ -20,6 +21,7 @@ export {
 	Canvas,
 	Card,
 	Col,
+	Dropdown,
 	Heading,
 	Link,
 	Main,
