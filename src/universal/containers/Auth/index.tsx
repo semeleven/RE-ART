@@ -7,10 +7,7 @@ import { Mutation } from 'react-apollo';
 import { SignMutation } from './AuthSchema';
 
 import { connect } from 'react-redux';
-import {
-	getUserAndLayout,
-	getUserAndLayoutType,
-} from '@Redux/reselect';
+import { getUserAndLayout, getUserAndLayoutType } from '@Redux/reselect';
 import { mapDispatchToProps } from '@Redux/helpers';
 import { ToggleModal } from '@Redux/reducers/Layout/LayoutActions';
 

@@ -1,17 +1,11 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 
-import {
-	getUserAndLayout,
-	getUserAndLayoutType,
-} from '@Redux/reselect';
+import { getUserAndLayout, getUserAndLayoutType } from '@Redux/reselect';
 
 import { mapDispatchToProps } from '@Redux/helpers';
 
-import {
-	ToggleModal,
-	ToggleMenu,
-} from '@Redux/reducers/Layout/LayoutActions';
+import { ToggleModal, ToggleMenu } from '@Redux/reducers/Layout/LayoutActions';
 
 import Header from './components/Header';
 

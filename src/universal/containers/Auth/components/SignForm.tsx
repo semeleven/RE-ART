@@ -3,15 +3,7 @@ import { FormikProps } from 'formik';
 import styled from '@Styled';
 import { SignFormValues, oneOfFields } from '../../Auth';
 
-import {
-	Row,
-	Col,
-	Heading,
-	Input,
-	Button,
-	Link,
-	Modal,
-} from '@Components';
+import { Row, Col, Heading, Input, Button, Link, Modal } from '@Components';
 
 interface Props extends FormikProps<SignFormValues> {
 	apiErrors: Partial<SignFormValues>;

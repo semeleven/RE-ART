@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-	Button,
-	Row,
-	Col,
-	Heading,
-	Swiper,
-	Image,
-	Link,
-} from '@Components';
+import { Button, Row, Col, Heading, Swiper, Image, Link } from '@Components';
 
 type Product = {
 	id: number;
