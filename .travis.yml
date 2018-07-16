@@ -39,6 +39,7 @@ script:
       mv reart reart-old &&
       mv reart-new reart &&
       cp reart-config/app.json reart &&
+      cp reart-config/.env reart &&
       cd reart &&
       rm -rf ./node_modules/ && yarn &&
       pm2 delete -s reart || true &&
