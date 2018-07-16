@@ -1,4 +1,6 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
+
 
 const baseConfig = {
 	module: {
@@ -39,10 +41,14 @@ const baseConfig = {
 			"@GraphQL": path.resolve(__dirname, '../src/universal/lib/graphql/'),
 			'@Components': path.resolve(__dirname, '../src/universal/components/index.ts'),
 			'@Containers': path.resolve(__dirname, '../src/universal/containers/index.ts'),
+			'@Helpers': path.resolve(__dirname, '../src/universal/helpers/'),
 			'@API': path.resolve(__dirname, '../src/server/api/'),
 		},
 		extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx', 'svg']
-	}
+	},
+	plugins: [
+		new Dotenv()
+	],
 };
 
 module.exports = baseConfig;

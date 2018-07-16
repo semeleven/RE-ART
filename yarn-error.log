@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /home/slyshadow/.yarn/bin/yarn.js jest -u
+  /usr/bin/node /home/slyshadow/.yarn/bin/yarn.js add --dev react-animate-height
 
 PATH: 
   /home/slyshadow/bin:/home/slyshadow/.local/bin:/home/slyshadow/.yarn/bin:/home/slyshadow/.config/yarn/global/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Windows/System32:/mnt/c/Windows:/mnt/c/Windows/System32/wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/Windows/System32/OpenSSH:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/nodejs:/mnt/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit:/mnt/c/Go/bin:/mnt/c/PostgreSQL/pg10/bin:/mnt/c/Program Files/Git LFS:/mnt/c/Users/Vanko/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Vanko/AppData/Roaming/npm:/mnt/c/Users/Vanko/AppData/Local/hyper/app-2.0.0/resources/bin:/snap/bin
@@ -14,12 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  SyntaxError: /mnt/c/Users/Vanko/Documents/Projects/ReART/package.json: Unexpected token } in JSON at position 1132
-      at JSON.parse (<anonymous>)
-      at /home/slyshadow/.yarn/lib/cli.js:1130:59
-      at Generator.next (<anonymous>)
-      at step (/home/slyshadow/.yarn/lib/cli.js:98:30)
-      at /home/slyshadow/.yarn/lib/cli.js:109:13
+  Error: ENOENT: no such file or directory, lstat '/home/slyshadow/.cache/yarn/v1/npm-babel-plugin-react-docgen-2.0.0-rc.1-2538ecff4102c9e4e4087dbb90bcc76a8db3658f/test/fixtures/functionDeclaration/expected.js'
 
 npm manifest: 
   {
@@ -54,9 +49,9 @@ npm manifest:
       ],
       "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
       "moduleNameMapper": {
-        "^@Styled(.*)$": "<rootDir>/src/lib/styled$1",
+        "^@Styled(.*)$": "<rootDir>/src/universal/lib/styled$1",
         "^@Components(.*)$": "<rootDir>/src/universal/components$1",
-        "^@Redux(.*)$": "<rootDir>/src/lib/redux$1",
+        "^@Redux(.*)$": "<rootDir>/src/lib/redux$1"
       },
       "moduleFileExtensions": [
         "ts",

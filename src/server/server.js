@@ -13,7 +13,7 @@ const app = express();
 
 const corsOptions = {
 	// temporary
-	origin: 'http://localhost:8080',
+	origin: process.env.HOST,
 	credentials: true,
 };
 app.use(cors(corsOptions));

@@ -96,7 +96,7 @@ class Input extends Component<Props> {
 		return (
 			<label>
 				{label && (
-					<Heading bold darkGray size="S">
+					<Heading bold darkGray uppercase size="S">
 						{label}
 					</Heading>
 				)}

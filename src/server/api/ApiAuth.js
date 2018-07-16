@@ -1,6 +1,6 @@
 import Api from './Api';
 
-const ApiProducts = new Api('http://138.68.85.252:4580');
+const ApiProducts = new Api(process.env.API_URL);
 
 // eslint-disable-next-line
 export function SignRequest({ username = null, email, password }) {

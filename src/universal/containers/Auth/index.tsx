@@ -41,7 +41,7 @@ interface State extends SignFormValues {
 interface SignUpResponseInterface {
 	success: boolean;
 	message?: string; // validation errors, etc
-	data: {
+	data?: {
 		sign: {
 			token: string;
 		};
