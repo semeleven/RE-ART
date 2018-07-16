@@ -1,6 +1,5 @@
 import Api from './Api';
 
-console.log(process.env.API_URL);
 const ApiProducts = new Api(process.env.API_URL);
 
 // eslint-disable-next-line
