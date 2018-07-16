@@ -112,42 +112,42 @@ export default class SignForm extends PureComponent<Props> {
 		const heading = `sign ${isLogin ? 'in' : 'up'}`;
 
 		return (
-				<Modal
-					handleReset={handleReset}
-					toggleModal={toggleModal}
-					showModal={showModal}
-				>
-					<Icon onClick={toggleModal} icon="Cancel" absolute top="5" right="5" />
-					<Row justifyContent="center">
-						<Col size={12}>
-							<form onSubmit={handleSubmit}>
-								<Col size={12} centered marginBottom="50px">
-									<Heading mono uppercase size="L">
-										{heading}
-									</Heading>
-									<Heading mono uppercase size="L">
-										to re-art
-									</Heading>
-								</Col>
-								{this.renderInput('email')}
-								{!isLogin && this.renderInput('username')}
-								{this.renderInput('password')}
-								<Col size={12}>
-									<Button
-										type="submit"
-										loading={loading}
-										width="100%"
-										dark={!loading}
-										onClick={() => {}}
-									>
-										{isLogin ? 'SIGN IN' : 'SIGN UP'}
-									</Button>
-								</Col>
-								{this.renderConditionalBottomPart(isLogin, switchScreen)}
-							</form>
-						</Col>
-					</Row>
-				</Modal>
+			<Modal
+				handleReset={handleReset}
+				toggleModal={toggleModal}
+				showModal={showModal}
+			>
+				<Icon onClick={toggleModal} icon="Cancel" absolute top="5" right="5" />
+				<Row justifyContent="center">
+					<Col size={12}>
+						<form onSubmit={handleSubmit}>
+							<Col size={12} centered marginBottom="50px">
+								<Heading mono uppercase size="L">
+									{heading}
+								</Heading>
+								<Heading mono uppercase size="L">
+									to re-art
+								</Heading>
+							</Col>
+							{this.renderInput('email')}
+							{!isLogin && this.renderInput('username')}
+							{this.renderInput('password')}
+							<Col size={12}>
+								<Button
+									type="submit"
+									loading={loading}
+									width="100%"
+									dark={!loading}
+									onClick={() => {}}
+								>
+									{isLogin ? 'SIGN IN' : 'SIGN UP'}
+								</Button>
+							</Col>
+							{this.renderConditionalBottomPart(isLogin, switchScreen)}
+						</form>
+					</Col>
+				</Row>
+			</Modal>
 		);
 	}
 }

@@ -6,6 +6,7 @@ import chalk from 'chalk';
 import boxen from 'boxen';
 import { graphiqlExpress, graphqlExpress } from 'apollo-server-express';
 import bodyParser from 'body-parser';
+console.log(process.env, 'ENV!');
 
 import schema from '../universal/lib/graphql/schema';
 

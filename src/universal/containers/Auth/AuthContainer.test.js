@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 import 'jest-styled-components';
 import sinon from 'sinon';
 
-
 import { AuthContainer } from '../Auth';
 
 it('handles sign response successfully, then triggers toggleModal and authorize actions', () => {
@@ -40,7 +39,8 @@ it('handles sign response successfully, then triggers toggleModal and authorize 
 it('handles error from sign response', () => {
 	const fakeResponse = {
 		success: false,
-		message: 'The email address and username you have entered is already registered.',
+		message:
+			'The email address and username you have entered is already registered.',
 	};
 
 	const onAuthorize = sinon.spy();

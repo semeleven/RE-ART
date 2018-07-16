@@ -32,9 +32,7 @@ it('renders Sign In Form with no values', () => {
 		<Formik
 			initialValues={initialValues(true)}
 			onSubmit={noop}
-			validate={values =>
-				validateSignForm(values, true)
-			}
+			validate={values => validateSignForm(values, true)}
 			render={({ handleChange, ...rest }) => (
 				<SignForm
 					apiErrors={apiErrors}
@@ -57,9 +55,7 @@ it('renders Sign Up Form with no values', () => {
 		<Formik
 			initialValues={initialValues(false)}
 			onSubmit={noop}
-			validate={values =>
-				validateSignForm(values, false)
-			}
+			validate={values => validateSignForm(values, false)}
 			render={({ handleChange, ...rest }) => (
 				<SignForm
 					apiErrors={apiErrors}
