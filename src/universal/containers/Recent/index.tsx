@@ -6,12 +6,9 @@ import { Row, Title, Product } from '@Components';
 // temporary
 import { getProductsQuery } from '../ListOfProducts/ProductsQueries';
 
-
 export default class Categories extends PureComponent {
 	renderSlides = slides => (
-		<Row>
-			{slides.map(item => <Product small key={item.id} item={item} />)}
-		</Row>
+		<Row>{slides.map(item => <Product small key={item.id} item={item} />)}</Row>
 	);
 
 	render() {
