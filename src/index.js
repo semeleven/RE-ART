@@ -18,7 +18,6 @@ import globalStyles from './injectGlobal';
 // eslint-disable-next-line
 import createStore from './universal/lib/redux/store';
 
-
 import AppRoot from './App';
 
 const preloadedReduxState = window.__REDUX_STATE__;
