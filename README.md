@@ -21,7 +21,7 @@
 <h4 align="center">Unit Testing With Jest, Enzyme, Sinon and Storyshots</h4>
 <h4 align="center">End To End Testing With Puppeteer and Jest (ain't done yet)</h4>
 
-<h4 align="center">TODO:
+<h4>TODO:</h4>
 - [ ] Code-Splitting
 - [ ] Separate Media Server with <a href="https://github.com/jaydenseric/apollo-upload-server">Apollo Upload Server</a>
 - [ ] End To End Testing With Puppeteer/Cypress
@@ -37,4 +37,4 @@
 - [ ] Design Footer
 - [ ] Design Error Component
 - [ ] Design Top Menu
-</h4>
+
