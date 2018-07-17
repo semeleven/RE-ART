@@ -1,7 +1,7 @@
 import React, { PureComponent, Fragment } from 'react';
-// import { helpers } from 'react-redux';
 import { Row, Col, Card, Title } from '@Components';
 
+// temporary
 const mockCards = [
 	{
 		id: 0,

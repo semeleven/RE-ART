@@ -108,7 +108,6 @@ export default class SignForm extends PureComponent<Props> {
 			handleSubmit,
 			handleReset,
 		} = this.props;
-		console.log(this.props, 'props in signform!');
 		const heading = `sign ${isLogin ? 'in' : 'up'}`;
 
 		return (

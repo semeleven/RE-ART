@@ -10,7 +10,7 @@ export type LayoutType = {
 	showMenu: boolean;
 };
 
-const initialState: LayoutType = {
+export const initialState: LayoutType = {
 	showModal: false,
 	showMenu: false,
 };

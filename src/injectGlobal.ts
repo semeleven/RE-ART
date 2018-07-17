@@ -19,6 +19,9 @@ export default `
 	    font: inherit;
 	    vertical-align: baseline;
 	    box-sizing: border-box;
+        -webkit-tap-highlight-color: rgba(0,0,0,0); 
+        -webkit-tap-highlight-color: transparent; 
+
 	}
 	/* HTML5 display-role reset for older browsers */
 	article, aside, details, figcaption, figure,

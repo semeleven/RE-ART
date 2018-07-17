@@ -19,7 +19,7 @@ type State = {
 	user: UserData;
 };
 
-const initialState: State = {
+export const initialState: State = {
 	user: {
 		token: null,
 		username: '',
