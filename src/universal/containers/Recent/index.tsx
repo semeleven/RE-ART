@@ -1,50 +1,42 @@
 import React, { PureComponent, Fragment } from 'react';
+import { Query } from 'react-apollo';
+
 import { Row, Title, Product } from '@Components';
 
-const mockSlides = [
-	{
-		id: 0,
-		url: 'https://pp.userapi.com/c630117/v630117754/2d72d/fBdlOlnOvUk.jpg',
-		author: 'LoremIpsum',
-		name: 'Lesbians',
-		price: '777',
-	},
-	{
-		id: 1,
-		url: 'https://pp.userapi.com/c630117/v630117754/2d72d/fBdlOlnOvUk.jpg',
-		author: 'LoremIpsum',
-		name: 'Lesbians',
-		price: '777',
-	},
-	{
-		id: 2,
-		url: 'https://pp.userapi.com/c630117/v630117754/2d72d/fBdlOlnOvUk.jpg',
-		author: 'LoremIpsum',
-		name: 'Lesbians',
-		price: '777',
-	},
-	{
-		id: 3,
-		url: 'https://pp.userapi.com/c630117/v630117754/2d72d/fBdlOlnOvUk.jpg',
-		author: 'LoremIpsum',
-		name: 'Lesbians',
-		price: '777',
-	},
-];
+// temporary
+import { getProductsQuery } from '../ListOfProducts/ProductsQueries';
+
 
 export default class Categories extends PureComponent {
-	renderSlides = () => (
+	renderSlides = slides => (
 		<Row>
-			{mockSlides.map(item => <Product small key={item.id} item={item} />)}
+			{slides.map(item => <Product small key={item.id} item={item} />)}
 		</Row>
 	);
 
 	render() {
 		return (
-			<Fragment>
-				<Title>Recently Dropped</Title>
-				<Row>{this.renderSlides()}</Row>
-			</Fragment>
+			<Query query={getProductsQuery}>
+				{({ data, loading, error }) => {
+					if (error) return <h1>Error!</h1>;
+					if (loading) return <h1>Loading...</h1>;
+
+					const { getProducts } = data;
+
+					if (Array.isArray(getProducts) && getProducts.length >= 4) {
+						const lastFourItems = getProducts.slice(0, 4);
+
+						return (
+							<Fragment>
+								<Title>Recently Dropped</Title>
+								<Row>{this.renderSlides(lastFourItems)}</Row>
+							</Fragment>
+						);
+					}
+
+					return null;
+				}}
+			</Query>
 		);
 	}
 }

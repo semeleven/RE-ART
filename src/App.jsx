@@ -18,9 +18,9 @@ export default class App extends Component {
 					<Route path="/product/:id" component={Product} />
 				</Switch>
 				<Auth {...this.props} />
-				<footer>
-					<h1>FOOTER</h1>
-				</footer>
+				{/*<footer>*/}
+					{/*<h1>FOOTER</h1>*/}
+				{/*</footer>*/}
 			</Canvas>
 		);
 	}
