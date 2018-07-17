@@ -10,15 +10,12 @@ export const fakeData = {
 
 describe('user reducer', () => {
 	it('should return the initial state', () => {
-		expect(UserReducer(undefined, {}))
-			.toEqual(initialState);
+		expect(UserReducer(undefined, {})).toEqual(initialState);
 	});
 
 	it('should handle authorize action', () => {
 		const createdAction = Authorize(fakeData);
-		expect(
-			UserReducer(initialState, createdAction)
-		).toEqual({
+		expect(UserReducer(initialState, createdAction)).toEqual({
 			...initialState,
 			user: {
 				...initialState.user,
@@ -29,8 +26,6 @@ describe('user reducer', () => {
 
 	it('should handle logout action', () => {
 		const createdAction = Logout();
-		expect(
-			UserReducer(initialState, createdAction)
-		).toEqual(initialState);
+		expect(UserReducer(initialState, createdAction)).toEqual(initialState);
 	});
 });
