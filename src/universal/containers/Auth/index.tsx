@@ -156,9 +156,10 @@ export class AuthContainer extends PureComponent<Props, State> {
 						return (
 							<Formik
 								initialValues={initialValues}
-								onSubmit={(variables: SignFormValues) =>
-									SignUpRequest({ variables })
-								}
+								onSubmit={ async (variables: SignFormValues, { resetForm }) => {
+									await SignUpRequest({ variables });
+									return resetForm();
+								}}
 								validate={(values: SignFormValues) =>
 									validateSignForm(values, isLogin)
 								}

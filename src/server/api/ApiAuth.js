@@ -4,7 +4,7 @@ const ApiProducts = new Api(process.env.API_URL);
 
 // eslint-disable-next-line
 export function SignRequest({ username = null, email, password }) {
-	const isSignUp = username != null;
+	const isSignUp = username != null && username !== '';
 
 	const body = {
 		email,

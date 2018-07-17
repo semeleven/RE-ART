@@ -17,7 +17,7 @@ export default class ProductsContainer extends PureComponent {
 					if (loading) return <h1>Loading...</h1>;
 
 					const { getProducts } = data;
-					console.log(getProducts, 'data in query!');
+
 					return this.renderProducts(getProducts);
 				}}
 			</Query>

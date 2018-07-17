@@ -31,7 +31,6 @@ export const initialState: State = {
 type UserActions = ActionType<typeof actions>;
 
 const userReducer = (state = initialState, action: UserActions) => {
-	console.log(action.type, 'action Type');
 	switch (action.type) {
 		case actionTypes.AUTHORIZATION:
 			return {
