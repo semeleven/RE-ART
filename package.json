@@ -31,6 +31,8 @@
     "moduleNameMapper": {
       "^@Styled(.*)$": "<rootDir>/src/universal/lib/styled$1",
       "^@Components(.*)$": "<rootDir>/src/universal/components$1",
+      "^@Containers(.*)$": "<rootDir>/src/universal/containers$1",
+      "^@Pages(.*)$": "<rootDir>/src/universal/pages$1",
       "^@Helpers(.*)$": "<rootDir>/src/universal/helpers$1",
       "^@Redux(.*)$": "<rootDir>/src/universal/lib/redux$1"
     },

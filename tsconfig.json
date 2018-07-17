@@ -13,6 +13,7 @@
       "@GraphQL/*": ["src/universal/lib/graphql/*"],
       "@Components": ["src/universal/components/index.ts"],
       "@Containers": ["src/universal/containers/index.ts"],
+      "@Pages/*": ["src/universal/pages/*"],
       "@Helpers/*": ["src/universal/helpers/*"],
       "@API/*" : ["src/server/api/*"]
     },

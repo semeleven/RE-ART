@@ -39,6 +39,7 @@ const baseConfig = {
 			"@GraphQL": path.resolve(__dirname, '../src/universal/lib/graphql/'),
 			'@Components': path.resolve(__dirname, '../src/universal/components/index.ts'),
 			'@Containers': path.resolve(__dirname, '../src/universal/containers/index.ts'),
+			'@Pages': path.resolve(__dirname, '../src/universal/pages/'),
 			'@Helpers': path.resolve(__dirname, '../src/universal/helpers/'),
 			'@API': path.resolve(__dirname, '../src/server/api/'),
 		},

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { withRouter, Switch } from 'react-router';
 import { Route } from 'react-router-dom';
-import { Canvas } from './universal/components';
-import { Header, Auth } from './universal/containers';
+import { Canvas } from '@Components';
+import { Header, Auth } from '@Containers';
 
-import Landing from './universal/pages/Landing';
-import Product from './universal/pages/Product';
+import Landing from '@Pages/Landing';
+import Product from '@Pages/Product';
 
 @withRouter
 export default class App extends Component {

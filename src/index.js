@@ -11,13 +11,13 @@ import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 import { injectGlobal } from 'styled-components';
-import { Loading } from './universal/components';
+import { ThemeProvider } from '@Styled';
+import { colors } from '@Styled/theme';
 import globalStyles from './injectGlobal';
+
 // eslint-disable-next-line
 import createStore from './universal/lib/redux/store';
 
-import { ThemeProvider } from './universal/lib/styled';
-import { colors } from './universal/lib/styled/theme';
 
 import AppRoot from './App';
 

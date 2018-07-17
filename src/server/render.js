@@ -3,6 +3,7 @@ import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router';
 
 import { Provider as ReduxProvider } from 'react-redux';
+import createStore from '@Redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 
 import { flushChunkNames } from 'react-universal-component/server';
@@ -16,11 +17,9 @@ import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 import { ServerStyleSheet, injectGlobal } from 'styled-components';
+import { ThemeProvider } from '@Styled';
+import { colors } from '@Styled/theme';
 import globalStyles from '../injectGlobal';
-import { ThemeProvider } from '../universal/lib/styled';
-import { colors } from '../universal/lib/styled/theme';
-
-import createStore from '../universal/lib/redux/store';
 
 import AppRoot from '../App';
 // import { Loading } from '../universal/components';
